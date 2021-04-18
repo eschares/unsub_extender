@@ -12,7 +12,7 @@ In an [unsub](http://unsub.org) project, choose "Export - Download as spreadshee
 
 A .csv file will be saved, which you run through **unsub extender.**
 
-The .csv file must have the following columns in any order, but must be exactly as:
+The .csv file must have the following columns in any order, but named exactly as:
 * downloads
 * citations
 * authorships
