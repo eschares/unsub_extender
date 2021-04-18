@@ -1,4 +1,4 @@
-# unsub extender
+![unsub extender logo](https://github.com/eschares/unsub_extender/blob/main/unsub_extender2.png)
 
 [unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
 The tool is very useful, but most detailed analysis tends to take place off the site and in an exported .csv file that allows for filtering, notes, and graphing.
