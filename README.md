@@ -22,6 +22,7 @@ These should already be the default column names assigned by unsub in the file e
 
 # Usage
 Hosted on Streamlit
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/eschares/unsub_extender/unsub_extender/)
 
 Navigate to https://share.streamlit.io/eschares/unsub_extender/main/unsub_extender.py to run in browser
 
