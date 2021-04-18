@@ -8,7 +8,9 @@ The graphs are interactive through [Altair](https://altair-viz.github.io/index.h
 Hosting provided by [Streamlit](https://streamlit.io/).
 
 # Requirements:
-In unsub, choose "Export - Download as spreadsheet".  A .csv file will be saved, which you run through **unsub extender.**
+In an [unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
+
+A .csv file will be saved, which you run through **unsub extender.**
 
 The .csv file must have the following columns in any order, but must be exactly as:
 * downloads
