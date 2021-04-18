@@ -4,6 +4,6 @@ Requirements:
 Unsub export in .csv format
 
 Column names:
--downloads
--citations
--authorships
+--downloads
+--citations
+--authorships
