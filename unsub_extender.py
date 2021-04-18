@@ -25,6 +25,8 @@ st.write('Analyzing file "' + str(file) + '"')
 
 with st.beta_expander("FAQ"):
     st.write('''
+             by Eric Schares
+             
              What is this? What do I need? How does it work?
              
              Unsub is a tool that helps libraries analyze their journal subscriptions.
@@ -71,7 +73,7 @@ domain = ['TRUE', 'FALSE', 'MAYBE', ' ']
 range_ = ['blue', 'red', 'green', 'gray']
 
 #weighted usage in log by cost (x), colored by subscribed
-weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
     y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (dl + cit + auth'),
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
@@ -81,7 +83,7 @@ st.altair_chart(weighted_vs_cost, use_container_width=True)
 
 #Altair scatter plot
 #cit vs dl
-cit_vs_dl = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
@@ -91,7 +93,7 @@ st.altair_chart(cit_vs_dl, use_container_width=True)
 
 #Altair scatter plot
 #auth vs dl
-auth_vs_dl = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+auth_vs_dl = alt.Chart(df[filt], title='Authorships vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
     x='downloads',
     y='authorships',
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
@@ -101,7 +103,7 @@ st.altair_chart(auth_vs_dl, use_container_width=True)
 
 #Altair scatter plot
 #auth vs cit, colord by subscribed
-auth_vs_cit = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+auth_vs_cit = alt.Chart(df[filt], title='Authorships vs. Citations').mark_circle(size=75, opacity=0.5).encode(
     x='citations:Q',
     y='authorships:Q',
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
@@ -111,7 +113,7 @@ st.altair_chart(auth_vs_cit, use_container_width=True)
 
 #cit vs dl, by cpu_rank 5 buckets, colred by subscribed
 #NOT DONE
-cit_vs_dl_by_cpurank = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+cit_vs_dl_by_cpurank = alt.Chart(df[filt], title='====NOT DONE, WILL HAVE SELECTOR BY CPU_RANK BUCKETS====').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
@@ -122,7 +124,7 @@ st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
 
 #cpu_Rank y vs. subject, colored by subscribed
 #what Altair calls a "stripplot"
-cpurank_vs_subject = alt.Chart(df[filt], width=40).mark_circle(size=40, opacity=0.5).encode(
+cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject', width=40).mark_circle(size=40, opacity=0.5).encode(
     x=alt.X('subject:N', title=None, axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale(),
             ),
     y=alt.Y('cpu_rank:Q'),
@@ -140,10 +142,6 @@ cpurank_vs_subject = alt.Chart(df[filt], width=40).mark_circle(size=40, opacity=
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive()
 st.altair_chart(cpurank_vs_subject, use_container_width=True)
-
-
-
-
 
 
 
