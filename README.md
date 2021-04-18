@@ -8,11 +8,14 @@ The graphs are interactive (zoom, pan, hover), and filters in the sidebar help s
 
 
 Requirements:
-Unsub export in .csv format with columns in any order, but names must be exactly as:
+In unsub, choose "Export - Download as spreadsheet".  A .csv file will be saved, which you run through **unsub extender.**
+
+The .csv file must have the following columns in any order, but must be exactly as:
 * downloads
 * citations
 * authorships
-* weighted usage
+* usage (will be renamed to "weighted usage" during the analysis)
 * subscription_cost
+* subscribed
 
-In most cases these are the default column names assigned by unsub in the file export option.
+These should already be the default column names assigned by unsub in the file export.
