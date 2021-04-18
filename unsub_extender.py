@@ -12,7 +12,7 @@ import altair as alt
 
 
 #st.title('Unsub Extender')
-st.image('unsub_extender.png')
+st.image('unsub_extender2.png')
 
 file = "Unsub_Elsevier_2021_cancellations.csv"
 uploaded_file = st.sidebar.file_uploader('Upload new .csv file:', type='csv')
