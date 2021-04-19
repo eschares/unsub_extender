@@ -68,24 +68,28 @@ domain = ['TRUE', 'FALSE', 'MAYBE', ' ']
 range_ = ['blue', 'red', 'green', 'gray']
 
 #weighted usage in log by cost (x), colored by subscribed
-weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost').mark_circle(size=75, opacity=0.5).encode(
+#adding clickable legend to highlight subscribed categories
+selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
+weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost, clickable legend').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
     y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.condition(selection1, alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)), alt.value('lightgray')),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
-    ).interactive().properties(height=500)
+    ).interactive().properties(height=500).add_selection(selection1)
 st.altair_chart(weighted_vs_cost, use_container_width=True)
 
 
-col1, col2 = st.beta_columns(2)
-#Altair scatter plot
+
+#col1, col2 = st.beta_columns(2)
 #cit vs dl
+selection = alt.selection_interval()
 cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
-    color=alt.Color('subscribed:N', legend=None, scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.condition(selection, alt.Color('subscribed:N', legend=None, scale=alt.Scale(domain=domain, range=range_)),
+                        alt.value('gray')),   #alt.condition takes selection object, values for points inside selection, value for points OUTSIDE selection
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
-    ).interactive()
+    ).add_selection(selection)#.interactive()
 
 #Altair scatter plot
 #auth vs dl
@@ -97,10 +101,19 @@ auth_vs_dl = alt.Chart(df[filt], title='Authorships vs. Downloads').mark_circle(
     ).interactive()
 
 
-with col1:
-    st.altair_chart(cit_vs_dl)#, use_container_width=True)
-with col2:
-    st.altair_chart(auth_vs_dl)#, use_container_width=True)
+
+test = cit_vs_dl.encode(y='authorships:Q')
+
+cit_vs_dl | cit_vs_dl.encode(y='authorships')
+
+
+#with col1:
+st.altair_chart(cit_vs_dl)#, use_container_width=True)
+#with col2:
+st.altair_chart(auth_vs_dl)#, use_container_width=True)
+
+
+
 
 #Altair scatter plot
 #auth vs cit, colord by subscribed
