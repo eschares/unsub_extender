@@ -15,13 +15,14 @@ import altair as alt
 #st.title('Unsub Extender')
 st.image('unsub_extender2.png')
 
-file = "Unsub_Elsevier_2021_cancellations.csv"
+file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv"])
+
 #uploaded_file = st.sidebar.file_uploader('Upload new .csv file:', type='csv')
 #if uploaded_file is not None:
 #    file = uploaded_file
 
 df = pd.read_csv(file)
-st.write('Analyzing file "' + str(file) + '"')
+#st.write('Analyzing file "' + str(file) + '"')
 #Process the data
 #change column usage name to weighted usage
 
@@ -82,25 +83,31 @@ weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost').mark_cir
     ).interactive().properties(height=500)
 st.altair_chart(weighted_vs_cost, use_container_width=True)
 
+
+col1, col2 = st.beta_columns(2)
 #Altair scatter plot
 #cit vs dl
 cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
-    color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.Color('subscribed:N', legend=None, scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive()
-st.altair_chart(cit_vs_dl, use_container_width=True)
 
 #Altair scatter plot
 #auth vs dl
 auth_vs_dl = alt.Chart(df[filt], title='Authorships vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
-    x='downloads',
-    y='authorships',
+    x='downloads:Q',
+    y='authorships:Q',
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive()
-st.altair_chart(auth_vs_dl, use_container_width=True)
+
+
+with col1:
+    st.altair_chart(cit_vs_dl)#, use_container_width=True)
+with col2:
+    st.altair_chart(auth_vs_dl)#, use_container_width=True)
 
 #Altair scatter plot
 #auth vs cit, colord by subscribed
