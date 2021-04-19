@@ -22,31 +22,20 @@ file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellation
 #    file = uploaded_file
 
 df = pd.read_csv(file)
-#st.write('Analyzing file "' + str(file) + '"')
 #Process the data
 #change column usage name to weighted usage
-
-#st.write("Here's an attempt to make looking at the Unsub data easier:")
-
-#with st.beta_expander("FAQ"):
-#    st.write('''
-#             by Eric Schares
-#             
-#             st.href(https://github.com/eschares/unsub_extender/blob/main/README.md)
-#             ''')
-
 
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected
 
 
 # Sliders and filter
 st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
-price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=max(df['subscription_cost']), value=(0,max(df['subscription_cost'])))
-downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=max(df['downloads']), value=(0,max(df['downloads'])))
+price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
+downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))))
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])))
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])))
-weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=max(df['weighted usage']), value=(0,max(df['weighted usage'])))
-OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=max(df['free_instant_usage_percent']), value=(0,max(df['free_instant_usage_percent'])))
+weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['weighted usage'])), value=(0,int(max(df['weighted usage']))))
+OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
 
 
 filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_instant_usage_percent'] <= OA_percent_slider[1]) &
