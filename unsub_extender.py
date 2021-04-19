@@ -15,7 +15,7 @@ import altair as alt
 #st.title('Unsub Extender')
 st.image('unsub_extender2.png')
 
-file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv"])
+file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "Unsub_test.csv"])
 
 #uploaded_file = st.sidebar.file_uploader('Upload new .csv file:', type='csv')
 #if uploaded_file is not None:
