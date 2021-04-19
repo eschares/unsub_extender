@@ -29,9 +29,7 @@ Hosted on Streamlit
 Navigate to https://share.streamlit.io/eschares/unsub_extender/main/unsub_extender.py to run in browser
 
 # License
-MIT License
-
-Copyright (c) 2021 Eric Schares
+MIT License, Copyright (c) 2021 Eric Schares
 
 See LICENSE file
 
