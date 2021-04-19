@@ -8,6 +8,8 @@ The tool provides rich data and a summary graph, but more detailed analysis tend
 The graphs are interactive through [Altair](https://altair-viz.github.io/index.html) and support zoom, pan, and hover, and filters in the sidebar help set parameters to quickly narrow in on obvious titles to KEEP or CANCEL.
 Hosting is provided by [Streamlit](https://streamlit.io/).
 
+![unsub extender screenshot](https://github.com/eschares/unsub_extender/blob/main/screenshot.png)
+
 # Requirements
 An unsub export file - in an [unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
 
