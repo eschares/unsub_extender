@@ -6,6 +6,7 @@ Created on Thu Apr 15 21:16:06 2021
 """
 
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import altair as alt
@@ -144,7 +145,19 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject', width=40).
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
+components.html(
+'''
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Z0VMP44J0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-2Z0VMP44J0');
+</script>
+'''
+)
 
 
 if (0):
