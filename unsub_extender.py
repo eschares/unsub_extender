@@ -21,24 +21,24 @@ file = "Unsub_Elsevier_2021_cancellations.csv"
 
 df = pd.read_csv(file)
 st.write('Analyzing file "' + str(file) + '"')
+#Process the data
+#change column usage name to weighted usage
+
 #st.write("Here's an attempt to make looking at the Unsub data easier:")
 
-with st.beta_expander("FAQ"):
-    st.write('''
-             by Eric Schares
-             
-             What is this? What do I need? How does it work?
-             
-             Unsub is a tool that helps libraries analyze their journal subscriptions.
-             
-             Step 1: Get an Unsub report and choose export file to .csv
-             ''')
+#with st.beta_expander("FAQ"):
+#    st.write('''
+#             by Eric Schares
+#             
+#             st.href(https://github.com/eschares/unsub_extender/blob/main/README.md)
+#             ''')
 
 
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected
 
 
 # Sliders and filter
+st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=max(df['subscription_cost']), value=(0,max(df['subscription_cost'])))
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=max(df['downloads']), value=(0,max(df['downloads'])))
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])))
@@ -78,7 +78,7 @@ weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost').mark_cir
     y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (dl + cit + auth'),
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
-    ).interactive()
+    ).interactive().properties(height=500)
 st.altair_chart(weighted_vs_cost, use_container_width=True)
 
 #Altair scatter plot
@@ -141,7 +141,7 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject', width=40).
         ),
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive()
-st.altair_chart(cpurank_vs_subject, use_container_width=True)
+st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
 
