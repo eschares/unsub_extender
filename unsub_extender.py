@@ -12,21 +12,25 @@ import numpy as np
 import altair as alt
 
 
-#st.title('Unsub Extender')
 st.image('unsub_extender2.png')
 
-file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "Unsub_test.csv"])
+file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "test2.csv"])
 
 #uploaded_file = st.sidebar.file_uploader('Upload new .csv file:', type='csv')
 #if uploaded_file is not None:
 #    file = uploaded_file
 
-df = pd.read_csv(file)
-#Process the data
-#change column usage name to weighted usage
+df = pd.read_csv(file)  #Process the data
+#change column name 'usage' to 'weighted usage', how we refer to it interally since it contains DL + xCit + yAuth
+if 'usage' in df.columns:
+    df.rename(columns = {'usage': 'weighted usage'}, inplace=True)
+
+#force 'subscribed' column to be a string, not Bool and all uppercase
+df['subscribed'] = df['subscribed'].astype(str)
+df['subscribed'] = df['subscribed'].str.upper()
+
 
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected
-
 
 # Sliders and filter
 st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
@@ -66,7 +70,7 @@ range_ = ['blue', 'red', 'green', 'gray']
 #weighted usage in log by cost (x), colored by subscribed
 weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
-    y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (dl + cit + auth'),
+    y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive().properties(height=500)
