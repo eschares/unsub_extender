@@ -9,7 +9,7 @@ The graphs are interactive through [Altair](https://altair-viz.github.io/index.h
 
 Hosting is provided by [Streamlit](https://streamlit.io/).
 
-![unsub extender screenshot](https://github.com/eschares/unsub_extender/blob/main/screenshot.png)
+![unsub extender screenshot demo](https://github.com/eschares/unsub_extender/blob/main/demo.gif)
 
 # Requirements
 An unsub export file - in an [unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
