@@ -64,8 +64,10 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 
 
 #set up the color maps on 'subscribed'
-domain = ['TRUE', 'FALSE', 'MAYBE', ' ']
-range_ = ['blue', 'red', 'green', 'gray']
+subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
+                                  range = ['blue', 'red', 'green', 'gray'])
+# domain = ['TRUE', 'FALSE', 'MAYBE', ' ']
+# range_ = ['blue', 'red', 'green', 'gray']
 
 #weighted usage in log by cost (x), colored by subscribed
 #adding clickable legend to highlight subscribed categories
@@ -73,7 +75,7 @@ selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
 weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost by Subscribed status, clickable legend').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
     y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.condition(selection1, alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)), alt.value('lightgray')),   #Nominal data type
+    color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(height=500).add_selection(selection1)
 st.altair_chart(weighted_vs_cost, use_container_width=True)
@@ -84,7 +86,10 @@ selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
 weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Rank, clickable legend').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
     y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')),   #selection, if selected, if NOT selected
+    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')
+        #,legend = alt.Legend(type='symbol')                
+                        ),   #selection, if selected, if NOT selected
+    
     #color=alt.Color('cpu_rank:Q',scale=alt.Scale(scheme='category20b')),
     #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'cpu_rank', 'subscribed'],
@@ -98,7 +103,7 @@ selection = alt.selection_interval()
 cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
-    color=alt.condition(selection, alt.Color('subscribed:N', legend=None, scale=alt.Scale(domain=domain, range=range_)),
+    color=alt.condition(selection, alt.Color('subscribed:N', legend=None, scale=subscribed_colorscale),
                         alt.value('gray')),   #alt.condition takes selection object, values for points inside selection, value for points OUTSIDE selection
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).add_selection(selection)#.interactive()
@@ -108,7 +113,7 @@ cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads').mark_circle(siz
 auth_vs_dl = alt.Chart(df[filt], title='Authorships vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='authorships:Q',
-    color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive().add_selection(selection)
 
@@ -124,7 +129,7 @@ cit_vs_dl | cit_vs_dl.encode(y='authorships')
 auth_vs_cit = alt.Chart(df[filt], title='Authorships vs. Citations').mark_circle(size=75, opacity=0.5).encode(
     x='citations:Q',
     y='authorships:Q',
-    color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive()
 st.altair_chart(auth_vs_cit, use_container_width=True)
@@ -139,7 +144,7 @@ st.altair_chart(auth_vs_cit, use_container_width=True)
 cit_vs_dl_by_cpurank = alt.Chart(df[filt], title='====NOT DONE, WILL HAVE SELECTOR BY CPU_RANK BUCKETS====').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
-    color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
     ).interactive()
 st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
@@ -151,7 +156,7 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject', width=40).
     x=alt.X('subject:N', title=None, axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale(),
             ),
     y=alt.Y('cpu_rank:Q'),
-    color=alt.Color('subscribed:N', scale=alt.Scale(domain=domain, range=range_)),   #Nominal data type
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
     column=alt.Column(
         'subscribed:N',
         header=alt.Header(
@@ -169,17 +174,18 @@ st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 components.html(
 '''
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Z0VMP44J0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2Z0VMP44J0');
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Z0VMP44J0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-2Z0VMP44J0');
+    </script>
 '''
 )
+
 
 
 if (0):
