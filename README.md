@@ -27,7 +27,9 @@ The .csv file must have the following columns in any order, but named exactly as
 These should already be the default column names assigned by unsub in the file export.
 
 ### subscribed options
-The **subscribed** column accepts the following values (TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option, and blank will color the data point grey):
+The **subscribed** column accepts the following values.
+
+(TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option for future consideration, and leaving the cell blank will color that journal data point grey):
 * TRUE
   * A title to keep
 * FALSE
