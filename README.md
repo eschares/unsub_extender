@@ -26,7 +26,7 @@ The .csv file must have the following columns in any order, but named exactly as
 
 These should already be the default column names assigned by unsub in the file export.
 
-## subscribed column
+### subscribed options
 The **subscribed** column accepts the following values (TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option, and blank will color the data point grey):
 * TRUE
   * A title to keep
