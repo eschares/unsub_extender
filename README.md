@@ -26,6 +26,13 @@ The .csv file must have the following columns in any order, but named exactly as
 
 These should already be the default column names assigned by unsub in the file export.
 
+The 'subscribed' column accepts the following values:
+* TRUE
+** test
+* FALSE
+* MAYBE
+* (blank)
+
 # Usage
 Hosted on Streamlit
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/eschares/unsub_extender/main/unsub_extender.py/)
