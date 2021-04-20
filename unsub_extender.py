@@ -84,7 +84,7 @@ selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
 weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Rank, clickable legend').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
     y=alt.Y('weighted usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='category20b')), alt.value('lightgray')),   #selection, if selected, if NOT selected
+    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')),   #selection, if selected, if NOT selected
     #color=alt.Color('cpu_rank:Q',scale=alt.Scale(scheme='category20b')),
     #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'cpu_rank', 'subscribed'],
