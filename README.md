@@ -26,12 +26,15 @@ The .csv file must have the following columns in any order, but named exactly as
 
 These should already be the default column names assigned by unsub in the file export.
 
-The 'subscribed' column accepts the following values:
+The **subscribed** column accepts the following values (TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option, and blank will color the data point grey):
 * TRUE
-** test
+  * A title to keep
 * FALSE
+  * A title to cancel
 * MAYBE
+  * A title to think more about
 * (blank)
+  * A title with no decision yet
 
 # Usage
 Hosted on Streamlit
