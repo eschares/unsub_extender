@@ -14,11 +14,22 @@ import altair as alt
 
 st.image('unsub_extender2.png')
 
-file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "test2.csv"])
+my_slot2 = st.empty()   #save this spot to fill in later for filename to analyze
+#file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "test2.csv"])
 
-#uploaded_file = st.sidebar.file_uploader('Upload new .csv file:', type='csv')
-#if uploaded_file is not None:
-#    file = uploaded_file
+#Initialize with a hardcoded dataset
+file = filename = "Unsub_Elsevier_2021_cancellations.csv"
+
+uploaded_file = st.sidebar.file_uploader('Upload new .csv file to analyze:', type='csv')
+if uploaded_file is not None:
+    file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
+    #st.write(file_details)
+    
+    file = uploaded_file
+    filename = uploaded_file.name
+
+my_slot2.subheader('Analyzing file "' + filename + '"')
+
 
 df = pd.read_csv(file)  #Process the data
 #change column name 'usage' to 'weighted usage', how we refer to it interally since it contains DL + xCit + yAuth
