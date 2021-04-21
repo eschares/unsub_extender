@@ -18,7 +18,7 @@ my_slot2 = st.empty()   #save this spot to fill in later for filename to analyze
 #file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "test2.csv"])
 
 #Initialize with a hardcoded dataset
-file = filename = "Unsub_Elsevier_2021_cancellations.csv"
+file = filename = "Unsub_export_example.csv"
 
 uploaded_file = st.sidebar.file_uploader('Upload new .csv file to analyze:', type='csv')
 if uploaded_file is not None:
