@@ -35,6 +35,7 @@ my_slot1 = st.empty()   #save this spot to fill in later for how many rows get s
 # Sliders and filter
 st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
+cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))))
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))))
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])))
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])))
@@ -47,6 +48,7 @@ filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_
         (df['citations'] >= citations_slider[0]) & (df['citations'] <= citations_slider[1]) &
         (df['subscription_cost'] >= price_slider[0]) & (df['subscription_cost'] <= price_slider[1]) &
         (df['authorships'] >= authorships_slider[0]) & (df['authorships'] <= authorships_slider[1]) &
+        (df['cpu_rank'] >= cpu_slider[0]) & (df['cpu_rank'] <= cpu_slider[1]) &
         (df['weighted usage'] >= weighted_usage_slider[0]) & (df['weighted usage'] <= weighted_usage_slider[1])
         )
 
@@ -98,9 +100,47 @@ st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
 
+#click the bar chart to filter the scatter plot
+click = alt.selection_multi(encodings=['color'])
+scatter = alt.Chart(df[filt], title="Citations vs. Downloads, with clickable bar graph linked underneath").mark_point().encode(
+    x='downloads',
+    y='citations',
+    color='subscribed'
+).transform_filter(click).interactive()
+
+hist = alt.Chart(df[filt]).mark_bar().encode(
+    x='count()',
+    y='subscribed',
+    color = alt.condition(click, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray'))
+).add_selection(click)
+
+scatter & hist
+
+#scatter matrix
+scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
+
+eric = alt.Chart(df).mark_circle().encode(
+    alt.X(alt.repeat("column"), type='quantitative'),
+    alt.Y(alt.repeat("row"), type='quantitative'),
+    #color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
+    tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'cpu_rank', 'subscribed']    
+).properties(
+    width=350,
+    height=250
+).repeat(
+    row=['weighted usage'],#, 'downloads', 'citations', 'authorships'],
+    column=['downloads', 'citations', 'authorships']
+).interactive().add_selection(scatter_selection)
+
+eric
+
+
+
+
 #cit vs dl
 selection = alt.selection_interval()
-cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
+cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads, linked selection').mark_circle(size=75, opacity=0.5).encode(
     x='downloads:Q',
     y='citations:Q',
     color=alt.condition(selection, alt.Color('subscribed:N', legend=None, scale=subscribed_colorscale),
@@ -140,20 +180,20 @@ st.altair_chart(auth_vs_cit, use_container_width=True)
 #seemed to break everything??
 #into_5 = int(df.shape[0]/5)
 
-#cpu_bucket_selector = st.slider('Filter by CPU_Ranks', 1, df.shape[0], 1, into_5)
-cit_vs_dl_by_cpurank = alt.Chart(df[filt], title='====NOT DONE, WILL HAVE SELECTOR BY CPU_RANK BUCKETS====').mark_circle(size=75, opacity=0.5).encode(
-    x='downloads:Q',
-    y='citations:Q',
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
-    ).interactive()
-st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
+# #cpu_bucket_selector = st.slider('Filter by CPU_Ranks', 1, df.shape[0], 1, into_5)
+# cit_vs_dl_by_cpurank = alt.Chart(df[filt], title='====NOT DONE, WILL HAVE SELECTOR BY CPU_RANK BUCKETS====').mark_circle(size=75, opacity=0.5).encode(
+#     x='downloads:Q',
+#     y='citations:Q',
+#     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
+#     tooltip=['title','downloads','citations','authorships','weighted usage','subscription_cost', 'subscribed'],
+#     ).interactive()
+# st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
 
 
 #cpu_Rank y vs. subject, colored by subscribed
 #what Altair calls a "stripplot"
-cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject', width=40).mark_circle(size=40, opacity=0.5).encode(
-    x=alt.X('subject:N', title=None, axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale(),
+cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE===', width=40).mark_circle(size=40, opacity=0.5).encode(
+    x=alt.X('subject:N', title=None, #axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale(),
             ),
     y=alt.Y('cpu_rank:Q'),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
