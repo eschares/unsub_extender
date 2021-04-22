@@ -10,6 +10,9 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import altair as alt
+import streamlit_analytics
+
+streamlit_analytics.start_tracking()
 
 st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
@@ -244,6 +247,7 @@ components.html(
 '''
 )
 
+streamlit_analytics.stop_tracking()
 
 
 if (0):
