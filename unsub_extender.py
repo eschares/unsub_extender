@@ -227,6 +227,8 @@ html_string = "<img src='https://www.google-analytics.com/collect?v=1&tid=G-2Z0V
 st.markdown(html_string, unsafe_allow_html=True)
 
 
+html_string2 = "<img src='https://www.google-analytics.com/collect?v=1&tid=UA-195227159-1&cid=555&aip=1&t=event&ec=email&ea=open&dp=%2Femail%2Fnewsletter&dt=My%20Newsletter'></img>"
+st.markdown(html_string2, unsafe_allow_html=True)
 
 components.html(
 '''
