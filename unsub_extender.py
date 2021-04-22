@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import altair as alt
 
-
+st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 
 my_slot2 = st.empty()   #save this spot to fill in later for filename to analyze
@@ -221,6 +221,11 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE=
     tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'subscribed'],
     ).interactive()
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
+
+#html_string = "<h3>Hello there</h3>"
+html_string = "<img src='https://www.google-analytics.com/collect?v=1&tid=G-2Z0VMP44J0&cid=555&aip=1&t=event&ec=email&ea=open&dp=%2Femail%2Fnewsletter&dt=My%20Newsletter'></img>"
+st.markdown(html_string, unsafe_allow_html=True)
+
 
 
 components.html(
