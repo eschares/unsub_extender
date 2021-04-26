@@ -31,7 +31,7 @@ if uploaded_file is not None:
     file = uploaded_file
     filename = uploaded_file.name
 
-my_slot2.subheader('Analyzing file "' + filename + '"')
+my_slot2.header('Analyzing file "' + filename + '"')
 
 
 df = pd.read_csv(file)  #Process the data
@@ -97,7 +97,7 @@ subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
 #blue histogram, but colored by subscribed
 filt_to_100 = df['cpu']<=100
 unsub_hist = alt.Chart(df[filt_to_100].reset_index(), height=450, width=900).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(maxbins=100)),
+    alt.X('cpu:Q', bin=alt.Bin(maxbins=100), title="Cost per Use bins, $0-$100"),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
     tooltip=['title', 'cpu'],
@@ -105,7 +105,7 @@ unsub_hist = alt.Chart(df[filt_to_100].reset_index(), height=450, width=900).mar
     ).properties(
         title={
             "text": ["Unsub's Histogram, CPU bins from $0-$100, color coded by Subscribed status"],
-            "subtitle": ["Reproducing Unsub's blue histogram", "Only graph here that does NOT update and change with filters on the left"],
+            "subtitle": ["Only graph on this page that does NOT live-update and change with filters on the left"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -113,30 +113,31 @@ unsub_hist = alt.Chart(df[filt_to_100].reset_index(), height=450, width=900).mar
 unsub_hist
 
 # Instant Fill % graphs
-IF = alt.Chart(df[filt]).mark_circle().encode(
-    x='IF%',
-    y='subscription_cost',
+st.subheader('Calculate and look at the Instant Fill % for each journal')
+IF = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
+    alt.X('IF%', title='Instant Fill %'),
+    alt.Y('subscription_cost', title="Journal Cost"),
     tooltip=(['title','subscription_cost','IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).properties(
         title={
-            "text": ['Instant Fill % vs. Overall Journal Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most", "(right on x-axis), and what do they cost?"],
+            "text": ['Instant Fill % vs. Journal Subscription Cost'],
+            "subtitle": ["Which journals increase Instant Fill % the most", "(moving right on x-axis), and what do they each cost?"],
             "color": "black",
             "subtitleColor": "gray"
         }
         ).interactive()
 IF
 
-IF2 = alt.Chart(df[filt]).mark_circle().encode(
-    x='IF%',
-    y=alt.Y('cost_per_IF%', scale=alt.Scale(type='log')),
+IF2 = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
+    alt.X('IF%', title="Instant Fill %"),
+    alt.Y('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% )"),
     tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).properties(
         title={
             "text": ['Instant Fill % vs. Price per IF%'],
-            "subtitle": ["Normalized by price, which journals are most economical", "to increase Instant Fill % (lower right corner)?"],
+            "subtitle": ["Normalized by price, which journals are the best way", "to increase Instant Fill % (lower right corner)?","(log Y-axis to stretch and increase visibility)"],
             "color": "black",
             "subtitleColor": "gray"
         }
