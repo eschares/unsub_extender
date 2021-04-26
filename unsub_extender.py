@@ -14,7 +14,7 @@ import altair as alt
 
 #streamlit_analytics.start_tracking()
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 
 my_slot2 = st.empty()   #save this spot to fill in later for filename to analyze
@@ -36,12 +36,18 @@ my_slot2.subheader('Analyzing file "' + filename + '"')
 
 df = pd.read_csv(file)  #Process the data
 #change column name 'usage' to 'weighted usage', how we refer to it interally since it contains DL + xCit + yAuth
-if 'usage' in df.columns:
-    df.rename(columns = {'usage': 'weighted_usage'}, inplace=True)
+#if 'usage' in df.columns:
+#    df.rename(columns = {'usage': 'weighted_usage'}, inplace=True)
 
 #force 'subscribed' column to be a string, not Bool and all uppercase
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
+
+#process data to calculate IF%
+total_usage = df['usage'].sum()
+df['current_yr_usage'] = ((df['use_ill_percent'] + df['use_other_delayed_percent']) / 100) * df['usage']
+df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
+df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 
 
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected
@@ -53,7 +59,7 @@ cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_va
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))))
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])))
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])))
-weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['weighted_usage'])), value=(0,int(max(df['weighted_usage']))))
+weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))))
 OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
 
 
@@ -63,7 +69,7 @@ filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_
         (df['subscription_cost'] >= price_slider[0]) & (df['subscription_cost'] <= price_slider[1]) &
         (df['authorships'] >= authorships_slider[0]) & (df['authorships'] <= authorships_slider[1]) &
         (df['cpu_rank'] >= cpu_slider[0]) & (df['cpu_rank'] <= cpu_slider[1]) &
-        (df['weighted_usage'] >= weighted_usage_slider[0]) & (df['weighted_usage'] <= weighted_usage_slider[1])
+        (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
         )
 
 
@@ -85,14 +91,67 @@ subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
 # domain = ['TRUE', 'FALSE', 'MAYBE', ' ']
 # range_ = ['blue', 'red', 'green', 'gray']
 
+
+########  Charts start here  ########
+
+#blue histogram, but colored by subscribed
+filt_to_100 = df['cpu']<=100
+unsub_hist = alt.Chart(df[filt_to_100].reset_index(), height=450, width=900).mark_bar().encode(
+    alt.X('cpu:Q', bin=alt.Bin(maxbins=100)),
+    alt.Y('count()', axis=alt.Axis(grid=False)),
+    alt.Detail('index'),
+    tooltip=['title', 'cpu'],
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    ).properties(
+        title={
+            "text": ["Unsub's Histogram, CPU bins from $0-$100, color coded by Subscribed status"],
+            "subtitle": ["Reproducing Unsub's blue histogram", "Only graph here that does NOT update and change with filters on the left"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+).configure_view(strokeWidth=0).interactive()
+unsub_hist
+
+# Instant Fill % graphs
+IF = alt.Chart(df[filt]).mark_circle().encode(
+    x='IF%',
+    y='subscription_cost',
+    tooltip=(['title','subscription_cost','IF%']),
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    ).properties(
+        title={
+            "text": ['Instant Fill % vs. Overall Journal Cost'],
+            "subtitle": ["Which journals increase Instant Fill % the most", "(right on x-axis), and what do they cost?"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        ).interactive()
+IF
+
+IF2 = alt.Chart(df[filt]).mark_circle().encode(
+    x='IF%',
+    y=alt.Y('cost_per_IF%', scale=alt.Scale(type='log')),
+    tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    ).properties(
+        title={
+            "text": ['Instant Fill % vs. Price per IF%'],
+            "subtitle": ["Normalized by price, which journals are most economical", "to increase Instant Fill % (lower right corner)?"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+).interactive()
+IF2
+
+
 #weighted usage in log by cost (x), colored by subscribed
 #adding clickable legend to highlight subscribed categories
 selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
 weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost by Subscribed status, clickable legend').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
-    y=alt.Y('weighted_usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
+    y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'cpu_rank', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(height=500).add_selection(selection1)
 st.altair_chart(weighted_vs_cost, use_container_width=True)
 
@@ -101,14 +160,14 @@ st.altair_chart(weighted_vs_cost, use_container_width=True)
 selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
 weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Rank, clickable legend').mark_circle(size=75, opacity=0.5).encode(
     x='subscription_cost:Q',
-    y=alt.Y('weighted_usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
+    y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')
         #,legend = alt.Legend(type='symbol')                
                         ),   #selection, if selected, if NOT selected
     
     #color=alt.Color('cpu_rank:Q',scale=alt.Scale(scheme='category20b')),
     #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'cpu_rank', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(height=500).add_selection(selection2)
 st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
@@ -138,12 +197,12 @@ eric = alt.Chart(df).mark_circle().encode(
     alt.Y(alt.repeat("row"), type='quantitative'),
     #color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'cpu_rank', 'subscribed']    
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed']    
 ).properties(
     width=350,
     height=250
 ).repeat(
-    row=['weighted_usage'],#, 'downloads', 'citations', 'authorships'],
+    row=['usage'],#, 'downloads', 'citations', 'authorships'],
     column=['downloads', 'citations', 'authorships']
 ).interactive().add_selection(scatter_selection)
 
@@ -159,7 +218,7 @@ cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads, linked selection
     y='citations:Q',
     color=alt.condition(selection, alt.Color('subscribed:N', legend=None, scale=subscribed_colorscale),
                         alt.value('gray')),   #alt.condition takes selection object, values for points inside selection, value for points OUTSIDE selection
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
     ).add_selection(selection)#.interactive()
 
 #Altair scatter plot
@@ -168,7 +227,7 @@ auth_vs_dl = alt.Chart(df[filt], title='Authorships vs. Downloads').mark_circle(
     x='downloads:Q',
     y='authorships:Q',
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
     ).interactive().add_selection(selection)
 
 cit_vs_dl | cit_vs_dl.encode(y='authorships')
@@ -184,7 +243,7 @@ auth_vs_cit = alt.Chart(df[filt], title='Authorships vs. Citations').mark_circle
     x='citations:Q',
     y='authorships:Q',
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
     ).interactive()
 st.altair_chart(auth_vs_cit, use_container_width=True)
 
@@ -199,7 +258,7 @@ st.altair_chart(auth_vs_cit, use_container_width=True)
 #     x='downloads:Q',
 #     y='citations:Q',
 #     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-#     tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'subscribed'],
+#     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
 #     ).interactive()
 # st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
 
@@ -221,7 +280,7 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE=
             labelPadding=3,
             ),
         ),
-    tooltip=['title','downloads','citations','authorships','weighted_usage','subscription_cost', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
     ).interactive()
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
