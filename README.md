@@ -20,7 +20,7 @@ The .csv file must have the following columns in any order, but named exactly as
 * downloads
 * citations
 * authorships
-* usage (will be renamed to "weighted usage" during the analysis)
+* usage
 * subscription_cost
 * subscribed
 
