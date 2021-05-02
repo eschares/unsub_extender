@@ -5,14 +5,14 @@
 The tool provides rich data and a summary graph, but more detailed analysis tends to take place off the site in an exported .csv file that allows for filtering, notes, and additional visualization.
 
 [**unsub extender**](https://github.com/eschares/unsub_extender) is a Python script that takes an unsub data export file and automates useful plots and visualizations for a collection analysis team to explore.
-The graphs are interactive through [Altair](https://altair-viz.github.io/index.html) and support zoom, pan, and hover, and filters in the sidebar help set parameters to quickly narrow in on obvious titles to KEEP or CANCEL.
+The graphs are interactive through [Altair](https://altair-viz.github.io/index.html) and support zoom, pan, and hover, and filters in the left sidebar help set parameters to quickly narrow in on obvious titles to KEEP or CANCEL.
 
 Hosting is provided by [Streamlit](https://streamlit.io/).
 
 ![unsub extender screenshot demo](https://github.com/eschares/unsub_extender/blob/main/demo.gif)
 
 # Requirements
-An unsub export file - in an [unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
+An unsub export .csv file - from an [unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
 
 A .csv file will be saved, which is the input to **unsub extender.**
 
@@ -31,13 +31,13 @@ The **subscribed** column accepts the following values.
 
 (TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option for future consideration, and leaving the cell blank will color that journal data point grey):
 * TRUE
-  * A title to keep
+  * A title to keep, displayed in blue
 * FALSE
-  * A title to cancel
+  * A title to cancel, displayed in red
 * MAYBE
-  * A title to think more about
+  * A title to think more about, displayed in green
 * (blank)
-  * A title with no decision yet
+  * A title with no decision yet, displayed in grey
 
 # Usage
 Hosted on Streamlit
