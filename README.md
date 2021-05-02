@@ -4,7 +4,7 @@
 [unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
 The tool provides rich data and a summary graph, but more detailed analysis tends to take place off the site in an exported .csv file that allows for filtering, notes, and additional visualization.
 
-[**unsub extender**](https://github.com/eschares/unsub_extender) is a Python script that automates useful plots and provides standardized visualizations for a collection analysis team to explore.
+[**unsub extender**](https://github.com/eschares/unsub_extender) is a Python script that takes an unsub data export file and automates useful plots and visualizations for a collection analysis team to explore.
 The graphs are interactive through [Altair](https://altair-viz.github.io/index.html) and support zoom, pan, and hover, and filters in the sidebar help set parameters to quickly narrow in on obvious titles to KEEP or CANCEL.
 
 Hosting is provided by [Streamlit](https://streamlit.io/).
