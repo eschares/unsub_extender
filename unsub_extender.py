@@ -10,6 +10,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import altair as alt
+from pandas.api.types import CategoricalDtype
 #import streamlit_analytics
 
 #streamlit_analytics.start_tracking()
@@ -17,8 +18,13 @@ import altair as alt
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 
+with st.beta_expander("How to use and requirements:"):
+    st.write("This tool takes an **unsub** data export file and automatically creates various plots and visualizations")
+    st.write("Upload your .csv file using the button in the left sidebar, or explore the example dataset and plots to see what is available.")
+    st.markdown('**More information about unsub extender [is available on the project GitHub page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
+
+
 my_slot2 = st.empty()   #save this spot to fill in later for filename to analyze
-#file = st.selectbox('Choose file to analyze', ["Unsub_Elsevier_2021_cancellations.csv", "test2.csv"])
 
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
@@ -30,6 +36,7 @@ if uploaded_file is not None:
     
     file = uploaded_file
     filename = uploaded_file.name
+
 
 my_slot2.header('Analyzing file "' + filename + '"')
 
@@ -53,7 +60,7 @@ df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected
 
 # Sliders and filter
-st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
+st.sidebar.markdown('**[About unsub extender on GitHub](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
 cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))))
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))))
@@ -88,41 +95,48 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 #set up the color maps on 'subscribed'
 subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
                                   range = ['blue', 'red', 'green', 'gray'])
-# domain = ['TRUE', 'FALSE', 'MAYBE', ' ']
-# range_ = ['blue', 'red', 'green', 'gray']
+
+
+### Summary dataframe created to show count and sum$ by Subscribed status
+summary_df = df[filt].groupby('subscribed')['subscription_cost'].agg(['count','sum'])
+summary_df['sum'] = summary_df['sum'].apply(lambda x: "${0:,.0f}".format(x))
+#now formatted as a string (f)
+#leading dollar sign, add commas, round result to 0 decimal places
+st.write(summary_df.sort_index(ascending=False))
+
 
 
 ########  Charts start here  ########
 
 #blue histogram, but colored by subscribed
-filt_to_100 = df['cpu']<=100
-unsub_hist = alt.Chart(df[filt_to_100].reset_index(), height=450, width=900).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(maxbins=100), title="Cost per Use bins, $0-$100"),
+#filt_to_100 = df['cpu']<=100
+unsub_hist = alt.Chart(df[filt].reset_index(), height=450, width=900).mark_bar().encode(
+    alt.X('cpu:Q', bin=alt.Bin(maxbins=100), title="Cost per Use bins", axis=alt.Axis(format='$')),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
     tooltip=['title', 'cpu'],
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).properties(
         title={
-            "text": ["Unsub's Histogram, CPU bins from $0-$100, color coded by Subscribed status"],
-            "subtitle": ["Only graph on this page that does NOT live-update and change with filters on the left"],
+            "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
+            "subtitle": ["Graph supports pan, zoom, and live-updates from changes in filters on the left"],
             "color": "black",
             "subtitleColor": "gray"
         }
-).configure_view(strokeWidth=0).interactive()
+).interactive()
 unsub_hist
 
 # Instant Fill % graphs
 st.subheader('Calculate and look at the Instant Fill % for each journal')
 IF = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
     alt.X('IF%', title='Instant Fill %'),
-    alt.Y('subscription_cost', title="Journal Cost"),
+    alt.Y('subscription_cost', title="Journal Cost", axis=alt.Axis(format='$,.2r')),    #grouped thousands with two significant digits
     tooltip=(['title','subscription_cost','IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).properties(
         title={
             "text": ['Instant Fill % vs. Journal Subscription Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most", "(moving right on x-axis), and what do they each cost?"],
+            "subtitle": ["Which journals increase Instant Fill % the most", "(moving to the right), and what do they each cost?"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -131,13 +145,13 @@ IF
 
 IF2 = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
     alt.X('IF%', title="Instant Fill %"),
-    alt.Y('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% )"),
+    alt.Y('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% )", axis=alt.Axis(format='$,.2r')),
     tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).properties(
         title={
             "text": ['Instant Fill % vs. Price per IF%'],
-            "subtitle": ["Normalized by price, which journals are the best way", "to increase Instant Fill % (lower right corner)?","(log Y-axis to stretch and increase visibility)"],
+            "subtitle": ["Normalized by price, which journals are the best way", "to increase Instant Fill % (tending to lower right corner)?","Note: Y-axis shown in log to stretch and increase visibility"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -149,8 +163,8 @@ IF2
 #adding clickable legend to highlight subscribed categories
 selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
 weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost by Subscribed status, clickable legend').mark_circle(size=75, opacity=0.5).encode(
-    x='subscription_cost:Q',
-    y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
+    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
+    alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(height=500).add_selection(selection1)
@@ -159,14 +173,12 @@ st.altair_chart(weighted_vs_cost, use_container_width=True)
 
 #same chart as above but now colored by cpu_rank, and would really like buckets somehow
 selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
-weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Rank, clickable legend').mark_circle(size=75, opacity=0.5).encode(
-    x='subscription_cost:Q',
+weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Rank').mark_circle(size=75, opacity=0.5).encode(
+    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')
         #,legend = alt.Legend(type='symbol')                
-                        ),   #selection, if selected, if NOT selected
-    
-    #color=alt.Color('cpu_rank:Q',scale=alt.Scale(scheme='category20b')),
+        ),   #selection, if selected, if NOT selected
     #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(height=500).add_selection(selection2)
@@ -189,6 +201,8 @@ hist = alt.Chart(df[filt]).mark_bar().encode(
 ).add_selection(click)
 
 scatter & hist
+
+
 
 #scatter matrix
 scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
@@ -304,6 +318,16 @@ components.html(
     
       gtag('config', 'G-2Z0VMP44J0');
     </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-195227159-1');
+</script>
 '''
 )
 
