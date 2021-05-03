@@ -17,6 +17,7 @@ An unsub export .csv file - from an [unsub](http://unsub.org) project, choose "E
 A .csv file will be saved, which is the input to **unsub extender.**
 
 The .csv file must have the following columns in any order, but named exactly as:
+* title
 * downloads
 * citations
 * authorships
