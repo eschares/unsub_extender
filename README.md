@@ -24,6 +24,10 @@ The .csv file must have the following columns in any order, but named exactly as
 * usage
 * subscription_cost
 * subscribed
+* cpu
+* cpu_rank
+* use_ill_percent
+* use_other_delayed_percent
 
 These should already be the default column names assigned by unsub in the file export.
 
