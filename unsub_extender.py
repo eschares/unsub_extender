@@ -18,7 +18,7 @@ import altair as alt
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 #st.sidebar.write("*Version 1.0*")
-st.sidebar.markdown('**[About unsub extender on GitHub](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
+st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 
 
 with st.beta_expander("How to use and requirements:"):
@@ -29,7 +29,7 @@ with st.beta_expander("How to use and requirements:"):
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
 
-uploaded_file = st.sidebar.file_uploader('Upload new .csv file to analyze:', type='csv')
+uploaded_file = st.sidebar.file_uploader('Analyze your Unsub export file .csv :', type='csv')
 if uploaded_file is not None:
     file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
     #st.write(file_details)
@@ -38,13 +38,12 @@ if uploaded_file is not None:
     filename = uploaded_file.name
 
 
-st.header('Analyzing file "' + filename + '"')
-
-
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def load_data(file):
-    st.write("I ran!")
+    st.write("New file loaded")
     return pd.read_csv(file, sep=',', encoding='utf-8')  #Process the data in cached way to speed up processing
+
+st.header('Analyzing file "' + filename + '"')
 
 df = load_data(file)
 
@@ -58,7 +57,8 @@ df['current_yr_usage'] = ((df['use_ill_percent'] + df['use_other_delayed_percent
 df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
 df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 
-
+sidebar_modifier_slot = st.sidebar.empty()
+sidebar_header_slot = st.sidebar.empty()
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected with the filter
 
 # Sliders and filter
@@ -87,7 +87,7 @@ if st.checkbox('Show raw data'):
     
 my_slot2 = st.empty()   #save this spot to fill in later with the summary table of counts and sum$ by Subscribed
 
-#Report the summary stats of what you selected
+#Report the summary stats of number of journals the filter selected
 selected_jnls = str(df[filt].shape[0])
 total_jnls = str(df.shape[0])
 cost_sum = df[filt]['subscription_cost'].sum()  #cost of selected journals
@@ -99,27 +99,35 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
                                   range = ['blue', 'red', 'green', 'gray'])
 
-
-with st.beta_expander("Modify the 'Subscribed' status of journal(s):"):
-    selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df[filt]['title'])
-    #st.write(selected_titles)
-
-    col1, col2 = st.beta_columns(2)
-
-    radiovalue = col1.radio("'Subscribed' choices", ['TRUE', "FALSE", 'MAYBE', ' '])
-    #write(radiovalue)
+with sidebar_modifier_slot:
+    with st.beta_expander("Change journal 'Subscribed' setting:"):
+        selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df[filt]['title'])
+        #st.write(selected_titles)
+    
+        col1, col2 = st.beta_columns(2)
+    
+        radiovalue = col1.radio("'Subscribed' choices", ['TRUE', "FALSE", 'MAYBE', ' '])
+        #write(radiovalue)
 
 if col2.button('Commit change'):
     for title in selected_titles:
         title_filter = (df['title'] == title)
         df.loc[title_filter, 'subscribed'] = radiovalue
 
+with sidebar_header_slot:
+    st.subheader("Filters")
+
+
 ### Summary dataframe created to show count and sum$ by Subscribed status
 summary_df = df[filt].groupby('subscribed')['subscription_cost'].agg(['count','sum'])
 summary_df['sum'] = summary_df['sum'].apply(lambda x: "${0:,.0f}".format(x))
 #now formatted as a string (f)
 #leading dollar sign, add commas, round result to 0 decimal places
-my_slot2.write(summary_df.sort_index(ascending=False))
+my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRUE, MAYBE, FALSE, blank
+
+
+
+
 
 ########  Charts start here  ########
 
