@@ -21,11 +21,11 @@ st.image('unsub_extender2.png')
 st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 
 
-with st.beta_expander("How to use and requirements:"):
-    st.write("This tool takes an **unsub** data export .csv file and automates the creation of interative plots and visualizations.")
+with st.beta_expander("How to use:"):
+    st.write("This tool takes an **unsub** data export .csv file and automates the creation of useful plots and interactive visualizations.")
     st.write("Upload your specific .csv export file using the Browse button in the left sidebar, or explore the example dataset and ready-made plots to see what is available.")
-    st.write("Filter on various criteria using the sliders on the left to narrow in on journals of interest, then use the dropdown to actually change a journal's Subscribed status and watch the graphs update automatically (may have to occasionally hit *'R'* to force a reload if you notice it's not going right away).")
-    st.markdown('**More information about unsub extender [is available on the project GitHub page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
+    st.write("Filter on various criteria using the sliders on the left to narrow in on journals of interest, then use the dropdown to actually change a journal's Subscribed status and watch the graphs update. (Note: you may have to occasionally hit *'R'* to force a reload if you notice it's not loading right away)")
+    st.markdown('**More information about unsub extender, its requirements, and the source code [is available on the project GitHub page](https://github.com/eschares/unsub_extender)**')
 
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
@@ -147,6 +147,26 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 ########  Charts start here  ########
 
+#weighted usage in log by cost (x), colored by subscribed
+#adding clickable legend to highlight subscribed categories
+selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
+weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
+    alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
+    color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
+    ).interactive().properties(
+        height=500,
+        title={
+            "text": ["Weighed Usage vs. Cost, color-coded by Subscribed status; clickable legend"],
+            "subtitle": ["Graph supports pan, zoom, and live-updates from changes in filters on left sidebar"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        ).add_selection(selection1)
+st.altair_chart(weighted_vs_cost, use_container_width=True)
+
+
 #blue histogram, but colored by subscribed
 #filt_to_100 = df['cpu']<=100
 unsub_hist = alt.Chart(df[filt].reset_index(), height=450, width=800).mark_bar().encode(
@@ -158,7 +178,7 @@ unsub_hist = alt.Chart(df[filt].reset_index(), height=450, width=800).mark_bar()
     ).properties(
         title={
             "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
-            "subtitle": ["Graph supports pan, zoom, and live-updates from changes in filters on the left"],
+            "subtitle": ["Where do Subscribed titles stack up?"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -166,21 +186,10 @@ unsub_hist = alt.Chart(df[filt].reset_index(), height=450, width=800).mark_bar()
 unsub_hist
 
 
-#weighted usage in log by cost (x), colored by subscribed
-#adding clickable legend to highlight subscribed categories
-selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
-weighted_vs_cost = alt.Chart(df[filt], title='Weighted Usage vs. Cost by Subscribed status, clickable legend').mark_circle(size=75, opacity=0.5).encode(
-    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
-    alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
-    ).interactive().properties(height=500).add_selection(selection1)
-st.altair_chart(weighted_vs_cost, use_container_width=True)
 
-
-#same chart as above but now colored by cpu_rank, and would really like buckets somehow
+#same chart as Weighted Use vs. cost but now colored by cpu_rank, and would really like buckets somehow
 selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
-weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Rank').mark_circle(size=75, opacity=0.5).encode(
+weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')
@@ -188,11 +197,19 @@ weighted_vs_cost2 = alt.Chart(df[filt], title='Weighted Usage vs. Cost by CPU_Ra
         ),   #selection, if selected, if NOT selected
     #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
-    ).interactive().properties(height=500).add_selection(selection2)
+    ).interactive().properties(
+        height=500,
+        title={
+            "text": ['Weighted Usage vs. Cost by CPU_Rank'],
+            "subtitle": ["Color-coded by Cost-per-Use ranking gradient", "Do more expensive journals get more usage?"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        ).add_selection(selection2)
 st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
-st.header("Look at Instant Fill rates")
+#st.header("Look at Instant Fill rates")
 # Instant Fill % graphs
 st.subheader('Calculate and look at the Instant Fill % for each journal')
 IF = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
