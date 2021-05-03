@@ -22,8 +22,9 @@ st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_
 
 
 with st.beta_expander("How to use and requirements:"):
-    st.write("This tool takes an **unsub** data export file .csv and automates the creation of various plots and visualizations.")
-    st.write("Upload your .csv file using the button in the left sidebar, or explore the example dataset and ready-made plots to see what is available.")
+    st.write("This tool takes an **unsub** data export .csv file and automates the creation of interative plots and visualizations.")
+    st.write("Upload your specific .csv export file using the Browse button in the left sidebar, or explore the example dataset and ready-made plots to see what is available.")
+    st.write("Filter on various criteria using the sliders on the left to narrow in on journals of interest, then use the dropdown to actually change a journal's Subscribed status and watch the graphs update automatically (may have to occasionally hit *'R'* to force a reload if you notice it's not going right away).")
     st.markdown('**More information about unsub extender [is available on the project GitHub page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 
 #Initialize with a hardcoded dataset
@@ -58,18 +59,25 @@ df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
 df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 
 sidebar_modifier_slot = st.sidebar.empty()
-sidebar_header_slot = st.sidebar.empty()
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected with the filter
 
-# Sliders and filter
-price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
-cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))))
-downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))))
-citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])))
-authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])))
-weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))))
-OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
 
+# Sliders and filter
+st.sidebar.subheader("Filters")
+
+price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
+cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))), help='CPU Rank ranges from 0 to max number of journals in the dataset')
+downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))), help='Average per year over the next five years')
+citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])), help='Average per year over the next five years')
+authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])), help='Average per year over the next five years')
+weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))), help='x Citation and y Authorship weights are set in the Unsub tool')
+OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
+subscribed_filter_flag = 0
+subscribed_filter = st.sidebar.radio('Subscribed status:',['Show All', 'TRUE', 'FALSE', 'MAYBE', '(blank)'], help='Filter based on the current Subscribed status')
+if subscribed_filter == "(blank)":
+    subscribed_filter = " "
+if subscribed_filter != 'Show All':
+    subscribed_filter_flag = 1
 
 filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_instant_usage_percent'] <= OA_percent_slider[1]) &
         (df['downloads'] >= downloads_slider[0]) & (df['downloads'] <= downloads_slider[1]) &
@@ -80,6 +88,9 @@ filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_
         (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
         )
 
+if subscribed_filter_flag:      #have to do it this way so Subscribed=ALL works
+    filt2 = df['subscribed'] == subscribed_filter
+    filt = filt & filt2
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
@@ -99,23 +110,28 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
                                   range = ['blue', 'red', 'green', 'gray'])
 
+
+#Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
-    with st.beta_expander("Change journal 'Subscribed' setting:"):
+    with st.beta_expander("Change a journal's 'Subscribed' status:"):
         selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df[filt]['title'])
         #st.write(selected_titles)
     
-        col1, col2 = st.beta_columns(2)
+        col1, col2 = st.beta_columns([2,1])
     
-        radiovalue = col1.radio("'Subscribed' choices", ['TRUE', "FALSE", 'MAYBE', ' '])
-        #write(radiovalue)
+        with col1:
+            radiovalue = st.radio("Change 'Subscribed' status to:", ['TRUE', "FALSE", 'MAYBE', '(blank)'])
+            if radiovalue == "(blank)":
+                radiovalue = " "
+                #write(radiovalue)
+        with col2:
+            st.write(" ")       #Move the Commit button down vertically
+            st.write(" ")       #I'm sure there's a smarter way to do this, but oh well
+            if st.button('Commit change!'):
+                for title in selected_titles:
+                    title_filter = (df['title'] == title)
+                    df.loc[title_filter, 'subscribed'] = radiovalue
 
-if col2.button('Commit change'):
-    for title in selected_titles:
-        title_filter = (df['title'] == title)
-        df.loc[title_filter, 'subscribed'] = radiovalue
-
-with sidebar_header_slot:
-    st.subheader("Filters")
 
 
 ### Summary dataframe created to show count and sum$ by Subscribed status
