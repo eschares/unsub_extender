@@ -32,7 +32,7 @@ The .csv file must have the following columns in any order, but named exactly as
 These should already be the default column names assigned by unsub in the file export.
 
 ### subscribed column
-The **subscribed** column is especially important as it determines the color-coding of data points in multiple graphs. The column accepts the following values:
+The **subscribed** column is especially important as it determines the color-coding of data points in several of the graphs. The column accepts the following values:
 
 (TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option for future consideration, and leaving the cell blank will color that journal data point grey):
 * TRUE
