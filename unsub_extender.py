@@ -11,9 +11,9 @@ import pandas as pd
 import numpy as np
 import altair as alt
 #from pandas.api.types import CategoricalDtype
-#import streamlit_analytics
+import streamlit_analytics
 
-#streamlit_analytics.start_tracking()
+streamlit_analytics.start_tracking()
 
 
 
@@ -385,7 +385,7 @@ html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State Unive
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 
-#streamlit_analytics.stop_tracking()
+streamlit_analytics.stop_tracking()
 
 
 if (0):
