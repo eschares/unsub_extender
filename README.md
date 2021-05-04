@@ -45,10 +45,9 @@ The **subscribed** column is especially important as it determines the color-cod
   * A title with no decision yet, displayed in grey
 
 # Usage
-Hosted on Streamlit
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/eschares/unsub_extender/main/unsub_extender.py/)
+Hosted by Iowa State University
 
-Navigate to https://share.streamlit.io/eschares/unsub_extender/main/unsub_extender.py to run in browser
+Navigate to https://unsubextender.lib.iastate.edu to run in browser
 
 # License
 MIT License, Copyright (c) 2021 Eric Schares
@@ -57,4 +56,5 @@ See LICENSE file
 
 # Credits
 * Eric Schares
+* Nick Booher
 * [unsub](http://unsub.org)
