@@ -385,7 +385,7 @@ html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State Unive
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 
-streamlit_analytics.stop_tracking()
+streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
 
 
 if (0):
