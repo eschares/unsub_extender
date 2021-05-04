@@ -11,9 +11,9 @@ import pandas as pd
 import numpy as np
 import altair as alt
 #from pandas.api.types import CategoricalDtype
-#import streamlit_analytics
+import streamlit_analytics
 
-#streamlit_analytics.start_tracking()
+streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
@@ -25,7 +25,7 @@ with st.beta_expander("How to use:"):
     st.write("This tool takes an **unsub** data export .csv file and automates the creation of useful plots and interactive visualizations.")
     st.write("Upload your specific .csv export file using the Browse button in the left sidebar, or explore the example dataset and ready-made plots to see what is available.")
     st.write("Filter on various criteria using the sliders on the left to narrow in on journals of interest, then use the dropdown to actually change a journal's Subscribed status and watch the graphs update. (Note: you may have to occasionally hit *'R'* to force a reload if you notice it's not loading right away)")
-    st.markdown('**More information about unsub extender, its requirements, and the source code [is available on the project GitHub page](https://github.com/eschares/unsub_extender)**')
+    st.markdown('**More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
@@ -63,14 +63,14 @@ my_slot1 = st.empty()   #save this spot to fill in later for how many rows get s
 
 
 # Sliders and filter
-st.sidebar.subheader("Filters")
+st.sidebar.subheader("**Filters**")
 
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
 cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))), help='CPU Rank ranges from 0 to max number of journals in the dataset')
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))), help='Average per year over the next five years')
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])), help='Average per year over the next five years')
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])), help='Average per year over the next five years')
-weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))), help='x Citation and y Authorship weights are set in the Unsub tool')
+weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))), help='x Citation and y Authorship weights are set in the Unsub tool itself')
 OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
 subscribed_filter_flag = 0
 subscribed_filter = st.sidebar.radio('Subscribed status:',['Show All', 'TRUE', 'FALSE', 'MAYBE', '(blank)'], help='Filter based on the current Subscribed status')
@@ -88,7 +88,7 @@ filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_
         (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
         )
 
-if subscribed_filter_flag:      #have to do it this way so Subscribed=ALL works
+if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
     filt2 = df['subscribed'] == subscribed_filter
     filt = filt & filt2
 
@@ -98,7 +98,7 @@ if st.checkbox('Show raw data'):
     
 my_slot2 = st.empty()   #save this spot to fill in later with the summary table of counts and sum$ by Subscribed
 
-#Report the summary stats of number of journals the filter selected
+#Report the number of journals the filter selected
 selected_jnls = str(df[filt].shape[0])
 total_jnls = str(df.shape[0])
 cost_sum = df[filt]['subscription_cost'].sum()  #cost of selected journals
@@ -113,7 +113,7 @@ subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
 
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
-    with st.beta_expander("Change a journal's 'Subscribed' status:"):
+    with st.beta_expander("Change a journal's Subscribed status:"):
         selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df[filt]['title'])
         #st.write(selected_titles)
     
@@ -388,7 +388,7 @@ components.html(
 '''
 )
 
-#streamlit_analytics.stop_tracking()
+streamlit_analytics.stop_tracking()
 
 
 if (0):
