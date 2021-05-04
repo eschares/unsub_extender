@@ -15,6 +15,8 @@ import altair as alt
 
 #streamlit_analytics.start_tracking()
 
+
+
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 #st.sidebar.write("*Version 1.0*")
@@ -356,15 +358,6 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE=
     ).interactive()
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
-#html_string = "<h3>Hello there</h3>"
-#html_string = "<img src='https://www.google-analytics.com/collect?v=1&tid=G-2Z0VMP44J0&cid=555&aip=1&t=event&ec=email&ea=open&dp=%2Femail%2Fnewsletter&dt=My%20Newsletter'></img>"
-#st.markdown(html_string, unsafe_allow_html=True)
-
-
-#html_string2 = "<img src='https://www.google-analytics.com/collect?v=1&tid=UA-195227159-1&cid=555&aip=1&t=event&ec=email&ea=open&dp=%2Femail%2Fnewsletter&dt=My%20Newsletter'></img>"
-#st.markdown(html_string2, unsafe_allow_html=True)
-
-
 
 components.html(
 '''
@@ -380,8 +373,13 @@ components.html(
 '''
 )
 
-html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br />If you found this useful, or have suggestions or other feedback, please email eschares@iastate.edu</p>"
+components.html(
+    '''
+    <meta name="google-site-verification" content="aClUnGnkCZ4TmxlB-kzj5Bbz0oKtRuzJnEIJUMKMmQ8" />
+    '''
+)
 
+html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br />If you found this useful, or have suggestions or other feedback, please email eschares@iastate.edu</p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 
