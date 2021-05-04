@@ -375,7 +375,9 @@ components.html(
 
 components.html(
     '''
-    <meta name="google-site-verification" content="aClUnGnkCZ4TmxlB-kzj5Bbz0oKtRuzJnEIJUMKMmQ8" />
+    <head>
+        <meta name="google-site-verification" content="aClUnGnkCZ4TmxlB-kzj5Bbz0oKtRuzJnEIJUMKMmQ8" />
+    </head>
     '''
 )
 
