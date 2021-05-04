@@ -7,7 +7,7 @@ The tool provides rich data and a summary graph, but more detailed analysis tend
 [**unsub extender**](https://unsubextender.lib.iastate.edu) is a Python script that takes an unsub data export file and automates useful plots and visualizations for a collection analysis team to explore.
 The graphs are interactive through [Altair](https://altair-viz.github.io/index.html) and support zoom, pan, and hover, and filters in the left sidebar help set parameters to quickly narrow in on obvious titles to KEEP or CANCEL. The Python code is turned into a web app using [Streamlit](https://streamlit.io/).
 
-Hosting is provided by Iowa State University.
+Hosting provided by Iowa State University.
 
 ![unsub extender screenshot demo](https://github.com/eschares/unsub_extender/blob/main/demo.gif)
 
