@@ -23,7 +23,7 @@ st.image('unsub_extender2.png')
 st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 
 
-with st.beta_expander("How to use:"):
+with st.beta_expander("How to use this:"):
     st.write("This tool takes an **unsub** data export .csv file and automates the creation of useful plots and interactive visualizations.")
     st.write("Upload your specific .csv export file using the Browse button in the left sidebar, or explore the example dataset and ready-made plots to see what is available.")
     st.write("Filter on various criteria using the sliders on the left to narrow in on journals of interest, then use the dropdown to actually change a journal's Subscribed status and watch the graphs update. (Note: you may have to occasionally hit *'R'* to force a reload if you notice it's not loading right away)")
@@ -359,19 +359,19 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE=
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
-components.html(
-'''
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+# components.html(
+# '''
+# <!-- Global site tag (gtag.js) - Google Analytics -->
+# <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
+# <script>
+#   window.dataLayer = window.dataLayer || [];
+#   function gtag(){dataLayer.push(arguments);}
+#   gtag('js', new Date());
 
-  gtag('config', 'UA-195227159-1');
-</script>
-'''
-)
+#   gtag('config', 'UA-195227159-1');
+# </script>
+# '''
+# )
 
 components.html(
     '''
