@@ -360,17 +360,17 @@ st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
 components.html(
-'''
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PC9FGEF5R3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PC9FGEF5R3');
-</script>
-'''
+    f"""
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC9FGEF5R3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-PC9FGEF5R3');
+    </script>
+    """
 )
 
 # components.html(
