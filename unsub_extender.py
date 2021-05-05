@@ -74,8 +74,8 @@ citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_va
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])), help='Average per year over the next five years')
 weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))), help='x Citation and y Authorship weights are set in the Unsub tool itself')
 OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
-subscribed_filter_flag = 0
 subscribed_filter = st.sidebar.radio('Subscribed status:',['Show All', 'TRUE', 'FALSE', 'MAYBE', '(blank)'], help='Filter based on the current Subscribed status')
+subscribed_filter_flag = 0
 if subscribed_filter == "(blank)":
     subscribed_filter = " "
 if subscribed_filter != 'Show All':
@@ -90,8 +90,10 @@ filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_
         (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
         )
 
+#st.write('filt is ', filt)
+
 if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
-    filt2 = df['subscribed'] == subscribed_filter
+    filt2 = (df['subscribed'] == subscribed_filter)
     filt = filt & filt2
 
 if st.checkbox('Show raw data'):
@@ -116,13 +118,13 @@ subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
     with st.beta_expander("Change a journal's Subscribed status:"):
-        selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df[filt]['title'])
+        selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df.loc[filt,'title'])
         #st.write(selected_titles)
     
         col1, col2 = st.beta_columns([2,1])
     
         with col1:
-            radiovalue = st.radio("Change 'Subscribed' status to:", ['TRUE', "FALSE", 'MAYBE', '(blank)'])
+            radiovalue = st.radio("Change 'Subscribed' status to:", ['TRUE', 'MAYBE', 'FALSE', '(blank)'])
             if radiovalue == "(blank)":
                 radiovalue = " "
                 #write(radiovalue)
@@ -144,7 +146,7 @@ summary_df['sum'] = summary_df['sum'].apply(lambda x: "${0:,.0f}".format(x))
 my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRUE, MAYBE, FALSE, blank
 
 
-
+st.write('filt after everything is ', filt)
 
 
 ########  Charts start here  ########
@@ -362,13 +364,23 @@ st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 components.html(
     """
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PC9FGEF5R3"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
-      gtag('config', 'G-PC9FGEF5R3');
+      gtag('config', 'G-FDDMR7WRFB');
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264375-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+      gtag('config', 'UA-196264375-1');
     </script>
     """
 )
