@@ -118,7 +118,7 @@ subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
     with st.beta_expander("Change a journal's Subscribed status:"):
-        selected_titles = st.multiselect('Journal Name (shown in order provided by the underlying datafile):', df.loc[filt,'title'])
+        selected_titles = st.multiselect('Journal Name:', pd.Series(df.loc[filt, 'title']), help='Displayed in order provided by the underlying datafile')
         #st.write(selected_titles)
     
         col1, col2 = st.beta_columns([2,1])
@@ -146,7 +146,7 @@ summary_df['sum'] = summary_df['sum'].apply(lambda x: "${0:,.0f}".format(x))
 my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRUE, MAYBE, FALSE, blank
 
 
-st.write('filt after everything is ', filt)
+#st.write('filt after everything is ', filt)
 
 
 ########  Charts start here  ########
