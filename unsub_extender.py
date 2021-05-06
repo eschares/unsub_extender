@@ -5,7 +5,7 @@ Created on Thu Apr 15 21:16:06 2021
 @author: eschares
 """
 import streamlit as st
-import streamlit.components.v1 as components
+#import streamlit.components.v1 as components
 st.markdown(
     """
     <!-- Global site tag (gtag.js) - Google Analytics -->
