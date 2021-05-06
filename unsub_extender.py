@@ -18,16 +18,7 @@ st.markdown(
       gtag('config', 'G-FDDMR7WRFB');
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264375-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-      gtag('config', 'UA-196264375-1');
-    </script>
-    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FLC0B2HE6"></script>
 <script>
