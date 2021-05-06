@@ -22,9 +22,9 @@ st.markdown(
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FLC0B2HE6"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
       gtag('config', 'G-1FLC0B2HE6');
     </script>
@@ -43,7 +43,7 @@ import altair as alt
 import streamlit_analytics
 
 
-#streamlit_analytics.start_tracking()
+streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
