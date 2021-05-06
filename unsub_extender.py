@@ -9,16 +9,15 @@ import streamlit as st
 st.markdown(
     """
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
-      gtag('config', 'G-FDDMR7WRFB');
+
+      gtag('config', 'UA-195227159-1');
     </script>
     
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FLC0B2HE6"></script>
     <script>
@@ -31,8 +30,6 @@ st.markdown(
 """,
     unsafe_allow_html=True
 )
-#2HE6 is for streamlit.io share, UE 2 - GA4
-
 
 
 
@@ -404,7 +401,7 @@ html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State Unive
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 
-#streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
+streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
 
 
 if (0):
