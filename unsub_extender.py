@@ -16,6 +16,31 @@ import streamlit_analytics
 streamlit_analytics.start_tracking()
 
 
+st.markdown(
+    """
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-FDDMR7WRFB');
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264375-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+      gtag('config', 'UA-196264375-1');
+    </script>
+    """,
+    allow_unsafe_html=True
+)
+
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
@@ -362,30 +387,7 @@ st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
 #components.html(
-st.markdown(
-    """
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-FDDMR7WRFB');
-    </script>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264375-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-      gtag('config', 'UA-196264375-1');
-    </script>
-    """,
-    allow_unsafe_html=True
-)
 
 # components.html(
 #     '''
