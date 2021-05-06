@@ -4,6 +4,7 @@ Created on Thu Apr 15 21:16:06 2021
 
 @author: eschares
 """
+import streamlit as st
 import streamlit.components.v1 as components
 st.markdown(
     """
@@ -21,7 +22,7 @@ st.markdown(
 )
 
 
-import streamlit as st
+
 
 import pandas as pd
 import numpy as np
