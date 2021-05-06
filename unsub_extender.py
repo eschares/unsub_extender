@@ -361,7 +361,8 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE=
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
-components.html(
+#components.html(
+st.markdown(
     """
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
@@ -382,7 +383,8 @@ components.html(
 
       gtag('config', 'UA-196264375-1');
     </script>
-    """
+    """,
+    allow_unsafe_html=True
 )
 
 # components.html(
