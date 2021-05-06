@@ -9,6 +9,7 @@ import streamlit.components.v1 as components
 
 components.html(
     """
+    <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
     <script>
@@ -18,6 +19,7 @@ components.html(
 
       gtag('config', 'UA-195227159-1');
     </script>
+    </head>
     """
 )
 
