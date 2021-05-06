@@ -20,18 +20,18 @@ st.markdown(
     
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1FLC0B2HE6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FLC0B2HE6"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-1FLC0B2HE6');
-</script>
+      gtag('config', 'G-1FLC0B2HE6');
+    </script>
 """,
     unsafe_allow_html=True
 )
-#2HE6 is for streamlit.io share
+#2HE6 is for streamlit.io share, UE 2 - GA4
 
 
 
