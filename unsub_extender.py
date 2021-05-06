@@ -7,7 +7,7 @@ Created on Thu Apr 15 21:16:06 2021
 import streamlit as st
 #import streamlit.components.v1 as components
 st.markdown(
-    """
+    "
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
     <script>
@@ -27,7 +27,7 @@ st.markdown(
 
       gtag('config', 'G-1FLC0B2HE6');
     </script>
-""",
+    ",
     unsafe_allow_html=True
 )
 
