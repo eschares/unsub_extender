@@ -13,7 +13,7 @@ import altair as alt
 #from pandas.api.types import CategoricalDtype
 import streamlit_analytics
 
-streamlit_analytics.start_tracking()
+
 
 
 st.markdown(
@@ -31,6 +31,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
