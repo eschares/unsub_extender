@@ -5,8 +5,9 @@ Created on Thu Apr 15 21:16:06 2021
 @author: eschares
 """
 import streamlit as st
-#import streamlit.components.v1 as components
-st.markdown(
+import streamlit.components.v1 as components
+
+components.html(
     """
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
@@ -17,10 +18,8 @@ st.markdown(
 
       gtag('config', 'UA-195227159-1');
     </script>
-    """,
-    unsafe_allow_html=True
+    """
 )
-
 
 
 import pandas as pd
