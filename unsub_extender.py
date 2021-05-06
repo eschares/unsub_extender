@@ -5,17 +5,6 @@ Created on Thu Apr 15 21:16:06 2021
 @author: eschares
 """
 
-import streamlit as st
-import streamlit.components.v1 as components
-import pandas as pd
-import numpy as np
-import altair as alt
-#from pandas.api.types import CategoricalDtype
-import streamlit_analytics
-
-
-
-
 st.markdown(
     """
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -31,7 +20,17 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-streamlit_analytics.start_tracking()
+
+import streamlit as st
+import streamlit.components.v1 as components
+import pandas as pd
+import numpy as np
+import altair as alt
+#from pandas.api.types import CategoricalDtype
+import streamlit_analytics
+
+
+#streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
@@ -392,7 +391,7 @@ html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State Unive
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 
-streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
+#streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
 
 
 if (0):
