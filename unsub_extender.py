@@ -388,17 +388,17 @@ components.html(
     """
 )
 
-st.markdown(
-    """
-    <head>
+# st.markdown(
+#     """
+#     <head>
     
-    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
-    <script async src="//static.getclicky.com/js"></script>
+#     <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
+#     <script async src="//static.getclicky.com/js"></script>
     
-    </head>
-    """,
-    unsafe_allow_html=True
-    )
+#     </head>
+#     """,
+#     unsafe_allow_html=True
+#     )
 
 
 if (0):
