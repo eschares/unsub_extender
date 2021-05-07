@@ -7,6 +7,19 @@ Created on Thu Apr 15 21:16:06 2021
 import streamlit as st
 import streamlit.components.v1 as components
 
+
+components.html(
+    """
+    <head>
+    
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
+    <script async src="//static.getclicky.com/js"></script>
+    
+    </head>
+    """
+)
+
+
 components.html(
     """
     <head>
