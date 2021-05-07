@@ -42,7 +42,6 @@ st.markdown(
 import pandas as pd
 import numpy as np
 import altair as alt
-#from pandas.api.types import CategoricalDtype
 import streamlit_analytics
 
 
@@ -97,7 +96,6 @@ my_slot1 = st.empty()   #save this spot to fill in later for how many rows get s
 
 # Sliders and filter
 st.sidebar.subheader("**Filters**")
-
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
 cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))), help='CPU Rank ranges from 0 to max number of journals in the dataset')
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))), help='Average per year over the next five years')
@@ -112,6 +110,7 @@ if subscribed_filter == "(blank)":
 if subscribed_filter != 'Show All':
     subscribed_filter_flag = 1
 
+#could also use between: (df['cpu_rank'].between(cpu_slider[0], cpu_slider[1]))
 filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_instant_usage_percent'] <= OA_percent_slider[1]) &
         (df['downloads'] >= downloads_slider[0]) & (df['downloads'] <= downloads_slider[1]) &
         (df['citations'] >= citations_slider[0]) & (df['citations'] <= citations_slider[1]) &
@@ -121,7 +120,6 @@ filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_
         (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
         )
 
-#st.write('filt is ', filt)
 
 if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
     filt2 = (df['subscribed'] == subscribed_filter)
@@ -145,17 +143,14 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
                                   range = ['blue', 'red', 'green', 'gray'])
 
-filtered_titles_flag=0
+
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
     with st.beta_expander("Change a journal's Subscribed status:"):
-        #if filtered_titles_flag:
-        #    del filtered_titles_df
-        filtered_titles_df = df.loc[filt]['title']      #make a new df with the valid titles
-        #only give those valid titles as choices in the Modifier, was causing problems when trying to offer them through a filter, kept trying to use the index but wouldn't be there anymore
+        filtered_titles_df = df.loc[filt]['title']      #make a new df with only the valid titles
+        #then give those valid titles as choices in the Modifier, was causing problems when trying to offer them through a filter, kept trying to use the index but wouldn't be there anymore
         selected_titles = st.multiselect('Journal Name:', pd.Series(filtered_titles_df.reset_index(drop=True)), help='Displayed in order provided by the underlying datafile')
         #st.write(selected_titles)
-        filtered_titles_flag=1
     
         col1, col2 = st.beta_columns([2,1])
     
@@ -182,11 +177,10 @@ summary_df['sum'] = summary_df['sum'].apply(lambda x: "${0:,.0f}".format(x))
 my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRUE, MAYBE, FALSE, blank
 
 
-#st.write('filt after everything is ', filt)
 
 
 ########  Charts start here  ########
-
+#st.header('Charts created automatically')
 #weighted usage in log by cost (x), colored by subscribed
 #adding clickable legend to highlight subscribed categories
 selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
@@ -198,34 +192,13 @@ weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
     ).interactive().properties(
         height=500,
         title={
-            "text": ["Weighed Usage vs. Cost, color-coded by Subscribed status; clickable legend"],
+            "text": ["Total Weighed Usage vs. Cost, color-coded by Subscribed status; clickable legend"],
             "subtitle": ["Graph supports pan, zoom, and live-updates from changes in filters on left sidebar"],
             "color": "black",
             "subtitleColor": "gray"
         }
         ).add_selection(selection1)
 st.altair_chart(weighted_vs_cost, use_container_width=True)
-
-
-#blue histogram, but colored by subscribed
-#filt_to_100 = df['cpu']<=100
-unsub_hist = alt.Chart(df[filt].reset_index(), height=450, width=800).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(maxbins=100), title="Cost per Use bins", axis=alt.Axis(format='$')),
-    alt.Y('count()', axis=alt.Axis(grid=False)),
-    alt.Detail('index'),
-    tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
-    ).properties(
-        title={
-            "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
-            "subtitle": ["Where do Subscribed titles stack up?"],
-            "color": "black",
-            "subtitleColor": "gray"
-        }
-).interactive()
-unsub_hist
-
-
 
 #same chart as Weighted Use vs. cost but now colored by cpu_rank, and would really like buckets somehow
 selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
@@ -240,8 +213,8 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
     ).interactive().properties(
         height=500,
         title={
-            "text": ['Weighted Usage vs. Cost by CPU_Rank'],
-            "subtitle": ["Color-coded by Cost-per-Use ranking gradient", "Do more expensive journals get more usage?"],
+            "text": ['Total Weighted Usage vs. Cost, color-coded by CPU_Rank gradient'],
+            "subtitle": ["Same graph as above, but different color markers", "Where do high CPU_rank journals show up (light yellow)?"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -249,38 +222,59 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
 st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
-#st.header("Look at Instant Fill rates")
+#Unsub histogram, but colored by subscribed
+unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
+    alt.X('cpu:Q', bin=alt.Bin(maxbins=100), title="Cost per Use bins", axis=alt.Axis(format='$')),
+    alt.Y('count()', axis=alt.Axis(grid=False)),
+    alt.Detail('index'),
+    tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    ).interactive().properties(
+        height=400,
+        #width=800,
+        title={
+            "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
+            "subtitle": ["Where do Subscribed titles stack up?"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        )
+st.altair_chart(unsub_hist, use_container_width=True)
+
+
 # Instant Fill % graphs
-st.subheader('Calculate and look at the Instant Fill % for each journal')
-IF = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
+st.subheader('Consider the Instant Fill % from each journal')
+IF = alt.Chart(df[filt]).mark_circle().encode(
     alt.X('IF%', title='Instant Fill %'),
     alt.Y('subscription_cost', title="Journal Cost", axis=alt.Axis(format='$,.2r')),    #grouped thousands with two significant digits
     tooltip=(['title','subscription_cost','IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
-    ).properties(
+    ).interactive().properties(
+        height = 400,
         title={
             "text": ['Instant Fill % vs. Journal Subscription Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most", "(moving to the right), and what do they each cost?"],
+            "subtitle": ["Which journals increase Instant Fill % the most (moving to the right), and what do they cost?", "Look for a less expensive journal that gets you the same IF%"],
             "color": "black",
             "subtitleColor": "gray"
         }
-        ).interactive()
-IF
+        )
+st.altair_chart(IF, use_container_width=True)
 
-IF2 = alt.Chart(df[filt], height=400, width=500).mark_circle().encode(
+IF2 = alt.Chart(df[filt]).mark_circle().encode(
     alt.X('IF%', title="Instant Fill %"),
-    alt.Y('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% )", axis=alt.Axis(format='$,.2r')),
+    alt.Y('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% point)", axis=alt.Axis(format='$,.2r')),
     tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
-    ).properties(
+    ).interactive().properties(
+        height=400,
         title={
-            "text": ['Instant Fill % vs. Price per IF%'],
-            "subtitle": ["Normalized by price, which journals are the best way", "to increase Instant Fill % (tending to lower right corner)?","Note: Y-axis shown in log to stretch and increase visibility"],
+            "text": ['Instant Fill % vs. Price per IF% point'],
+            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to lower right corner)?","Note: Y-axis shown in log to stretch and increase visibility"],
             "color": "black",
             "subtitleColor": "gray"
         }
-).interactive()
-IF2
+)
+st.altair_chart(IF2, use_container_width=True)
 
 
 #click the bar chart to filter the scatter plot
