@@ -6,72 +6,6 @@ Created on Thu Apr 15 21:16:06 2021
 """
 import streamlit as st
 import streamlit.components.v1 as components
-
-
-components.html(
-    """
-<html>
-<body>
-<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
-<script async src="//static.getclicky.com/js"></script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101315881ns.gif" /></p></noscript>
- </body>
-</html>
-    """
-)
-
-st.markdown(
-    """
-    <head>
-    
-    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
-    <script async src="//static.getclicky.com/js"></script>
-    
-    </head>
-    """,
-    unsafe_allow_html=True
-    )
-
-
-
-
-
-components.html(
-    """
-    <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264375-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-196264375-1', {debug_mode:true});
-    </script>
-    </head>
-    """
-)
-
-st.markdown(
-    """
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-FDDMR7WRFB');
-    </script>
-    """,
-    unsafe_allow_html=True
-)
-
-htmlfile = open("test.html", 'r', encoding='utf-8')
-source_code=htmlfile.read()
-#st.write(source_code)
-components.html(source_code)
-
 import pandas as pd
 import numpy as np
 import altair as alt
@@ -440,6 +374,31 @@ st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
+
+
+components.html(
+    """
+<html>
+<body>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
+<script async src="//static.getclicky.com/js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101315881ns.gif" /></p></noscript>
+ </body>
+</html>
+    """
+)
+
+st.markdown(
+    """
+    <head>
+    
+    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
+    <script async src="//static.getclicky.com/js"></script>
+    
+    </head>
+    """,
+    unsafe_allow_html=True
+    )
 
 
 if (0):
