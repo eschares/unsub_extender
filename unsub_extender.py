@@ -40,7 +40,7 @@ st.markdown(
 
 htmlfile = open("test.html", 'r', encoding='utf-8')
 source_code=htmlfile.read()
-st.write(source_code)
+#st.write(source_code)
 components.html(source_code)
 
 import pandas as pd
