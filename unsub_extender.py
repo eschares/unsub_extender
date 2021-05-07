@@ -17,7 +17,7 @@ components.html(
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-195227159-1', {debug_mode:true});
+      gtag('config', 'UA-195227159-1');
     </script>
     </head>
     """
@@ -32,7 +32,7 @@ st.markdown(
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-    gtag('config', 'UA-195227159-1',  {debug_mode:true});
+    gtag('config', 'UA-195227159-1');
     </script>
     """,
     unsafe_allow_html=True
