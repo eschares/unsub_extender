@@ -17,7 +17,7 @@ components.html(
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-196264375-1');
+      gtag('config', 'UA-196264375-1', {debug_mode:true});
     </script>
     </head>
     """
