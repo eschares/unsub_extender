@@ -11,13 +11,13 @@ components.html(
     """
     <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196264375-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-195227159-1');
+      gtag('config', 'UA-196264375-1');
     </script>
     </head>
     """
@@ -26,13 +26,13 @@ components.html(
 st.markdown(
     """
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195227159-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDDMR7WRFB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-    gtag('config', 'UA-195227159-1');
+      
+      gtag('config', 'G-FDDMR7WRFB');
     </script>
     """,
     unsafe_allow_html=True
