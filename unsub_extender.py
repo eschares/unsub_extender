@@ -145,12 +145,17 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
                                   range = ['blue', 'red', 'green', 'gray'])
 
-
+filtered_titles_flag=0
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
     with st.beta_expander("Change a journal's Subscribed status:"):
-        selected_titles = st.multiselect('Journal Name:', pd.Series(df.loc[filt, 'title']), help='Displayed in order provided by the underlying datafile')
+        #if filtered_titles_flag:
+        #    del filtered_titles_df
+        filtered_titles_df = df.loc[filt]['title']      #make a new df with the valid titles
+        #only give those valid titles as choices in the Modifier, was causing problems when trying to offer them through a filter, kept trying to use the index but wouldn't be there anymore
+        selected_titles = st.multiselect('Journal Name:', pd.Series(filtered_titles_df.reset_index(drop=True)), help='Displayed in order provided by the underlying datafile')
         #st.write(selected_titles)
+        filtered_titles_flag=1
     
         col1, col2 = st.beta_columns([2,1])
     
