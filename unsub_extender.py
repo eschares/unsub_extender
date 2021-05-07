@@ -38,6 +38,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+htmlfile = open("test.html", 'r', encoding='utf-8')
+source_code=htmlfile.read()
+print(source_code)
+components.html(source_code, height=600)
 
 import pandas as pd
 import numpy as np
