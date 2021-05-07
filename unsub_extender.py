@@ -41,7 +41,7 @@ st.markdown(
 htmlfile = open("test.html", 'r', encoding='utf-8')
 source_code=htmlfile.read()
 print(source_code)
-components.html(source_code, height=600)
+components.html(source_code)
 
 import pandas as pd
 import numpy as np
