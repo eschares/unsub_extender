@@ -22,10 +22,10 @@ st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_
 
 
 with st.beta_expander("How to use:"):
-    st.write("This tool takes an **unsub** data export .csv file and automates the creation of useful plots and interactive visualizations.")
-    st.write("Upload your specific .csv export file using the Browse button in the left sidebar, or explore the example dataset and ready-made plots to see what is available.")
-    st.write("Filter on various criteria using the sliders on the left to narrow in on journals of interest, then use the dropdown to actually change a journal's Subscribed status and watch the graphs update. (Note: you may have to occasionally hit *'R'* to force a reload if you notice it's not loading right away)")
-    st.markdown('**More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
+    st.write("This site takes an Unsub data export .csv file and automates the creation of useful plots and interactive visualizations so you can make more informed collection decisions.")
+    st.write('**Upload your specific Unsub .csv** export file using the "Browse files" button in the left sidebar, or explore the pre-loaded example dataset and plots to see what is available.')
+    st.write("Filter on various criteria using the sliders on the left to narrow in on areas of interest, hover over data points to learn more about a specific journal, then use the dropdown to actually change a journal's *Subscribed* status and watch the graphs update. (Note: you may have to occasionally hit *'r'* to force a reload if you notice it's not loading right away)")
+    st.markdown('This project is written in Python and deployed as a web app using the library Streamlit. **More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
@@ -161,7 +161,7 @@ weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
         height=500,
         title={
             "text": ["Total Weighed Usage vs. Cost, color-coded by Subscribed status; clickable legend"],
-            "subtitle": ["Graph supports pan, zoom, and live-updates from changes in filters on left sidebar"],
+            "subtitle": ["Graph supports pan, zoom, and live-updates from changes in filters on left sidebar", "Journals on the underside of this curve might be considered for cancellation"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -181,8 +181,8 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
     ).interactive().properties(
         height=500,
         title={
-            "text": ['Total Weighted Usage vs. Cost, color-coded by CPU_Rank gradient'],
-            "subtitle": ["Same graph as above, but different color markers", "Where do high CPU_rank journals show up (light yellow)?"],
+            "text": ['Total Weighted Usage vs. Cost, color coded by CPU_Rank gradient'],
+            "subtitle": ["Same graph as above, but with different color coding", "High Cost-per-Use rank (least economical) journals show up in light yellow"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -190,9 +190,11 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
 st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
-#Unsub histogram, but colored by subscribed
-unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(maxbins=100), title="Cost per Use bins", axis=alt.Axis(format='$')),
+#Unsub histogram, but colored by subscribed    alt.Bin(maxbins=100)
+hist_filt = filt & (df['cpu']<=100)
+hist_df = df[hist_filt]
+unsub_hist = alt.Chart(hist_df.reset_index()).mark_bar().encode(
+    alt.X('cpu:Q', bin=alt.Bin(maxbins=100, step=1), title="Cost per Use bins", axis=alt.Axis(format='$')),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
     tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
@@ -208,6 +210,7 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
         }
         )
 st.altair_chart(unsub_hist, use_container_width=True)
+st.write("Journals with cpu>100: ")
 
 
 # Instant Fill % graphs
