@@ -153,7 +153,7 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 #adding clickable legend to highlight subscribed categories
 selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
 weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
-    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
+    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
@@ -171,7 +171,7 @@ st.altair_chart(weighted_vs_cost, use_container_width=True)
 #same chart as Weighted Use vs. cost but now colored by cpu_rank, and would really like buckets somehow
 selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
 weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
-    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r')),
+    alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')
         #,legend = alt.Legend(type='symbol')                
@@ -191,10 +191,10 @@ st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
 #Unsub histogram, but colored by subscribed    alt.Bin(maxbins=100)
-hist_filt = filt & (df['cpu']<=100)
-hist_df = df[hist_filt]
-unsub_hist = alt.Chart(hist_df.reset_index()).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(maxbins=100, step=1), title="Cost per Use bins", axis=alt.Axis(format='$')),
+#hist_filt = filt & (df['cpu']<=100)
+#hist_df = df[hist_filt]
+unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
+    alt.X('cpu:Q', bin=alt.Bin(maxbins=100, step=1), title="Cost per Use bins", axis=alt.Axis(format='$')),# scale=alt.Scale(rangeMax=100)),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
     tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
