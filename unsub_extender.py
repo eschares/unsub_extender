@@ -393,7 +393,7 @@ components.html(
 )
 
 
-st.markdown(
+components.html(
 """
 <!-- Default Statcounter code for Unsub Extender
 https://unsubextender.lib.iastate.edu/ -->
@@ -409,8 +409,7 @@ href="https://statcounter.com/" target="_blank"><img class="statcounter"
 src="https://c.statcounter.com/12526873/0/c525cd17/1/" alt="Web
 Analytics"></a></div></noscript>
 <!-- End of Statcounter Code -->
-""",
-unsafe_allow_html=True
+"""
 )
 
 components.html(
