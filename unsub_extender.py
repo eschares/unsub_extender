@@ -416,9 +416,9 @@ unsafe_allow_html=True
 components.html(
     """
 <html>
-<head>
+<body>
 <script async defer data-domain="unsubextender.lib.iastate.edu" src="https://plausible.io/js/plausible.js"></script>
-</head>
+</body>
 </html>
 """
 )
