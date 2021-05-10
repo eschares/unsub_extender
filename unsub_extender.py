@@ -11,6 +11,7 @@ import numpy as np
 import altair as alt
 import streamlit_analytics
 
+st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
 streamlit_analytics.start_tracking()
 
@@ -386,6 +387,26 @@ components.html(
   </body>
 </html>
     """
+)
+
+
+components.html(
+"""
+<!-- Default Statcounter code for Unsub Extender
+https://unsubextender.lib.iastate.edu/ -->
+<script type="text/javascript">
+var sc_project=12526873; 
+var sc_invisible=1; 
+var sc_security="c525cd17"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12526873/0/c525cd17/1/" alt="Web
+Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->
+"""
 )
 
 # st.markdown(
