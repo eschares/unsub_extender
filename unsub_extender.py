@@ -387,7 +387,7 @@ components.html(
 <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
 <script async src="//static.getclicky.com/js"></script>
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101315881ns.gif" /></p></noscript>
-  </body>
+</body>
 </html>
     """
 )
@@ -422,6 +422,17 @@ components.html(
 </html>
 """
 )
+
+st.markdown(
+    """
+    <html>
+    <head>
+    <script async defer data-domain="unsubextender.lib.iastate.edu" src="https://plausible.io/js/plausible.js"></script>
+    </head>
+    </html>
+    """,
+    unsafe_allow_html=True    
+    )
 
 # st.markdown(
 #     """
