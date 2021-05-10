@@ -190,11 +190,11 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
 st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
-#Unsub histogram, but colored by subscribed    alt.Bin(maxbins=100)
+#Unsub histogram, but colored by subscribed    bin=alt.Bin(step=1)
 #hist_filt = filt & (df['cpu']<=100)
 #hist_df = df[hist_filt]
 unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(maxbins=100, step=1), title="Cost per Use bins", axis=alt.Axis(format='$')),# scale=alt.Scale(rangeMax=100)),
+    alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue off the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
     tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
@@ -204,13 +204,13 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
         #width=800,
         title={
             "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
-            "subtitle": ["Where do Subscribed titles stack up?"],
+            "subtitle": ["Journals grouped by Subscribed status, not shown in continuous order by CPU", "Note: X-axis default set to max of $100, zoom out to see data that may have even higher CPU"],
             "color": "black",
             "subtitleColor": "gray"
         }
         )
 st.altair_chart(unsub_hist, use_container_width=True)
-st.write("Journals with cpu>100: ")
+#st.write("Journals with cpu>100: ")
 
 
 # Instant Fill % graphs
@@ -395,20 +395,7 @@ components.html(
 
 components.html(
 """
-<!-- Default Statcounter code for Unsub Extender
-https://unsubextender.lib.iastate.edu/ -->
-<script type="text/javascript">
-var sc_project=12526873; 
-var sc_invisible=1; 
-var sc_security="c525cd17"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/12526873/0/c525cd17/1/" alt="Web
-Analytics"></a></div></noscript>
-<!-- End of Statcounter Code -->
+<a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img src="https://c.statcounter.com/12526873/0/c525cd17/1/" alt="Web Analytics" ></a>
 """
 )
 
