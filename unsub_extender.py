@@ -397,24 +397,15 @@ cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE=
 st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
 
 
-#components.html(
 
 
-# components.html(
-#     '''
-#     <head>
-#         <meta name="google-site-verification" content="aClUnGnkCZ4TmxlB-kzj5Bbz0oKtRuzJnEIJUMKMmQ8" />
-#     </head>
-#     '''
-# )
-
+##### Footer in sidebar #####
 html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br />If you found this useful, or have suggestions or other feedback, please email eschares@iastate.edu</p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
-
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
 
-
+# Analytics code
 components.html(
     """
 <html>
@@ -433,75 +424,3 @@ components.html(
 <a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img src="https://c.statcounter.com/12526873/0/c525cd17/1/" alt="Web Analytics" ></a>
 """
 )
-
-components.html(
-    """
-<html>
-<head>
-<script async defer data-domain="unsubextender.lib.iastate.edu" src="https://plausible.io/js/plausible.js"></script>
-</head>
-</html>
-"""
-)
-
-st.markdown(
-    """
-    <html>
-    <head>
-    <script async defer data-domain="unsubextender.lib.iastate.edu" src="https://plausible.io/js/plausible.js"></script>
-    </head>
-    </html>
-    """,
-    unsafe_allow_html=True    
-    )
-
-# st.markdown(
-#     """
-# <html>
-# <body>
-# <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101315881);</script>
-# <script async src="//static.getclicky.com/js"></script>
-# <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101315881ns.gif" /></p></noscript>
-# </body>
-# </html>
-#     """,
-#     unsafe_allow_html=True
-#     )
-
-
-if (0):
-    #Altair scatter plot with selection
-    brush = alt.selection(type='interval')
-    points = alt.Chart(df).mark_point().encode(
-        x='downloads',
-        y='citations',
-        color=alt.condition(brush, 'Cylinders:O', alt.value('grey'))
-    ).add_selection(brush)
-    points
-    
-    ranked_text = alt.Chart(df).mark_text().encode(
-        y=alt.Y('row_number:O', axis=None)
-    ).transform_window(
-        row_number='row_number()'
-    ).transform_filter(
-        brush
-    ).transform_window(
-        rank='rank(row_number)'
-    ).transform_filter(
-        alt.datum.rank<20
-    )
-    
-    # Data Tables
-    horsepower = ranked_text.encode(text='downloads:N').properties(title='Horsepower')
-    mpg = ranked_text.encode(text='citations:N').properties(title='MPG')
-    origin = ranked_text.encode(text='authorships:N').properties(title='Origin')
-    text = alt.hconcat(horsepower, mpg, origin) # Combine data tables
-    
-    alt.hconcat(
-        points,
-        text
-    ).resolve_legend(
-        color="independent"
-    )
-
-
