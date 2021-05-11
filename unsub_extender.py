@@ -402,9 +402,9 @@ components.html(
 components.html(
     """
 <html>
-<body>
+<head>
 <script async defer data-domain="unsubextender.lib.iastate.edu" src="https://plausible.io/js/plausible.js"></script>
-</body>
+</head>
 </html>
 """
 )
