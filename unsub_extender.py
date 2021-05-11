@@ -24,6 +24,7 @@ st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_
 with st.beta_expander("How to use:"):
     st.write("This site takes an Unsub data export .csv file and automates the creation of useful plots and interactive visualizations so you can make more informed collection decisions.")
     st.write('**Upload your specific Unsub .csv** export file using the "Browse files" button in the left sidebar, or explore the pre-loaded example dataset and plots to see what is available.')
+    st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset it back to default view.")
     st.write("Filter on various criteria using the sliders on the left to narrow in on areas of interest, hover over data points to learn more about a specific journal, then use the dropdown to actually change a journal's *Subscribed* status and watch the graphs update. (Note: you may have to occasionally hit *'r'* to force a reload if you notice it's not loading right away)")
     st.markdown('This project is written in Python and deployed as a web app using the library Streamlit. **More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
@@ -173,9 +174,7 @@ selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
 weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')
-        #,legend = alt.Legend(type='symbol')                
-        ),   #selection, if selected, if NOT selected
+    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')),   #selection, if selected, if NOT selected
     #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(
@@ -252,15 +251,15 @@ st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
 # Instant Fill % graphs
 st.subheader('Consider the Instant Fill % from each journal')
 IF = alt.Chart(df[filt]).mark_circle().encode(
-    alt.X('IF%', title='Instant Fill %'),
-    alt.Y('subscription_cost', title="Journal Cost", axis=alt.Axis(format='$,.2r')),    #grouped thousands with two significant digits
+    alt.X('subscription_cost', title="Journal Cost", axis=alt.Axis(format='$,.2r')),    #grouped thousands with two significant digits
+    alt.Y('IF%', title='Instant Fill %'),
     tooltip=(['title','subscription_cost','IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).interactive().properties(
         height = 400,
         title={
             "text": ['Instant Fill % vs. Journal Subscription Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most (moving to the right), and what do they cost?", "Look for a less expensive journal that gets you the same IF%"],
+            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Look for a less expensive journal that gets you the same IF%, generally the upper band"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -268,15 +267,15 @@ IF = alt.Chart(df[filt]).mark_circle().encode(
 st.altair_chart(IF, use_container_width=True)
 
 IF2 = alt.Chart(df[filt]).mark_circle().encode(
-    alt.X('IF%', title="Instant Fill %"),
-    alt.Y('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% point)", axis=alt.Axis(format='$,.2r')),
+    alt.X('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% point)", axis=alt.Axis(format='$,.2r')),
+    alt.Y('IF%', title="Instant Fill %"),
     tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).interactive().properties(
         height=400,
         title={
             "text": ['Instant Fill % vs. Price per IF% point'],
-            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to lower right corner)?","Note: Y-axis shown in log to stretch and increase visibility"],
+            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to upper left corner)?","Note: X-axis shown in log to stretch and increase visibility"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -504,6 +503,5 @@ if (0):
     ).resolve_legend(
         color="independent"
     )
-
 
 
