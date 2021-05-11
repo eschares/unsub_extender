@@ -193,8 +193,8 @@ st.altair_chart(weighted_vs_cost2, use_container_width=True)
 #Unsub histogram, but colored by subscribed    bin=alt.Bin(step=1)
 #hist_filt = filt & (df['cpu']<=100)
 #hist_df = df[hist_filt]
-unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
-    alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue off the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
+unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_index() turns the indx into a column
+    alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue beyond the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
     tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
@@ -211,6 +211,42 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(
         )
 st.altair_chart(unsub_hist, use_container_width=True)
 #st.write("Journals with cpu>100: ")
+
+auth_hist = alt.Chart(df[filt].reset_index()).mark_bar(width=10).encode(
+    alt.X('authorships:Q', title="Authorships (average per year over the next five years)"),
+    alt.Y('count()', axis=alt.Axis(grid=False)),
+    alt.Detail('index'),
+    tooltip=['title', 'authorships', 'subscription_cost', 'subscribed'],
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    ).interactive().properties(
+        height=400,
+        #width=800,
+        title={
+            "text": ["Authorships Distribution"],
+            "subtitle": ["What do the range of Authorships look like?", "Use this graph to help set the Authorships slider filter and narrow down titles of interest"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        )
+st.altair_chart(auth_hist, use_container_width=True)
+
+scatter_dl_vs_cit = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+    alt.X('downloads:Q', title="Downloads"),
+    alt.Y('citations:Q', title="Citations"),
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),
+    tooltip=['title', 'authorships', 'subscription_cost', 'subscribed'],
+    size=('authorships')
+).interactive().properties(
+        height=400,
+        #width=800,
+        title={
+            "text": ["Citations vs. Downloads"],
+            "subtitle": ["Where is the usage coming from?"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        )
+st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
 
 
 # Instant Fill % graphs
