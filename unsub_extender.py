@@ -250,6 +250,9 @@ st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
 
 # Instant Fill % graphs
 st.subheader('Consider the Instant Fill % from each journal')
+
+IF_selection = alt.selection_single()
+
 IF = alt.Chart(df[filt]).mark_circle().encode(
     alt.X('subscription_cost', title="Journal Cost", axis=alt.Axis(format='$,.2r')),    #grouped thousands with two significant digits
     alt.Y('IF%', title='Instant Fill %'),
@@ -376,25 +379,32 @@ st.altair_chart(auth_vs_cit, use_container_width=True)
 
 
 #cpu_Rank y vs. subject, colored by subscribed
-#what Altair calls a "stripplot"
-cpurank_vs_subject = alt.Chart(df[filt], title='CPU_Rank by Subject ===NOT DONE===', width=40).mark_circle(size=40, opacity=0.5).encode(
-    x=alt.X('subject:N', title=None, #axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale(),
-            ),
+cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
+    x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
     y=alt.Y('cpu_rank:Q'),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    column=alt.Column(
-        'subscribed:N',
-        header=alt.Header(
-            labelAngle=-90,
-            titleOrient='top',
-            labelOrient='bottom',
-            labelAlign='right',
-            labelPadding=3,
-            ),
-        ),
+    # column=alt.Column(
+    #     'subscribed:N',
+    #     header=alt.Header(
+    #         labelAngle=-90,
+    #         titleOrient='top',
+    #         labelOrient='bottom',
+    #         labelAlign='right',
+    #         labelPadding=3,
+    #         ),
+    #     ),
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
-    ).interactive()
-st.altair_chart(cpurank_vs_subject)#, use_container_width=True)
+    ).interactive().properties(
+        height=600,
+        #width=800,
+        title={
+            "text": ["Overview of cancellations by 'Subject' column"],
+            "subtitle": ["Review decisions and make sure you're not penalizing one discipline too much", "Subject area classifications are probably not perfect, but gives a general idea"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        )
+st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 
 
