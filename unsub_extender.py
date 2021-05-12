@@ -24,7 +24,7 @@ st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_
 with st.beta_expander("How to use:"):
     st.write("This site takes an Unsub data export .csv file and automates the creation of useful plots and interactive visualizations so you can make more informed collection decisions.")
     st.write('**Upload your specific Unsub .csv** export file using the "Browse files" button in the left sidebar, or explore the pre-loaded example dataset and plots to see what is available.')
-    st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset it back to default view.")
+    st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset back to the default view.")
     st.write("Filter on various criteria using the sliders on the left to narrow in on areas of interest, hover over data points to learn more about a specific journal, then use the dropdown to actually change a journal's *Subscribed* status and watch the graphs update. (Note: you may have to occasionally hit *'r'* to force a reload if you notice it's not loading right away)")
     st.markdown('This project is written in Python and deployed as a web app using the library Streamlit. **More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
@@ -190,30 +190,6 @@ st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
 
-st.subheader('Look where journal decisions land in the Unsub histogram')
-#Unsub histogram, but colored by subscribed    bin=alt.Bin(step=1)
-#hist_filt = filt & (df['cpu']<=100)
-#hist_df = df[hist_filt]
-unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_index() turns the indx into a column
-    alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue beyond the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
-    alt.Y('count()', axis=alt.Axis(grid=False)),
-    alt.Detail('index'),
-    tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
-    ).interactive().properties(
-        height=400,
-        #width=800,
-        title={
-            "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
-            "subtitle": ["Journals grouped by Subscribed status, not shown in continuous order by CPU", "Note: X-axis default set to max of $100, zoom out to see data that may have even higher CPU"],
-            "color": "black",
-            "subtitleColor": "gray"
-        }
-        )
-st.altair_chart(unsub_hist, use_container_width=True)
-#st.write("Journals with cpu>100: ")
-
-
 st.subheader('Break down the authorships, citations, and downloads of each journal')
 auth_hist = alt.Chart(df[filt].reset_index()).mark_bar(width=10).encode(
     alt.X('authorships:Q', title="Authorships (average per year over the next five years)"),
@@ -237,19 +213,46 @@ scatter_dl_vs_cit = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
     alt.X('downloads:Q', title="Downloads"),
     alt.Y('citations:Q', title="Citations"),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),
-    tooltip=['title', 'authorships', 'subscription_cost', 'subscribed'],
-    size=('authorships')
+    tooltip=['title', 'authorships', 'subscription_cost', 'subscribed']
+    #size=('authorships')
 ).interactive().properties(
         height=400,
         #width=800,
         title={
             "text": ["Citations vs. Downloads"],
-            "subtitle": ["Where is the usage coming from?"],
+            "subtitle": ["Where is the usage coming from?", "Hold authorships steady with a filter and consider citations and DLs within that group"],
             "color": "black",
             "subtitleColor": "gray"
         }
         )
 st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
+
+
+#3x scatter matrix showing all metrics vs. overall usage
+scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
+
+eric = alt.Chart(df).mark_circle().encode(
+    alt.X(alt.repeat("column"), type='quantitative'),
+    alt.Y(alt.repeat("row"), type='quantitative'),
+    #color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed']    
+).properties(
+    width=350,
+    height=250,
+    title={
+        "text": ["Linked plots - Overall usage vs. something"],
+        "subtitle": ["Zooming in will adjust all three"],
+        'color':'black',
+        'subtitleColor': 'gray'
+        }
+).repeat(
+    row=['usage'],#, 'downloads', 'citations', 'authorships'],
+    column=['downloads', 'citations', 'authorships']
+).interactive().add_selection(scatter_selection)
+
+eric
+
 
 
 # Instant Fill % graphs
@@ -291,78 +294,30 @@ st.altair_chart(IF2, use_container_width=True)
 
 
 
-#scatter matrix
-scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
-
-eric = alt.Chart(df).mark_circle().encode(
-    alt.X(alt.repeat("column"), type='quantitative'),
-    alt.Y(alt.repeat("row"), type='quantitative'),
-    #color=alt.Color('subscribed:N', scale=subscribed_colorscale)
-    color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed']    
-).properties(
-    width=350,
-    height=250
-).repeat(
-    row=['usage'],#, 'downloads', 'citations', 'authorships'],
-    column=['downloads', 'citations', 'authorships']
-).interactive().add_selection(scatter_selection)
-
-eric
-
-
-
-
-#cit vs dl
-selection = alt.selection_interval()
-cit_vs_dl = alt.Chart(df[filt], title='Citations vs. Downloads, linked selection').mark_circle(size=75, opacity=0.5).encode(
-    x='downloads:Q',
-    y='citations:Q',
-    color=alt.condition(selection, alt.Color('subscribed:N', legend=None, scale=subscribed_colorscale),
-                        alt.value('gray')),   #alt.condition takes selection object, values for points inside selection, value for points OUTSIDE selection
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
-    ).add_selection(selection)#.interactive()
-
-#Altair scatter plot
-#auth vs dl
-auth_vs_dl = alt.Chart(df[filt], title='Authorships vs. Downloads').mark_circle(size=75, opacity=0.5).encode(
-    x='downloads:Q',
-    y='authorships:Q',
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
-    ).interactive().add_selection(selection)
-
-cit_vs_dl | cit_vs_dl.encode(y='authorships')
+st.subheader('Look where journal decisions land in the Unsub histogram')
+#Unsub histogram, but colored by subscribed    bin=alt.Bin(step=1)
+#hist_filt = filt & (df['cpu']<=100)
+#hist_df = df[hist_filt]
+unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_index() turns the indx into a column
+    alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue beyond the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
+    alt.Y('count()', axis=alt.Axis(grid=False)),
+    alt.Detail('index'),
+    tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    ).interactive().properties(
+        height=400,
+        #width=800,
+        title={
+            "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
+            "subtitle": ["Note: Journals are grouped by Subscribed status, not shown in continuous order by CPU like Unsub does", "Note 2: X-axis default set to max of $100, zoom out to see data that may have even higher CPU"],
+            "color": "black",
+            "subtitleColor": "gray"
+        }
+        )
+st.altair_chart(unsub_hist, use_container_width=True)
+#st.write("Journals with cpu>100: ")
 
 
-
-
-
-
-#Altair scatter plot
-#auth vs cit, colord by subscribed
-auth_vs_cit = alt.Chart(df[filt], title='Authorships vs. Citations').mark_circle(size=75, opacity=0.5).encode(
-    x='citations:Q',
-    y='authorships:Q',
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
-    ).interactive()
-st.altair_chart(auth_vs_cit, use_container_width=True)
-
-#cit vs dl, by cpu_rank 5 buckets, colred by subscribed
-#NOT DONE
-#break it into 5 or 6 chunks based on number of rows
-#seemed to break everything??
-#into_5 = int(df.shape[0]/5)
-
-# #cpu_bucket_selector = st.slider('Filter by CPU_Ranks', 1, df.shape[0], 1, into_5)
-# cit_vs_dl_by_cpurank = alt.Chart(df[filt], title='====NOT DONE, WILL HAVE SELECTOR BY CPU_RANK BUCKETS====').mark_circle(size=75, opacity=0.5).encode(
-#     x='downloads:Q',
-#     y='citations:Q',
-#     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-#     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
-#     ).interactive()
-# st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
 
 
 st.subheader('Consider journal subject areas')
