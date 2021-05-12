@@ -149,7 +149,7 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 
 ########  Charts start here  ########
-#st.header('Charts created automatically')
+st.subheader('Start by looking at the overall usage')
 #weighted usage in log by cost (x), colored by subscribed
 #adding clickable legend to highlight subscribed categories
 selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
@@ -189,6 +189,8 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
 st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
+
+st.subheader('Look where journal decisions land in the Unsub histogram')
 #Unsub histogram, but colored by subscribed    bin=alt.Bin(step=1)
 #hist_filt = filt & (df['cpu']<=100)
 #hist_df = df[hist_filt]
@@ -211,6 +213,8 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_inde
 st.altair_chart(unsub_hist, use_container_width=True)
 #st.write("Journals with cpu>100: ")
 
+
+st.subheader('Break down the authorships, citations, and downloads of each journal')
 auth_hist = alt.Chart(df[filt].reset_index()).mark_bar(width=10).encode(
     alt.X('authorships:Q', title="Authorships (average per year over the next five years)"),
     alt.Y('count()', axis=alt.Axis(grid=False)),
@@ -284,23 +288,6 @@ IF2 = alt.Chart(df[filt]).mark_circle().encode(
         }
 )
 st.altair_chart(IF2, use_container_width=True)
-
-
-#click the bar chart to filter the scatter plot
-click = alt.selection_multi(encodings=['color'])
-scatter = alt.Chart(df[filt], title="Citations vs. Downloads, with clickable bar graph linked underneath").mark_point().encode(
-    x='downloads',
-    y='citations',
-    color='subscribed'
-).transform_filter(click).interactive()
-
-hist = alt.Chart(df[filt]).mark_bar().encode(
-    x='count()',
-    y='subscribed',
-    color = alt.condition(click, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray'))
-).add_selection(click)
-
-scatter & hist
 
 
 
@@ -378,21 +365,12 @@ st.altair_chart(auth_vs_cit, use_container_width=True)
 # st.altair_chart(cit_vs_dl_by_cpurank, use_container_width=True)
 
 
+st.subheader('Consider journal subject areas')
 #cpu_Rank y vs. subject, colored by subscribed
 cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
     x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
     y=alt.Y('cpu_rank:Q'),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    # column=alt.Column(
-    #     'subscribed:N',
-    #     header=alt.Header(
-    #         labelAngle=-90,
-    #         titleOrient='top',
-    #         labelOrient='bottom',
-    #         labelAlign='right',
-    #         labelPadding=3,
-    #         ),
-    #     ),
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
     ).interactive().properties(
         height=600,
