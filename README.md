@@ -50,7 +50,7 @@ Hosted by Iowa State University
 Navigate to https://unsubextender.lib.iastate.edu to run in browser
 
 # License
-MIT License, Copyright (c) 2021 Eric Schares
+GNU AGPLv3, Copyright (c) 2021 Eric Schares
 
 See LICENSE file
 
