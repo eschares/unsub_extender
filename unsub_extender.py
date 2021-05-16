@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import streamlit_analytics
+import os
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
@@ -54,10 +55,12 @@ df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
 
 #process data to calculate IF%
-total_usage = df['usage'].sum()
-df['current_yr_usage'] = ((df['use_ill_percent'] + df['use_other_delayed_percent']) / 100) * df['usage']
-df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
-df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
+#TO DO put in check here to not do it if IF% column already exists - rerunning a file through UE
+if not 'IF%' in df.columns:
+    total_usage = df['usage'].sum()
+    df['current_yr_usage'] = ((df['use_ill_percent'] + df['use_other_delayed_percent']) / 100) * df['usage']
+    df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
+    df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 
 sidebar_modifier_slot = st.sidebar.empty()
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected with the filter
@@ -144,6 +147,18 @@ summary_df['sum'] = summary_df['sum'].apply(lambda x: "${0:,.0f}".format(x))
 #now formatted as a string (f)
 #leading dollar sign, add commas, round result to 0 decimal places
 my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRUE, MAYBE, FALSE, blank
+
+
+
+### Export the df with any changes the user made 
+st.sidebar.subheader('Export spreadsheet with any changes')
+path = st.sidebar.text_input('Enter complete path to save here:', '', help='Example is C:\\Users\\eschares\\Desktop')
+#st.sidebar.write('you wrote ', path)
+
+st.sidebar.button('Click to download')
+if st.sidebar.button:
+    df.to_csv(os.path.join(path, r'UnsubExtender_export.csv'), index=False) #, header=True)
+    #r'C:\Users\Ron\Desktop\export_dataframe.csv'
 
 
 
@@ -343,7 +358,8 @@ st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 
 ##### Footer in sidebar #####
-html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br />If you found this useful, or have suggestions or other feedback, please email eschares@iastate.edu</p>"
+st.sidebar.subheader("Credits")
+html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or want to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
