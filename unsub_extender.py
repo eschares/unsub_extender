@@ -155,13 +155,9 @@ st.sidebar.subheader('Export spreadsheet with any changes')
 path = st.sidebar.text_input('Enter complete path to save here:', '', help='Example: C:\\Users\\eschares\\Desktop')
 #st.sidebar.write('you wrote ', path)
 
-st.sidebar.button=False  #Have to reset the button explicitly, otherwise will run automatically every time
-st.sidebar.button('Click to download')
-if st.sidebar.button:
-    df.to_csv(os.path.join(path, r'UnsubExtender_exportttt.csv'), index=False) #, header=True)
-    #r'C:\Users\Ron\Desktop\export_dataframe.csv'
-else:
-    1
+if st.sidebar.button('Click to download'):
+    df.to_csv(os.path.join(path, r'UnsubExtender_export.csv'), index=False) #, header=True)
+    #r'C:\Users\eschares\Desktop\export_dataframe.csv'
 
 
 
@@ -365,7 +361,7 @@ st.sidebar.subheader("Credits")
 html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or want to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
-streamlit_analytics.stop_tracking(unsafe_password="testtesttest")
+streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #5 hours ahead
 
 # Analytics code
 components.html(
