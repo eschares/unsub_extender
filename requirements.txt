@@ -2,3 +2,4 @@ streamlit
 pandas
 altair
 streamlit-analytics
+os
