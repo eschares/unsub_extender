@@ -152,13 +152,16 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
-path = st.sidebar.text_input('Enter complete path to save here:', '', help='Example is C:\\Users\\eschares\\Desktop')
+path = st.sidebar.text_input('Enter complete path to save here:', '', help='Example: C:\\Users\\eschares\\Desktop')
 #st.sidebar.write('you wrote ', path)
 
+st.sidebar.button=False  #Have to reset the button explicitly, otherwise will run automatically every time
 st.sidebar.button('Click to download')
 if st.sidebar.button:
-    df.to_csv(os.path.join(path, r'UnsubExtender_export.csv'), index=False) #, header=True)
+    df.to_csv(os.path.join(path, r'UnsubExtender_exportttt.csv'), index=False) #, header=True)
     #r'C:\Users\Ron\Desktop\export_dataframe.csv'
+else:
+    1
 
 
 
