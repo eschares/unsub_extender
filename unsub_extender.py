@@ -11,6 +11,7 @@ import numpy as np
 import altair as alt
 import streamlit_analytics
 import os
+from datetime import datetime
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
@@ -32,7 +33,8 @@ with st.beta_expander("How to use:"):
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
 
-uploaded_file = st.sidebar.file_uploader('Analyze your Unsub export file .csv :', type='csv')
+st.sidebar.subheader('Analyze your Unsub export file')
+uploaded_file = st.sidebar.file_uploader("Must be a .csv file", type='csv')
 if uploaded_file is not None:
     file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
     #st.write(file_details)
@@ -62,6 +64,7 @@ if not 'IF%' in df.columns:
     df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
     df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 
+st.sidebar.subheader("Change a journal's Subscribed status")
 sidebar_modifier_slot = st.sidebar.empty()
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected with the filter
 
@@ -118,7 +121,7 @@ subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
 
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
-    with st.beta_expander("Change a journal's Subscribed status:"):
+    with st.beta_expander("Expand to select:"):
         filtered_titles_df = df.loc[filt]['title']      #make a new df with only the valid titles
         #then give those valid titles as choices in the Modifier, was causing problems when trying to offer them through a filter, kept trying to use the index but wouldn't be there anymore
         selected_titles = st.multiselect('Journal Name:', pd.Series(filtered_titles_df.reset_index(drop=True)), help='Displayed in order provided by the underlying datafile')
@@ -150,13 +153,16 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 
 
+date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
+date
+
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
 path = st.sidebar.text_input('Enter complete path to save here:', '', help='Example: C:\\Users\\eschares\\Desktop')
-#st.sidebar.write('you wrote ', path)
+st.sidebar.write('Path specified is: ', path)
 
 if st.sidebar.button('Click to download'):
-    df.to_csv(os.path.join(path, r'UnsubExtender_export_wheredoesthisgo.csv'), index=False) #, header=True)
+    df.to_csv(os.path.join(path, r'UnsubExtender_export' + date + '.csv'), index=False) #, header=True)
     #r'C:\Users\eschares\Desktop\export_dataframe.csv'
 
 
