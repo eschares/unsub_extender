@@ -6,6 +6,7 @@ Created on Thu Apr 15 21:16:06 2021
 """
 import streamlit as st
 import streamlit.components.v1 as components
+from streamlit.media_file_manager import media_file_manager
 import pandas as pd
 import numpy as np
 import altair as alt
@@ -160,15 +161,10 @@ date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
-path = st.sidebar.text_input('Enter complete path for file save:', '', help='Example: C:\\Users\\eschares\\Desktop')
-st.sidebar.write('Path specified is: ', path)
 
-if st.sidebar.button('Click to download'):
-    df.to_csv(os.path.join(path, r'UnsubExtender_export_' + date + '.csv'), index=False) #, header=True)
-    #r'C:\Users\eschares\Desktop\export_dataframe.csv'
-
-
-
+if st.sidebar.button('Click to export'):
+    this_file = media_file_manager.add(df.to_csv(index=False).encode('utf-8'), 'text/csv', r'UnsubExtender_export' + date + '.csv')
+    st.sidebar.markdown('[Click to download]({})'.format(this_file.url))
 
 ########  Charts start here  ########
 st.subheader('Start by looking at the overall usage')
