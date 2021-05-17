@@ -2,5 +2,3 @@ streamlit
 pandas
 altair
 streamlit-analytics
-os
-datetime
