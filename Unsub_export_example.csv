@@ -1,432 +1,432 @@
-era_subjects,subscribed,title,subject,cpu,cpu_rank,usage,instant_usage_percent,free_instant_usage_percent,subscription_cost,ill_cost,subscription_minus_ill_cost,use_oa_percent,use_backfile_percent,use_subscription_percent,use_ill_percent,use_other_delayed_percent,perpetual_access_years,baseline_access,bronze_oa_embargo_months,use_green_percent,use_hybrid_percent,use_bronze_percent,use_asns_percent,use_peer_reviewed_percent,downloads,citations,authorships
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Journlia,Life Sciences,264.851077,430,722,96,96,8273,12,8261,96,0,0,0,4,,,18,1,10,71,10,81,321,36.2,0.4
-"[['0601', 'Biochemistry and Cell Biology'], ['0699', 'Other Biological Sciences'], ['0904', 'Chemical Engineering'], ['09', 'Engineering'], ['06', 'Biological Sciences']]",FALSE,Nexus American,Life Sciences,145.089854,429,497,90,90,7265,25,7240,90,0,0,1,10,,,18,0,7,81,0,86,288,17,0.4
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences'], ['08', 'Information and Computing Sciences']]",FALSE,Become Veterinary,,128.433666,428,85,86,86,1568,10,1558,86,0,0,1,14,,,12,1,13,71,3,79,79,0.6,0
-"[['0801', 'Artificial Intelligence and Image Processing'], ['0802', 'Computation Theory and Mathematics'], ['08', 'Information and Computing Sciences']]",FALSE,Wish Industrial,Computer Science,76.156409,427,20,30,30,1064,11,1053,30,0,0,3,66,,,,6,0,11,8,6,18,0.2,0
-"[['09', 'Engineering']]",FALSE,Encourage Methods,"Engineering, Energy and Technology",74.233178,426,901,82,82,12068,87,11981,82,0,0,1,17,,,36,3,2,63,8,65,570,19.2,1.4
-"[['01', 'Mathematical Sciences'], ['08', 'Information and Computing Sciences']]",FALSE,Research Materialia,Computer Science,71.519558,425,361,82,82,4798,20,4778,82,0,0,1,18,,,48,15,6,52,4,64,128,17.4,0.6
-"[['01', 'Mathematical Sciences'], ['02', 'Physical Sciences']]",FALSE,Alpha Trends,Physics and Astronomy,70.158704,424,638,79,79,9491,36,9455,79,0,0,1,20,,,,29,7,10,2,20,203,44,0
-"[['1403', 'Econometrics'], ['1401', 'Economic Theory'], ['1402', 'Applied Economics'], ['14', 'Economics']]",FALSE,Perception Science,"Economics, Business and Management",55.74553,423,216,71,71,3551,29,3522,71,0,0,1,28,,,,42,3,6,1,34,115,6.2,0.4
-"[['09', 'Engineering'], ['0912', 'Materials Engineering']]",FALSE,Advance Environment,"Engineering, Energy and Technology",53.925285,422,310,42,42,9771,101,9670,42,0,0,3,55,,,,10,11,8,10,21,206,10.4,0
-"[['0302', 'Inorganic Chemistry'], ['0306', 'Physical Chemistry (incl. Structural)'], ['0399', 'Other Chemical Sciences'], ['03', 'Chemical Sciences']]",FALSE,Butterfly Veterinary,Chemistry and Chemical Engineering,51.812057,421,272,22,22,11122,113,11009,22,0,0,4,74,,,,2,1,5,10,3,170,8.2,0.2
-"[['05', 'Environmental Sciences'], ['0502', 'Environmental Science and Management'], ['11', 'Medical and Health Sciences'], ['1115', 'Pharmacology and Pharmaceutical Sciences']]",FALSE,Refine Total,"Pharmacology, Pharmaceutical Science and Toxicology",50.177753,420,168,4,4,8151,77,8074,4,0,0,5,91,,,,0,0,1,2,1,94,7.4,0
-"[['09', 'Engineering']]",FALSE,Bright Side Science,"Engineering, Energy and Technology",47.26968,419,298,35,35,9196,101,9095,35,0,0,3,61,,,,14,3,3,16,10,185,9.4,0.2
-"[['1103', 'Clinical Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Environorama,Life Sciences,47.176679,418,269,17,17,10619,127,10492,17,0,0,4,79,,,,3,1,2,5,6,181,8.8,0
-"[['0912', 'Materials Engineering'], ['02', 'Physical Sciences'], ['0204', 'Condensed Matter Physics'], ['09', 'Engineering']]",FALSE,Learn Biosensor,Materials Science,46.005318,417,237,18,18,9067,118,8949,18,0,0,4,78,,,,5,1,4,9,5,169,6.8,0
-"[['01', 'Mathematical Sciences'], ['08', 'Information and Computing Sciences'], ['09', 'Engineering']]",FALSE,Unite Programming,Mathematics,44.310804,416,845,83,83,6372,50,6322,83,0,0,1,16,,,48,12,2,62,4,68,346,24,2.6
-"[['1109', 'Neurosciences'], ['17', 'Psychology and Cognitive Sciences'], ['1702', 'Cognitive Science'], ['11', 'Medical and Health Sciences']]",FALSE,Quake Cement,Neuroscience,41.882913,415,170,52,52,3493,51,3442,52,0,0,2,46,,,,28,10,6,5,39,124,4.6,0
-"[['09', 'Engineering'], ['01', 'Mathematical Sciences'], ['08', 'Information and Computing Sciences']]",FALSE,Imagine Computer,Computer Science,41.229243,414,318,35,35,8560,101,8459,17,19,0,3,61,2016-2019,,,7,0,3,4,4,214,10.4,0
-"[['11', 'Medical and Health Sciences'], ['1702', 'Cognitive Science'], ['17', 'Psychology and Cognitive Sciences'], ['1109', 'Neurosciences'], ['1701', 'Psychology']]",FALSE,Logical Journal,Neuroscience,40.03516,413,530,41,41,12761,147,12614,41,0,0,3,56,,,,26,8,1,12,32,291,22,0.2
-"[['0801', 'Artificial Intelligence and Image Processing'], ['0903', 'Biomedical Engineering'], ['0906', 'Electrical and Electronic Engineering'], ['08', 'Information and Computing Sciences'], ['09', 'Engineering']]",FALSE,Simple Industrial,Medicine,39.390209,412,113,22,22,3501,47,3454,22,0,0,4,74,,,,6,1,4,8,8,71,2.2,0.2
-"[['1702', 'Cognitive Science'], ['1109', 'Neurosciences'], ['1701', 'Psychology'], ['17', 'Psychology and Cognitive Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Achieve Academic,Neuroscience,38.621808,411,282,50,50,5475,73,5402,50,0,0,2,47,,,,22,8,2,11,28,172,9,0.2
-"[['1005', 'Communications Technologies'], ['0205', 'Optical Physics'], ['0906', 'Electrical and Electronic Engineering'], ['09', 'Engineering'], ['02', 'Physical Sciences'], ['10', 'Technology']]",FALSE,Recoil Trends,Physics and Astronomy,38.392816,410,255,12,12,8723,123,8600,12,0,0,4,84,,,,5,1,2,3,1,165,7,0.2
-"[['MD', 'Multidisciplinary']]",FALSE,Flamefluent,"Engineering, Energy and Technology",38.336784,409,354,37,37,8718,145,8573,37,0,0,3,60,,,,5,1,9,11,11,270,8.4,0
-"[['06', 'Biological Sciences'], ['0603', 'Evolutionary Biology'], ['0403', 'Geology'], ['0602', 'Ecology'], ['04', 'Earth Sciences']]",FALSE,Excel Finance,Earth and Planetary Sciences,37.161041,408,350,38,38,8136,50,8086,38,0,0,3,59,,,,3,1,5,21,11,95,19.6,0.6
-"[['0306', 'Physical Chemistry (incl. Structural)'], ['0301', 'Analytical Chemistry'], ['0303', 'Macromolecular and Materials Chemistry'], ['03', 'Chemical Sciences']]",FALSE,Learn Statistics,Chemistry and Chemical Engineering,36.878477,407,274,20,20,8233,130,8103,20,0,0,4,76,,,,0,0,3,15,2,190,8.4,0
-"[['17', 'Psychology and Cognitive Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Pioneer Quantitative,Neuroscience,36.668558,406,475,36,36,11370,166,11204,36,0,0,3,61,,,,20,5,3,9,25,303,9.2,0.8
-"[['1401', 'Economic Theory'], ['1502', 'Banking, Finance and Investment'], ['14', 'Economics'], ['1402', 'Applied Economics'], ['15', 'Commerce, Management, Tourism and Services']]",FALSE,Fuelhut,"Economics, Business and Management",35.79685,405,188,49,49,3439,41,3398,49,0,0,3,48,,,,34,1,4,6,22,94,7.4,0.2
-"[['07', 'Agricultural and Veterinary Sciences'], ['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]",FALSE,Growth American,Life Sciences,35.072121,404,1859,88,88,8161,61,8100,88,0,0,1,12,,,12,1,8,79,0,84,581,100.2,2.8
-"[['09', 'Engineering'], ['03', 'Chemical Sciences']]",FALSE,Programmingfluent,Chemistry and Chemical Engineering,34.970511,403,402,25,25,10694,209,10485,25,0,0,4,71,,,,8,2,5,13,6,330,7.2,0
-"[['0911', 'Maritime Engineering'], ['0905', 'Civil Engineering'], ['0405', 'Oceanography'], ['04', 'Earth Sciences'], ['09', 'Engineering']]",FALSE,Nurture Opinion,"Engineering, Energy and Technology",34.739889,402,238,32,32,5693,112,5581,32,0,0,3,64,,,,5,2,5,12,6,196,4.2,0
-"[['1107', 'Immunology'], ['1108', 'Medical Microbiology'], ['1113', 'Ophthalmology and Optometry'], ['11', 'Medical and Health Sciences']]",FALSE,Belief Statistics,Life Sciences,34.579897,401,222,27,27,5654,83,5571,27,0,0,4,69,,,,7,7,2,5,15,134,8.8,0
-"[['02', 'Physical Sciences'], ['04', 'Earth Sciences']]",FALSE,Flourish Trends,Earth and Planetary Sciences,34.012358,400,428,42,42,8591,91,8500,42,0,0,3,55,,,,10,14,3,11,24,183,20.6,0.4
-"[['0906', 'Electrical and Electronic Engineering'], ['02', 'Physical Sciences'], ['0299', 'Other Physical Sciences'], ['0204', 'Condensed Matter Physics'], ['09', 'Engineering']]",FALSE,Scienceara,"Engineering, Energy and Technology",33.801582,399,207,23,23,5525,102,5423,23,0,0,4,74,,,,11,5,6,9,12,155,5.2,0
-"[['0101', 'Pure Mathematics'], ['0802', 'Computation Theory and Mathematics'], ['08', 'Information and Computing Sciences'], ['0102', 'Applied Mathematics'], ['01', 'Mathematical Sciences']]",FALSE,Academic Clinic,Mathematics,33.797549,398,769,87,87,3510,21,3489,87,0,0,1,13,,,48,20,1,52,6,62,187,26.4,3.2
-"[['0502', 'Environmental Science and Management'], ['0704', 'Fisheries Sciences'], ['0602', 'Ecology'], ['05', 'Environmental Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]",FALSE,Push Cell,Agricultural and Biological Sciences,32.942267,397,209,35,35,4536,81,4455,35,0,0,3,61,,,,7,7,7,15,10,147,4.2,0.2
-"[['0102', 'Applied Mathematics'], ['0103', 'Numerical and Computational Mathematics'], ['01', 'Mathematical Sciences']]",FALSE,Dairycog,"Economics, Business and Management",32.392604,396,263,26,26,6431,104,6327,26,0,0,4,71,,,,11,1,3,7,8,165,9.8,0
-"[['0103', 'Numerical and Computational Mathematics'], ['0102', 'Applied Mathematics'], ['0801', 'Artificial Intelligence and Image Processing'], ['08', 'Information and Computing Sciences'], ['01', 'Mathematical Sciences']]",FALSE,Express Journal,Computer Science,31.826013,395,415,75,75,3357,58,3299,75,0,0,1,24,,,,4,0,52,15,52,272,8.4,0.6
-"[['0306', 'Physical Chemistry (incl. Structural)'], ['0399', 'Other Chemical Sciences'], ['0302', 'Inorganic Chemistry'], ['03', 'Chemical Sciences']]",FALSE,Pursue Journal,Chemistry and Chemical Engineering,31.322796,394,440,24,24,10678,188,10490,24,0,0,4,72,,,,8,1,8,6,10,291,15,0
-"[['0601', 'Biochemistry and Cell Biology'], ['1108', 'Medical Microbiology'], ['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]",FALSE,School Journal,Life Sciences,31.180727,393,359,52,52,5426,96,5330,52,0,0,2,45,,,18,0,5,43,2,45,238,12.2,0
-"[['1702', 'Cognitive Science'], ['1109', 'Neurosciences'], ['1701', 'Psychology'], ['17', 'Psychology and Cognitive Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Morph Clinic,Neuroscience,30.973995,392,541,28,28,12178,167,12011,28,0,0,4,68,,,,10,4,4,9,14,274,24.8,0.2
-"[['11', 'Medical and Health Sciences'], ['1115', 'Pharmacology and Pharmaceutical Sciences']]",FALSE,Matter Organizational,"Pharmacology, Pharmaceutical Science and Toxicology",30.276334,391,673,39,39,12696,160,12536,25,14,0,3,58,2017-2019,,,10,2,2,9,9,374,26,0.4
-"[['0601', 'Biochemistry and Cell Biology'], ['06', 'Biological Sciences']]",FALSE,Quake Science,Life Sciences,29.143573,390,329,62,62,3683,55,3628,62,0,0,2,36,,,,20,10,22,6,30,173,15.8,0
-"[['09', 'Engineering'], ['02', 'Physical Sciences']]",MAYBE,Energize Greening,"Engineering, Energy and Technology",29.097508,389,626,25,25,13805,220,13585,25,0,0,4,71,,,,6,2,3,9,5,347,26,0.2
-"[['1117', 'Public Health and Health Services'], ['1114', 'Paediatrics and Reproductive Medicine'], ['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Scholar Science,"Pharmacology, Pharmaceutical Science and Toxicology",28.797174,388,147,29,29,3044,29,3015,29,0,0,4,67,,,,6,0,2,6,8,48,6,0.4
-"[['11', 'Medical and Health Sciences'], ['1117', 'Public Health and Health Services'], ['1402', 'Applied Economics'], ['1403', 'Econometrics'], ['14', 'Economics']]",FALSE,Consumer Clinic,"Economics, Business and Management",28.459117,387,254,63,63,2771,58,2713,63,0,0,2,36,,,,39,8,6,4,38,181,7.4,0
-"[['09', 'Engineering'], ['15', 'Commerce, Management, Tourism and Services'], ['01', 'Mathematical Sciences']]",FALSE,Financelux,"Engineering, Energy and Technology",28.181745,386,474,43,43,7731,149,7582,43,0,0,3,54,,,,9,4,7,14,10,308,12.6,0.4
-"[['0906', 'Electrical and Electronic Engineering'], ['09', 'Engineering']]",FALSE,Tutor Journal,"Engineering, Energy and Technology",27.874221,385,306,32,32,5881,118,5763,32,0,0,3,64,,,,7,2,5,16,8,206,8,0.2
-"[['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]",FALSE,Veterinarynest,Medicine,27.757761,384,356,35,35,6562,132,6430,35,0,0,3,62,,,,8,1,3,13,10,238,9.8,0.2
-"[['02', 'Physical Sciences'], ['0912', 'Materials Engineering'], ['0204', 'Condensed Matter Physics'], ['09', 'Engineering']]",FALSE,Opinverse,Materials Science,27.352998,383,215,54,54,2767,48,2719,54,0,0,2,44,,,,13,15,18,8,33,123,7.6,0.2
-"[['03', 'Chemical Sciences'], ['0204', 'Condensed Matter Physics'], ['0306', 'Physical Chemistry (incl. Structural)'], ['09', 'Engineering'], ['0912', 'Materials Engineering'], ['02', 'Physical Sciences']]",MAYBE,Propel Current,Physics and Astronomy,27.050787,382,628,22,22,13577,290,13287,22,0,0,4,74,,,,3,2,2,12,4,437,13.2,0.6
-"[['05', 'Environmental Sciences'], ['03', 'Chemical Sciences'], ['06', 'Biological Sciences']]",FALSE,Swift Sensing,Environmental Sciences,26.359422,381,284,40,40,4560,97,4463,40,0,0,3,57,,,,9,7,5,9,15,192,9.2,0
-"[['1109', 'Neurosciences'], ['11', 'Medical and Health Sciences'], ['1701', 'Psychology'], ['1702', 'Cognitive Science'], ['17', 'Psychology and Cognitive Sciences']]",MAYBE,Flagship Crop,Neuroscience,26.326749,380,646,40,40,10344,167,10177,40,0,0,3,57,,,,23,7,4,10,28,328,31.8,0
-"[['0904', 'Chemical Engineering'], ['0306', 'Physical Chemistry (incl. Structural)'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]",FALSE,Loop Flame,Chemistry and Chemical Engineering,26.193666,379,254,19,19,5580,165,5415,19,0,0,4,77,,,,1,0,4,8,1,238,1.6,0
-"[['0704', 'Fisheries Sciences'], ['06', 'Biological Sciences'], ['0608', 'Zoology'], ['07', 'Agricultural and Veterinary Sciences']]",FALSE,Quiz Current,Agricultural and Biological Sciences,25.910855,378,460,25,25,9073,140,8933,25,0,0,4,71,,,,4,1,2,12,5,221,22,0.2
-"[['0303', 'Macromolecular and Materials Chemistry'], ['0904', 'Chemical Engineering'], ['0912', 'Materials Engineering'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]",FALSE,Field Journal,Materials Science,25.624378,377,430,29,29,8018,179,7839,29,0,0,4,68,,,,7,3,6,8,8,297,11.4,0.2
-"[['0402', 'Geochemistry'], ['0399', 'Other Chemical Sciences'], ['0405', 'Oceanography'], ['03', 'Chemical Sciences'], ['04', 'Earth Sciences']]",FALSE,Boffin Academic,Earth and Planetary Sciences,25.556349,376,320,52,52,4052,112,3940,52,0,0,2,46,,,,11,19,8,10,29,273,4.8,0
-"[['04', 'Earth Sciences'], ['0914', 'Resources Engineering and Extractive Metallurgy'], ['0403', 'Geology'], ['0904', 'Chemical Engineering'], ['09', 'Engineering']]",FALSE,Community Clinic,Earth and Planetary Sciences,25.555157,375,209,26,26,4096,126,3970,26,0,0,4,71,,,,2,1,7,9,2,199,1,0
-"[['0912', 'Materials Engineering'], ['0913', 'Mechanical Engineering'], ['0910', 'Manufacturing Engineering'], ['09', 'Engineering']]",MAYBE,Develop Veterinary,"Engineering, Energy and Technology",25.43958,374,694,31,31,12381,199,12182,31,0,0,3,66,,,,10,5,4,10,13,339,21.6,1.4
-"[['10', 'Technology'], ['02', 'Physical Sciences'], ['09', 'Engineering']]",FALSE,Shine Dairy,Physics and Astronomy,25.323819,373,591,15,15,12950,266,12684,15,0,0,4,80,,,,5,5,4,5,9,370,20.2,0.2
-"[['1401', 'Economic Theory'], ['1403', 'Econometrics'], ['1402', 'Applied Economics'], ['14', 'Economics']]",FALSE,Fortune Biological,"Economics, Business and Management",24.56125,372,447,58,58,4702,109,4593,58,0,0,2,40,,,,32,6,4,5,24,305,12.2,0.2
-"[['0912', 'Materials Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]",FALSE,Outlook Cement,Chemistry and Chemical Engineering,24.281131,371,228,20,20,4541,109,4432,20,0,0,4,76,,,,1,1,7,7,6,161,6.8,0
-"[['08', 'Information and Computing Sciences'], ['01', 'Mathematical Sciences'], ['06', 'Biological Sciences']]",FALSE,Propel Computer,Agricultural and Biological Sciences,23.55172,370,611,44,44,8283,157,8126,44,0,0,3,54,,,,17,7,4,9,19,327,26.4,0.2
-"[['03', 'Chemical Sciences'], ['0301', 'Analytical Chemistry'], ['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Refine Science,Chemistry and Chemical Engineering,23.486525,369,343,15,15,6960,153,6807,15,0,0,4,80,,,,4,0,2,6,5,213,11,0.2
-"[['0206', 'Quantum Physics'], ['02', 'Physical Sciences'], ['0105', 'Mathematical Physics'], ['0102', 'Applied Mathematics'], ['01', 'Mathematical Sciences']]",FALSE,Skill Trends,Physics and Astronomy,23.325328,368,420,26,26,7429,177,7252,26,0,0,4,70,,,,12,0,1,5,5,282,11.8,0.2
-"[['0901', 'Aerospace Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering'], ['0905', 'Civil Engineering']]",FALSE,Sage Journal,"Engineering, Energy and Technology",23.308292,367,383,30,30,6435,192,6243,30,0,0,3,66,,,,7,3,5,10,7,323,4,0.2
-"[['0301', 'Analytical Chemistry'], ['03', 'Chemical Sciences']]",FALSE,Pathway Coating,Chemistry and Chemical Engineering,22.693249,366,439,18,18,8416,219,8197,18,0,0,4,78,,,,4,2,3,9,5,313,8.6,0.4
-"[['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",MAYBE,Brave Research,"Pharmacology, Pharmaceutical Science and Toxicology",22.477633,365,729,39,39,10129,166,9963,39,0,0,3,58,,,,19,7,5,5,26,321,39,0.2
-"[['03', 'Chemical Sciences'], ['02', 'Physical Sciences'], ['0204', 'Condensed Matter Physics'], ['0912', 'Materials Engineering'], ['0306', 'Physical Chemistry (incl. Structural)'], ['09', 'Engineering']]",FALSE,Morph Journal,Chemistry and Chemical Engineering,22.317123,364,508,18,18,9429,181,9248,18,0,0,4,78,,,,3,3,4,8,6,260,20.8,0.4
-"[['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",FALSE,Progress Journal,Life Sciences,21.983772,363,295,40,40,3939,58,3881,40,0,0,3,57,,,,14,9,4,12,29,114,14.4,0.4
-"[['03', 'Chemical Sciences'], ['09', 'Engineering']]",MAYBE,Aware Polymers,Chemistry and Chemical Engineering,21.459489,362,636,19,19,11412,350,11062,19,0,0,4,77,,,,5,2,3,7,6,508,12.8,0
-"[['09', 'Engineering'], ['03', 'Chemical Sciences'], ['02', 'Physical Sciences']]",MAYBE,Flourish Proceedings,Chemistry and Chemical Engineering,21.204792,361,721,12,12,13755,369,13386,12,0,0,4,83,,,,4,0,2,4,3,496,18.6,0.4
-"[['1403', 'Econometrics'], ['1402', 'Applied Economics'], ['1401', 'Economic Theory'], ['14', 'Economics']]",FALSE,Home Neuro,"Economics, Business and Management",21.197238,360,431,49,49,4792,110,4682,49,0,0,3,49,,,,35,5,6,0,24,252,16,0.2
-"[['1402', 'Applied Economics'], ['1403', 'Econometrics'], ['0104', 'Statistics'], ['01', 'Mathematical Sciences'], ['14', 'Economics']]", ,Encourage Trends,"Economics, Business and Management",20.998241,359,597,60,60,5182,129,5053,60,0,0,2,38,,,,41,7,3,3,23,376,20.2,0.2
-"[['0604', 'Genetics'], ['06', 'Biological Sciences']]",FALSE,Growth Opinion,Life Sciences,20.785647,358,294,45,45,3464,71,3393,45,0,0,3,53,,,,22,10,5,7,33,152,12.4,0.2
-"[['0301', 'Analytical Chemistry'], ['0303', 'Macromolecular and Materials Chemistry'], ['0307', 'Theoretical and Computational Chemistry'], ['03', 'Chemical Sciences']]",FALSE,Professional Nutrition,Chemistry and Chemical Engineering,20.478948,357,392,18,18,6781,199,6582,18,0,0,4,78,,,,3,0,3,8,4,287,10.6,0
-"[['01', 'Mathematical Sciences'], ['04', 'Earth Sciences'], ['0401', 'Atmospheric Sciences'], ['0104', 'Statistics'], ['0907', 'Environmental Engineering'], ['09', 'Engineering']]", ,Surfacescape,Environmental Sciences,20.199247,356,854,30,30,12326,234,12092,30,0,0,4,67,,,,9,11,2,9,17,392,32.2,1.4
-"[['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences'], ['0305', 'Organic Chemistry'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['03', 'Chemical Sciences']]",FALSE,Fortune Dairy,Chemistry and Chemical Engineering,20.116801,355,386,31,31,5543,163,5380,31,0,0,3,66,,,,13,4,6,8,20,277,11,0
-"[['0913', 'Mechanical Engineering'], ['0906', 'Electrical and Electronic Engineering'], ['0912', 'Materials Engineering'], ['09', 'Engineering']]", ,Champions Trends,Chemistry and Chemical Engineering,20.031316,354,572,28,28,8503,215,8288,28,0,0,4,69,,,,4,2,3,14,5,351,18.2,0.4
-"[['17', 'Psychology and Cognitive Sciences'], ['11', 'Medical and Health Sciences'], ['08', 'Information and Computing Sciences']]",FALSE,Training Journal,Neuroscience,19.63139,353,386,51,51,3832,103,3729,51,0,0,2,47,,,,23,8,7,8,32,245,14.2,0
-"[['0601', 'Biochemistry and Cell Biology'], ['03', 'Chemical Sciences'], ['06', 'Biological Sciences'], ['0304', 'Medicinal and Biomolecular Chemistry']]",FALSE,Though Analyze,Chemistry and Chemical Engineering,19.624137,352,275,38,38,3407,72,3335,38,0,0,3,59,,,,14,9,3,2,28,138,13.8,0
-"[['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Techie Journal,"Pharmacology, Pharmaceutical Science and Toxicology",19.293009,351,455,28,28,6435,94,6341,28,0,0,4,69,,,,12,5,3,3,17,154,22.2,0.8
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Better Cement,Life Sciences,19.102537,350,384,51,51,3685,101,3584,51,0,0,2,46,,,,29,4,14,6,42,244,14.2,0
-"[['08', 'Information and Computing Sciences'], ['17', 'Psychology and Cognitive Sciences'], ['15', 'Commerce, Management, Tourism and Services']]",FALSE,Institute Journal,Computer Science,19.039701,349,173,27,27,2495,88,2407,27,0,0,4,70,,,,7,1,4,9,6,141,3.2,0
-"[['03', 'Chemical Sciences'], ['06', 'Biological Sciences'], ['0601', 'Biochemistry and Cell Biology'], ['0304', 'Medicinal and Biomolecular Chemistry']]",FALSE,Accel Accident,Life Sciences,18.814105,348,471,58,58,3848,105,3743,58,0,0,2,40,,,,18,16,16,5,35,292,18,0
-"[['0912', 'Materials Engineering'], ['0303', 'Macromolecular and Materials Chemistry'], ['0904', 'Chemical Engineering'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]", ,Cabin International,Materials Science,18.780985,347,520,16,16,8456,230,8226,16,0,0,4,80,,,,6,2,3,4,8,321,18,0.2
-"[['01', 'Mathematical Sciences'], ['09', 'Engineering'], ['08', 'Information and Computing Sciences']]", ,Academadil,"Engineering, Energy and Technology",18.761704,346,516,43,43,5614,117,5497,43,0,0,3,54,,,,21,3,4,9,13,243,21.4,0.6
-"[['09', 'Engineering'], ['10', 'Technology'], ['06', 'Biological Sciences']]",FALSE,Jewel Computer,Life Sciences,18.708488,345,474,11,11,8091,203,7888,11,0,0,4,84,,,,4,4,2,4,8,269,20.6,0
-"[['0102', 'Applied Mathematics'], ['1401', 'Economic Theory'], ['1502', 'Banking, Finance and Investment'], ['14', 'Economics'], ['15', 'Commerce, Management, Tourism and Services'], ['01', 'Mathematical Sciences']]",FALSE,Roads Academic,"Economics, Business and Management",18.464831,344,428,32,32,5511,119,5392,32,0,0,3,65,,,,26,3,2,5,15,205,14.4,0.8
-"[['03', 'Chemical Sciences'], ['09', 'Engineering']]",FALSE,Roads Urban,Chemistry and Chemical Engineering,18.441038,343,335,27,27,4658,142,4516,27,0,0,4,69,,,,12,4,9,9,17,228,10.8,0
-"[['0607', 'Plant Biology'], ['06', 'Biological Sciences']]",FALSE,Visionary Veterinary,Agricultural and Biological Sciences,18.31002,342,354,26,26,4940,125,4815,26,0,0,4,71,,,,5,1,3,13,6,198,15.6,0
-"[['17', 'Psychology and Cognitive Sciences'], ['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Fast Sensing,Neuroscience,18.173107,341,852,42,42,9250,214,9036,42,0,0,3,55,,,,20,5,4,8,26,431,34.2,0.8
-"[['03', 'Chemical Sciences'], ['09', 'Engineering']]",FALSE,Guardian Nutrition,Materials Science,17.773434,340,449,38,38,5112,123,4989,38,0,0,3,59,,,,7,0,21,13,13,232,20,0.2
-"[['MD', 'Multidisciplinary']]",MAYBE,Keys Journal,Environmental Sciences,17.746806,339,839,39,39,9296,222,9074,26,13,0,3,58,2016-2019,,,3,2,4,10,5,502,29.8,0.4
-"[['0305', 'Organic Chemistry'], ['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['03', 'Chemical Sciences']]", ,Materialiabes,Chemistry and Chemical Engineering,17.64134,338,515,24,24,7106,240,6866,24,0,0,4,72,,,,14,4,6,6,20,374,12.2,0.2
-"[['09', 'Engineering']]", ,Propel Programming,Materials Science,17.542146,337,717,31,31,8873,175,8698,15,15,0,3,66,2016-2019,,,3,2,2,5,5,373,24.4,1
-"[['09', 'Engineering'], ['0908', 'Food Sciences']]",MAYBE,Mente Forestry,"Pharmacology, Pharmaceutical Science and Toxicology",17.535004,336,441,20,20,6355,193,6162,20,0,0,4,76,,,,2,4,4,5,7,286,11.6,0.4
-"[['1108', 'Medical Microbiology'], ['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Cabin Dairy,,17.332593,335,216,24,24,2943,78,2865,24,0,0,4,73,,,,5,1,6,7,12,121,9.6,0
-"[['0606', 'Physiology'], ['0608', 'Zoology'], ['0604', 'Genetics'], ['06', 'Biological Sciences']]",MAYBE,Owl Trends,Agricultural and Biological Sciences,17.221856,334,423,36,36,4731,75,4656,36,0,0,3,61,,,,7,7,9,18,14,138,28.8,0
-"[['2101', 'Archaeology'], ['0603', 'Evolutionary Biology'], ['1601', 'Anthropology'], ['16', 'Studies in Human Society'], ['06', 'Biological Sciences'], ['21', 'History and Archaeology']]",FALSE,Trainer Fuel,Life Sciences,17.178562,333,263,34,34,3020,55,2965,34,0,0,3,62,,,,11,7,6,11,12,98,12.6,0.4
-"[['1103', 'Clinical Sciences'], ['1109', 'Neurosciences'], ['11', 'Medical and Health Sciences']]",FALSE,Academish,Neuroscience,17.097469,332,460,39,39,4939,161,4778,39,0,0,3,58,,,,27,10,6,4,36,312,12.8,0.2
-"[['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]", ,Biologyopolis,Neuroscience,17.026078,331,541,51,51,4633,126,4507,51,0,0,2,46,,,,20,14,7,11,29,302,22,0.2
-"[['03', 'Chemical Sciences'], ['0306', 'Physical Chemistry (incl. Structural)']]",FALSE,Achieve Research,Chemistry and Chemical Engineering,16.802695,330,490,32,32,5751,196,5555,16,16,0,3,64,2016-2019,,,1,1,4,9,2,370,8,0.4
-"[['MD', 'Multidisciplinary']]", ,Range Insect,Environmental Sciences,16.503954,329,689,38,38,7195,178,7017,38,0,0,3,59,,,,11,7,6,15,19,340,29,0.6
-"[['16', 'Studies in Human Society']]",FALSE,Logical Science,Social and Behavioral Sciences,16.344103,328,197,45,45,1827,65,1762,45,0,0,3,52,,,,8,4,4,16,11,140,5.8,0
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences'], ['0605', 'Microbiology'], ['1108', 'Medical Microbiology']]",FALSE,Crown Veterinary,Life Sciences,16.191399,327,485,56,56,3518,99,3419,46,11,0,2,41,2017-2019,,,25,10,5,7,33,311,15.6,0.2
-"[['0913', 'Mechanical Engineering'], ['0904', 'Chemical Engineering'], ['0912', 'Materials Engineering'], ['09', 'Engineering']]",FALSE,Flourish Journal,Materials Science,16.003549,326,194,24,24,2416,67,2349,24,0,0,4,72,,,,3,1,4,11,3,105,7,0.2
-"[['14', 'Economics']]",MAYBE,Succeed Veterinary,"Economics, Business and Management",15.86116,325,468,37,37,4831,177,4654,37,0,0,3,60,,,,23,3,5,3,15,332,7.6,0.6
-"[['0912', 'Materials Engineering'], ['0204', 'Condensed Matter Physics'], ['0303', 'Macromolecular and Materials Chemistry'], ['03', 'Chemical Sciences'], ['09', 'Engineering'], ['02', 'Physical Sciences']]",FALSE,Dish Dairy,Materials Science,15.510313,324,387,13,13,5447,194,5253,13,0,0,4,83,,,,3,0,1,8,2,262,12.6,0
-"[['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",FALSE,Brain Technology,"Pharmacology, Pharmaceutical Science and Toxicology",15.481869,323,196,34,34,2034,42,1992,34,0,0,3,62,,,,1,23,4,5,25,75,4.2,0.8
-"[['17', 'Psychology and Cognitive Sciences'], ['11', 'Medical and Health Sciences']]", ,Cognitive Journal,Medicine,15.46415,322,691,31,31,7713,308,7405,31,0,0,3,66,,,,10,5,4,4,12,524,12.8,0.4
-"[['15', 'Commerce, Management, Tourism and Services'], ['17', 'Psychology and Cognitive Sciences'], ['1701', 'Psychology'], ['1507', 'Transportation and Freight Services']]",FALSE,Expand Programming,Social and Behavioral Sciences,15.352243,321,148,29,29,1668,65,1603,29,0,0,4,67,,,,5,2,4,6,7,108,2,0.2
-"[['MD', 'Multidisciplinary']]",FALSE,Squad Math,Social and Behavioral Sciences,15.258921,320,156,41,41,1443,43,1400,41,0,0,3,56,,,,15,1,7,8,15,87,7,0
-"[['12', 'Built Environment and Design'], ['15', 'Commerce, Management, Tourism and Services']]",FALSE,Meetup Qualitative,"Economics, Business and Management",15.168792,319,215,27,27,2452,75,2377,27,0,0,4,69,,,,27,1,7,7,25,120,9.6,0
-"[['03', 'Chemical Sciences'], ['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",MAYBE,Skill Corporate,Chemistry and Chemical Engineering,14.862141,318,837,25,25,9580,223,9357,25,0,0,4,71,,,,6,6,6,7,10,349,45,0.4
-"[['09', 'Engineering'], ['12', 'Built Environment and Design']]",FALSE,Prodigy Trends,"Engineering, Energy and Technology",14.744556,317,389,29,29,4193,143,4050,29,0,0,4,67,,,,5,1,3,13,6,239,13,0.2
-"[['1114', 'Paediatrics and Reproductive Medicine'], ['11', 'Medical and Health Sciences']]",FALSE,Advance Cement,Medicine,14.621973,316,263,56,56,1753,74,1679,56,0,0,2,42,,,,5,0,48,1,31,199,6.4,0
-"[['09', 'Engineering']]",FALSE,Digital Industrial,Materials Science,14.589443,315,866,29,29,9276,346,8930,29,0,0,4,67,,,,6,1,1,16,5,577,17,1.2
-"[['0913', 'Mechanical Engineering'], ['0905', 'Civil Engineering'], ['09', 'Engineering']]",FALSE,Pursue Sensing,"Engineering, Energy and Technology",14.581198,314,321,25,25,3643,143,3500,25,0,0,4,71,,,,6,2,4,8,4,226,5.6,0.4
-"[['02', 'Physical Sciences'], ['01', 'Mathematical Sciences'], ['09', 'Engineering']]", ,Definite Dairy,"Engineering, Energy and Technology",14.539223,313,1045,54,54,7154,165,6989,54,0,0,2,44,,,,14,7,6,14,16,423,44.4,1.8
-"[['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]",FALSE,Magnet Science,,14.487334,312,79,21,21,924,25,899,21,0,0,4,75,,,,3,0,16,5,22,37,4.2,0
-"[['14', 'Economics'], ['16', 'Studies in Human Society'], ['11', 'Medical and Health Sciences']]",MAYBE,Egghead Research,Social and Behavioral Sciences,14.234034,311,1212,45,45,9797,374,9423,45,0,0,3,52,,,,26,13,3,2,35,805,24.8,1.6
-"[['0102', 'Applied Mathematics'], ['0913', 'Mechanical Engineering'], ['0915', 'Interdisciplinary Engineering'], ['01', 'Mathematical Sciences'], ['09', 'Engineering']]", ,Evolution Quantitative,"Engineering, Energy and Technology",14.04388,310,584,35,35,5476,172,5304,35,0,0,3,61,,,,12,4,3,10,11,312,19.2,0.8
-[],FALSE,Forge Biological,Agricultural and Biological Sciences,14.039526,309,188,16,16,2287,53,2234,16,0,0,4,80,,,,3,1,4,6,3,73,1.6,1
-"[['MD', 'Multidisciplinary']]",FALSE,Prodigy Global,Environmental Sciences,14.017189,308,330,26,26,3573,145,3428,26,0,0,4,70,,,,6,3,6,11,8,230,8,0.2
-"[['0102', 'Applied Mathematics'], ['0915', 'Interdisciplinary Engineering'], ['09', 'Engineering'], ['0913', 'Mechanical Engineering'], ['01', 'Mathematical Sciences']]",FALSE,Analyzebea,"Engineering, Energy and Technology",13.961866,307,227,19,19,2641,69,2572,19,0,0,4,77,,,,2,0,3,12,2,100,8.8,0.4
-"[['0608', 'Zoology'], ['06', 'Biological Sciences']]",FALSE,Journado,Life Sciences,13.947506,306,286,34,34,2673,36,2637,34,0,0,3,63,,,,3,0,5,15,14,64,22.4,0
-"[['09', 'Engineering'], ['02', 'Physical Sciences'], ['03', 'Chemical Sciences']]", ,Motivate Science,"Engineering, Energy and Technology",13.936471,305,511,22,22,5702,142,5560,22,0,0,4,74,,,,7,3,4,6,9,214,21.8,0.8
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences'], ['0604', 'Genetics'], ['1108', 'Medical Microbiology'], ['0606', 'Physiology']]",MAYBE,Jumpstart Journal,Life Sciences,13.922087,304,855,14,14,10493,283,10210,14,0,0,4,81,,,,3,1,2,6,5,388,42.8,0.4
-"[['14', 'Economics'], ['1503', 'Business and Management'], ['1402', 'Applied Economics'], ['1505', 'Marketing'], ['15', 'Commerce, Management, Tourism and Services']]", ,Journlux,"Economics, Business and Management",13.783776,303,620,50,50,4446,173,4273,50,0,0,2,47,,,,13,8,6,10,17,407,17.4,0.4
-"[['11', 'Medical and Health Sciences'], ['1115', 'Pharmacology and Pharmaceutical Sciences']]",FALSE,Invision Science,"Pharmacology, Pharmaceutical Science and Toxicology",13.754228,302,205,24,24,2235,86,2149,24,0,0,4,72,,,,9,1,4,3,10,134,7.2,0
-"[['0306', 'Physical Chemistry (incl. Structural)'], ['0303', 'Macromolecular and Materials Chemistry'], ['09', 'Engineering'], ['0912', 'Materials Engineering'], ['03', 'Chemical Sciences']]", ,Neuro Computer,Materials Science,13.533674,301,748,15,15,8902,297,8605,15,0,0,4,81,,,,5,5,4,3,10,410,31.8,0.2
-"[['0102', 'Applied Mathematics'], ['0104', 'Statistics'], ['1403', 'Econometrics'], ['14', 'Economics'], ['01', 'Mathematical Sciences']]",MAYBE,Dream Global,Mathematics,13.431824,300,380,35,35,3419,91,3328,35,0,0,3,62,,,,19,1,5,5,12,165,5.6,1.6
-"[['0204', 'Condensed Matter Physics'], ['09', 'Engineering'], ['0906', 'Electrical and Electronic Engineering'], ['0912', 'Materials Engineering'], ['02', 'Physical Sciences']]", ,Source Science,Physics and Astronomy,13.381979,299,405,17,17,4704,190,4514,17,0,0,4,79,,,,6,2,1,7,5,268,11.8,0.2
-"[['11', 'Medical and Health Sciences'], ['0605', 'Microbiology'], ['1108', 'Medical Microbiology'], ['06', 'Biological Sciences']]", ,Home Journal,Life Sciences,13.353852,298,570,56,56,3518,135,3383,41,14,0,2,42,2016-2019,,,16,8,10,7,29,410,16.2,0
-"[['0702', 'Animal Production'], ['07', 'Agricultural and Veterinary Sciences']]", ,Professional Solar,Agricultural and Biological Sciences,13.294942,297,370,24,24,3857,123,3734,24,0,0,4,72,,,,8,2,6,9,9,191,12,0.6
-"[['08', 'Information and Computing Sciences'], ['01', 'Mathematical Sciences'], ['09', 'Engineering']]", ,Specialist Quantitative,Computer Science,13.166729,296,771,39,39,6459,224,6235,18,21,0,3,58,2016-2019,,,9,1,2,4,7,515,21.6,0.4
-"[['06', 'Biological Sciences'], ['1108', 'Medical Microbiology'], ['0605', 'Microbiology'], ['11', 'Medical and Health Sciences']]", ,Valiant Current,Life Sciences,13.10689,295,730,34,34,6502,192,6310,34,0,0,3,63,,,,9,8,6,15,19,342,31,0.8
-"[['05', 'Environmental Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]", ,Guardian Journal,Agricultural and Biological Sciences,13.032764,294,899,29,29,8652,294,8358,29,0,0,4,68,,,,5,5,4,14,10,485,33.4,0.8
-"[['09', 'Engineering'], ['03', 'Chemical Sciences']]", ,Future Cell,Chemistry and Chemical Engineering,12.990658,293,582,14,14,6761,281,6480,14,0,0,4,81,,,,4,1,3,5,4,386,15.6,0.4
-"[['0606', 'Physiology'], ['0608', 'Zoology'], ['0707', 'Veterinary Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]", ,Hurdle Science,Life Sciences,12.910926,292,581,32,32,5165,100,5065,32,0,0,3,64,,,,6,5,4,17,11,174,36.8,0.4
-"[['14', 'Economics'], ['16', 'Studies in Human Society']]", ,Coatingaza,Social and Behavioral Sciences,12.743654,291,677,46,46,4895,232,4663,46,0,0,3,51,,,,17,15,4,5,26,505,17.2,0
-"[['0806', 'Information Systems'], ['0899', 'Other Information and Computing Sciences'], ['08', 'Information and Computing Sciences']]", ,Financepad,Computer Science,12.689684,290,201,20,20,2145,111,2034,20,0,0,4,76,,,,6,1,7,6,7,163,1.8,0.2
-"[['0913', 'Mechanical Engineering'], ['0912', 'Materials Engineering'], ['0905', 'Civil Engineering'], ['09', 'Engineering']]", ,Success Journal,Materials Science,12.67549,289,706,25,25,6953,268,6685,25,0,0,4,71,,,,5,3,2,12,6,422,20.4,0.8
-"[['MD', 'Multidisciplinary']]",TRUE,Focus Materialia,Physics and Astronomy,12.596997,288,1533,18,18,16673,764,15909,18,0,0,4,78,,,,2,1,1,12,3,1091,34.2,1
-"[['0912', 'Materials Engineering'], ['09', 'Engineering']]", ,Soar Nutrition,Materials Science,12.558059,287,657,25,25,6399,227,6172,25,0,0,4,71,,,,5,3,3,14,5,357,20,1
-"[['02', 'Physical Sciences'], ['01', 'Mathematical Sciences'], ['08', 'Information and Computing Sciences']]",TRUE,Aware Trends,Physics and Astronomy,12.554462,286,990,56,56,5588,138,5450,56,0,0,2,42,,,,34,10,5,8,26,370,56.2,0.6
-"[['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences'], ['09', 'Engineering']]", ,Foster Science,Social and Behavioral Sciences,12.46989,285,294,31,31,2636,98,2538,31,0,0,3,66,,,,7,5,7,5,12,167,8.8,0.4
-"[['1108', 'Medical Microbiology'], ['0605', 'Microbiology'], ['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]", ,Advisor Journal,Life Sciences,12.467104,284,558,29,29,5167,222,4945,29,0,0,4,68,,,,7,5,4,12,12,367,17.2,0.2
-"[['0601', 'Biochemistry and Cell Biology'], ['0607', 'Plant Biology'], ['06', 'Biological Sciences']]", ,Foster Journal,Medicine,12.465319,283,525,27,27,4981,202,4779,27,0,0,4,69,,,,11,6,4,8,15,326,16,0.4
-"[['0904', 'Chemical Engineering'], ['0301', 'Analytical Chemistry'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]", ,Influence Journal,Chemistry and Chemical Engineering,12.270734,282,459,26,26,4349,196,4153,26,0,0,4,70,,,,2,2,3,15,3,313,10.6,0.4
-"[['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]", ,Possible Research,Agricultural and Biological Sciences,12.269482,281,500,21,21,5071,191,4880,21,0,0,4,75,,,,4,1,2,11,5,283,13.8,0.8
-"[['08', 'Information and Computing Sciences'], ['17', 'Psychology and Cognitive Sciences'], ['09', 'Engineering']]", ,Pursuit Science,Computer Science,12.235931,280,459,15,15,5031,247,4784,15,0,0,4,81,,,,9,1,3,3,8,341,9.8,0.2
-"[['07', 'Agricultural and Veterinary Sciences'], ['05', 'Environmental Sciences']]", ,Clever Journal,Agricultural and Biological Sciences,12.205328,279,805,45,45,5654,234,5420,45,0,0,3,52,,,,7,19,8,9,25,499,24.8,0.6
-"[['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['11', 'Medical and Health Sciences']]", ,Start Journal,Life Sciences,12.194605,278,401,44,44,2848,101,2747,44,0,0,3,53,,,,15,10,10,8,29,212,15,0.4
-"[['09', 'Engineering'], ['03', 'Chemical Sciences']]",TRUE,Blue Sky Research,Materials Science,12.14301,277,1520,22,22,15004,615,14389,22,0,0,4,74,,,,5,4,5,7,9,929,47.2,1.2
-"[['MD', 'Multidisciplinary']]", ,Arrive Cell,Medicine,11.867659,276,782,37,37,6058,217,5841,20,17,0,3,60,2016-2019,,,7,2,5,5,6,487,13.6,1.6
-"[['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]",TRUE,Ademia Applied,Neuroscience,11.82644,275,416,46,46,2700,60,2640,46,0,0,3,51,,,,20,6,3,9,26,131,22.6,0.6
-"[['0104', 'Statistics'], ['01', 'Mathematical Sciences']]", ,Push Polymers,Mathematics,11.814176,274,334,29,29,2926,109,2817,29,0,0,4,68,,,,28,4,5,3,20,180,7.6,0.8
-"[['11', 'Medical and Health Sciences']]", ,Learn Quantitative,Life Sciences,11.794178,273,466,31,31,3932,153,3779,31,0,0,3,65,,,,15,3,4,6,18,262,12.4,0.8
-"[['06', 'Biological Sciences'], ['05', 'Environmental Sciences']]",FALSE,Recoil Science,Environmental Sciences,11.7837,272,130,36,36,1024,42,982,36,0,0,3,61,,,,12,1,4,16,7,76,5.4,0
-"[['03', 'Chemical Sciences'], ['08', 'Information and Computing Sciences'], ['06', 'Biological Sciences']]",FALSE,Swift Science,Life Sciences,11.751971,271,646,79,79,1650,45,1605,79,0,0,1,20,,,12,2,11,62,3,71,252,31.6,0.8
-"[['1402', 'Applied Economics'], ['14', 'Economics']]", ,Matter Remote,Social and Behavioral Sciences,11.730764,270,286,46,46,1899,100,1799,46,0,0,3,51,,,,18,6,5,4,15,219,6.8,0
-"[['09', 'Engineering'], ['11', 'Medical and Health Sciences'], ['0913', 'Mechanical Engineering'], ['1106', 'Human Movement and Sports Science'], ['0903', 'Biomedical Engineering']]", ,Recoil Academic,Medicine,11.661797,269,1093,39,39,8061,323,7738,39,0,0,3,58,,,,23,6,5,7,28,626,38.8,0.8
-"[['09', 'Engineering'], ['1003', 'Industrial Biotechnology'], ['0601', 'Biochemistry and Cell Biology'], ['0904', 'Chemical Engineering'], ['10', 'Technology'], ['06', 'Biological Sciences']]", ,Dynamo Journal,Chemistry and Chemical Engineering,11.601884,268,342,22,22,3204,105,3099,22,0,0,4,74,,,,6,1,4,8,7,158,10.4,0.8
-"[['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['04', 'Earth Sciences']]",TRUE,Possible Dairy,Earth and Planetary Sciences,11.576369,267,1505,67,67,5907,181,5726,67,0,0,2,31,,,,5,7,24,24,30,649,63.8,2.2
-"[['0910', 'Manufacturing Engineering'], ['0913', 'Mechanical Engineering'], ['0912', 'Materials Engineering'], ['09', 'Engineering']]", ,Access University,"Engineering, Energy and Technology",11.572878,266,698,22,22,6557,290,6267,22,0,0,4,74,,,,3,2,3,9,5,440,17.8,0.8
-"[['06', 'Biological Sciences'], ['03', 'Chemical Sciences'], ['11', 'Medical and Health Sciences']]", ,Jockey Biological,Life Sciences,11.552376,265,539,52,52,3108,116,2992,52,0,0,2,46,,,,21,4,9,7,31,283,25.8,0
-"[['05', 'Environmental Sciences'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]", ,Pioneer Review,Chemistry and Chemical Engineering,11.365522,264,1013,24,24,9070,349,8721,24,0,0,4,72,,,,3,1,3,13,3,542,41.2,0.6
-"[['0806', 'Information Systems'], ['0801', 'Artificial Intelligence and Image Processing'], ['0102', 'Applied Mathematics'], ['08', 'Information and Computing Sciences'], ['01', 'Mathematical Sciences']]", ,Research Trends,"Engineering, Energy and Technology",11.321628,263,197,46,46,1268,69,1199,17,29,0,3,51,2016-2019,,,4,1,4,3,5,167,3,0
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]", ,Instructor Journal,Neuroscience,11.194997,262,554,37,37,4038,138,3900,37,0,0,3,60,,,,8,2,6,1,11,258,27.6,0.2
-"[['0601', 'Biochemistry and Cell Biology'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['1101', 'Medical Biochemistry and Metabolomics'], ['11', 'Medical and Health Sciences'], ['03', 'Chemical Sciences'], ['06', 'Biological Sciences']]", ,Succeed Computer,Life Sciences,11.168667,261,637,18,18,6049,241,5808,18,0,0,4,78,,,,6,1,4,1,8,347,29,0
-"[['1114', 'Paediatrics and Reproductive Medicine'], ['1106', 'Human Movement and Sports Science'], ['11', 'Medical and Health Sciences']]", ,Wise Veterinary,Medicine,11.164089,260,340,50,50,1993,79,1914,50,0,0,3,48,,,,10,0,28,6,30,184,11.6,0.4
-"[['0399', 'Other Chemical Sciences'], ['0302', 'Inorganic Chemistry'], ['03', 'Chemical Sciences'], ['0305', 'Organic Chemistry']]", ,Workshop Veterinary,Chemistry and Chemical Engineering,11.087412,259,863,27,27,7255,275,6980,27,0,0,4,69,,,,5,3,7,12,8,444,42,0
-"[['0601', 'Biochemistry and Cell Biology'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['06', 'Biological Sciences'], ['1101', 'Medical Biochemistry and Metabolomics'], ['11', 'Medical and Health Sciences'], ['03', 'Chemical Sciences']]",TRUE,Propel Journal,Life Sciences,11.045144,258,1495,22,22,13395,466,12929,22,0,0,4,74,,,,5,5,2,7,10,700,73.6,0.6
-"[['0299', 'Other Physical Sciences'], ['0202', 'Atomic, Molecular, Nuclear, Particle and Plasma Physics'], ['0201', 'Astronomical and Space Sciences'], ['02', 'Physical Sciences']]",TRUE,Social Cell,Physics and Astronomy,10.897991,257,1450,37,37,10070,81,9989,37,0,0,3,60,,,,15,9,5,1,16,151,98,3.2
-"[['07', 'Agricultural and Veterinary Sciences'], ['0607', 'Plant Biology'], ['0703', 'Crop and Pasture Production'], ['06', 'Biological Sciences']]",TRUE,Morph Sensing,Agricultural and Biological Sciences,10.735756,256,1189,36,36,8524,309,8215,36,0,0,3,61,,,,4,7,5,14,9,564,34.6,2.8
-"[['1607', 'Social Work'], ['1602', 'Criminology'], ['1701', 'Psychology'], ['16', 'Studies in Human Society'], ['17', 'Psychology and Cognitive Sciences']]", ,Agile Insect,Social and Behavioral Sciences,10.720977,255,522,41,41,3542,218,3324,41,0,0,3,56,,,,11,5,7,12,15,433,9,0
-"[['0912', 'Materials Engineering'], ['0913', 'Mechanical Engineering'], ['0905', 'Civil Engineering'], ['09', 'Engineering']]", ,Loop Biosensor,"Engineering, Energy and Technology",10.699283,254,854,47,47,5035,155,4880,47,0,0,3,51,,,,7,4,7,20,10,342,31.4,2
-"[['07', 'Agricultural and Veterinary Sciences'], ['16', 'Studies in Human Society'], ['05', 'Environmental Sciences']]", ,Professional Cell,Environmental Sciences,10.688878,253,284,44,44,1807,101,1706,44,0,0,3,53,,,,9,18,5,7,25,212,7.2,0
-"[['MD', 'Multidisciplinary']]", ,Push Quantitative,Environmental Sciences,10.420873,252,1293,22,22,11038,502,10536,22,0,0,4,74,,,,3,1,3,9,4,756,39.8,1.4
-"[['09', 'Engineering']]", ,Knowledge Scripta,Chemistry and Chemical Engineering,10.357649,251,744,36,36,5154,191,4963,36,0,0,3,61,,,,10,4,7,9,13,350,31.6,0.8
-"[['0601', 'Biochemistry and Cell Biology'], ['0301', 'Analytical Chemistry'], ['0399', 'Other Chemical Sciences'], ['06', 'Biological Sciences'], ['03', 'Chemical Sciences']]", ,Cognitive Analyze,Life Sciences,10.351031,250,1010,27,27,8029,361,7668,27,0,0,4,70,,,,12,4,2,7,18,579,41.2,0.2
-"[['11', 'Medical and Health Sciences']]", ,Physicsopedia,Medicine,10.298034,249,399,66,66,1434,30,1404,66,0,0,2,32,,,,12,14,39,5,61,104,21.6,0.8
-"[['09', 'Engineering'], ['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]", ,Techie Renewable,Neuroscience,10.135882,248,309,17,17,2762,151,2611,17,0,0,4,79,,,,4,0,8,2,7,213,5.6,0.4
-"[['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]", ,Chalk Econ,Life Sciences,9.997625,247,726,52,52,3643,155,3488,52,0,0,2,46,,,,22,10,8,4,35,379,35,0
-"[['0301', 'Analytical Chemistry'], ['0399', 'Other Chemical Sciences'], ['03', 'Chemical Sciences']]",TRUE,Spur Computer,Chemistry and Chemical Engineering,9.929095,246,1720,19,19,14458,617,13841,19,0,0,4,77,,,,4,1,5,5,5,895,66.6,1.6
-"[['0608', 'Zoology'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['0601', 'Biochemistry and Cell Biology'], ['03', 'Chemical Sciences'], ['06', 'Biological Sciences']]", ,Flameable,Agricultural and Biological Sciences,9.870993,245,734,42,42,4355,125,4230,42,0,0,3,55,,,,14,10,11,10,24,253,40.6,0.8
-"[['09', 'Engineering'], ['12', 'Built Environment and Design'], ['05', 'Environmental Sciences']]", ,Research Polymers,Environmental Sciences,9.782614,244,550,33,33,3815,224,3591,33,0,0,3,63,,,,5,9,6,9,12,395,13.6,0.2
-"[['0915', 'Interdisciplinary Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]", ,Excellence Journal,Chemistry and Chemical Engineering,9.765395,243,642,21,21,5281,304,4977,21,0,0,4,75,,,,5,1,2,11,4,450,15.2,0.4
-"[['MD', 'Multidisciplinary']]",TRUE,Journscape,Earth and Planetary Sciences,9.759058,242,1723,32,32,11958,454,11504,32,0,0,3,65,,,,8,4,5,13,10,780,76.4,1.8
-"[['03', 'Chemical Sciences'], ['09', 'Engineering']]",TRUE,Smart Computer,Chemistry and Chemical Engineering,9.742602,241,1308,25,25,10147,622,9525,25,0,0,4,71,,,,5,2,3,13,6,979,29,0.4
-"[['0906', 'Electrical and Electronic Engineering'], ['09', 'Engineering']]", ,Crave Nutrition,"Engineering, Energy and Technology",9.721571,240,512,22,22,4073,186,3887,22,0,0,4,74,,,,5,3,5,8,8,280,11.2,1.2
-"[['0906', 'Electrical and Electronic Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]", ,Access Programming,"Engineering, Energy and Technology",9.651521,239,983,16,16,8481,469,8012,16,0,0,4,80,,,,3,1,3,7,5,653,23,1
-"[['0904', 'Chemical Engineering'], ['1115', 'Pharmacology and Pharmaceutical Sciences'], ['0903', 'Biomedical Engineering'], ['11', 'Medical and Health Sciences'], ['09', 'Engineering']]",TRUE,Drive Nutrition,"Pharmacology, Pharmaceutical Science and Toxicology",9.622393,238,1081,33,33,7274,269,7005,33,0,0,3,64,,,,20,8,5,5,28,470,51.2,1
-"[['0306', 'Physical Chemistry (incl. Structural)'], ['0904', 'Chemical Engineering'], ['03', 'Chemical Sciences'], ['09', 'Engineering']]",TRUE,Rising Biological,Chemistry and Chemical Engineering,9.56345,237,1750,23,23,13656,843,12813,23,0,0,4,73,,,,5,3,5,12,7,1295,39.6,0.6
-"[['08', 'Information and Computing Sciences'], ['0805', 'Distributed Computing'], ['0806', 'Information Systems'], ['0807', 'Library and Information Studies']]", ,Squad American,"Economics, Business and Management",9.539519,236,293,36,36,1882,89,1793,36,0,0,3,61,,,,5,4,10,6,12,164,7,0.6
-"[['0204', 'Condensed Matter Physics'], ['0306', 'Physical Chemistry (incl. Structural)'], ['0912', 'Materials Engineering'], ['09', 'Engineering'], ['03', 'Chemical Sciences'], ['02', 'Physical Sciences']]", ,Trendsable,Physics and Astronomy,9.467295,235,526,22,22,4088,213,3875,22,0,0,4,74,,,,3,0,4,7,3,322,16.4,0.4
-"[['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences'], ['05', 'Environmental Sciences']]", ,Champions Renewable,Environmental Sciences,9.432786,234,1104,43,43,6241,314,5927,43,0,0,3,54,,,,9,9,10,15,15,649,45.6,0
-"[['0601', 'Biochemistry and Cell Biology'], ['0706', 'Horticultural Production'], ['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]", ,Fountain Conduct,Agricultural and Biological Sciences,9.330734,233,596,30,30,4147,265,3882,30,0,0,3,66,,,,2,2,5,19,5,446,13,0.2
-"[['0914', 'Resources Engineering and Extractive Metallurgy'], ['09', 'Engineering'], ['0904', 'Chemical Engineering']]", ,Guide Research,,9.296492,232,380,16,16,3139,166,2973,16,0,0,4,80,,,,6,1,6,0,6,233,6.8,0.8
-"[['0201', 'Astronomical and Space Sciences'], ['02', 'Physical Sciences'], ['0202', 'Atomic, Molecular, Nuclear, Particle and Plasma Physics'], ['0206', 'Quantum Physics']]", ,Rapid Cement,Physics and Astronomy,9.225174,231,697,28,28,4717,98,4619,28,0,0,4,68,,,,31,9,4,0,22,160,40,1.4
-"[['0908', 'Food Sciences'], ['1505', 'Marketing'], ['09', 'Engineering'], ['15', 'Commerce, Management, Tourism and Services']]", ,Concept Clinic,Agricultural and Biological Sciences,9.215503,230,370,36,36,2322,140,2182,36,0,0,3,61,,,,8,5,11,8,13,257,11.4,0
-"[['MD', 'Multidisciplinary']]", ,Journorama,"Economics, Business and Management",9.161209,229,1364,34,34,8752,528,8224,34,0,0,3,63,,,,19,3,2,9,12,945,38,0.4
-"[['09', 'Engineering'], ['02', 'Physical Sciences'], ['03', 'Chemical Sciences']]", ,Mode Journal,Materials Science,9.015377,228,856,14,14,7059,389,6670,14,0,0,4,82,,,,2,0,2,9,2,530,24.6,0.8
-"[['06', 'Biological Sciences'], ['09', 'Engineering'], ['10', 'Technology']]", ,Trainer Clinic,Life Sciences,8.957376,227,745,46,46,3725,139,3586,33,14,0,3,51,2016-2019,,,9,7,4,7,16,393,25.4,1
-"[['06', 'Biological Sciences']]", ,Possible Biosensor,Life Sciences,8.948113,226,369,23,23,2646,113,2533,23,0,0,4,73,,,,2,2,5,9,4,174,11.6,0.8
-"[['MD', 'Multidisciplinary']]",TRUE,Statisticslytical,Environmental Sciences,8.815363,225,1807,39,39,10207,561,9646,39,0,0,3,58,,,,7,5,4,20,10,1090,63.8,0.8
-"[['05', 'Environmental Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]", ,Network Veterinary,Agricultural and Biological Sciences,8.529842,224,401,37,37,2283,115,2168,37,0,0,3,60,,,,2,1,4,23,3,213,14.8,0.4
-"[['06', 'Biological Sciences'], ['0602', 'Ecology'], ['0608', 'Zoology']]",TRUE,Keys Polymers,Agricultural and Biological Sciences,8.43115,223,504,32,32,2983,97,2886,32,0,0,3,65,,,,8,7,4,7,14,168,7.8,2.6
-"[['0601', 'Biochemistry and Cell Biology'], ['06', 'Biological Sciences']]", ,Club Polymers,Life Sciences,8.41534,222,699,28,28,4400,195,4205,16,13,0,4,68,2016-2019,,,1,1,2,8,2,377,18.2,1.4
-"[['0908', 'Food Sciences'], ['0904', 'Chemical Engineering'], ['09', 'Engineering']]", ,Founder Computer,Agricultural and Biological Sciences,8.398019,221,1039,22,22,7248,453,6795,22,0,0,4,74,,,,6,3,4,9,8,684,35.6,0
-"[['0913', 'Mechanical Engineering'], ['09', 'Engineering'], ['0102', 'Applied Mathematics'], ['0801', 'Artificial Intelligence and Image Processing'], ['01', 'Mathematical Sciences'], ['08', 'Information and Computing Sciences']]", ,Home Dairy,"Engineering, Energy and Technology",8.395557,220,387,15,15,2930,172,2758,15,0,0,4,81,,,,2,1,3,5,3,239,8.8,0.6
-"[['1505', 'Marketing'], ['15', 'Commerce, Management, Tourism and Services']]", ,Dojo Trends,"Economics, Business and Management",8.380955,219,270,38,38,1469,75,1394,38,0,0,3,58,,,,13,9,3,14,18,143,11,0.2
-"[['MD', 'Multidisciplinary']]", ,Advisor Renewable,Environmental Sciences,8.379752,218,661,54,54,2692,145,2547,37,17,0,2,44,2016-2019,,,9,10,5,8,17,450,17.2,0.4
-"[['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]", ,Dynamo Current,Medicine,8.359194,217,785,38,38,4243,174,4069,38,0,0,3,59,,,,16,6,4,5,21,330,37.6,0.8
-"[['09', 'Engineering'], ['10', 'Technology'], ['03', 'Chemical Sciences']]",TRUE,Confer Opinion,Chemistry and Chemical Engineering,8.276869,216,2375,14,14,17635,796,16839,14,0,0,4,81,,,,6,4,3,4,9,1093,94.4,3.4
-"[['02', 'Physical Sciences'], ['01', 'Mathematical Sciences'], ['09', 'Engineering']]",TRUE,Lab Journal,"Engineering, Energy and Technology",8.276786,215,1797,22,22,12172,585,11587,22,0,0,4,74,,,,4,2,3,11,5,883,61.4,3
-"[['11', 'Medical and Health Sciences'], ['1103', 'Clinical Sciences'], ['1109', 'Neurosciences']]",FALSE,Logic Coating,Neuroscience,8.230058,214,705,79,79,1279,62,1217,79,0,0,1,20,,,,23,29,1,11,50,350,21.6,1.4
-"[['0605', 'Microbiology'], ['0704', 'Fisheries Sciences'], ['0707', 'Veterinary Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]", ,Bridge Current,Veterinary Science and Veterinary Medicine,8.205955,213,996,23,23,6591,340,6251,23,0,0,4,73,,,,9,9,5,8,18,523,35.4,1.2
-"[['10', 'Technology'], ['09', 'Engineering'], ['06', 'Biological Sciences']]", ,Intellect Journal,Life Sciences,8.16741,212,897,42,42,4538,265,4273,42,0,0,3,55,,,,11,18,10,5,31,535,28.4,0.8
-"[['0204', 'Condensed Matter Physics'], ['0912', 'Materials Engineering'], ['09', 'Engineering'], ['02', 'Physical Sciences']]",TRUE,Propel Forestry,Materials Science,8.099572,211,1215,21,21,8139,359,7780,21,0,0,4,75,,,,5,3,4,8,7,534,50.2,1.8
-"[['1501', 'Accounting, Auditing and Accountability'], ['0806', 'Information Systems'], ['08', 'Information and Computing Sciences'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,Succeed Neuro,"Economics, Business and Management",8.074368,210,128,16,16,891,24,867,16,0,0,4,79,,,,0,3,6,5,6,34,3.8,0.6
-"[['02', 'Physical Sciences'], ['03', 'Chemical Sciences'], ['10', 'Technology']]",TRUE,Zoom Polymers,Chemistry and Chemical Engineering,7.976535,209,1782,23,23,11489,541,10948,23,0,0,4,73,,,,5,4,5,8,8,827,89.6,0.6
-"[['09', 'Engineering'], ['03', 'Chemical Sciences'], ['19', 'Studies in Creative Arts and Writing']]", ,Arrive Science,Materials Science,7.926941,208,619,12,12,4596,275,4321,12,0,0,4,84,,,,1,0,2,7,1,367,13.2,1.2
-"[['0206', 'Quantum Physics'], ['0303', 'Macromolecular and Materials Chemistry'], ['0204', 'Condensed Matter Physics'], ['03', 'Chemical Sciences'], ['02', 'Physical Sciences']]", ,Passage Journal,Physics and Astronomy,7.869812,207,870,18,18,5943,346,5597,18,0,0,4,78,,,,6,0,3,10,3,498,25.2,1.2
-[], ,Bright Science,,7.781979,206,211,39,39,1080,77,1003,39,0,0,3,58,,,,11,10,10,5,24,148,2.4,0.4
-"[['08', 'Information and Computing Sciences'], ['15', 'Commerce, Management, Tourism and Services'], ['01', 'Mathematical Sciences']]", ,Active Materialia,"Economics, Business and Management",7.702526,205,430,25,25,2628,131,2497,25,0,0,4,72,,,,12,1,5,9,11,204,16.8,0.6
-"[['0702', 'Animal Production'], ['07', 'Agricultural and Veterinary Sciences']]", ,Course Research,Agricultural and Biological Sciences,7.584438,204,1061,33,33,5669,308,5361,33,0,0,3,63,,,,9,4,6,15,12,544,42,1
-"[['0306', 'Physical Chemistry (incl. Structural)'], ['0302', 'Inorganic Chemistry'], ['0303', 'Macromolecular and Materials Chemistry'], ['03', 'Chemical Sciences']]", ,Empower Journal,Chemistry and Chemical Engineering,7.464117,203,1404,20,20,8993,619,8374,20,0,0,4,76,,,,4,3,5,3,8,911,39.4,1
-"[['0406', 'Physical Geography and Environmental Geoscience'], ['0403', 'Geology'], ['0402', 'Geochemistry'], ['04', 'Earth Sciences']]",TRUE,Accelerate Academic,Earth and Planetary Sciences,7.422123,202,1224,40,40,5711,235,5476,40,0,0,3,57,,,,10,10,5,14,19,459,70.6,0.6
-"[['0915', 'Interdisciplinary Engineering'], ['0905', 'Civil Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]", ,Maismadora,"Engineering, Energy and Technology",7.401344,201,594,41,41,2749,168,2581,27,15,0,3,56,2016-2019,,,6,2,6,9,7,388,16.6,0.4
-"[['17', 'Psychology and Cognitive Sciences'], ['15', 'Commerce, Management, Tourism and Services']]", ,Alpha Research,Social and Behavioral Sciences,7.306385,200,555,33,33,2931,200,2731,33,0,0,3,64,,,,13,3,11,8,13,349,21,0
-"[['MD', 'Multidisciplinary']]", ,Researchology,Social and Behavioral Sciences,7.302723,199,361,49,49,1422,86,1336,49,0,0,3,48,,,,20,1,7,11,22,201,10.2,0.6
-"[['1301', 'Education Systems'], ['1303', 'Specialist Studies in Education'], ['1302', 'Curriculum and Pedagogy'], ['13', 'Education']]", ,Belief Industrial,Social and Behavioral Sciences,7.261066,198,488,27,27,2738,169,2569,27,0,0,4,69,,,,4,4,4,10,9,275,17.4,0.4
-"[['09', 'Engineering']]", ,Ademia Accident,"Engineering, Energy and Technology",7.25798,197,485,42,42,2133,89,2044,30,12,0,3,55,2016-2019,,,11,4,5,9,12,232,13.4,1.2
-"[['04', 'Earth Sciences'], ['0406', 'Physical Geography and Environmental Geoscience'], ['1604', 'Human Geography'], ['16', 'Studies in Human Society']]", ,Master Journal,Social and Behavioral Sciences,7.245988,196,290,31,31,1578,138,1440,31,0,0,3,65,,,,9,6,3,11,15,236,5.4,0
-"[['0703', 'Crop and Pasture Production'], ['07', 'Agricultural and Veterinary Sciences']]", ,Focus Cement,Agricultural and Biological Sciences,7.19832,195,617,26,26,3479,203,3276,26,0,0,4,70,,,,4,2,7,12,9,324,25.4,0.4
-"[['0205', 'Optical Physics'], ['0301', 'Analytical Chemistry'], ['03', 'Chemical Sciences'], ['0912', 'Materials Engineering'], ['09', 'Engineering'], ['02', 'Physical Sciences']]", ,Motivate Sensing,Chemistry and Chemical Engineering,7.183784,194,1531,11,11,10472,710,9762,11,0,0,4,84,,,,2,1,1,5,3,942,43,1.6
-"[['0608', 'Zoology'], ['06', 'Biological Sciences']]", ,Achieve Journal,Agricultural and Biological Sciences,7.155102,193,298,27,27,1611,61,1550,27,0,0,4,69,,,,2,1,4,12,9,99,18,0.2
-"[['0913', 'Mechanical Engineering'], ['0203', 'Classical Physics'], ['0912', 'Materials Engineering'], ['02', 'Physical Sciences'], ['09', 'Engineering']]", ,Passage Cement,Physics and Astronomy,7.035163,192,517,24,24,2919,165,2754,24,0,0,4,72,,,,6,2,4,11,7,256,16.2,1
-"[['0301', 'Analytical Chemistry'], ['0399', 'Other Chemical Sciences'], ['03', 'Chemical Sciences']]",TRUE,Ambition Science,Chemistry and Chemical Engineering,7.023119,191,1401,21,21,8247,455,7792,21,0,0,4,75,,,,3,1,4,10,4,676,46.6,2.6
-"[['1502', 'Banking, Finance and Investment'], ['14', 'Economics'], ['15', 'Commerce, Management, Tourism and Services'], ['1606', 'Political Science'], ['1402', 'Applied Economics'], ['16', 'Studies in Human Society']]", ,Boost Journal,"Economics, Business and Management",6.965902,190,1175,39,39,5396,361,5035,39,0,0,3,58,,,,19,2,3,3,16,690,44.8,0.4
-"[['09', 'Engineering']]", ,Intellect Veterinary,"Engineering, Energy and Technology",6.963024,189,429,20,20,2544,160,2384,20,0,0,4,76,,,,5,0,5,7,5,235,15.4,0.4
-"[['MD', 'Multidisciplinary']]",TRUE,Republic Opinion,Materials Science,6.945438,188,2237,31,31,11219,564,10655,31,0,0,3,65,,,,18,6,4,7,24,967,119.2,0.8
-"[['15', 'Commerce, Management, Tourism and Services'], ['1507', 'Transportation and Freight Services'], ['1205', 'Urban and Regional Planning'], ['1604', 'Human Geography'], ['12', 'Built Environment and Design'], ['16', 'Studies in Human Society']]", ,Workshop Journal,Social and Behavioral Sciences,6.881232,187,244,30,30,1273,102,1171,30,0,0,3,66,,,,7,4,9,7,9,172,7.2,0
-"[['04', 'Earth Sciences'], ['0403', 'Geology'], ['0503', 'Soil Sciences'], ['0406', 'Physical Geography and Environmental Geoscience'], ['05', 'Environmental Sciences']]", ,Growth Crop,Agricultural and Biological Sciences,6.860957,186,605,27,27,3214,168,3046,27,0,0,4,70,,,,4,3,4,13,7,270,23.6,1
-"[['0502', 'Environmental Science and Management'], ['12', 'Built Environment and Design'], ['1205', 'Urban and Regional Planning'], ['05', 'Environmental Sciences']]", ,Scienceopedia,,6.847179,185,378,33,33,1912,171,1741,33,0,0,3,64,,,,3,2,9,12,4,298,2,0.6
-"[['05', 'Environmental Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]", ,Simple Forestry,Agricultural and Biological Sciences,6.818205,184,585,33,33,2844,189,2655,33,0,0,3,63,,,,4,4,6,19,9,334,21.2,0.4
-"[['1201', 'Architecture'], ['0502', 'Environmental Science and Management'], ['1202', 'Building'], ['12', 'Built Environment and Design'], ['05', 'Environmental Sciences']]", ,Motion Science,"Engineering, Energy and Technology",6.80841,183,1084,42,42,4517,236,4281,28,14,0,3,55,2016-2019,,,6,5,3,8,8,595,31,1.8
-"[['11', 'Medical and Health Sciences'], ['1114', 'Paediatrics and Reproductive Medicine'], ['0601', 'Biochemistry and Cell Biology'], ['06', 'Biological Sciences']]", ,Scriptawind,Life Sciences,6.788759,182,313,30,30,1601,118,1483,30,0,0,3,66,,,,14,7,3,6,21,199,9.4,0.2
-"[['0910', 'Manufacturing Engineering'], ['0912', 'Materials Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]",TRUE,Think Research,Materials Science,6.745994,181,2277,21,21,12995,823,12172,21,0,0,4,75,,,,4,2,3,11,5,1221,81.6,2.4
-"[['09', 'Engineering']]", ,Digital Research,Materials Science,6.720851,180,952,39,39,4196,302,3894,19,20,0,3,58,2016-2019,,,4,1,2,9,4,674,17.8,1
-"[['14', 'Economics'], ['05', 'Environmental Sciences'], ['0502', 'Environmental Science and Management'], ['1499', 'Other Economics'], ['1402', 'Applied Economics']]", ,Field Academic,Environmental Sciences,6.706641,179,823,35,35,3883,287,3596,35,0,0,3,62,,,,12,5,3,8,12,518,26.6,0.4
-"[['07', 'Agricultural and Veterinary Sciences'], ['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]",TRUE,Zoom Current,Life Sciences,6.632239,178,1963,43,43,7821,404,7417,43,0,0,3,54,,,,10,24,4,3,36,834,83,3
-"[['0913', 'Mechanical Engineering'], ['0915', 'Interdisciplinary Engineering'], ['0906', 'Electrical and Electronic Engineering'], ['09', 'Engineering']]", ,Academy Journal,"Engineering, Energy and Technology",6.627727,177,1239,41,41,5187,346,4841,24,17,0,3,56,2016-2019,,,5,2,3,7,6,811,32.8,1
-"[['1402', 'Applied Economics'], ['0906', 'Electrical and Electronic Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering'], ['14', 'Economics']]", ,Ademia Research,"Economics, Business and Management",6.539342,176,587,41,41,2380,131,2249,41,0,0,3,56,,,,14,3,4,11,10,263,18.4,1.4
-"[['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",TRUE,Analytics Opinion,Life Sciences,6.489082,175,1392,26,26,7119,410,6709,26,0,0,4,71,,,,9,5,4,8,14,649,56.6,1.8
-"[['09', 'Engineering'], ['0914', 'Resources Engineering and Extractive Metallurgy'], ['0904', 'Chemical Engineering'], ['0913', 'Mechanical Engineering']]",TRUE,Swift Statistics,Chemistry and Chemical Engineering,6.478074,174,1496,22,22,8053,462,7591,22,0,0,4,74,,,,4,1,3,11,4,694,56.2,2.4
-"[['05', 'Environmental Sciences'], ['12', 'Built Environment and Design'], ['09', 'Engineering']]", ,Think Review,Environmental Sciences,6.473769,173,841,34,34,3936,333,3603,34,0,0,3,63,,,,10,10,5,8,19,592,19,0.6
-"[['0914', 'Resources Engineering and Extractive Metallurgy'], ['0904', 'Chemical Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]",TRUE,Pioneer Sustainable,Chemistry and Chemical Engineering,6.37805,172,2575,35,35,11503,748,10755,35,0,0,3,62,,,,9,4,4,11,10,1344,99.2,2.4
-"[['03', 'Chemical Sciences'], ['0306', 'Physical Chemistry (incl. Structural)'], ['0904', 'Chemical Engineering'], ['0907', 'Environmental Engineering'], ['09', 'Engineering']]",TRUE,Imagine International,Chemistry and Chemical Engineering,6.33327,171,1300,29,29,6422,601,5821,29,0,0,4,67,,,,3,1,5,18,4,1000,24,0.6
-"[['09', 'Engineering'], ['02', 'Physical Sciences']]",TRUE,Arrive Biology,Chemistry and Chemical Engineering,6.326095,170,1546,40,40,6339,489,5850,40,0,0,3,57,,,,20,7,10,4,25,962,50.6,0.8
-"[['09', 'Engineering'], ['01', 'Mathematical Sciences']]",TRUE,Cultivation Cell,"Engineering, Energy and Technology",6.289012,169,1987,58,58,5615,331,5284,58,0,0,2,40,,,,19,4,5,18,16,921,90.8,1.6
-"[['1116', 'Medical Physiology'], ['0908', 'Food Sciences'], ['1111', 'Nutrition and Dietetics'], ['09', 'Engineering'], ['11', 'Medical and Health Sciences']]",FALSE,Prodigy Journal,Agricultural and Biological Sciences,6.250312,168,246,29,29,1163,69,1094,29,0,0,4,68,,,,3,18,1,5,21,114,7.2,0.6
-"[['03', 'Chemical Sciences'], ['09', 'Engineering'], ['02', 'Physical Sciences']]",TRUE,Progress Science,Chemistry and Chemical Engineering,6.233736,167,1714,17,17,9716,820,8896,17,0,0,4,79,,,,4,2,3,3,4,1158,41.6,1.4
-"[['0303', 'Macromolecular and Materials Chemistry'], ['0305', 'Organic Chemistry'], ['0908', 'Food Sciences'], ['03', 'Chemical Sciences'], ['09', 'Engineering']]",TRUE,Academworks,Agricultural and Biological Sciences,6.229692,166,1267,13,13,7233,385,6848,13,0,0,4,82,,,,3,1,3,5,5,522,62.6,1.2
-"[['0204', 'Condensed Matter Physics'], ['0306', 'Physical Chemistry (incl. Structural)'], ['0206', 'Quantum Physics'], ['02', 'Physical Sciences'], ['03', 'Chemical Sciences']]", ,Evolve Journal,Physics and Astronomy,6.21483,165,1196,34,34,5293,354,4939,34,0,0,3,63,,,,7,9,7,7,18,626,47.2,1
-"[['02', 'Physical Sciences'], ['03', 'Chemical Sciences'], ['09', 'Engineering']]",TRUE,Wise Research,Chemistry and Chemical Engineering,6.207719,164,2019,17,17,11190,840,10350,17,0,0,4,78,,,,3,1,2,10,4,1198,52.2,3
-"[['0301', 'Analytical Chemistry'], ['0399', 'Other Chemical Sciences'], ['03', 'Chemical Sciences']]", ,Workshop Clinic,,6.05718,163,737,27,27,3499,248,3251,27,0,0,4,69,,,,4,3,7,8,7,401,27.8,0.6
-"[['0605', 'Microbiology'], ['06', 'Biological Sciences'], ['0908', 'Food Sciences'], ['1003', 'Industrial Biotechnology'], ['10', 'Technology'], ['09', 'Engineering']]",TRUE,Brave Review,Agricultural and Biological Sciences,6.035448,162,1532,23,23,7731,587,7144,23,0,0,4,73,,,,7,2,3,9,8,894,60,0.4
-"[['06', 'Biological Sciences'], ['09', 'Engineering'], ['10', 'Technology']]", ,Associate Biological,Life Sciences,5.996437,161,742,39,39,2955,221,2734,39,0,0,3,58,,,,9,4,9,9,17,423,28,0.4
-"[['MD', 'Multidisciplinary']]",TRUE,Cultivate Research,Environmental Sciences,5.875912,160,3613,43,43,13297,1252,12045,29,15,0,3,54,2016-2019,,,3,4,2,12,6,2803,53,2.8
-"[['0305', 'Organic Chemistry'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['03', 'Chemical Sciences']]",TRUE,Logic Journal,Chemistry and Chemical Engineering,5.821699,159,2462,16,16,12672,690,11982,16,0,0,4,79,,,,6,3,6,3,10,971,141.2,0.8
-"[['09', 'Engineering'], ['03', 'Chemical Sciences']]",TRUE,Success Biology,"Engineering, Energy and Technology",5.801102,158,2049,19,19,10529,900,9629,19,0,0,4,77,,,,5,6,5,8,12,1308,62.2,1.2
-"[['MD', 'Multidisciplinary']]",TRUE,Digital Dairy,"Engineering, Energy and Technology",5.777638,157,1488,45,45,5076,331,4745,28,17,0,3,52,2016-2019,,,10,7,3,6,12,887,52.2,0.8
-"[['11', 'Medical and Health Sciences']]", ,Course Computer,Nursing,5.755198,156,359,23,23,1752,165,1587,23,0,0,4,73,,,,4,4,3,9,6,253,6.6,0.4
-"[['1507', 'Transportation and Freight Services'], ['1701', 'Psychology'], ['15', 'Commerce, Management, Tourism and Services'], ['1117', 'Public Health and Health Services'], ['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]", ,Inspire Nutrition,Social and Behavioral Sciences,5.721055,155,990,36,36,3812,184,3628,23,13,0,3,61,2016-2019,,,9,3,3,7,9,452,46,0.8
-"[['0204', 'Condensed Matter Physics'], ['0912', 'Materials Engineering'], ['10', 'Technology'], ['1007', 'Nanotechnology'], ['02', 'Physical Sciences'], ['09', 'Engineering']]", ,Dairyverse,Physics and Astronomy,5.671975,154,907,21,21,4465,391,4074,21,0,0,4,75,,,,15,4,3,5,7,581,26.8,0.6
-"[['1303', 'Specialist Studies in Education'], ['1701', 'Psychology'], ['13', 'Education'], ['17', 'Psychology and Cognitive Sciences']]", ,Journaza,Social and Behavioral Sciences,5.624222,153,208,28,28,921,82,839,28,0,0,4,68,,,,11,2,4,8,13,134,5.4,0.2
-"[['0707', 'Veterinary Sciences'], ['0702', 'Animal Production'], ['0608', 'Zoology'], ['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]", ,Spark Trends,Agricultural and Biological Sciences,5.585693,152,1338,31,31,5725,543,5182,31,0,0,3,66,,,,11,5,6,9,13,922,35.8,0.6
-"[['0913', 'Mechanical Engineering'], ['0905', 'Civil Engineering'], ['09', 'Engineering'], ['0911', 'Maritime Engineering']]", ,Today Biological,"Engineering, Energy and Technology",5.498865,151,1321,29,29,5711,544,5167,29,0,0,4,68,,,,5,3,4,10,7,900,30.2,1.2
-"[['0904', 'Chemical Engineering'], ['09', 'Engineering'], ['0301', 'Analytical Chemistry'], ['03', 'Chemical Sciences']]", ,Ready Cement,Chemistry and Chemical Engineering,5.474405,150,1547,40,40,5425,347,5078,23,18,0,3,57,2016-2019,,,7,1,4,8,6,877,47.2,2
-"[['0905', 'Civil Engineering'], ['0911', 'Maritime Engineering'], ['0904', 'Chemical Engineering'], ['09', 'Engineering']]", ,Classroom Research,Earth and Planetary Sciences,5.402674,149,642,27,27,2760,215,2545,27,0,0,4,70,,,,3,5,4,7,8,346,19.8,1
-"[['0910', 'Manufacturing Engineering'], ['09', 'Engineering']]",MAYBE,Journio,"Engineering, Energy and Technology",5.355024,148,153,26,26,680,76,604,26,0,0,4,70,,,,2,0,7,12,2,121,1.2,0.2
-"[['09', 'Engineering']]", ,Keys Biosensor,"Engineering, Energy and Technology",5.344536,147,434,26,26,1890,166,1724,26,0,0,4,71,,,,5,2,4,9,6,263,15.2,0.2
-"[['MD', 'Multidisciplinary']]", ,Potential Dairy,"Economics, Business and Management",5.30923,146,1218,26,26,5228,418,4810,26,0,0,4,71,,,,11,2,4,7,10,661,33.8,2.2
-"[['0904', 'Chemical Engineering'], ['0306', 'Physical Chemistry (incl. Structural)'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]",TRUE,Wise Reviews,Chemistry and Chemical Engineering,5.295209,145,2149,31,31,8761,869,7892,31,0,0,3,66,,,,4,5,9,8,12,1475,63.6,0.4
-"[['09', 'Engineering'], ['03', 'Chemical Sciences'], ['02', 'Physical Sciences']]",TRUE,Rising Technology,Materials Science,5.265372,144,2228,38,38,7780,452,7328,24,14,0,3,59,2016-2019,,,7,3,3,9,7,1101,74.8,3.8
-"[['MD', 'Multidisciplinary']]", ,Techie Trends,Social and Behavioral Sciences,5.21196,143,559,43,43,1859,191,1668,43,0,0,3,54,,,,14,20,5,6,30,392,14.8,0.2
-"[['0503', 'Soil Sciences'], ['0607', 'Plant Biology'], ['05', 'Environmental Sciences'], ['06', 'Biological Sciences']]", ,Gain Corporate,Agricultural and Biological Sciences,5.184779,142,476,28,28,1946,162,1784,28,0,0,4,69,,,,1,2,5,16,5,264,19.2,0.2
-"[['0912', 'Materials Engineering'], ['0914', 'Resources Engineering and Extractive Metallurgy'], ['0204', 'Condensed Matter Physics'], ['02', 'Physical Sciences'], ['09', 'Engineering']]",TRUE,Reach Clinic,Materials Science,5.166645,141,3464,18,18,16144,1466,14678,18,0,0,4,78,,,,2,1,2,12,2,2103,96.2,4
-"[['1503', 'Business and Management'], ['1303', 'Specialist Studies in Education'], ['1701', 'Psychology'], ['15', 'Commerce, Management, Tourism and Services'], ['13', 'Education'], ['17', 'Psychology and Cognitive Sciences']]", ,Crimson Cell,Social and Behavioral Sciences,5.080039,140,682,41,41,2239,187,2052,41,0,0,3,56,,,,15,1,4,11,13,372,27.2,0.4
-"[['0902', 'Automotive Engineering'], ['0904', 'Chemical Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]", ,Journry,"Engineering, Energy and Technology",5.05749,139,1037,39,39,3504,281,3223,39,0,0,3,58,,,,10,7,6,6,17,538,40,1
-"[['09', 'Engineering'], ['01', 'Mathematical Sciences'], ['02', 'Physical Sciences']]",TRUE,Computernetic,Physics and Astronomy,5.051911,138,2704,55,55,6604,396,6208,55,0,0,2,43,,,,25,12,8,8,28,1025,128.2,4
-"[['17', 'Psychology and Cognitive Sciences'], ['11', 'Medical and Health Sciences'], ['16', 'Studies in Human Society']]", ,Insight Journal,Social and Behavioral Sciences,5.024164,137,219,30,30,873,98,775,30,0,0,4,67,,,,12,1,8,9,11,164,3.6,0.2
-"[['1608', 'Sociology'], ['1604', 'Human Geography'], ['1205', 'Urban and Regional Planning'], ['12', 'Built Environment and Design'], ['16', 'Studies in Human Society']]", ,Eagle Journal,Social and Behavioral Sciences,5.013866,136,506,37,37,1779,177,1602,37,0,0,3,60,,,,8,6,5,12,12,329,7.8,1
-"[['0913', 'Mechanical Engineering'], ['1103', 'Clinical Sciences'], ['1106', 'Human Movement and Sports Science'], ['09', 'Engineering'], ['11', 'Medical and Health Sciences']]", ,Launch Forestry,Medicine,5.008875,135,616,31,31,2252,125,2127,18,13,0,3,65,2016-2019,,,6,1,1,6,6,279,17.8,1.6
-"[['1701', 'Psychology'], ['1702', 'Cognitive Science'], ['17', 'Psychology and Cognitive Sciences']]",TRUE,Academegy,Social and Behavioral Sciences,4.980066,134,1567,33,33,5794,579,5215,33,0,0,3,63,,,,13,2,5,18,14,1020,54.8,0
-"[['07', 'Agricultural and Veterinary Sciences'], ['0701', 'Agriculture, Land and Farm Management'], ['0799', 'Other Agricultural and Veterinary Sciences'], ['0905', 'Civil Engineering'], ['09', 'Engineering']]", ,Evolve American,Agricultural and Biological Sciences,4.951016,133,1057,32,32,3866,323,3543,32,0,0,3,64,,,,6,4,5,15,9,561,35.8,1.4
-"[['09', 'Engineering'], ['05', 'Environmental Sciences'], ['04', 'Earth Sciences']]", ,Future Insect,Environmental Sciences,4.942532,132,718,38,38,2363,158,2205,19,18,0,3,59,2016-2019,,,9,2,4,9,9,395,18.4,1.4
-"[['MD', 'Multidisciplinary']]", ,Development Journal,Social and Behavioral Sciences,4.84352,131,529,31,31,1999,230,1769,31,0,0,3,66,,,,5,6,4,9,10,391,9.8,0.4
-"[['0502', 'Environmental Science and Management'], ['1401', 'Economic Theory'], ['1402', 'Applied Economics'], ['14', 'Economics'], ['05', 'Environmental Sciences']]", ,Zoom Biosensor,"Economics, Business and Management",4.826399,130,657,39,39,2099,150,1949,39,0,0,3,58,,,,16,4,2,2,14,288,31.2,0.6
-"[['1107', 'Immunology'], ['11', 'Medical and Health Sciences']]", ,Geek Statistics,Life Sciences,4.822441,129,662,64,64,1252,114,1138,64,0,0,2,34,,,12,1,5,53,1,60,376,28.8,0
-"[['1502', 'Banking, Finance and Investment'], ['15', 'Commerce, Management, Tourism and Services']]", ,Meetup Journal,"Economics, Business and Management",4.800895,128,340,33,33,1227,131,1096,33,0,0,3,64,,,,19,1,14,4,14,229,7.2,0.4
-"[['03', 'Chemical Sciences'], ['09', 'Engineering']]", ,Research Biology,"Engineering, Energy and Technology",4.774426,127,1090,14,14,5061,594,4467,14,0,0,4,82,,,,3,2,3,7,4,814,25.6,0.2
-"[['05', 'Environmental Sciences'], ['0403', 'Geology'], ['0502', 'Environmental Science and Management'], ['1604', 'Human Geography'], ['04', 'Earth Sciences'], ['16', 'Studies in Human Society']]", ,Drive Journal,,4.74875,126,346,67,67,611,73,538,67,0,0,2,31,,,,6,55,12,2,61,262,2.6,0.6
-"[['0702', 'Animal Production'], ['07', 'Agricultural and Veterinary Sciences']]", ,Improve Journal,Agricultural and Biological Sciences,4.711703,125,1163,28,28,4268,345,3923,28,0,0,4,68,,,,6,3,7,14,11,568,37.8,2.2
-"[['1106', 'Human Movement and Sports Science'], ['1116', 'Medical Physiology'], ['1203', 'Design Practice and Management'], ['12', 'Built Environment and Design'], ['11', 'Medical and Health Sciences']]", ,Currentopolis,"Engineering, Energy and Technology",4.700051,124,642,35,35,2243,275,1968,35,0,0,3,62,,,,13,5,9,7,13,497,8.6,0.6
-"[['MD', 'Multidisciplinary']]",TRUE,Institute Energy,Agricultural and Biological Sciences,4.692457,123,2886,21,21,11862,1126,10736,21,0,0,4,75,,,,4,1,2,10,4,1670,101.6,2
-"[['1106', 'Human Movement and Sports Science'], ['1117', 'Public Health and Health Services'], ['11', 'Medical and Health Sciences']]", ,Research Physics,Medicine,4.674537,122,815,41,41,2474,227,2247,41,0,0,3,56,,,,27,10,4,4,34,452,30.4,0.6
-"[['1402', 'Applied Economics'], ['14', 'Economics'], ['1607', 'Social Work'], ['16', 'Studies in Human Society']]", ,Meetup Sonic,Social and Behavioral Sciences,4.667017,121,739,26,26,2922,358,2564,26,0,0,4,71,,,,6,2,7,5,8,567,9.2,0.8
-"[['0605', 'Microbiology'], ['0304', 'Medicinal and Biomolecular Chemistry'], ['0601', 'Biochemistry and Cell Biology'], ['03', 'Chemical Sciences'], ['06', 'Biological Sciences']]",TRUE,Training Opinion,Life Sciences,4.605499,120,1998,53,53,4672,318,4354,53,0,0,2,45,,,,24,14,7,2,41,791,107,1.4
-"[['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['05', 'Environmental Sciences']]",TRUE,Nutritara,Agricultural and Biological Sciences,4.5846,119,1589,43,43,4491,363,4128,43,0,0,3,54,,,,5,4,10,21,8,753,68,1.6
-"[['17', 'Psychology and Cognitive Sciences'], ['1702', 'Cognitive Science'], ['1701', 'Psychology'], ['1109', 'Neurosciences'], ['11', 'Medical and Health Sciences']]", ,Prosper Quantitative,Neuroscience,4.560348,118,1020,68,68,1651,175,1476,68,0,0,2,30,,,12,2,5,55,2,61,649,37.2,0
-"[['05', 'Environmental Sciences'], ['0703', 'Crop and Pasture Production'], ['0503', 'Soil Sciences'], ['0607', 'Plant Biology'], ['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]",MAYBE,Quake Flame,,4.541411,117,166,4,4,795,72,723,4,0,0,5,91,,,,6,0,3,2,0,88,6,0.2
-"[['09', 'Engineering'], ['0907', 'Environmental Engineering']]", ,Thrive Journal,Environmental Sciences,4.497341,116,1046,26,26,3999,508,3491,26,0,0,4,70,,,,5,2,3,12,6,805,14.2,1
-"[['07', 'Agricultural and Veterinary Sciences'], ['0707', 'Veterinary Sciences']]", ,Academscape,Medicine,4.413502,115,346,14,14,1500,181,1319,14,0,0,4,82,,,,6,0,3,1,4,246,4,0.6
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]", ,Learn Journal,Veterinary Science and Veterinary Medicine,4.348737,114,616,46,46,1561,109,1452,27,19,0,3,52,2016-2019,,,3,0,18,5,4,333,26.4,0.2
-"[['09', 'Engineering'], ['0905', 'Civil Engineering'], ['0904', 'Chemical Engineering'], ['0907', 'Environmental Engineering']]",TRUE,Accelerate Computer,Chemistry and Chemical Engineering,4.332917,113,1651,18,18,6707,823,5884,18,0,0,4,78,,,,2,1,3,8,3,1178,35.4,1.2
-"[['1605', 'Policy and Administration'], ['16', 'Studies in Human Society'], ['0908', 'Food Sciences'], ['09', 'Engineering']]", ,Motivate Veterinary,Agricultural and Biological Sciences,4.301342,112,748,39,39,2252,281,1971,39,0,0,3,58,,,,10,13,5,7,21,539,15,0.6
-"[['0913', 'Mechanical Engineering'], ['0912', 'Materials Engineering'], ['0204', 'Condensed Matter Physics'], ['02', 'Physical Sciences'], ['09', 'Engineering']]",TRUE,Flagship Physics,Physics and Astronomy,4.24213,111,2835,24,24,10356,1225,9131,24,0,0,4,72,,,,7,1,3,7,6,1898,55.8,3.8
-"[['0607', 'Plant Biology'], ['0605', 'Microbiology'], ['06', 'Biological Sciences'], ['0601', 'Biochemistry and Cell Biology']]",TRUE,Ademia Remote,Agricultural and Biological Sciences,4.239321,110,1322,42,42,3575,320,3255,42,0,0,3,55,,,,8,17,8,8,26,649,65.8,0.2
-"[['1503', 'Business and Management'], ['1505', 'Marketing'], ['1506', 'Tourism'], ['15', 'Commerce, Management, Tourism and Services']]", ,Potential Journal,"Economics, Business and Management",4.231892,109,497,26,26,1743,193,1550,26,0,0,4,70,,,,5,1,12,4,5,308,9,1
-"[['03', 'Chemical Sciences'], ['02', 'Physical Sciences'], ['06', 'Biological Sciences']]",TRUE,Pursue University,Life Sciences,4.227561,108,2243,71,71,3017,237,2780,71,0,0,1,28,,,12,1,2,63,0,67,951,69.2,6
-"[['0904', 'Chemical Engineering'], ['0905', 'Civil Engineering'], ['1202', 'Building'], ['12', 'Built Environment and Design'], ['09', 'Engineering']]",TRUE,Pursue Research,Materials Science,4.219982,107,1791,34,34,5597,611,4986,34,0,0,3,63,,,,10,4,6,13,12,1089,70.6,0
-"[['06', 'Biological Sciences'], ['05', 'Environmental Sciences']]",TRUE,Higher Conduct,Environmental Sciences,4.115182,106,1423,39,39,3917,350,3567,39,0,0,3,58,,,,10,8,8,11,19,676,73.2,0.2
-"[['1103', 'Clinical Sciences'], ['11', 'Medical and Health Sciences']]", ,Whiteboard Journal,Life Sciences,4.112673,105,612,39,39,1715,192,1523,39,0,0,3,58,,,,24,13,3,4,36,373,18,0.6
-"[['0908', 'Food Sciences'], ['09', 'Engineering']]", ,Americanverse,Agricultural and Biological Sciences,4.078901,104,967,31,31,3115,388,2727,31,0,0,3,66,,,,5,3,6,10,7,661,26.8,0.4
-"[['07', 'Agricultural and Veterinary Sciences'], ['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]", ,Club Veterinary,Agricultural and Biological Sciences,4.061286,103,951,18,18,3610,443,3167,18,0,0,4,78,,,,5,2,3,7,7,636,27.6,0.4
-"[['12', 'Built Environment and Design'], ['09', 'Engineering']]", ,Logic Current,"Engineering, Energy and Technology",3.960618,102,589,34,34,1694,152,1542,34,0,0,3,63,,,,4,2,4,18,6,270,16,1.6
-"[['11', 'Medical and Health Sciences'], ['13', 'Education'], ['17', 'Psychology and Cognitive Sciences']]", ,Excellence Dairy,Social and Behavioral Sciences,3.953335,101,510,50,50,1155,143,1012,50,0,0,3,48,,,,14,2,5,17,12,335,7.6,1
-"[['07', 'Agricultural and Veterinary Sciences'], ['0707', 'Veterinary Sciences'], ['0799', 'Other Agricultural and Veterinary Sciences']]",FALSE,Cold Cell,Veterinary Science and Veterinary Medicine,3.928847,100,201,28,28,685,114,571,28,0,0,4,69,,,,5,1,9,4,4,185,1.6,0
-"[['0912', 'Materials Engineering'], ['0913', 'Mechanical Engineering'], ['0903', 'Biomedical Engineering'], ['09', 'Engineering']]", ,Propel Physics,"Engineering, Energy and Technology",3.920143,99,597,27,27,2022,304,1718,27,0,0,4,70,,,,9,3,4,4,11,487,5,0.6
-"[['0306', 'Physical Chemistry (incl. Structural)'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering'], ['03', 'Chemical Sciences']]", ,Viewer Veterinary,"Engineering, Energy and Technology",3.906618,98,457,18,18,1670,201,1469,18,0,0,4,78,,,,2,1,4,8,2,287,11,0.6
-"[['0913', 'Mechanical Engineering'], ['0904', 'Chemical Engineering'], ['0902', 'Automotive Engineering'], ['09', 'Engineering']]", ,Chalk Qualitative,"Engineering, Energy and Technology",3.89912,97,498,40,40,1273,102,1171,40,0,0,3,57,,,,6,1,3,8,5,199,18,1.2
-"[['0908', 'Food Sciences'], ['09', 'Engineering'], ['0912', 'Materials Engineering'], ['0904', 'Chemical Engineering']]", ,Spring Corporate,Agricultural and Biological Sciences,3.851359,96,834,36,36,2296,228,2068,18,17,0,3,61,2016-2019,,,5,2,4,3,6,504,21,1.2
-"[['0914', 'Resources Engineering and Extractive Metallurgy'], ['0915', 'Interdisciplinary Engineering'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]", ,Hearthstone Veterinary,"Engineering, Energy and Technology",3.818614,95,1615,18,18,5732,645,5087,18,0,0,4,78,,,,3,2,2,6,4,920,47.6,2.2
-"[['15', 'Commerce, Management, Tourism and Services'], ['1503', 'Business and Management'], ['1505', 'Marketing']]", ,Innovate Journal,"Economics, Business and Management",3.817854,94,760,30,30,2356,335,2021,30,0,0,3,66,,,,13,4,6,5,15,565,13.6,0.6
-"[['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['17', 'Psychology and Cognitive Sciences']]", ,Foster Reviews,Agricultural and Biological Sciences,3.760542,93,757,42,42,1791,150,1641,42,0,0,3,55,,,,12,12,7,16,24,307,45.2,0
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Scholar Trends,Veterinary Science and Veterinary Medicine,3.732961,92,1620,32,32,4558,467,4091,32,0,0,3,64,,,,10,9,6,7,17,813,51,3
-"[['1301', 'Education Systems'], ['1302', 'Curriculum and Pedagogy'], ['1303', 'Specialist Studies in Education'], ['13', 'Education']]", ,Seek Computer,Social and Behavioral Sciences,3.66953,91,1191,25,25,3859,600,3259,25,0,0,4,71,,,,8,3,5,6,10,946,20.6,0.4
-"[['1702', 'Cognitive Science'], ['1701', 'Psychology'], ['17', 'Psychology and Cognitive Sciences']]", ,Boost Solar,Social and Behavioral Sciences,3.658294,90,781,28,28,2308,264,2044,28,0,0,4,68,,,,13,3,4,4,13,433,35,0
-"[['MD', 'Multidisciplinary']]", ,Drip Biological,Neuroscience,3.646245,89,940,38,38,2483,363,2120,38,0,0,3,59,,,,15,4,2,10,17,690,25,0
-"[['0204', 'Condensed Matter Physics'], ['0299', 'Other Physical Sciences'], ['0306', 'Physical Chemistry (incl. Structural)'], ['02', 'Physical Sciences'], ['03', 'Chemical Sciences']]", ,Researchzilla,Chemistry and Chemical Engineering,3.644773,88,925,54,54,1787,246,1541,54,0,0,2,43,,,,12,11,23,8,23,635,17.8,1.2
-"[['09', 'Engineering'], ['12', 'Built Environment and Design']]", ,Succeed Food,"Engineering, Energy and Technology",3.642447,87,1426,30,30,4184,534,3650,30,0,0,4,67,,,,9,4,3,15,11,895,43.2,1
-"[['14', 'Economics'], ['1502', 'Banking, Finance and Investment'], ['1402', 'Applied Economics'], ['1501', 'Accounting, Auditing and Accountability'], ['15', 'Commerce, Management, Tourism and Services']]", ,Academic Crop,"Economics, Business and Management",3.624992,86,793,24,24,2568,396,2172,24,0,0,4,72,,,,9,2,3,5,8,616,18,0
-"[['1111', 'Nutrition and Dietetics'], ['11', 'Medical and Health Sciences'], ['0904', 'Chemical Engineering'], ['0908', 'Food Sciences'], ['09', 'Engineering']]", ,Skill Journal,Agricultural and Biological Sciences,3.62143,85,1164,23,23,3740,498,3242,23,0,0,4,73,,,,5,1,3,8,5,762,34.2,0.6
-"[['0604', 'Genetics'], ['06', 'Biological Sciences']]", ,Explore Nutrition,Life Sciences,3.562814,84,438,30,30,1233,138,1095,30,0,0,4,67,,,,7,6,3,12,13,230,18.8,0.2
-"[['1505', 'Marketing'], ['1503', 'Business and Management'], ['1502', 'Banking, Finance and Investment'], ['15', 'Commerce, Management, Tourism and Services']]", ,Blue Sky Molecular,"Economics, Business and Management",3.537107,83,863,45,45,2013,332,1681,45,0,0,3,52,,,,9,6,5,13,12,708,15.6,0
-"[['09', 'Engineering'], ['03', 'Chemical Sciences'], ['06', 'Biological Sciences']]",TRUE,Think Dairy,Agricultural and Biological Sciences,3.527981,82,497,32,32,1310,112,1198,20,12,0,3,65,2017-2019,,,5,2,4,5,4,238,20,0.6
-[],MAYBE,Mind Statistics,Social and Behavioral Sciences,3.429225,81,183,30,30,462,19,443,30,0,0,4,67,,,,6,0,10,14,3,31,8,0.8
-"[['0905', 'Civil Engineering'], ['1202', 'Building'], ['09', 'Engineering'], ['0904', 'Chemical Engineering'], ['12', 'Built Environment and Design']]",TRUE,Advance Physics,Materials Science,3.400417,80,1004,24,24,2973,381,2592,24,0,0,4,72,,,,4,1,4,9,5,591,29.4,1.2
-"[['08', 'Information and Computing Sciences'], ['09', 'Engineering'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,Guide Journal,Social and Behavioral Sciences,3.352144,79,947,38,38,2296,323,1973,38,0,0,3,59,,,,12,4,4,14,12,612,21.6,1.2
-"[['0909', 'Geomatic Engineering'], ['09', 'Engineering'], ['0406', 'Physical Geography and Environmental Geoscience'], ['04', 'Earth Sciences']]",TRUE,Pathway Science,Environmental Sciences,3.347995,78,3064,47,47,6313,873,5440,47,0,0,3,50,,,,9,15,5,17,23,1936,99,1.4
-"[['0912', 'Materials Engineering'], ['0205', 'Optical Physics'], ['0204', 'Condensed Matter Physics'], ['02', 'Physical Sciences'], ['09', 'Engineering']]",TRUE,Shine Research,Materials Science,3.345151,77,1213,23,23,3525,411,3114,23,0,0,4,73,,,,5,2,5,9,7,630,28.4,3
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Aware Journal,Veterinary Science and Veterinary Medicine,3.310858,76,215,17,17,705,119,586,17,0,0,4,78,,,,0,0,5,5,1,169,0.6,0.4
-"[['1109', 'Neurosciences'], ['1115', 'Pharmacology and Pharmaceutical Sciences'], ['11', 'Medical and Health Sciences']]",TRUE,Think Sonic,"Pharmacology, Pharmaceutical Science and Toxicology",3.270505,75,450,34,34,1057,90,967,34,0,0,3,62,,,,17,3,4,6,22,162,17,1.2
-"[['10', 'Technology'], ['06', 'Biological Sciences'], ['0607', 'Plant Biology'], ['0904', 'Chemical Engineering'], ['1003', 'Industrial Biotechnology'], ['09', 'Engineering']]",TRUE,Improve Sustainable,,3.269751,74,312,35,35,749,81,668,35,0,0,3,62,,,,4,7,7,10,10,147,8.6,0.8
-"[['07', 'Agricultural and Veterinary Sciences'], ['0701', 'Agriculture, Land and Farm Management'], ['0703', 'Crop and Pasture Production'], ['0503', 'Soil Sciences'], ['05', 'Environmental Sciences']]",TRUE,Sciencebea,Agricultural and Biological Sciences,3.187997,73,2151,36,36,4925,525,4400,36,0,0,3,61,,,,5,6,4,19,13,963,91.2,2.8
-"[['10', 'Technology'], ['1007', 'Nanotechnology'], ['03', 'Chemical Sciences'], ['0303', 'Macromolecular and Materials Chemistry'], ['0912', 'Materials Engineering'], ['09', 'Engineering']]",TRUE,Up Journal,Materials Science,3.187119,72,722,27,27,2033,359,1674,27,0,0,4,69,,,,3,2,7,9,4,580,12.2,0.2
-"[['09', 'Engineering'], ['03', 'Chemical Sciences']]",TRUE,Boffin Current,Materials Science,3.178872,71,493,55,55,854,143,711,55,0,0,2,43,2010-2016,,36,2,29,13,4,35,370,12.4,0
-"[['MD', 'Multidisciplinary']]",TRUE,Coastal Clinic,Materials Science,3.143666,70,862,39,39,1893,233,1660,39,0,0,3,58,,,,13,6,8,8,19,446,29.6,1.2
-"[['07', 'Agricultural and Veterinary Sciences'], ['05', 'Environmental Sciences'], ['06', 'Biological Sciences']]",TRUE,Collab International,Agricultural and Biological Sciences,3.104421,69,2245,27,27,5673,589,5084,27,0,0,4,69,,,,4,4,6,12,8,950,103.8,2.6
-"[['1301', 'Education Systems'], ['13', 'Education']]",TRUE,Unite Crop,Social and Behavioral Sciences,3.092762,68,462,22,22,1323,211,1112,22,0,0,4,74,,,,3,0,4,13,2,318,12.4,0.2
-"[['09', 'Engineering'], ['0306', 'Physical Chemistry (incl. Structural)'], ['03', 'Chemical Sciences'], ['0913', 'Mechanical Engineering'], ['0904', 'Chemical Engineering']]",TRUE,Techie Flame,"Engineering, Energy and Technology",3.077174,67,2317,17,17,6888,973,5915,17,0,0,4,79,,,,3,2,3,6,5,1379,63.8,3
-"[['03', 'Chemical Sciences'], ['05', 'Environmental Sciences'], ['06', 'Biological Sciences']]",TRUE,Conductverse,Environmental Sciences,3.076264,66,489,28,28,1277,195,1082,28,0,0,4,68,,,,4,4,6,10,8,320,13,0.4
-"[['0601', 'Biochemistry and Cell Biology'], ['0604', 'Genetics'], ['0607', 'Plant Biology'], ['06', 'Biological Sciences']]",TRUE,Instructor Materialia,Life Sciences,2.996842,65,1655,71,71,1730,278,1452,71,0,0,1,28,,,18,1,12,54,6,63,1117,36.2,1.8
-"[['07', 'Agricultural and Veterinary Sciences'], ['0608', 'Zoology'], ['0707', 'Veterinary Sciences'], ['06', 'Biological Sciences']]",TRUE,Scienceprism,Veterinary Science and Veterinary Medicine,2.99405,64,1293,21,21,3401,352,3049,21,0,0,4,75,,,,4,4,4,6,8,526,51.2,2.6
-"[['06', 'Biological Sciences'], ['0605', 'Microbiology'], ['1003', 'Industrial Biotechnology'], ['0908', 'Food Sciences'], ['10', 'Technology'], ['09', 'Engineering']]",TRUE,Integrity Insect,Agricultural and Biological Sciences,2.98727,63,689,19,19,1954,295,1659,19,0,0,4,77,,,,6,3,5,2,10,430,24,0.2
-"[['11', 'Medical and Health Sciences'], ['06', 'Biological Sciences']]",TRUE,Boffin Energy,Life Sciences,2.930699,62,1000,63,63,1252,175,1077,63,0,0,2,35,,,12,3,6,46,3,54,559,36.2,0.8
-"[['07', 'Agricultural and Veterinary Sciences'], ['0703', 'Crop and Pasture Production']]",TRUE,Grasshopper International,Agricultural and Biological Sciences,2.901418,61,731,25,25,1817,233,1584,25,0,0,4,71,,,,5,5,5,9,10,367,26.6,1
-"[['07', 'Agricultural and Veterinary Sciences'], ['0502', 'Environmental Science and Management'], ['0705', 'Forestry Sciences'], ['05', 'Environmental Sciences']]",TRUE,Perception Reviews,Social and Behavioral Sciences,2.887535,60,252,34,34,610,127,483,34,0,0,3,63,,,,3,3,6,12,10,226,2.6,0
-"[['05', 'Environmental Sciences'], ['07', 'Agricultural and Veterinary Sciences'], ['16', 'Studies in Human Society']]",TRUE,Spark American,Agricultural and Biological Sciences,2.844207,59,2410,31,31,5378,633,4745,31,0,0,3,66,,,,8,6,5,13,12,1075,99.8,3.4
-"[['1505', 'Marketing'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,Corporatelux,"Economics, Business and Management",2.821119,58,1806,29,29,4430,814,3616,29,0,0,4,67,,,,8,3,2,9,9,1349,41.8,0.4
-"[['1303', 'Specialist Studies in Education'], ['2004', 'Linguistics'], ['20', 'Language, Communication and Culture'], ['13', 'Education']]",TRUE,Blossom Sensing,Social and Behavioral Sciences,2.816078,57,659,43,43,1235,185,1050,28,15,0,3,54,2017-2019,,,8,1,7,2,8,443,17.8,0.4
-"[['0406', 'Physical Geography and Environmental Geoscience'], ['0909', 'Geomatic Engineering'], ['04', 'Earth Sciences'], ['09', 'Engineering']]",TRUE,Duel Dairy,Earth and Planetary Sciences,2.804793,56,522,38,38,1122,215,907,38,0,0,3,59,,,,7,7,4,17,12,408,9.4,0.2
-"[['MD', 'Multidisciplinary']]",TRUE,Fountain Solar,Social and Behavioral Sciences,2.796036,55,473,41,41,944,162,782,41,0,0,3,56,,,,11,9,6,16,20,322,15.2,0
-"[['06', 'Biological Sciences'], ['05', 'Environmental Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Intellect Physics,Agricultural and Biological Sciences,2.778154,54,2707,31,31,5862,705,5157,31,0,0,3,65,,,,5,5,3,14,10,1210,140,1
-"[['1106', 'Human Movement and Sports Science'], ['1116', 'Medical Physiology'], ['1117', 'Public Health and Health Services'], ['11', 'Medical and Health Sciences']]",TRUE,Sage Total,Medicine,2.711664,53,486,51,51,747,105,642,51,0,0,2,46,,,,7,2,28,12,9,254,13.2,1
-"[['09', 'Engineering'], ['14', 'Economics']]",TRUE,Inspire Cell,"Engineering, Energy and Technology",2.70965,52,2804,28,28,6557,1075,5482,28,0,0,4,69,,,,8,6,3,10,12,1753,69.2,3.6
-"[['0913', 'Mechanical Engineering'], ['0912', 'Materials Engineering'], ['0204', 'Condensed Matter Physics'], ['02', 'Physical Sciences'], ['09', 'Engineering']]",TRUE,Bridge Veterinary,Materials Science,2.669027,51,1394,36,36,2723,356,2367,36,0,0,3,60,,,,5,5,5,18,10,658,49.8,2.4
-"[['MD', 'Multidisciplinary']]",TRUE,Classroom Environment,Environmental Sciences,2.632558,50,1438,31,31,3214,612,2602,31,0,0,3,65,,,,4,3,3,14,6,1048,29,1
-"[['0603', 'Evolutionary Biology'], ['0604', 'Genetics'], ['0608', 'Zoology'], ['06', 'Biological Sciences']]",TRUE,Leader Journal,Life Sciences,2.627625,49,988,32,32,1946,172,1774,32,0,0,3,65,,,,6,5,3,13,11,295,53.4,1.6
-"[['0905', 'Civil Engineering'], ['0912', 'Materials Engineering'], ['0915', 'Interdisciplinary Engineering'], ['09', 'Engineering']]",TRUE,Matter Cell,"Engineering, Energy and Technology",2.591317,48,2241,25,25,5255,921,4334,25,0,0,4,71,,,,4,2,2,14,5,1452,35,4.4
-"[['0703', 'Crop and Pasture Production'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Push Environment,Agricultural and Biological Sciences,2.458845,47,1110,20,20,2516,336,2180,20,0,0,4,76,,,,3,1,3,10,5,495,33.6,2.8
-"[['09', 'Engineering']]",TRUE,Fortune Global,"Engineering, Energy and Technology",2.39434,46,2313,49,49,3388,582,2806,26,24,0,3,48,2016-2019,,,11,6,4,11,15,1656,53.8,1.2
-"[['09', 'Engineering'], ['07', 'Agricultural and Veterinary Sciences'], ['10', 'Technology']]",TRUE,Dramatic Dairy,"Engineering, Energy and Technology",2.391355,45,1876,25,25,3899,529,3370,25,0,0,4,71,,,,7,8,5,8,15,829,83,2.2
-"[['0607', 'Plant Biology'], ['0602', 'Ecology'], ['07', 'Agricultural and Veterinary Sciences'], ['0703', 'Crop and Pasture Production'], ['06', 'Biological Sciences']]",TRUE,Americanlux,Agricultural and Biological Sciences,2.376222,44,2028,37,37,3671,642,3029,37,0,0,3,60,,,,8,7,9,13,19,1202,71.2,1.2
-"[['13', 'Education'], ['11', 'Medical and Health Sciences']]",TRUE,Aspire Scripta,Medicine,2.370601,43,1158,61,61,1267,184,1083,61,0,0,2,37,,,,25,18,14,3,53,548,47.2,1.4
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences'], ['17', 'Psychology and Cognitive Sciences']]",TRUE,Express Remote,Life Sciences,2.332691,42,2557,67,67,2373,430,1943,67,0,0,2,31,,,12,2,11,48,2,59,1554,86.4,1.4
-[],MAYBE,Field Cement,,2.320987654,42,81,0,0,188,0,188,0,0,0,5,95,,,,0,0,0,0,0,0,0,0
-"[['09', 'Engineering'], ['03', 'Chemical Sciences']]",TRUE,Researchlytical,Chemistry and Chemical Engineering,2.286336,41,306,18,18,717,139,578,18,0,0,4,78,,,,1,0,4,12,1,199,4.8,0.6
-"[['07', 'Agricultural and Veterinary Sciences'], ['08', 'Information and Computing Sciences'], ['09', 'Engineering']]",TRUE,Sciencegenics,Agricultural and Biological Sciences,2.247068,40,1462,25,25,3149,672,2477,25,0,0,4,72,,,,4,5,6,6,8,1049,29.4,1.2
-"[['09', 'Engineering'], ['0910', 'Manufacturing Engineering']]",TRUE,Alpha Systems,"Engineering, Energy and Technology",2.237176,39,600,63,63,662,169,493,53,10,0,2,35,2016-2019,,,3,8,12,12,11,554,2.6,0.2
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",TRUE,Ademia Flame,Life Sciences,2.222104,38,1792,66,66,1648,299,1349,66,0,0,2,32,,,12,4,9,45,3,57,1038,67.6,0.8
-"[['07', 'Agricultural and Veterinary Sciences'], ['0908', 'Food Sciences'], ['09', 'Engineering'], ['0702', 'Animal Production'], ['0904', 'Chemical Engineering']]",TRUE,Environhut,Agricultural and Biological Sciences,2.220707,37,2807,20,20,5738,766,4972,20,0,0,4,76,,,,7,1,4,9,7,1130,120.2,4.8
-"[['10', 'Technology'], ['0301', 'Analytical Chemistry'], ['1007', 'Nanotechnology'], ['0903', 'Biomedical Engineering'], ['03', 'Chemical Sciences'], ['09', 'Engineering']]",TRUE,Better Materialia,Chemistry and Chemical Engineering,2.211325,36,2206,15,15,5070,938,4132,15,0,0,4,80,,,,4,2,3,6,5,1303,66.4,2.4
-"[['0908', 'Food Sciences'], ['09', 'Engineering']]",TRUE,Zip Surface,Agricultural and Biological Sciences,2.209416,35,1283,17,17,2924,585,2339,17,0,0,4,78,,,,6,3,4,5,8,834,29,1.6
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Potential International,Veterinary Science and Veterinary Medicine,2.199196,34,206,18,18,507,136,371,18,0,0,4,78,,,,7,2,2,8,8,196,1,0
-"[['1503', 'Business and Management'], ['1505', 'Marketing'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,Possible Current,"Economics, Business and Management",2.173779,33,309,23,23,676,156,520,23,0,0,4,73,,,,1,1,5,13,5,238,5.2,0.2
-"[['0304', 'Medicinal and Biomolecular Chemistry'], ['0305', 'Organic Chemistry'], ['03', 'Chemical Sciences']]",TRUE,Improve Opinion,Chemistry and Chemical Engineering,2.155083,32,10244,17,17,19410,1092,18318,17,0,0,4,79,,,,7,6,5,3,16,1548,846.4,2.4
-"[['09', 'Engineering'], ['0999', 'Other Engineering']]",TRUE,Scienceiva,"Economics, Business and Management",2.135864,31,1205,41,41,1842,333,1509,20,21,0,3,56,2016-2019,,,4,3,5,9,6,811,23.6,1.6
-"[['1701', 'Psychology'], ['1503', 'Business and Management'], ['17', 'Psychology and Cognitive Sciences'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,Drive Biology,"Economics, Business and Management",2.018875,30,748,35,35,1247,265,982,35,0,0,3,62,,,,15,3,8,10,19,480,23.2,0.4
-"[['1504', 'Commercial Services'], ['15', 'Commerce, Management, Tourism and Services'], ['1505', 'Marketing'], ['1506', 'Tourism']]",TRUE,Excellence Computer,Social and Behavioral Sciences,1.992364,29,948,27,27,1839,462,1377,27,0,0,4,69,,,,15,3,3,7,16,746,20.4,0
-"[['1602', 'Criminology'], ['16', 'Studies in Human Society']]",TRUE,Integral Journal,Social and Behavioral Sciences,1.963545,28,1501,29,29,2284,190,2094,29,0,0,4,67,,,,5,2,4,15,7,315,84,3.6
-"[['17', 'Psychology and Cognitive Sciences'], ['13', 'Education'], ['11', 'Medical and Health Sciences']]",TRUE,Aware International,,1.878038,27,879,30,30,1471,323,1148,30,0,0,3,66,,,,12,4,8,3,21,546,25.4,0.8
-"[['MD', 'Multidisciplinary']]",TRUE,Innovate American,"Engineering, Energy and Technology",1.870006,26,4982,20,20,9304,1892,7412,20,0,0,4,76,,,,4,3,3,10,6,2797,186.6,3.2
-"[['0707', 'Veterinary Sciences'], ['0605', 'Microbiology'], ['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]",TRUE,Passage Current,Veterinary Science and Veterinary Medicine,1.74826,25,3734,27,27,5913,1129,4784,27,0,0,4,70,,,,5,5,6,11,10,1813,146.6,4.6
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Smart Journal,Veterinary Science and Veterinary Medicine,1.635936,24,513,22,22,819,164,655,22,0,0,4,74,,,,2,4,5,7,7,247,2.6,2.4
-"[['0204', 'Condensed Matter Physics'], ['0912', 'Materials Engineering'], ['02', 'Physical Sciences'], ['0913', 'Mechanical Engineering'], ['09', 'Engineering']]",TRUE,Neuro Veterinary,Materials Science,1.600061,23,4359,37,37,5608,1214,4394,37,0,0,3,60,,,,9,7,6,12,15,2268,147.4,6.2
-"[['1301', 'Education Systems'], ['1701', 'Psychology'], ['17', 'Psychology and Cognitive Sciences'], ['13', 'Education']]",TRUE,Scope Remote,Social and Behavioral Sciences,1.586677,22,701,29,29,1016,227,789,29,0,0,4,67,,,,6,1,2,9,7,377,28.6,0.4
-"[['1114', 'Paediatrics and Reproductive Medicine'], ['1103', 'Clinical Sciences'], ['1109', 'Neurosciences'], ['11', 'Medical and Health Sciences']]",TRUE,Techie Surface,Medicine,1.507061,21,932,9,9,1593,320,1273,9,0,0,5,86,,,,2,0,6,0,7,416,21.6,3
-"[['1505', 'Marketing'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,Academic Journal,"Economics, Business and Management",1.486475,20,449,20,20,697,165,532,20,0,0,4,76,,,,9,2,5,8,12,244,17,0.4
-"[['0707', 'Veterinary Sciences'], ['0702', 'Animal Production'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Grow International,Veterinary Science and Veterinary Medicine,1.46266,19,963,26,26,1379,336,1043,26,0,0,4,70,,,,6,3,7,9,8,533,37.2,0.6
-"[['06', 'Biological Sciences'], ['11', 'Medical and Health Sciences']]",TRUE,Improve Research,Agricultural and Biological Sciences,1.383775,18,5407,68,68,3272,866,2406,68,0,0,2,31,,,12,2,7,52,5,59,3168,224.2,0
-"[['08', 'Information and Computing Sciences'], ['1701', 'Psychology'], ['0806', 'Information Systems'], ['1702', 'Cognitive Science'], ['17', 'Psychology and Cognitive Sciences']]",TRUE,Nerd Journal,Social and Behavioral Sciences,1.211976,17,2399,24,24,3286,1086,2200,24,0,0,4,72,,,,10,3,3,10,11,1688,45.2,2.6
-"[['07', 'Agricultural and Veterinary Sciences'], ['0702', 'Animal Production'], ['0904', 'Chemical Engineering'], ['0908', 'Food Sciences'], ['09', 'Engineering']]",TRUE,Launch Science,Agricultural and Biological Sciences,1.209538,16,1141,20,20,1546,448,1098,20,0,0,4,76,,,,4,1,5,6,5,663,29.8,1.8
-"[['1505', 'Marketing'], ['1506', 'Tourism'], ['1504', 'Commercial Services'], ['15', 'Commerce, Management, Tourism and Services']]",TRUE,A1 Opinion,"Economics, Business and Management",1.165226,15,2522,34,34,3139,1197,1942,34,0,0,3,63,,,,10,2,5,14,10,2132,37.2,0.2
-"[['1701', 'Psychology'], ['1702', 'Cognitive Science'], ['17', 'Psychology and Cognitive Sciences']]",TRUE,Blue Sky Physics,Social and Behavioral Sciences,1.096843,14,552,28,28,555,119,436,28,0,0,4,68,,,,11,6,5,3,14,195,16.2,2
-"[['0915', 'Interdisciplinary Engineering'], ['0907', 'Environmental Engineering'], ['0910', 'Manufacturing Engineering'], ['09', 'Engineering']]",TRUE,Morph Food,Environmental Sciences,1.034375,13,2700,37,37,2840,1090,1750,18,19,0,3,60,2016-2019,,,4,2,2,4,5,2201,32,1.8
-"[['11', 'Medical and Health Sciences'], ['13', 'Education'], ['17', 'Psychology and Cognitive Sciences']]",TRUE,Propel Waste,Nursing,0.992804,12,921,58,58,571,191,380,58,0,0,2,39,,,,3,1,53,1,38,540,14.2,2.4
-"[['07', 'Agricultural and Veterinary Sciences'], ['06', 'Biological Sciences']]",TRUE,Logic Trends,Veterinary Science and Veterinary Medicine,0.943414,11,1658,20,20,1875,630,1245,20,0,0,4,76,,,,15,6,5,4,20,932,51,2.2
-"[['1003', 'Industrial Biotechnology'], ['10', 'Technology']]",TRUE,Earth Science,Life Sciences,0.862933,10,1194,43,43,926,340,586,43,0,0,3,54,,,,7,11,9,8,18,705,35.2,1.4
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Recoil Scripta,Veterinary Science and Veterinary Medicine,0.816736,9,379,11,11,542,265,277,11,0,0,4,85,,,,1,0,1,9,1,350,3,0
-"[['1202', 'Building'], ['0905', 'Civil Engineering'], ['09', 'Engineering'], ['12', 'Built Environment and Design']]",TRUE,Specialist Surface,"Engineering, Energy and Technology",0.506808,8,3852,17,17,3138,1527,1611,17,0,0,4,78,,,,3,1,3,8,3,2176,95.6,7.2
-"[['07', 'Agricultural and Veterinary Sciences'], ['0707', 'Veterinary Sciences']]",TRUE,Aspire Quantitative,Veterinary Science and Veterinary Medicine,0.400142,7,635,26,26,533,345,188,26,0,0,4,70,,,,9,3,5,5,11,551,4.6,0.4
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Biologyadil,Veterinary Science and Veterinary Medicine,0.162578,6,647,6,6,558,459,99,6,0,0,5,89,,,,2,0,2,3,2,577,5.2,0.2
-"[['0702', 'Animal Production'], ['0908', 'Food Sciences'], ['09', 'Engineering'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Field Biological,,0.076776,5,8264,64,64,1497,1266,231,64,0,0,2,35,,,12,0,0,0,0,0,4082,294.6,12.4
-"[['1111', 'Nutrition and Dietetics'], ['1103', 'Clinical Sciences'], ['11', 'Medical and Health Sciences'], ['1601', 'Anthropology'], ['16', 'Studies in Human Society']]",TRUE,Scope Research,Nursing,0.026565,4,1409,19,19,753,723,30,19,0,0,4,77,,,,6,1,10,1,12,1046,10.4,2.6
-"[['15', 'Commerce, Management, Tourism and Services'], ['1504', 'Commercial Services'], ['1505', 'Marketing'], ['1506', 'Tourism']]",TRUE,Refine Nuclear,"Economics, Business and Management",-0.139523,3,3882,19,19,1831,2270,-439,19,0,0,4,77,,,,3,0,5,5,3,3294,37,2.2
-"[['0707', 'Veterinary Sciences'], ['07', 'Agricultural and Veterinary Sciences']]",TRUE,Home Scripta,Veterinary Science and Veterinary Medicine,-0.284534,2,1525,8,8,639,1037,-398,8,0,0,5,87,,,,2,1,3,3,4,1331,17.6,0.2
-"[['07', 'Agricultural and Veterinary Sciences'], ['0707', 'Veterinary Sciences']]",TRUE,Pursuit Nuclear,Veterinary Science and Veterinary Medicine,-0.392813,1,1942,12,12,436,1105,-669,12,0,0,4,83,,,,2,2,3,6,5,1483,23,2.4
+subscribed,title,subject,cpu,cpu_rank,usage,instant_usage_percent,free_instant_usage_percent,subscription_cost,ill_cost,subscription_minus_ill_cost,use_oa_percent,use_backfile_percent,use_subscription_percent,use_ill_percent,use_other_delayed_percent,perpetual_access_years,baseline_access,bronze_oa_embargo_months,use_green_percent,use_hybrid_percent,use_bronze_percent,use_asns_percent,use_peer_reviewed_percent,downloads,citations,authorships
+FALSE,Journlia,Life Sciences,264.851077,430,722,96,96,8273,12,8261,96,0,0,0,4,,,18,1,10,71,10,81,321,36.2,0.4
+FALSE,Nexus American,Life Sciences,145.089854,429,497,90,90,7265,25,7240,90,0,0,1,10,,,18,0,7,81,0,86,288,17,0.4
+FALSE,Become Veterinary,,128.433666,428,85,86,86,1568,10,1558,86,0,0,1,14,,,12,1,13,71,3,79,79,0.6,0
+FALSE,Wish Industrial,Computer Science,76.156409,427,20,30,30,1064,11,1053,30,0,0,3,66,,,,6,0,11,8,6,18,0.2,0
+FALSE,Encourage Methods,"Engineering, Energy and Technology",74.233178,426,901,82,82,12068,87,11981,82,0,0,1,17,,,36,3,2,63,8,65,570,19.2,1.4
+FALSE,Research Materialia,Computer Science,71.519558,425,361,82,82,4798,20,4778,82,0,0,1,18,,,48,15,6,52,4,64,128,17.4,0.6
+FALSE,Alpha Trends,Physics and Astronomy,70.158704,424,638,79,79,9491,36,9455,79,0,0,1,20,,,,29,7,10,2,20,203,44,0
+FALSE,Perception Science,"Economics, Business and Management",55.74553,423,216,71,71,3551,29,3522,71,0,0,1,28,,,,42,3,6,1,34,115,6.2,0.4
+FALSE,Advance Environment,"Engineering, Energy and Technology",53.925285,422,310,42,42,9771,101,9670,42,0,0,3,55,,,,10,11,8,10,21,206,10.4,0
+FALSE,Butterfly Veterinary,Chemistry and Chemical Engineering,51.812057,421,272,22,22,11122,113,11009,22,0,0,4,74,,,,2,1,5,10,3,170,8.2,0.2
+FALSE,Refine Total,"Pharmacology, Pharmaceutical Science and Toxicology",50.177753,420,168,4,4,8151,77,8074,4,0,0,5,91,,,,0,0,1,2,1,94,7.4,0
+FALSE,Bright Side Science,"Engineering, Energy and Technology",47.26968,419,298,35,35,9196,101,9095,35,0,0,3,61,,,,14,3,3,16,10,185,9.4,0.2
+FALSE,Environorama,Life Sciences,47.176679,418,269,17,17,10619,127,10492,17,0,0,4,79,,,,3,1,2,5,6,181,8.8,0
+FALSE,Learn Biosensor,Materials Science,46.005318,417,237,18,18,9067,118,8949,18,0,0,4,78,,,,5,1,4,9,5,169,6.8,0
+FALSE,Unite Programming,Mathematics,44.310804,416,845,83,83,6372,50,6322,83,0,0,1,16,,,48,12,2,62,4,68,346,24,2.6
+FALSE,Quake Cement,Neuroscience,41.882913,415,170,52,52,3493,51,3442,52,0,0,2,46,,,,28,10,6,5,39,124,4.6,0
+FALSE,Imagine Computer,Computer Science,41.229243,414,318,35,35,8560,101,8459,17,19,0,3,61,2016-2019,,,7,0,3,4,4,214,10.4,0
+FALSE,Logical Journal,Neuroscience,40.03516,413,530,41,41,12761,147,12614,41,0,0,3,56,,,,26,8,1,12,32,291,22,0.2
+FALSE,Simple Industrial,Medicine,39.390209,412,113,22,22,3501,47,3454,22,0,0,4,74,,,,6,1,4,8,8,71,2.2,0.2
+FALSE,Achieve Academic,Neuroscience,38.621808,411,282,50,50,5475,73,5402,50,0,0,2,47,,,,22,8,2,11,28,172,9,0.2
+FALSE,Recoil Trends,Physics and Astronomy,38.392816,410,255,12,12,8723,123,8600,12,0,0,4,84,,,,5,1,2,3,1,165,7,0.2
+FALSE,Flamefluent,"Engineering, Energy and Technology",38.336784,409,354,37,37,8718,145,8573,37,0,0,3,60,,,,5,1,9,11,11,270,8.4,0
+FALSE,Excel Finance,Earth and Planetary Sciences,37.161041,408,350,38,38,8136,50,8086,38,0,0,3,59,,,,3,1,5,21,11,95,19.6,0.6
+FALSE,Learn Statistics,Chemistry and Chemical Engineering,36.878477,407,274,20,20,8233,130,8103,20,0,0,4,76,,,,0,0,3,15,2,190,8.4,0
+FALSE,Pioneer Quantitative,Neuroscience,36.668558,406,475,36,36,11370,166,11204,36,0,0,3,61,,,,20,5,3,9,25,303,9.2,0.8
+FALSE,Fuelhut,"Economics, Business and Management",35.79685,405,188,49,49,3439,41,3398,49,0,0,3,48,,,,34,1,4,6,22,94,7.4,0.2
+FALSE,Growth American,Life Sciences,35.072121,404,1859,88,88,8161,61,8100,88,0,0,1,12,,,12,1,8,79,0,84,581,100.2,2.8
+FALSE,Programmingfluent,Chemistry and Chemical Engineering,34.970511,403,402,25,25,10694,209,10485,25,0,0,4,71,,,,8,2,5,13,6,330,7.2,0
+FALSE,Nurture Opinion,"Engineering, Energy and Technology",34.739889,402,238,32,32,5693,112,5581,32,0,0,3,64,,,,5,2,5,12,6,196,4.2,0
+FALSE,Belief Statistics,Life Sciences,34.579897,401,222,27,27,5654,83,5571,27,0,0,4,69,,,,7,7,2,5,15,134,8.8,0
+FALSE,Flourish Trends,Earth and Planetary Sciences,34.012358,400,428,42,42,8591,91,8500,42,0,0,3,55,,,,10,14,3,11,24,183,20.6,0.4
+FALSE,Scienceara,"Engineering, Energy and Technology",33.801582,399,207,23,23,5525,102,5423,23,0,0,4,74,,,,11,5,6,9,12,155,5.2,0
+FALSE,Academic Clinic,Mathematics,33.797549,398,769,87,87,3510,21,3489,87,0,0,1,13,,,48,20,1,52,6,62,187,26.4,3.2
+FALSE,Push Cell,Agricultural and Biological Sciences,32.942267,397,209,35,35,4536,81,4455,35,0,0,3,61,,,,7,7,7,15,10,147,4.2,0.2
+FALSE,Dairycog,"Economics, Business and Management",32.392604,396,263,26,26,6431,104,6327,26,0,0,4,71,,,,11,1,3,7,8,165,9.8,0
+FALSE,Express Journal,Computer Science,31.826013,395,415,75,75,3357,58,3299,75,0,0,1,24,,,,4,0,52,15,52,272,8.4,0.6
+FALSE,Pursue Journal,Chemistry and Chemical Engineering,31.322796,394,440,24,24,10678,188,10490,24,0,0,4,72,,,,8,1,8,6,10,291,15,0
+FALSE,School Journal,Life Sciences,31.180727,393,359,52,52,5426,96,5330,52,0,0,2,45,,,18,0,5,43,2,45,238,12.2,0
+FALSE,Morph Clinic,Neuroscience,30.973995,392,541,28,28,12178,167,12011,28,0,0,4,68,,,,10,4,4,9,14,274,24.8,0.2
+FALSE,Matter Organizational,"Pharmacology, Pharmaceutical Science and Toxicology",30.276334,391,673,39,39,12696,160,12536,25,14,0,3,58,2017-2019,,,10,2,2,9,9,374,26,0.4
+FALSE,Quake Science,Life Sciences,29.143573,390,329,62,62,3683,55,3628,62,0,0,2,36,,,,20,10,22,6,30,173,15.8,0
+MAYBE,Energize Greening,"Engineering, Energy and Technology",29.097508,389,626,25,25,13805,220,13585,25,0,0,4,71,,,,6,2,3,9,5,347,26,0.2
+FALSE,Scholar Science,"Pharmacology, Pharmaceutical Science and Toxicology",28.797174,388,147,29,29,3044,29,3015,29,0,0,4,67,,,,6,0,2,6,8,48,6,0.4
+FALSE,Consumer Clinic,"Economics, Business and Management",28.459117,387,254,63,63,2771,58,2713,63,0,0,2,36,,,,39,8,6,4,38,181,7.4,0
+FALSE,Financelux,"Engineering, Energy and Technology",28.181745,386,474,43,43,7731,149,7582,43,0,0,3,54,,,,9,4,7,14,10,308,12.6,0.4
+FALSE,Tutor Journal,"Engineering, Energy and Technology",27.874221,385,306,32,32,5881,118,5763,32,0,0,3,64,,,,7,2,5,16,8,206,8,0.2
+FALSE,Veterinarynest,Medicine,27.757761,384,356,35,35,6562,132,6430,35,0,0,3,62,,,,8,1,3,13,10,238,9.8,0.2
+FALSE,Opinverse,Materials Science,27.352998,383,215,54,54,2767,48,2719,54,0,0,2,44,,,,13,15,18,8,33,123,7.6,0.2
+MAYBE,Propel Current,Physics and Astronomy,27.050787,382,628,22,22,13577,290,13287,22,0,0,4,74,,,,3,2,2,12,4,437,13.2,0.6
+FALSE,Swift Sensing,Environmental Sciences,26.359422,381,284,40,40,4560,97,4463,40,0,0,3,57,,,,9,7,5,9,15,192,9.2,0
+MAYBE,Flagship Crop,Neuroscience,26.326749,380,646,40,40,10344,167,10177,40,0,0,3,57,,,,23,7,4,10,28,328,31.8,0
+FALSE,Loop Flame,Chemistry and Chemical Engineering,26.193666,379,254,19,19,5580,165,5415,19,0,0,4,77,,,,1,0,4,8,1,238,1.6,0
+FALSE,Quiz Current,Agricultural and Biological Sciences,25.910855,378,460,25,25,9073,140,8933,25,0,0,4,71,,,,4,1,2,12,5,221,22,0.2
+FALSE,Field Journal,Materials Science,25.624378,377,430,29,29,8018,179,7839,29,0,0,4,68,,,,7,3,6,8,8,297,11.4,0.2
+FALSE,Boffin Academic,Earth and Planetary Sciences,25.556349,376,320,52,52,4052,112,3940,52,0,0,2,46,,,,11,19,8,10,29,273,4.8,0
+FALSE,Community Clinic,Earth and Planetary Sciences,25.555157,375,209,26,26,4096,126,3970,26,0,0,4,71,,,,2,1,7,9,2,199,1,0
+MAYBE,Develop Veterinary,"Engineering, Energy and Technology",25.43958,374,694,31,31,12381,199,12182,31,0,0,3,66,,,,10,5,4,10,13,339,21.6,1.4
+FALSE,Shine Dairy,Physics and Astronomy,25.323819,373,591,15,15,12950,266,12684,15,0,0,4,80,,,,5,5,4,5,9,370,20.2,0.2
+FALSE,Fortune Biological,"Economics, Business and Management",24.56125,372,447,58,58,4702,109,4593,58,0,0,2,40,,,,32,6,4,5,24,305,12.2,0.2
+FALSE,Outlook Cement,Chemistry and Chemical Engineering,24.281131,371,228,20,20,4541,109,4432,20,0,0,4,76,,,,1,1,7,7,6,161,6.8,0
+FALSE,Propel Computer,Agricultural and Biological Sciences,23.55172,370,611,44,44,8283,157,8126,44,0,0,3,54,,,,17,7,4,9,19,327,26.4,0.2
+FALSE,Refine Science,Chemistry and Chemical Engineering,23.486525,369,343,15,15,6960,153,6807,15,0,0,4,80,,,,4,0,2,6,5,213,11,0.2
+FALSE,Skill Trends,Physics and Astronomy,23.325328,368,420,26,26,7429,177,7252,26,0,0,4,70,,,,12,0,1,5,5,282,11.8,0.2
+FALSE,Sage Journal,"Engineering, Energy and Technology",23.308292,367,383,30,30,6435,192,6243,30,0,0,3,66,,,,7,3,5,10,7,323,4,0.2
+FALSE,Pathway Coating,Chemistry and Chemical Engineering,22.693249,366,439,18,18,8416,219,8197,18,0,0,4,78,,,,4,2,3,9,5,313,8.6,0.4
+MAYBE,Brave Research,"Pharmacology, Pharmaceutical Science and Toxicology",22.477633,365,729,39,39,10129,166,9963,39,0,0,3,58,,,,19,7,5,5,26,321,39,0.2
+FALSE,Morph Journal,Chemistry and Chemical Engineering,22.317123,364,508,18,18,9429,181,9248,18,0,0,4,78,,,,3,3,4,8,6,260,20.8,0.4
+FALSE,Progress Journal,Life Sciences,21.983772,363,295,40,40,3939,58,3881,40,0,0,3,57,,,,14,9,4,12,29,114,14.4,0.4
+MAYBE,Aware Polymers,Chemistry and Chemical Engineering,21.459489,362,636,19,19,11412,350,11062,19,0,0,4,77,,,,5,2,3,7,6,508,12.8,0
+MAYBE,Flourish Proceedings,Chemistry and Chemical Engineering,21.204792,361,721,12,12,13755,369,13386,12,0,0,4,83,,,,4,0,2,4,3,496,18.6,0.4
+FALSE,Home Neuro,"Economics, Business and Management",21.197238,360,431,49,49,4792,110,4682,49,0,0,3,49,,,,35,5,6,0,24,252,16,0.2
+ ,Encourage Trends,"Economics, Business and Management",20.998241,359,597,60,60,5182,129,5053,60,0,0,2,38,,,,41,7,3,3,23,376,20.2,0.2
+FALSE,Growth Opinion,Life Sciences,20.785647,358,294,45,45,3464,71,3393,45,0,0,3,53,,,,22,10,5,7,33,152,12.4,0.2
+FALSE,Professional Nutrition,Chemistry and Chemical Engineering,20.478948,357,392,18,18,6781,199,6582,18,0,0,4,78,,,,3,0,3,8,4,287,10.6,0
+ ,Surfacescape,Environmental Sciences,20.199247,356,854,30,30,12326,234,12092,30,0,0,4,67,,,,9,11,2,9,17,392,32.2,1.4
+FALSE,Fortune Dairy,Chemistry and Chemical Engineering,20.116801,355,386,31,31,5543,163,5380,31,0,0,3,66,,,,13,4,6,8,20,277,11,0
+ ,Champions Trends,Chemistry and Chemical Engineering,20.031316,354,572,28,28,8503,215,8288,28,0,0,4,69,,,,4,2,3,14,5,351,18.2,0.4
+FALSE,Training Journal,Neuroscience,19.63139,353,386,51,51,3832,103,3729,51,0,0,2,47,,,,23,8,7,8,32,245,14.2,0
+FALSE,Though Analyze,Chemistry and Chemical Engineering,19.624137,352,275,38,38,3407,72,3335,38,0,0,3,59,,,,14,9,3,2,28,138,13.8,0
+FALSE,Techie Journal,"Pharmacology, Pharmaceutical Science and Toxicology",19.293009,351,455,28,28,6435,94,6341,28,0,0,4,69,,,,12,5,3,3,17,154,22.2,0.8
+FALSE,Better Cement,Life Sciences,19.102537,350,384,51,51,3685,101,3584,51,0,0,2,46,,,,29,4,14,6,42,244,14.2,0
+FALSE,Institute Journal,Computer Science,19.039701,349,173,27,27,2495,88,2407,27,0,0,4,70,,,,7,1,4,9,6,141,3.2,0
+FALSE,Accel Accident,Life Sciences,18.814105,348,471,58,58,3848,105,3743,58,0,0,2,40,,,,18,16,16,5,35,292,18,0
+ ,Cabin International,Materials Science,18.780985,347,520,16,16,8456,230,8226,16,0,0,4,80,,,,6,2,3,4,8,321,18,0.2
+ ,Academadil,"Engineering, Energy and Technology",18.761704,346,516,43,43,5614,117,5497,43,0,0,3,54,,,,21,3,4,9,13,243,21.4,0.6
+FALSE,Jewel Computer,Life Sciences,18.708488,345,474,11,11,8091,203,7888,11,0,0,4,84,,,,4,4,2,4,8,269,20.6,0
+FALSE,Roads Academic,"Economics, Business and Management",18.464831,344,428,32,32,5511,119,5392,32,0,0,3,65,,,,26,3,2,5,15,205,14.4,0.8
+FALSE,Roads Urban,Chemistry and Chemical Engineering,18.441038,343,335,27,27,4658,142,4516,27,0,0,4,69,,,,12,4,9,9,17,228,10.8,0
+FALSE,Visionary Veterinary,Agricultural and Biological Sciences,18.31002,342,354,26,26,4940,125,4815,26,0,0,4,71,,,,5,1,3,13,6,198,15.6,0
+FALSE,Fast Sensing,Neuroscience,18.173107,341,852,42,42,9250,214,9036,42,0,0,3,55,,,,20,5,4,8,26,431,34.2,0.8
+FALSE,Guardian Nutrition,Materials Science,17.773434,340,449,38,38,5112,123,4989,38,0,0,3,59,,,,7,0,21,13,13,232,20,0.2
+MAYBE,Keys Journal,Environmental Sciences,17.746806,339,839,39,39,9296,222,9074,26,13,0,3,58,2016-2019,,,3,2,4,10,5,502,29.8,0.4
+ ,Materialiabes,Chemistry and Chemical Engineering,17.64134,338,515,24,24,7106,240,6866,24,0,0,4,72,,,,14,4,6,6,20,374,12.2,0.2
+ ,Propel Programming,Materials Science,17.542146,337,717,31,31,8873,175,8698,15,15,0,3,66,2016-2019,,,3,2,2,5,5,373,24.4,1
+MAYBE,Mente Forestry,"Pharmacology, Pharmaceutical Science and Toxicology",17.535004,336,441,20,20,6355,193,6162,20,0,0,4,76,,,,2,4,4,5,7,286,11.6,0.4
+FALSE,Cabin Dairy,,17.332593,335,216,24,24,2943,78,2865,24,0,0,4,73,,,,5,1,6,7,12,121,9.6,0
+MAYBE,Owl Trends,Agricultural and Biological Sciences,17.221856,334,423,36,36,4731,75,4656,36,0,0,3,61,,,,7,7,9,18,14,138,28.8,0
+FALSE,Trainer Fuel,Life Sciences,17.178562,333,263,34,34,3020,55,2965,34,0,0,3,62,,,,11,7,6,11,12,98,12.6,0.4
+FALSE,Academish,Neuroscience,17.097469,332,460,39,39,4939,161,4778,39,0,0,3,58,,,,27,10,6,4,36,312,12.8,0.2
+ ,Biologyopolis,Neuroscience,17.026078,331,541,51,51,4633,126,4507,51,0,0,2,46,,,,20,14,7,11,29,302,22,0.2
+FALSE,Achieve Research,Chemistry and Chemical Engineering,16.802695,330,490,32,32,5751,196,5555,16,16,0,3,64,2016-2019,,,1,1,4,9,2,370,8,0.4
+ ,Range Insect,Environmental Sciences,16.503954,329,689,38,38,7195,178,7017,38,0,0,3,59,,,,11,7,6,15,19,340,29,0.6
+FALSE,Logical Science,Social and Behavioral Sciences,16.344103,328,197,45,45,1827,65,1762,45,0,0,3,52,,,,8,4,4,16,11,140,5.8,0
+FALSE,Crown Veterinary,Life Sciences,16.191399,327,485,56,56,3518,99,3419,46,11,0,2,41,2017-2019,,,25,10,5,7,33,311,15.6,0.2
+FALSE,Flourish Journal,Materials Science,16.003549,326,194,24,24,2416,67,2349,24,0,0,4,72,,,,3,1,4,11,3,105,7,0.2
+MAYBE,Succeed Veterinary,"Economics, Business and Management",15.86116,325,468,37,37,4831,177,4654,37,0,0,3,60,,,,23,3,5,3,15,332,7.6,0.6
+FALSE,Dish Dairy,Materials Science,15.510313,324,387,13,13,5447,194,5253,13,0,0,4,83,,,,3,0,1,8,2,262,12.6,0
+FALSE,Brain Technology,"Pharmacology, Pharmaceutical Science and Toxicology",15.481869,323,196,34,34,2034,42,1992,34,0,0,3,62,,,,1,23,4,5,25,75,4.2,0.8
+ ,Cognitive Journal,Medicine,15.46415,322,691,31,31,7713,308,7405,31,0,0,3,66,,,,10,5,4,4,12,524,12.8,0.4
+FALSE,Expand Programming,Social and Behavioral Sciences,15.352243,321,148,29,29,1668,65,1603,29,0,0,4,67,,,,5,2,4,6,7,108,2,0.2
+FALSE,Squad Math,Social and Behavioral Sciences,15.258921,320,156,41,41,1443,43,1400,41,0,0,3,56,,,,15,1,7,8,15,87,7,0
+FALSE,Meetup Qualitative,"Economics, Business and Management",15.168792,319,215,27,27,2452,75,2377,27,0,0,4,69,,,,27,1,7,7,25,120,9.6,0
+MAYBE,Skill Corporate,Chemistry and Chemical Engineering,14.862141,318,837,25,25,9580,223,9357,25,0,0,4,71,,,,6,6,6,7,10,349,45,0.4
+FALSE,Prodigy Trends,"Engineering, Energy and Technology",14.744556,317,389,29,29,4193,143,4050,29,0,0,4,67,,,,5,1,3,13,6,239,13,0.2
+FALSE,Advance Cement,Medicine,14.621973,316,263,56,56,1753,74,1679,56,0,0,2,42,,,,5,0,48,1,31,199,6.4,0
+FALSE,Digital Industrial,Materials Science,14.589443,315,866,29,29,9276,346,8930,29,0,0,4,67,,,,6,1,1,16,5,577,17,1.2
+FALSE,Pursue Sensing,"Engineering, Energy and Technology",14.581198,314,321,25,25,3643,143,3500,25,0,0,4,71,,,,6,2,4,8,4,226,5.6,0.4
+ ,Definite Dairy,"Engineering, Energy and Technology",14.539223,313,1045,54,54,7154,165,6989,54,0,0,2,44,,,,14,7,6,14,16,423,44.4,1.8
+FALSE,Magnet Science,,14.487334,312,79,21,21,924,25,899,21,0,0,4,75,,,,3,0,16,5,22,37,4.2,0
+MAYBE,Egghead Research,Social and Behavioral Sciences,14.234034,311,1212,45,45,9797,374,9423,45,0,0,3,52,,,,26,13,3,2,35,805,24.8,1.6
+ ,Evolution Quantitative,"Engineering, Energy and Technology",14.04388,310,584,35,35,5476,172,5304,35,0,0,3,61,,,,12,4,3,10,11,312,19.2,0.8
+FALSE,Forge Biological,Agricultural and Biological Sciences,14.039526,309,188,16,16,2287,53,2234,16,0,0,4,80,,,,3,1,4,6,3,73,1.6,1
+FALSE,Prodigy Global,Environmental Sciences,14.017189,308,330,26,26,3573,145,3428,26,0,0,4,70,,,,6,3,6,11,8,230,8,0.2
+FALSE,Analyzebea,"Engineering, Energy and Technology",13.961866,307,227,19,19,2641,69,2572,19,0,0,4,77,,,,2,0,3,12,2,100,8.8,0.4
+FALSE,Journado,Life Sciences,13.947506,306,286,34,34,2673,36,2637,34,0,0,3,63,,,,3,0,5,15,14,64,22.4,0
+ ,Motivate Science,"Engineering, Energy and Technology",13.936471,305,511,22,22,5702,142,5560,22,0,0,4,74,,,,7,3,4,6,9,214,21.8,0.8
+MAYBE,Jumpstart Journal,Life Sciences,13.922087,304,855,14,14,10493,283,10210,14,0,0,4,81,,,,3,1,2,6,5,388,42.8,0.4
+ ,Journlux,"Economics, Business and Management",13.783776,303,620,50,50,4446,173,4273,50,0,0,2,47,,,,13,8,6,10,17,407,17.4,0.4
+FALSE,Invision Science,"Pharmacology, Pharmaceutical Science and Toxicology",13.754228,302,205,24,24,2235,86,2149,24,0,0,4,72,,,,9,1,4,3,10,134,7.2,0
+ ,Neuro Computer,Materials Science,13.533674,301,748,15,15,8902,297,8605,15,0,0,4,81,,,,5,5,4,3,10,410,31.8,0.2
+MAYBE,Dream Global,Mathematics,13.431824,300,380,35,35,3419,91,3328,35,0,0,3,62,,,,19,1,5,5,12,165,5.6,1.6
+ ,Source Science,Physics and Astronomy,13.381979,299,405,17,17,4704,190,4514,17,0,0,4,79,,,,6,2,1,7,5,268,11.8,0.2
+ ,Home Journal,Life Sciences,13.353852,298,570,56,56,3518,135,3383,41,14,0,2,42,2016-2019,,,16,8,10,7,29,410,16.2,0
+ ,Professional Solar,Agricultural and Biological Sciences,13.294942,297,370,24,24,3857,123,3734,24,0,0,4,72,,,,8,2,6,9,9,191,12,0.6
+ ,Specialist Quantitative,Computer Science,13.166729,296,771,39,39,6459,224,6235,18,21,0,3,58,2016-2019,,,9,1,2,4,7,515,21.6,0.4
+ ,Valiant Current,Life Sciences,13.10689,295,730,34,34,6502,192,6310,34,0,0,3,63,,,,9,8,6,15,19,342,31,0.8
+ ,Guardian Journal,Agricultural and Biological Sciences,13.032764,294,899,29,29,8652,294,8358,29,0,0,4,68,,,,5,5,4,14,10,485,33.4,0.8
+ ,Future Cell,Chemistry and Chemical Engineering,12.990658,293,582,14,14,6761,281,6480,14,0,0,4,81,,,,4,1,3,5,4,386,15.6,0.4
+ ,Hurdle Science,Life Sciences,12.910926,292,581,32,32,5165,100,5065,32,0,0,3,64,,,,6,5,4,17,11,174,36.8,0.4
+ ,Coatingaza,Social and Behavioral Sciences,12.743654,291,677,46,46,4895,232,4663,46,0,0,3,51,,,,17,15,4,5,26,505,17.2,0
+ ,Financepad,Computer Science,12.689684,290,201,20,20,2145,111,2034,20,0,0,4,76,,,,6,1,7,6,7,163,1.8,0.2
+ ,Success Journal,Materials Science,12.67549,289,706,25,25,6953,268,6685,25,0,0,4,71,,,,5,3,2,12,6,422,20.4,0.8
+TRUE,Focus Materialia,Physics and Astronomy,12.596997,288,1533,18,18,16673,764,15909,18,0,0,4,78,,,,2,1,1,12,3,1091,34.2,1
+ ,Soar Nutrition,Materials Science,12.558059,287,657,25,25,6399,227,6172,25,0,0,4,71,,,,5,3,3,14,5,357,20,1
+TRUE,Aware Trends,Physics and Astronomy,12.554462,286,990,56,56,5588,138,5450,56,0,0,2,42,,,,34,10,5,8,26,370,56.2,0.6
+ ,Foster Science,Social and Behavioral Sciences,12.46989,285,294,31,31,2636,98,2538,31,0,0,3,66,,,,7,5,7,5,12,167,8.8,0.4
+ ,Advisor Journal,Life Sciences,12.467104,284,558,29,29,5167,222,4945,29,0,0,4,68,,,,7,5,4,12,12,367,17.2,0.2
+ ,Foster Journal,Medicine,12.465319,283,525,27,27,4981,202,4779,27,0,0,4,69,,,,11,6,4,8,15,326,16,0.4
+ ,Influence Journal,Chemistry and Chemical Engineering,12.270734,282,459,26,26,4349,196,4153,26,0,0,4,70,,,,2,2,3,15,3,313,10.6,0.4
+ ,Possible Research,Agricultural and Biological Sciences,12.269482,281,500,21,21,5071,191,4880,21,0,0,4,75,,,,4,1,2,11,5,283,13.8,0.8
+ ,Pursuit Science,Computer Science,12.235931,280,459,15,15,5031,247,4784,15,0,0,4,81,,,,9,1,3,3,8,341,9.8,0.2
+ ,Clever Journal,Agricultural and Biological Sciences,12.205328,279,805,45,45,5654,234,5420,45,0,0,3,52,,,,7,19,8,9,25,499,24.8,0.6
+ ,Start Journal,Life Sciences,12.194605,278,401,44,44,2848,101,2747,44,0,0,3,53,,,,15,10,10,8,29,212,15,0.4
+TRUE,Blue Sky Research,Materials Science,12.14301,277,1520,22,22,15004,615,14389,22,0,0,4,74,,,,5,4,5,7,9,929,47.2,1.2
+ ,Arrive Cell,Medicine,11.867659,276,782,37,37,6058,217,5841,20,17,0,3,60,2016-2019,,,7,2,5,5,6,487,13.6,1.6
+TRUE,Ademia Applied,Neuroscience,11.82644,275,416,46,46,2700,60,2640,46,0,0,3,51,,,,20,6,3,9,26,131,22.6,0.6
+ ,Push Polymers,Mathematics,11.814176,274,334,29,29,2926,109,2817,29,0,0,4,68,,,,28,4,5,3,20,180,7.6,0.8
+ ,Learn Quantitative,Life Sciences,11.794178,273,466,31,31,3932,153,3779,31,0,0,3,65,,,,15,3,4,6,18,262,12.4,0.8
+FALSE,Recoil Science,Environmental Sciences,11.7837,272,130,36,36,1024,42,982,36,0,0,3,61,,,,12,1,4,16,7,76,5.4,0
+FALSE,Swift Science,Life Sciences,11.751971,271,646,79,79,1650,45,1605,79,0,0,1,20,,,12,2,11,62,3,71,252,31.6,0.8
+ ,Matter Remote,Social and Behavioral Sciences,11.730764,270,286,46,46,1899,100,1799,46,0,0,3,51,,,,18,6,5,4,15,219,6.8,0
+ ,Recoil Academic,Medicine,11.661797,269,1093,39,39,8061,323,7738,39,0,0,3,58,,,,23,6,5,7,28,626,38.8,0.8
+ ,Dynamo Journal,Chemistry and Chemical Engineering,11.601884,268,342,22,22,3204,105,3099,22,0,0,4,74,,,,6,1,4,8,7,158,10.4,0.8
+TRUE,Possible Dairy,Earth and Planetary Sciences,11.576369,267,1505,67,67,5907,181,5726,67,0,0,2,31,,,,5,7,24,24,30,649,63.8,2.2
+ ,Access University,"Engineering, Energy and Technology",11.572878,266,698,22,22,6557,290,6267,22,0,0,4,74,,,,3,2,3,9,5,440,17.8,0.8
+ ,Jockey Biological,Life Sciences,11.552376,265,539,52,52,3108,116,2992,52,0,0,2,46,,,,21,4,9,7,31,283,25.8,0
+ ,Pioneer Review,Chemistry and Chemical Engineering,11.365522,264,1013,24,24,9070,349,8721,24,0,0,4,72,,,,3,1,3,13,3,542,41.2,0.6
+ ,Research Trends,"Engineering, Energy and Technology",11.321628,263,197,46,46,1268,69,1199,17,29,0,3,51,2016-2019,,,4,1,4,3,5,167,3,0
+ ,Instructor Journal,Neuroscience,11.194997,262,554,37,37,4038,138,3900,37,0,0,3,60,,,,8,2,6,1,11,258,27.6,0.2
+ ,Succeed Computer,Life Sciences,11.168667,261,637,18,18,6049,241,5808,18,0,0,4,78,,,,6,1,4,1,8,347,29,0
+ ,Wise Veterinary,Medicine,11.164089,260,340,50,50,1993,79,1914,50,0,0,3,48,,,,10,0,28,6,30,184,11.6,0.4
+ ,Workshop Veterinary,Chemistry and Chemical Engineering,11.087412,259,863,27,27,7255,275,6980,27,0,0,4,69,,,,5,3,7,12,8,444,42,0
+TRUE,Propel Journal,Life Sciences,11.045144,258,1495,22,22,13395,466,12929,22,0,0,4,74,,,,5,5,2,7,10,700,73.6,0.6
+TRUE,Social Cell,Physics and Astronomy,10.897991,257,1450,37,37,10070,81,9989,37,0,0,3,60,,,,15,9,5,1,16,151,98,3.2
+TRUE,Morph Sensing,Agricultural and Biological Sciences,10.735756,256,1189,36,36,8524,309,8215,36,0,0,3,61,,,,4,7,5,14,9,564,34.6,2.8
+ ,Agile Insect,Social and Behavioral Sciences,10.720977,255,522,41,41,3542,218,3324,41,0,0,3,56,,,,11,5,7,12,15,433,9,0
+ ,Loop Biosensor,"Engineering, Energy and Technology",10.699283,254,854,47,47,5035,155,4880,47,0,0,3,51,,,,7,4,7,20,10,342,31.4,2
+ ,Professional Cell,Environmental Sciences,10.688878,253,284,44,44,1807,101,1706,44,0,0,3,53,,,,9,18,5,7,25,212,7.2,0
+ ,Push Quantitative,Environmental Sciences,10.420873,252,1293,22,22,11038,502,10536,22,0,0,4,74,,,,3,1,3,9,4,756,39.8,1.4
+ ,Knowledge Scripta,Chemistry and Chemical Engineering,10.357649,251,744,36,36,5154,191,4963,36,0,0,3,61,,,,10,4,7,9,13,350,31.6,0.8
+ ,Cognitive Analyze,Life Sciences,10.351031,250,1010,27,27,8029,361,7668,27,0,0,4,70,,,,12,4,2,7,18,579,41.2,0.2
+ ,Physicsopedia,Medicine,10.298034,249,399,66,66,1434,30,1404,66,0,0,2,32,,,,12,14,39,5,61,104,21.6,0.8
+ ,Techie Renewable,Neuroscience,10.135882,248,309,17,17,2762,151,2611,17,0,0,4,79,,,,4,0,8,2,7,213,5.6,0.4
+ ,Chalk Econ,Life Sciences,9.997625,247,726,52,52,3643,155,3488,52,0,0,2,46,,,,22,10,8,4,35,379,35,0
+TRUE,Spur Computer,Chemistry and Chemical Engineering,9.929095,246,1720,19,19,14458,617,13841,19,0,0,4,77,,,,4,1,5,5,5,895,66.6,1.6
+ ,Flameable,Agricultural and Biological Sciences,9.870993,245,734,42,42,4355,125,4230,42,0,0,3,55,,,,14,10,11,10,24,253,40.6,0.8
+ ,Research Polymers,Environmental Sciences,9.782614,244,550,33,33,3815,224,3591,33,0,0,3,63,,,,5,9,6,9,12,395,13.6,0.2
+ ,Excellence Journal,Chemistry and Chemical Engineering,9.765395,243,642,21,21,5281,304,4977,21,0,0,4,75,,,,5,1,2,11,4,450,15.2,0.4
+TRUE,Journscape,Earth and Planetary Sciences,9.759058,242,1723,32,32,11958,454,11504,32,0,0,3,65,,,,8,4,5,13,10,780,76.4,1.8
+TRUE,Smart Computer,Chemistry and Chemical Engineering,9.742602,241,1308,25,25,10147,622,9525,25,0,0,4,71,,,,5,2,3,13,6,979,29,0.4
+ ,Crave Nutrition,"Engineering, Energy and Technology",9.721571,240,512,22,22,4073,186,3887,22,0,0,4,74,,,,5,3,5,8,8,280,11.2,1.2
+ ,Access Programming,"Engineering, Energy and Technology",9.651521,239,983,16,16,8481,469,8012,16,0,0,4,80,,,,3,1,3,7,5,653,23,1
+TRUE,Drive Nutrition,"Pharmacology, Pharmaceutical Science and Toxicology",9.622393,238,1081,33,33,7274,269,7005,33,0,0,3,64,,,,20,8,5,5,28,470,51.2,1
+TRUE,Rising Biological,Chemistry and Chemical Engineering,9.56345,237,1750,23,23,13656,843,12813,23,0,0,4,73,,,,5,3,5,12,7,1295,39.6,0.6
+ ,Squad American,"Economics, Business and Management",9.539519,236,293,36,36,1882,89,1793,36,0,0,3,61,,,,5,4,10,6,12,164,7,0.6
+ ,Trendsable,Physics and Astronomy,9.467295,235,526,22,22,4088,213,3875,22,0,0,4,74,,,,3,0,4,7,3,322,16.4,0.4
+ ,Champions Renewable,Environmental Sciences,9.432786,234,1104,43,43,6241,314,5927,43,0,0,3,54,,,,9,9,10,15,15,649,45.6,0
+ ,Fountain Conduct,Agricultural and Biological Sciences,9.330734,233,596,30,30,4147,265,3882,30,0,0,3,66,,,,2,2,5,19,5,446,13,0.2
+ ,Guide Research,,9.296492,232,380,16,16,3139,166,2973,16,0,0,4,80,,,,6,1,6,0,6,233,6.8,0.8
+ ,Rapid Cement,Physics and Astronomy,9.225174,231,697,28,28,4717,98,4619,28,0,0,4,68,,,,31,9,4,0,22,160,40,1.4
+ ,Concept Clinic,Agricultural and Biological Sciences,9.215503,230,370,36,36,2322,140,2182,36,0,0,3,61,,,,8,5,11,8,13,257,11.4,0
+ ,Journorama,"Economics, Business and Management",9.161209,229,1364,34,34,8752,528,8224,34,0,0,3,63,,,,19,3,2,9,12,945,38,0.4
+ ,Mode Journal,Materials Science,9.015377,228,856,14,14,7059,389,6670,14,0,0,4,82,,,,2,0,2,9,2,530,24.6,0.8
+ ,Trainer Clinic,Life Sciences,8.957376,227,745,46,46,3725,139,3586,33,14,0,3,51,2016-2019,,,9,7,4,7,16,393,25.4,1
+ ,Possible Biosensor,Life Sciences,8.948113,226,369,23,23,2646,113,2533,23,0,0,4,73,,,,2,2,5,9,4,174,11.6,0.8
+TRUE,Statisticslytical,Environmental Sciences,8.815363,225,1807,39,39,10207,561,9646,39,0,0,3,58,,,,7,5,4,20,10,1090,63.8,0.8
+ ,Network Veterinary,Agricultural and Biological Sciences,8.529842,224,401,37,37,2283,115,2168,37,0,0,3,60,,,,2,1,4,23,3,213,14.8,0.4
+TRUE,Keys Polymers,Agricultural and Biological Sciences,8.43115,223,504,32,32,2983,97,2886,32,0,0,3,65,,,,8,7,4,7,14,168,7.8,2.6
+ ,Club Polymers,Life Sciences,8.41534,222,699,28,28,4400,195,4205,16,13,0,4,68,2016-2019,,,1,1,2,8,2,377,18.2,1.4
+ ,Founder Computer,Agricultural and Biological Sciences,8.398019,221,1039,22,22,7248,453,6795,22,0,0,4,74,,,,6,3,4,9,8,684,35.6,0
+ ,Home Dairy,"Engineering, Energy and Technology",8.395557,220,387,15,15,2930,172,2758,15,0,0,4,81,,,,2,1,3,5,3,239,8.8,0.6
+ ,Dojo Trends,"Economics, Business and Management",8.380955,219,270,38,38,1469,75,1394,38,0,0,3,58,,,,13,9,3,14,18,143,11,0.2
+ ,Advisor Renewable,Environmental Sciences,8.379752,218,661,54,54,2692,145,2547,37,17,0,2,44,2016-2019,,,9,10,5,8,17,450,17.2,0.4
+ ,Dynamo Current,Medicine,8.359194,217,785,38,38,4243,174,4069,38,0,0,3,59,,,,16,6,4,5,21,330,37.6,0.8
+TRUE,Confer Opinion,Chemistry and Chemical Engineering,8.276869,216,2375,14,14,17635,796,16839,14,0,0,4,81,,,,6,4,3,4,9,1093,94.4,3.4
+TRUE,Lab Journal,"Engineering, Energy and Technology",8.276786,215,1797,22,22,12172,585,11587,22,0,0,4,74,,,,4,2,3,11,5,883,61.4,3
+FALSE,Logic Coating,Neuroscience,8.230058,214,705,79,79,1279,62,1217,79,0,0,1,20,,,,23,29,1,11,50,350,21.6,1.4
+ ,Bridge Current,Veterinary Science and Veterinary Medicine,8.205955,213,996,23,23,6591,340,6251,23,0,0,4,73,,,,9,9,5,8,18,523,35.4,1.2
+ ,Intellect Journal,Life Sciences,8.16741,212,897,42,42,4538,265,4273,42,0,0,3,55,,,,11,18,10,5,31,535,28.4,0.8
+TRUE,Propel Forestry,Materials Science,8.099572,211,1215,21,21,8139,359,7780,21,0,0,4,75,,,,5,3,4,8,7,534,50.2,1.8
+TRUE,Succeed Neuro,"Economics, Business and Management",8.074368,210,128,16,16,891,24,867,16,0,0,4,79,,,,0,3,6,5,6,34,3.8,0.6
+TRUE,Zoom Polymers,Chemistry and Chemical Engineering,7.976535,209,1782,23,23,11489,541,10948,23,0,0,4,73,,,,5,4,5,8,8,827,89.6,0.6
+ ,Arrive Science,Materials Science,7.926941,208,619,12,12,4596,275,4321,12,0,0,4,84,,,,1,0,2,7,1,367,13.2,1.2
+ ,Passage Journal,Physics and Astronomy,7.869812,207,870,18,18,5943,346,5597,18,0,0,4,78,,,,6,0,3,10,3,498,25.2,1.2
+ ,Bright Science,,7.781979,206,211,39,39,1080,77,1003,39,0,0,3,58,,,,11,10,10,5,24,148,2.4,0.4
+ ,Active Materialia,"Economics, Business and Management",7.702526,205,430,25,25,2628,131,2497,25,0,0,4,72,,,,12,1,5,9,11,204,16.8,0.6
+ ,Course Research,Agricultural and Biological Sciences,7.584438,204,1061,33,33,5669,308,5361,33,0,0,3,63,,,,9,4,6,15,12,544,42,1
+ ,Empower Journal,Chemistry and Chemical Engineering,7.464117,203,1404,20,20,8993,619,8374,20,0,0,4,76,,,,4,3,5,3,8,911,39.4,1
+TRUE,Accelerate Academic,Earth and Planetary Sciences,7.422123,202,1224,40,40,5711,235,5476,40,0,0,3,57,,,,10,10,5,14,19,459,70.6,0.6
+ ,Maismadora,"Engineering, Energy and Technology",7.401344,201,594,41,41,2749,168,2581,27,15,0,3,56,2016-2019,,,6,2,6,9,7,388,16.6,0.4
+ ,Alpha Research,Social and Behavioral Sciences,7.306385,200,555,33,33,2931,200,2731,33,0,0,3,64,,,,13,3,11,8,13,349,21,0
+ ,Researchology,Social and Behavioral Sciences,7.302723,199,361,49,49,1422,86,1336,49,0,0,3,48,,,,20,1,7,11,22,201,10.2,0.6
+ ,Belief Industrial,Social and Behavioral Sciences,7.261066,198,488,27,27,2738,169,2569,27,0,0,4,69,,,,4,4,4,10,9,275,17.4,0.4
+ ,Ademia Accident,"Engineering, Energy and Technology",7.25798,197,485,42,42,2133,89,2044,30,12,0,3,55,2016-2019,,,11,4,5,9,12,232,13.4,1.2
+ ,Master Journal,Social and Behavioral Sciences,7.245988,196,290,31,31,1578,138,1440,31,0,0,3,65,,,,9,6,3,11,15,236,5.4,0
+ ,Focus Cement,Agricultural and Biological Sciences,7.19832,195,617,26,26,3479,203,3276,26,0,0,4,70,,,,4,2,7,12,9,324,25.4,0.4
+ ,Motivate Sensing,Chemistry and Chemical Engineering,7.183784,194,1531,11,11,10472,710,9762,11,0,0,4,84,,,,2,1,1,5,3,942,43,1.6
+ ,Achieve Journal,Agricultural and Biological Sciences,7.155102,193,298,27,27,1611,61,1550,27,0,0,4,69,,,,2,1,4,12,9,99,18,0.2
+ ,Passage Cement,Physics and Astronomy,7.035163,192,517,24,24,2919,165,2754,24,0,0,4,72,,,,6,2,4,11,7,256,16.2,1
+TRUE,Ambition Science,Chemistry and Chemical Engineering,7.023119,191,1401,21,21,8247,455,7792,21,0,0,4,75,,,,3,1,4,10,4,676,46.6,2.6
+ ,Boost Journal,"Economics, Business and Management",6.965902,190,1175,39,39,5396,361,5035,39,0,0,3,58,,,,19,2,3,3,16,690,44.8,0.4
+ ,Intellect Veterinary,"Engineering, Energy and Technology",6.963024,189,429,20,20,2544,160,2384,20,0,0,4,76,,,,5,0,5,7,5,235,15.4,0.4
+TRUE,Republic Opinion,Materials Science,6.945438,188,2237,31,31,11219,564,10655,31,0,0,3,65,,,,18,6,4,7,24,967,119.2,0.8
+ ,Workshop Journal,Social and Behavioral Sciences,6.881232,187,244,30,30,1273,102,1171,30,0,0,3,66,,,,7,4,9,7,9,172,7.2,0
+ ,Growth Crop,Agricultural and Biological Sciences,6.860957,186,605,27,27,3214,168,3046,27,0,0,4,70,,,,4,3,4,13,7,270,23.6,1
+ ,Scienceopedia,,6.847179,185,378,33,33,1912,171,1741,33,0,0,3,64,,,,3,2,9,12,4,298,2,0.6
+ ,Simple Forestry,Agricultural and Biological Sciences,6.818205,184,585,33,33,2844,189,2655,33,0,0,3,63,,,,4,4,6,19,9,334,21.2,0.4
+ ,Motion Science,"Engineering, Energy and Technology",6.80841,183,1084,42,42,4517,236,4281,28,14,0,3,55,2016-2019,,,6,5,3,8,8,595,31,1.8
+ ,Scriptawind,Life Sciences,6.788759,182,313,30,30,1601,118,1483,30,0,0,3,66,,,,14,7,3,6,21,199,9.4,0.2
+TRUE,Think Research,Materials Science,6.745994,181,2277,21,21,12995,823,12172,21,0,0,4,75,,,,4,2,3,11,5,1221,81.6,2.4
+ ,Digital Research,Materials Science,6.720851,180,952,39,39,4196,302,3894,19,20,0,3,58,2016-2019,,,4,1,2,9,4,674,17.8,1
+ ,Field Academic,Environmental Sciences,6.706641,179,823,35,35,3883,287,3596,35,0,0,3,62,,,,12,5,3,8,12,518,26.6,0.4
+TRUE,Zoom Current,Life Sciences,6.632239,178,1963,43,43,7821,404,7417,43,0,0,3,54,,,,10,24,4,3,36,834,83,3
+ ,Academy Journal,"Engineering, Energy and Technology",6.627727,177,1239,41,41,5187,346,4841,24,17,0,3,56,2016-2019,,,5,2,3,7,6,811,32.8,1
+ ,Ademia Research,"Economics, Business and Management",6.539342,176,587,41,41,2380,131,2249,41,0,0,3,56,,,,14,3,4,11,10,263,18.4,1.4
+TRUE,Analytics Opinion,Life Sciences,6.489082,175,1392,26,26,7119,410,6709,26,0,0,4,71,,,,9,5,4,8,14,649,56.6,1.8
+TRUE,Swift Statistics,Chemistry and Chemical Engineering,6.478074,174,1496,22,22,8053,462,7591,22,0,0,4,74,,,,4,1,3,11,4,694,56.2,2.4
+ ,Think Review,Environmental Sciences,6.473769,173,841,34,34,3936,333,3603,34,0,0,3,63,,,,10,10,5,8,19,592,19,0.6
+TRUE,Pioneer Sustainable,Chemistry and Chemical Engineering,6.37805,172,2575,35,35,11503,748,10755,35,0,0,3,62,,,,9,4,4,11,10,1344,99.2,2.4
+TRUE,Imagine International,Chemistry and Chemical Engineering,6.33327,171,1300,29,29,6422,601,5821,29,0,0,4,67,,,,3,1,5,18,4,1000,24,0.6
+TRUE,Arrive Biology,Chemistry and Chemical Engineering,6.326095,170,1546,40,40,6339,489,5850,40,0,0,3,57,,,,20,7,10,4,25,962,50.6,0.8
+TRUE,Cultivation Cell,"Engineering, Energy and Technology",6.289012,169,1987,58,58,5615,331,5284,58,0,0,2,40,,,,19,4,5,18,16,921,90.8,1.6
+FALSE,Prodigy Journal,Agricultural and Biological Sciences,6.250312,168,246,29,29,1163,69,1094,29,0,0,4,68,,,,3,18,1,5,21,114,7.2,0.6
+TRUE,Progress Science,Chemistry and Chemical Engineering,6.233736,167,1714,17,17,9716,820,8896,17,0,0,4,79,,,,4,2,3,3,4,1158,41.6,1.4
+TRUE,Academworks,Agricultural and Biological Sciences,6.229692,166,1267,13,13,7233,385,6848,13,0,0,4,82,,,,3,1,3,5,5,522,62.6,1.2
+ ,Evolve Journal,Physics and Astronomy,6.21483,165,1196,34,34,5293,354,4939,34,0,0,3,63,,,,7,9,7,7,18,626,47.2,1
+TRUE,Wise Research,Chemistry and Chemical Engineering,6.207719,164,2019,17,17,11190,840,10350,17,0,0,4,78,,,,3,1,2,10,4,1198,52.2,3
+ ,Workshop Clinic,,6.05718,163,737,27,27,3499,248,3251,27,0,0,4,69,,,,4,3,7,8,7,401,27.8,0.6
+TRUE,Brave Review,Agricultural and Biological Sciences,6.035448,162,1532,23,23,7731,587,7144,23,0,0,4,73,,,,7,2,3,9,8,894,60,0.4
+ ,Associate Biological,Life Sciences,5.996437,161,742,39,39,2955,221,2734,39,0,0,3,58,,,,9,4,9,9,17,423,28,0.4
+TRUE,Cultivate Research,Environmental Sciences,5.875912,160,3613,43,43,13297,1252,12045,29,15,0,3,54,2016-2019,,,3,4,2,12,6,2803,53,2.8
+TRUE,Logic Journal,Chemistry and Chemical Engineering,5.821699,159,2462,16,16,12672,690,11982,16,0,0,4,79,,,,6,3,6,3,10,971,141.2,0.8
+TRUE,Success Biology,"Engineering, Energy and Technology",5.801102,158,2049,19,19,10529,900,9629,19,0,0,4,77,,,,5,6,5,8,12,1308,62.2,1.2
+TRUE,Digital Dairy,"Engineering, Energy and Technology",5.777638,157,1488,45,45,5076,331,4745,28,17,0,3,52,2016-2019,,,10,7,3,6,12,887,52.2,0.8
+ ,Course Computer,Nursing,5.755198,156,359,23,23,1752,165,1587,23,0,0,4,73,,,,4,4,3,9,6,253,6.6,0.4
+ ,Inspire Nutrition,Social and Behavioral Sciences,5.721055,155,990,36,36,3812,184,3628,23,13,0,3,61,2016-2019,,,9,3,3,7,9,452,46,0.8
+ ,Dairyverse,Physics and Astronomy,5.671975,154,907,21,21,4465,391,4074,21,0,0,4,75,,,,15,4,3,5,7,581,26.8,0.6
+ ,Journaza,Social and Behavioral Sciences,5.624222,153,208,28,28,921,82,839,28,0,0,4,68,,,,11,2,4,8,13,134,5.4,0.2
+ ,Spark Trends,Agricultural and Biological Sciences,5.585693,152,1338,31,31,5725,543,5182,31,0,0,3,66,,,,11,5,6,9,13,922,35.8,0.6
+ ,Today Biological,"Engineering, Energy and Technology",5.498865,151,1321,29,29,5711,544,5167,29,0,0,4,68,,,,5,3,4,10,7,900,30.2,1.2
+ ,Ready Cement,Chemistry and Chemical Engineering,5.474405,150,1547,40,40,5425,347,5078,23,18,0,3,57,2016-2019,,,7,1,4,8,6,877,47.2,2
+ ,Classroom Research,Earth and Planetary Sciences,5.402674,149,642,27,27,2760,215,2545,27,0,0,4,70,,,,3,5,4,7,8,346,19.8,1
+MAYBE,Journio,"Engineering, Energy and Technology",5.355024,148,153,26,26,680,76,604,26,0,0,4,70,,,,2,0,7,12,2,121,1.2,0.2
+ ,Keys Biosensor,"Engineering, Energy and Technology",5.344536,147,434,26,26,1890,166,1724,26,0,0,4,71,,,,5,2,4,9,6,263,15.2,0.2
+ ,Potential Dairy,"Economics, Business and Management",5.30923,146,1218,26,26,5228,418,4810,26,0,0,4,71,,,,11,2,4,7,10,661,33.8,2.2
+TRUE,Wise Reviews,Chemistry and Chemical Engineering,5.295209,145,2149,31,31,8761,869,7892,31,0,0,3,66,,,,4,5,9,8,12,1475,63.6,0.4
+TRUE,Rising Technology,Materials Science,5.265372,144,2228,38,38,7780,452,7328,24,14,0,3,59,2016-2019,,,7,3,3,9,7,1101,74.8,3.8
+ ,Techie Trends,Social and Behavioral Sciences,5.21196,143,559,43,43,1859,191,1668,43,0,0,3,54,,,,14,20,5,6,30,392,14.8,0.2
+ ,Gain Corporate,Agricultural and Biological Sciences,5.184779,142,476,28,28,1946,162,1784,28,0,0,4,69,,,,1,2,5,16,5,264,19.2,0.2
+TRUE,Reach Clinic,Materials Science,5.166645,141,3464,18,18,16144,1466,14678,18,0,0,4,78,,,,2,1,2,12,2,2103,96.2,4
+ ,Crimson Cell,Social and Behavioral Sciences,5.080039,140,682,41,41,2239,187,2052,41,0,0,3,56,,,,15,1,4,11,13,372,27.2,0.4
+ ,Journry,"Engineering, Energy and Technology",5.05749,139,1037,39,39,3504,281,3223,39,0,0,3,58,,,,10,7,6,6,17,538,40,1
+TRUE,Computernetic,Physics and Astronomy,5.051911,138,2704,55,55,6604,396,6208,55,0,0,2,43,,,,25,12,8,8,28,1025,128.2,4
+ ,Insight Journal,Social and Behavioral Sciences,5.024164,137,219,30,30,873,98,775,30,0,0,4,67,,,,12,1,8,9,11,164,3.6,0.2
+ ,Eagle Journal,Social and Behavioral Sciences,5.013866,136,506,37,37,1779,177,1602,37,0,0,3,60,,,,8,6,5,12,12,329,7.8,1
+ ,Launch Forestry,Medicine,5.008875,135,616,31,31,2252,125,2127,18,13,0,3,65,2016-2019,,,6,1,1,6,6,279,17.8,1.6
+TRUE,Academegy,Social and Behavioral Sciences,4.980066,134,1567,33,33,5794,579,5215,33,0,0,3,63,,,,13,2,5,18,14,1020,54.8,0
+ ,Evolve American,Agricultural and Biological Sciences,4.951016,133,1057,32,32,3866,323,3543,32,0,0,3,64,,,,6,4,5,15,9,561,35.8,1.4
+ ,Future Insect,Environmental Sciences,4.942532,132,718,38,38,2363,158,2205,19,18,0,3,59,2016-2019,,,9,2,4,9,9,395,18.4,1.4
+ ,Development Journal,Social and Behavioral Sciences,4.84352,131,529,31,31,1999,230,1769,31,0,0,3,66,,,,5,6,4,9,10,391,9.8,0.4
+ ,Zoom Biosensor,"Economics, Business and Management",4.826399,130,657,39,39,2099,150,1949,39,0,0,3,58,,,,16,4,2,2,14,288,31.2,0.6
+ ,Geek Statistics,Life Sciences,4.822441,129,662,64,64,1252,114,1138,64,0,0,2,34,,,12,1,5,53,1,60,376,28.8,0
+ ,Meetup Journal,"Economics, Business and Management",4.800895,128,340,33,33,1227,131,1096,33,0,0,3,64,,,,19,1,14,4,14,229,7.2,0.4
+ ,Research Biology,"Engineering, Energy and Technology",4.774426,127,1090,14,14,5061,594,4467,14,0,0,4,82,,,,3,2,3,7,4,814,25.6,0.2
+ ,Drive Journal,,4.74875,126,346,67,67,611,73,538,67,0,0,2,31,,,,6,55,12,2,61,262,2.6,0.6
+ ,Improve Journal,Agricultural and Biological Sciences,4.711703,125,1163,28,28,4268,345,3923,28,0,0,4,68,,,,6,3,7,14,11,568,37.8,2.2
+ ,Currentopolis,"Engineering, Energy and Technology",4.700051,124,642,35,35,2243,275,1968,35,0,0,3,62,,,,13,5,9,7,13,497,8.6,0.6
+TRUE,Institute Energy,Agricultural and Biological Sciences,4.692457,123,2886,21,21,11862,1126,10736,21,0,0,4,75,,,,4,1,2,10,4,1670,101.6,2
+ ,Research Physics,Medicine,4.674537,122,815,41,41,2474,227,2247,41,0,0,3,56,,,,27,10,4,4,34,452,30.4,0.6
+ ,Meetup Sonic,Social and Behavioral Sciences,4.667017,121,739,26,26,2922,358,2564,26,0,0,4,71,,,,6,2,7,5,8,567,9.2,0.8
+TRUE,Training Opinion,Life Sciences,4.605499,120,1998,53,53,4672,318,4354,53,0,0,2,45,,,,24,14,7,2,41,791,107,1.4
+TRUE,Nutritara,Agricultural and Biological Sciences,4.5846,119,1589,43,43,4491,363,4128,43,0,0,3,54,,,,5,4,10,21,8,753,68,1.6
+ ,Prosper Quantitative,Neuroscience,4.560348,118,1020,68,68,1651,175,1476,68,0,0,2,30,,,12,2,5,55,2,61,649,37.2,0
+MAYBE,Quake Flame,,4.541411,117,166,4,4,795,72,723,4,0,0,5,91,,,,6,0,3,2,0,88,6,0.2
+ ,Thrive Journal,Environmental Sciences,4.497341,116,1046,26,26,3999,508,3491,26,0,0,4,70,,,,5,2,3,12,6,805,14.2,1
+ ,Academscape,Medicine,4.413502,115,346,14,14,1500,181,1319,14,0,0,4,82,,,,6,0,3,1,4,246,4,0.6
+ ,Learn Journal,Veterinary Science and Veterinary Medicine,4.348737,114,616,46,46,1561,109,1452,27,19,0,3,52,2016-2019,,,3,0,18,5,4,333,26.4,0.2
+TRUE,Accelerate Computer,Chemistry and Chemical Engineering,4.332917,113,1651,18,18,6707,823,5884,18,0,0,4,78,,,,2,1,3,8,3,1178,35.4,1.2
+ ,Motivate Veterinary,Agricultural and Biological Sciences,4.301342,112,748,39,39,2252,281,1971,39,0,0,3,58,,,,10,13,5,7,21,539,15,0.6
+TRUE,Flagship Physics,Physics and Astronomy,4.24213,111,2835,24,24,10356,1225,9131,24,0,0,4,72,,,,7,1,3,7,6,1898,55.8,3.8
+TRUE,Ademia Remote,Agricultural and Biological Sciences,4.239321,110,1322,42,42,3575,320,3255,42,0,0,3,55,,,,8,17,8,8,26,649,65.8,0.2
+ ,Potential Journal,"Economics, Business and Management",4.231892,109,497,26,26,1743,193,1550,26,0,0,4,70,,,,5,1,12,4,5,308,9,1
+TRUE,Pursue University,Life Sciences,4.227561,108,2243,71,71,3017,237,2780,71,0,0,1,28,,,12,1,2,63,0,67,951,69.2,6
+TRUE,Pursue Research,Materials Science,4.219982,107,1791,34,34,5597,611,4986,34,0,0,3,63,,,,10,4,6,13,12,1089,70.6,0
+TRUE,Higher Conduct,Environmental Sciences,4.115182,106,1423,39,39,3917,350,3567,39,0,0,3,58,,,,10,8,8,11,19,676,73.2,0.2
+ ,Whiteboard Journal,Life Sciences,4.112673,105,612,39,39,1715,192,1523,39,0,0,3,58,,,,24,13,3,4,36,373,18,0.6
+ ,Americanverse,Agricultural and Biological Sciences,4.078901,104,967,31,31,3115,388,2727,31,0,0,3,66,,,,5,3,6,10,7,661,26.8,0.4
+ ,Club Veterinary,Agricultural and Biological Sciences,4.061286,103,951,18,18,3610,443,3167,18,0,0,4,78,,,,5,2,3,7,7,636,27.6,0.4
+ ,Logic Current,"Engineering, Energy and Technology",3.960618,102,589,34,34,1694,152,1542,34,0,0,3,63,,,,4,2,4,18,6,270,16,1.6
+ ,Excellence Dairy,Social and Behavioral Sciences,3.953335,101,510,50,50,1155,143,1012,50,0,0,3,48,,,,14,2,5,17,12,335,7.6,1
+FALSE,Cold Cell,Veterinary Science and Veterinary Medicine,3.928847,100,201,28,28,685,114,571,28,0,0,4,69,,,,5,1,9,4,4,185,1.6,0
+ ,Propel Physics,"Engineering, Energy and Technology",3.920143,99,597,27,27,2022,304,1718,27,0,0,4,70,,,,9,3,4,4,11,487,5,0.6
+ ,Viewer Veterinary,"Engineering, Energy and Technology",3.906618,98,457,18,18,1670,201,1469,18,0,0,4,78,,,,2,1,4,8,2,287,11,0.6
+ ,Chalk Qualitative,"Engineering, Energy and Technology",3.89912,97,498,40,40,1273,102,1171,40,0,0,3,57,,,,6,1,3,8,5,199,18,1.2
+ ,Spring Corporate,Agricultural and Biological Sciences,3.851359,96,834,36,36,2296,228,2068,18,17,0,3,61,2016-2019,,,5,2,4,3,6,504,21,1.2
+ ,Hearthstone Veterinary,"Engineering, Energy and Technology",3.818614,95,1615,18,18,5732,645,5087,18,0,0,4,78,,,,3,2,2,6,4,920,47.6,2.2
+ ,Innovate Journal,"Economics, Business and Management",3.817854,94,760,30,30,2356,335,2021,30,0,0,3,66,,,,13,4,6,5,15,565,13.6,0.6
+ ,Foster Reviews,Agricultural and Biological Sciences,3.760542,93,757,42,42,1791,150,1641,42,0,0,3,55,,,,12,12,7,16,24,307,45.2,0
+TRUE,Scholar Trends,Veterinary Science and Veterinary Medicine,3.732961,92,1620,32,32,4558,467,4091,32,0,0,3,64,,,,10,9,6,7,17,813,51,3
+ ,Seek Computer,Social and Behavioral Sciences,3.66953,91,1191,25,25,3859,600,3259,25,0,0,4,71,,,,8,3,5,6,10,946,20.6,0.4
+ ,Boost Solar,Social and Behavioral Sciences,3.658294,90,781,28,28,2308,264,2044,28,0,0,4,68,,,,13,3,4,4,13,433,35,0
+ ,Drip Biological,Neuroscience,3.646245,89,940,38,38,2483,363,2120,38,0,0,3,59,,,,15,4,2,10,17,690,25,0
+ ,Researchzilla,Chemistry and Chemical Engineering,3.644773,88,925,54,54,1787,246,1541,54,0,0,2,43,,,,12,11,23,8,23,635,17.8,1.2
+ ,Succeed Food,"Engineering, Energy and Technology",3.642447,87,1426,30,30,4184,534,3650,30,0,0,4,67,,,,9,4,3,15,11,895,43.2,1
+ ,Academic Crop,"Economics, Business and Management",3.624992,86,793,24,24,2568,396,2172,24,0,0,4,72,,,,9,2,3,5,8,616,18,0
+ ,Skill Journal,Agricultural and Biological Sciences,3.62143,85,1164,23,23,3740,498,3242,23,0,0,4,73,,,,5,1,3,8,5,762,34.2,0.6
+ ,Explore Nutrition,Life Sciences,3.562814,84,438,30,30,1233,138,1095,30,0,0,4,67,,,,7,6,3,12,13,230,18.8,0.2
+ ,Blue Sky Molecular,"Economics, Business and Management",3.537107,83,863,45,45,2013,332,1681,45,0,0,3,52,,,,9,6,5,13,12,708,15.6,0
+TRUE,Think Dairy,Agricultural and Biological Sciences,3.527981,82,497,32,32,1310,112,1198,20,12,0,3,65,2017-2019,,,5,2,4,5,4,238,20,0.6
+MAYBE,Mind Statistics,Social and Behavioral Sciences,3.429225,81,183,30,30,462,19,443,30,0,0,4,67,,,,6,0,10,14,3,31,8,0.8
+TRUE,Advance Physics,Materials Science,3.400417,80,1004,24,24,2973,381,2592,24,0,0,4,72,,,,4,1,4,9,5,591,29.4,1.2
+TRUE,Guide Journal,Social and Behavioral Sciences,3.352144,79,947,38,38,2296,323,1973,38,0,0,3,59,,,,12,4,4,14,12,612,21.6,1.2
+TRUE,Pathway Science,Environmental Sciences,3.347995,78,3064,47,47,6313,873,5440,47,0,0,3,50,,,,9,15,5,17,23,1936,99,1.4
+TRUE,Shine Research,Materials Science,3.345151,77,1213,23,23,3525,411,3114,23,0,0,4,73,,,,5,2,5,9,7,630,28.4,3
+TRUE,Aware Journal,Veterinary Science and Veterinary Medicine,3.310858,76,215,17,17,705,119,586,17,0,0,4,78,,,,0,0,5,5,1,169,0.6,0.4
+TRUE,Think Sonic,"Pharmacology, Pharmaceutical Science and Toxicology",3.270505,75,450,34,34,1057,90,967,34,0,0,3,62,,,,17,3,4,6,22,162,17,1.2
+TRUE,Improve Sustainable,,3.269751,74,312,35,35,749,81,668,35,0,0,3,62,,,,4,7,7,10,10,147,8.6,0.8
+TRUE,Sciencebea,Agricultural and Biological Sciences,3.187997,73,2151,36,36,4925,525,4400,36,0,0,3,61,,,,5,6,4,19,13,963,91.2,2.8
+TRUE,Up Journal,Materials Science,3.187119,72,722,27,27,2033,359,1674,27,0,0,4,69,,,,3,2,7,9,4,580,12.2,0.2
+TRUE,Boffin Current,Materials Science,3.178872,71,493,55,55,854,143,711,55,0,0,2,43,2010-2016,,36,2,29,13,4,35,370,12.4,0
+TRUE,Coastal Clinic,Materials Science,3.143666,70,862,39,39,1893,233,1660,39,0,0,3,58,,,,13,6,8,8,19,446,29.6,1.2
+TRUE,Collab International,Agricultural and Biological Sciences,3.104421,69,2245,27,27,5673,589,5084,27,0,0,4,69,,,,4,4,6,12,8,950,103.8,2.6
+TRUE,Unite Crop,Social and Behavioral Sciences,3.092762,68,462,22,22,1323,211,1112,22,0,0,4,74,,,,3,0,4,13,2,318,12.4,0.2
+TRUE,Techie Flame,"Engineering, Energy and Technology",3.077174,67,2317,17,17,6888,973,5915,17,0,0,4,79,,,,3,2,3,6,5,1379,63.8,3
+TRUE,Conductverse,Environmental Sciences,3.076264,66,489,28,28,1277,195,1082,28,0,0,4,68,,,,4,4,6,10,8,320,13,0.4
+TRUE,Instructor Materialia,Life Sciences,2.996842,65,1655,71,71,1730,278,1452,71,0,0,1,28,,,18,1,12,54,6,63,1117,36.2,1.8
+TRUE,Scienceprism,Veterinary Science and Veterinary Medicine,2.99405,64,1293,21,21,3401,352,3049,21,0,0,4,75,,,,4,4,4,6,8,526,51.2,2.6
+TRUE,Integrity Insect,Agricultural and Biological Sciences,2.98727,63,689,19,19,1954,295,1659,19,0,0,4,77,,,,6,3,5,2,10,430,24,0.2
+TRUE,Boffin Energy,Life Sciences,2.930699,62,1000,63,63,1252,175,1077,63,0,0,2,35,,,12,3,6,46,3,54,559,36.2,0.8
+TRUE,Grasshopper International,Agricultural and Biological Sciences,2.901418,61,731,25,25,1817,233,1584,25,0,0,4,71,,,,5,5,5,9,10,367,26.6,1
+TRUE,Perception Reviews,Social and Behavioral Sciences,2.887535,60,252,34,34,610,127,483,34,0,0,3,63,,,,3,3,6,12,10,226,2.6,0
+TRUE,Spark American,Agricultural and Biological Sciences,2.844207,59,2410,31,31,5378,633,4745,31,0,0,3,66,,,,8,6,5,13,12,1075,99.8,3.4
+TRUE,Corporatelux,"Economics, Business and Management",2.821119,58,1806,29,29,4430,814,3616,29,0,0,4,67,,,,8,3,2,9,9,1349,41.8,0.4
+TRUE,Blossom Sensing,Social and Behavioral Sciences,2.816078,57,659,43,43,1235,185,1050,28,15,0,3,54,2017-2019,,,8,1,7,2,8,443,17.8,0.4
+TRUE,Duel Dairy,Earth and Planetary Sciences,2.804793,56,522,38,38,1122,215,907,38,0,0,3,59,,,,7,7,4,17,12,408,9.4,0.2
+TRUE,Fountain Solar,Social and Behavioral Sciences,2.796036,55,473,41,41,944,162,782,41,0,0,3,56,,,,11,9,6,16,20,322,15.2,0
+TRUE,Intellect Physics,Agricultural and Biological Sciences,2.778154,54,2707,31,31,5862,705,5157,31,0,0,3,65,,,,5,5,3,14,10,1210,140,1
+TRUE,Sage Total,Medicine,2.711664,53,486,51,51,747,105,642,51,0,0,2,46,,,,7,2,28,12,9,254,13.2,1
+TRUE,Inspire Cell,"Engineering, Energy and Technology",2.70965,52,2804,28,28,6557,1075,5482,28,0,0,4,69,,,,8,6,3,10,12,1753,69.2,3.6
+TRUE,Bridge Veterinary,Materials Science,2.669027,51,1394,36,36,2723,356,2367,36,0,0,3,60,,,,5,5,5,18,10,658,49.8,2.4
+TRUE,Classroom Environment,Environmental Sciences,2.632558,50,1438,31,31,3214,612,2602,31,0,0,3,65,,,,4,3,3,14,6,1048,29,1
+TRUE,Leader Journal,Life Sciences,2.627625,49,988,32,32,1946,172,1774,32,0,0,3,65,,,,6,5,3,13,11,295,53.4,1.6
+TRUE,Matter Cell,"Engineering, Energy and Technology",2.591317,48,2241,25,25,5255,921,4334,25,0,0,4,71,,,,4,2,2,14,5,1452,35,4.4
+TRUE,Push Environment,Agricultural and Biological Sciences,2.458845,47,1110,20,20,2516,336,2180,20,0,0,4,76,,,,3,1,3,10,5,495,33.6,2.8
+TRUE,Fortune Global,"Engineering, Energy and Technology",2.39434,46,2313,49,49,3388,582,2806,26,24,0,3,48,2016-2019,,,11,6,4,11,15,1656,53.8,1.2
+TRUE,Dramatic Dairy,"Engineering, Energy and Technology",2.391355,45,1876,25,25,3899,529,3370,25,0,0,4,71,,,,7,8,5,8,15,829,83,2.2
+TRUE,Americanlux,Agricultural and Biological Sciences,2.376222,44,2028,37,37,3671,642,3029,37,0,0,3,60,,,,8,7,9,13,19,1202,71.2,1.2
+TRUE,Aspire Scripta,Medicine,2.370601,43,1158,61,61,1267,184,1083,61,0,0,2,37,,,,25,18,14,3,53,548,47.2,1.4
+TRUE,Express Remote,Life Sciences,2.332691,42,2557,67,67,2373,430,1943,67,0,0,2,31,,,12,2,11,48,2,59,1554,86.4,1.4
+MAYBE,Field Cement,,2.320987654,42,81,0,0,188,0,188,0,0,0,5,95,,,,0,0,0,0,0,0,0,0
+TRUE,Researchlytical,Chemistry and Chemical Engineering,2.286336,41,306,18,18,717,139,578,18,0,0,4,78,,,,1,0,4,12,1,199,4.8,0.6
+TRUE,Sciencegenics,Agricultural and Biological Sciences,2.247068,40,1462,25,25,3149,672,2477,25,0,0,4,72,,,,4,5,6,6,8,1049,29.4,1.2
+TRUE,Alpha Systems,"Engineering, Energy and Technology",2.237176,39,600,63,63,662,169,493,53,10,0,2,35,2016-2019,,,3,8,12,12,11,554,2.6,0.2
+TRUE,Ademia Flame,Life Sciences,2.222104,38,1792,66,66,1648,299,1349,66,0,0,2,32,,,12,4,9,45,3,57,1038,67.6,0.8
+TRUE,Environhut,Agricultural and Biological Sciences,2.220707,37,2807,20,20,5738,766,4972,20,0,0,4,76,,,,7,1,4,9,7,1130,120.2,4.8
+TRUE,Better Materialia,Chemistry and Chemical Engineering,2.211325,36,2206,15,15,5070,938,4132,15,0,0,4,80,,,,4,2,3,6,5,1303,66.4,2.4
+TRUE,Zip Surface,Agricultural and Biological Sciences,2.209416,35,1283,17,17,2924,585,2339,17,0,0,4,78,,,,6,3,4,5,8,834,29,1.6
+TRUE,Potential International,Veterinary Science and Veterinary Medicine,2.199196,34,206,18,18,507,136,371,18,0,0,4,78,,,,7,2,2,8,8,196,1,0
+TRUE,Possible Current,"Economics, Business and Management",2.173779,33,309,23,23,676,156,520,23,0,0,4,73,,,,1,1,5,13,5,238,5.2,0.2
+TRUE,Improve Opinion,Chemistry and Chemical Engineering,2.155083,32,10244,17,17,19410,1092,18318,17,0,0,4,79,,,,7,6,5,3,16,1548,846.4,2.4
+TRUE,Scienceiva,"Economics, Business and Management",2.135864,31,1205,41,41,1842,333,1509,20,21,0,3,56,2016-2019,,,4,3,5,9,6,811,23.6,1.6
+TRUE,Drive Biology,"Economics, Business and Management",2.018875,30,748,35,35,1247,265,982,35,0,0,3,62,,,,15,3,8,10,19,480,23.2,0.4
+TRUE,Excellence Computer,Social and Behavioral Sciences,1.992364,29,948,27,27,1839,462,1377,27,0,0,4,69,,,,15,3,3,7,16,746,20.4,0
+TRUE,Integral Journal,Social and Behavioral Sciences,1.963545,28,1501,29,29,2284,190,2094,29,0,0,4,67,,,,5,2,4,15,7,315,84,3.6
+TRUE,Aware International,,1.878038,27,879,30,30,1471,323,1148,30,0,0,3,66,,,,12,4,8,3,21,546,25.4,0.8
+TRUE,Innovate American,"Engineering, Energy and Technology",1.870006,26,4982,20,20,9304,1892,7412,20,0,0,4,76,,,,4,3,3,10,6,2797,186.6,3.2
+TRUE,Passage Current,Veterinary Science and Veterinary Medicine,1.74826,25,3734,27,27,5913,1129,4784,27,0,0,4,70,,,,5,5,6,11,10,1813,146.6,4.6
+TRUE,Smart Journal,Veterinary Science and Veterinary Medicine,1.635936,24,513,22,22,819,164,655,22,0,0,4,74,,,,2,4,5,7,7,247,2.6,2.4
+TRUE,Neuro Veterinary,Materials Science,1.600061,23,4359,37,37,5608,1214,4394,37,0,0,3,60,,,,9,7,6,12,15,2268,147.4,6.2
+TRUE,Scope Remote,Social and Behavioral Sciences,1.586677,22,701,29,29,1016,227,789,29,0,0,4,67,,,,6,1,2,9,7,377,28.6,0.4
+TRUE,Techie Surface,Medicine,1.507061,21,932,9,9,1593,320,1273,9,0,0,5,86,,,,2,0,6,0,7,416,21.6,3
+TRUE,Academic Journal,"Economics, Business and Management",1.486475,20,449,20,20,697,165,532,20,0,0,4,76,,,,9,2,5,8,12,244,17,0.4
+TRUE,Grow International,Veterinary Science and Veterinary Medicine,1.46266,19,963,26,26,1379,336,1043,26,0,0,4,70,,,,6,3,7,9,8,533,37.2,0.6
+TRUE,Improve Research,Agricultural and Biological Sciences,1.383775,18,5407,68,68,3272,866,2406,68,0,0,2,31,,,12,2,7,52,5,59,3168,224.2,0
+TRUE,Nerd Journal,Social and Behavioral Sciences,1.211976,17,2399,24,24,3286,1086,2200,24,0,0,4,72,,,,10,3,3,10,11,1688,45.2,2.6
+TRUE,Launch Science,Agricultural and Biological Sciences,1.209538,16,1141,20,20,1546,448,1098,20,0,0,4,76,,,,4,1,5,6,5,663,29.8,1.8
+TRUE,A1 Opinion,"Economics, Business and Management",1.165226,15,2522,34,34,3139,1197,1942,34,0,0,3,63,,,,10,2,5,14,10,2132,37.2,0.2
+TRUE,Blue Sky Physics,Social and Behavioral Sciences,1.096843,14,552,28,28,555,119,436,28,0,0,4,68,,,,11,6,5,3,14,195,16.2,2
+TRUE,Morph Food,Environmental Sciences,1.034375,13,2700,37,37,2840,1090,1750,18,19,0,3,60,2016-2019,,,4,2,2,4,5,2201,32,1.8
+TRUE,Propel Waste,Nursing,0.992804,12,921,58,58,571,191,380,58,0,0,2,39,,,,3,1,53,1,38,540,14.2,2.4
+TRUE,Logic Trends,Veterinary Science and Veterinary Medicine,0.943414,11,1658,20,20,1875,630,1245,20,0,0,4,76,,,,15,6,5,4,20,932,51,2.2
+TRUE,Earth Science,Life Sciences,0.862933,10,1194,43,43,926,340,586,43,0,0,3,54,,,,7,11,9,8,18,705,35.2,1.4
+TRUE,Recoil Scripta,Veterinary Science and Veterinary Medicine,0.816736,9,379,11,11,542,265,277,11,0,0,4,85,,,,1,0,1,9,1,350,3,0
+TRUE,Specialist Surface,"Engineering, Energy and Technology",0.506808,8,3852,17,17,3138,1527,1611,17,0,0,4,78,,,,3,1,3,8,3,2176,95.6,7.2
+TRUE,Aspire Quantitative,Veterinary Science and Veterinary Medicine,0.400142,7,635,26,26,533,345,188,26,0,0,4,70,,,,9,3,5,5,11,551,4.6,0.4
+TRUE,Biologyadil,Veterinary Science and Veterinary Medicine,0.162578,6,647,6,6,558,459,99,6,0,0,5,89,,,,2,0,2,3,2,577,5.2,0.2
+TRUE,Field Biological,,0.076776,5,8264,64,64,1497,1266,231,64,0,0,2,35,,,12,0,0,0,0,0,4082,294.6,12.4
+TRUE,Scope Research,Nursing,0.026565,4,1409,19,19,753,723,30,19,0,0,4,77,,,,6,1,10,1,12,1046,10.4,2.6
+TRUE,Refine Nuclear,"Economics, Business and Management",-0.139523,3,3882,19,19,1831,2270,-439,19,0,0,4,77,,,,3,0,5,5,3,3294,37,2.2
+TRUE,Home Scripta,Veterinary Science and Veterinary Medicine,-0.284534,2,1525,8,8,639,1037,-398,8,0,0,5,87,,,,2,1,3,3,4,1331,17.6,0.2
+TRUE,Pursuit Nuclear,Veterinary Science and Veterinary Medicine,-0.392813,1,1942,12,12,436,1105,-669,12,0,0,4,83,,,,2,2,3,6,5,1483,23,2.4
