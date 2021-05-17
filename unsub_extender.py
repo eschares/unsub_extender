@@ -6,13 +6,13 @@ Created on Thu Apr 15 21:16:06 2021
 """
 import streamlit as st
 import streamlit.components.v1 as components
-from streamlit.media_file_manager import media_file_manager
 import pandas as pd
 import numpy as np
 import altair as alt
 import streamlit_analytics
 import os
 from datetime import datetime
+from streamlit.media_file_manager import media_file_manager
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
@@ -165,6 +165,8 @@ st.sidebar.subheader('Export spreadsheet with any changes')
 if st.sidebar.button('Click to export'):
     this_file = media_file_manager.add(df.to_csv(index=False).encode('utf-8'), 'text/csv', r'UnsubExtender_export' + date + '.csv')
     st.sidebar.markdown('[Click to download]({})'.format(this_file.url))
+
+
 
 ########  Charts start here  ########
 st.subheader('Start by looking at the overall usage')
@@ -361,8 +363,8 @@ st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 
 ##### Footer in sidebar #####
-st.sidebar.subheader(" ")
-st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
+st.sidebar.subheader("About")
+st.sidebar.markdown('**[Github page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
