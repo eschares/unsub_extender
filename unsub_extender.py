@@ -20,7 +20,6 @@ streamlit_analytics.start_tracking()
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 #st.sidebar.write("*Version 1.0*")
-st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 
 
 with st.beta_expander("How to use:"):
@@ -165,7 +164,7 @@ path = st.sidebar.text_input('Enter complete path for file save:', '', help='Exa
 st.sidebar.write('Path specified is: ', path)
 
 if st.sidebar.button('Click to download'):
-    df.to_csv(os.path.join(path, r'UnsubExtender_export' + date + '.csv'), index=False) #, header=True)
+    df.to_csv(os.path.join(path, r'UnsubExtender_export_' + date + '.csv'), index=False) #, header=True)
     #r'C:\Users\eschares\Desktop\export_dataframe.csv'
 
 
@@ -366,9 +365,11 @@ st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 
 ##### Footer in sidebar #####
-st.sidebar.subheader("Credits")
+st.sidebar.subheader(" ")
+st.sidebar.markdown('**[About unsub extender](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
+
 
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #5 hours ahead
 
