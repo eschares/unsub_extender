@@ -1,6 +1,6 @@
 
 Bivariate(
-	Y( :weighted usage ),
+	Y( :usage ),
 	X( :subscription_cost ),
 	SendToReport(
 		Dispatch(
