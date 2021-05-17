@@ -1,0 +1,64 @@
+
+Bivariate(
+	Y( :weighted usage ),
+	X( :subscription_cost ),
+	SendToReport(
+		Dispatch(
+			{},
+			"2",
+			ScaleBox,
+			{Scale( "Log" ), Min( 10 ), Max( 20000 ), Inc( 1 ), Minor Ticks( 1 )}
+		),
+		Dispatch(
+			{},
+			"Bivar Plot",
+			FrameBox,
+			{Frame Size( 524, 393 ), Row Legend(
+				subscribed,
+				Color( 1 ),
+				Color Theme( "JMP Default" ),
+				Marker( 0 ),
+				Marker Theme( "" ),
+				Continuous Scale( 0 ),
+				Reverse Scale( 0 ),
+				Excluded Rows( 0 )
+			)}
+		)
+	)
+);
+
+Graph Builder(
+	Size( 568, 452 ),
+	Show Control Panel( 0 ),
+	Variables( X( :subject ), Y( :cpu_rank ), Color( :subscribed ) ),
+	Elements( Points( X, Y, Legend( 6 ) ) )
+);
+
+Graph Builder(
+	Size( 568, 479 ),
+	Show Control Panel( 0 ),
+	Variables(
+		X( :downloads ),
+		Y( :citations ),
+		Group X( :cpu_rank ),
+		Color( :subscribed )
+	),
+	Elements( Points( X, Y, Legend( 3 ) ) )
+);
+
+Graph Builder(
+	Size( 565, 444 ),
+	Show Control Panel( 0 ),
+	Variables( X( :citations ), Y( :authorships ), Color( :subscribed ) ),
+	Elements( Points( X, Y, Legend( 7 ) ) ),
+	SendToReport(
+		Dispatch(
+			{},
+			"authorships",
+			ScaleBox,
+			{Scale( "Log" ), Format( "Best", 6 ), Min( 0.0930527950038015 ),
+			Max( 14.6591411206383 ), Inc( 1 ), Minor Ticks( 1 )}
+		)
+	)
+);
+
