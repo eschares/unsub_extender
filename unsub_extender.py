@@ -30,6 +30,7 @@ with st.beta_expander("How to use:"):
     st.write("Filter on various criteria using the sliders on the left to narrow in on areas of interest, hover over data points to learn more about a specific journal, then use the dropdown to actually change a journal's *Subscribed* status and watch the graphs update. (Note: you may have to occasionally hit *'r'* to force a reload if you notice it's not loading right away)")
     st.markdown('This project is written in Python and deployed as a web app using the library Streamlit. **More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
+#==== Load Data ====
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
 
@@ -52,6 +53,8 @@ st.header('Analyzing file "' + filename + '"')
 
 df = load_data(file)
 
+
+#==== Pre-process data ====
 #force 'subscribed' column to be a string, not Bool and all uppercase
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
@@ -154,11 +157,11 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 
 date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
-date
+#date
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
-path = st.sidebar.text_input('Enter complete path to save here:', '', help='Example: C:\\Users\\eschares\\Desktop')
+path = st.sidebar.text_input('Enter complete path for file save:', '', help='Example: C:\\Users\\eschares\\Desktop')
 st.sidebar.write('Path specified is: ', path)
 
 if st.sidebar.button('Click to download'):
@@ -364,7 +367,7 @@ st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 ##### Footer in sidebar #####
 st.sidebar.subheader("Credits")
-html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or want to make suggestions, please email <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #5 hours ahead
