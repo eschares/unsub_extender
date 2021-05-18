@@ -255,13 +255,13 @@ linked = alt.Chart(df[filt]).mark_circle().encode(
     width=350,
     height=250,
     title={
-        "text": ["Three linked plots - Weighted usage vs. [ DL / cit / auth ]"],
-        "subtitle": ["Zooming in will adjust all three"],
+        "text": ["Four linked plots - Weighted usage vs. [ DL / cit / auth / OA% ]"],
+        "subtitle": ["Zooming in will adjust all four"],
         'color':'black',
         'subtitleColor': 'gray'
         }
 ).repeat(
-    repeat=['downloads', 'citations', 'authorships'],
+    repeat=['downloads', 'citations', 'authorships', 'use_oa_percent'],
     columns=2
 ).interactive().add_selection(scatter_selection)
 
