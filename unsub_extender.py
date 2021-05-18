@@ -210,7 +210,7 @@ st.altair_chart(weighted_vs_cost2, use_container_width=True)
 
 
 
-st.subheader('Break down the authorships, citations, and downloads of each journal')
+st.subheader('Look into the authorships, citations, and downloads of each journal')
 auth_hist = alt.Chart(df[filt].reset_index()).mark_bar(width=10).encode(
     alt.X('authorships:Q', title="Authorships (average per year over the next five years)"),
     alt.Y('count()', axis=alt.Axis(grid=False)),
@@ -240,7 +240,7 @@ scatter_dl_vs_cit = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
         #width=800,
         title={
             "text": ["Citations vs. Downloads"],
-            "subtitle": ["Where is the usage coming from?", "Hold authorships steady with a filter and consider citations and DLs within that group"],
+            "subtitle": ["What is contributing to the weighted usage?", "Hold authorships steady with a filter and consider citations and DLs within that group"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -251,27 +251,26 @@ st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
 #3x scatter matrix showing all metrics vs. overall usage
 scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
 
-eric = alt.Chart(df).mark_circle().encode(
-    alt.X(alt.repeat("column"), type='quantitative'),
-    alt.Y(alt.repeat("row"), type='quantitative'),
-    #color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+linked = alt.Chart(df).mark_circle().encode(
+    alt.X(alt.repeat("repeat"), type='quantitative'),
+    alt.Y('usage:Q', title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed']    
 ).properties(
     width=350,
     height=250,
     title={
-        "text": ["Linked plots - Overall usage vs. something"],
+        "text": ["Three linked plots - Weighted usage vs. [ DL / cit / auth ]"],
         "subtitle": ["Zooming in will adjust all three"],
         'color':'black',
         'subtitleColor': 'gray'
         }
 ).repeat(
-    row=['usage'],#, 'downloads', 'citations', 'authorships'],
-    column=['downloads', 'citations', 'authorships']
+    repeat=['downloads', 'citations', 'authorships'],
+    columns=2
 ).interactive().add_selection(scatter_selection)
 
-eric
+linked
 
 
 
@@ -289,7 +288,7 @@ IF = alt.Chart(df[filt]).mark_circle().encode(
         height = 400,
         title={
             "text": ['Instant Fill % vs. Journal Subscription Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Look for a less expensive journal that gets you the same IF%, generally the upper band"],
+            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Could look for a less expensive journal that gets you the same IF%, generally the upper band"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -297,14 +296,14 @@ IF = alt.Chart(df[filt]).mark_circle().encode(
 st.altair_chart(IF, use_container_width=True)
 
 IF2 = alt.Chart(df[filt]).mark_circle().encode(
-    alt.X('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per IF% point)", axis=alt.Axis(format='$,.2r')),
+    alt.X('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per 1 IF% point)", axis=alt.Axis(format='$,.2r')),
     alt.Y('IF%', title="Instant Fill %"),
     tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).interactive().properties(
         height=400,
         title={
-            "text": ['Instant Fill % vs. Price per IF% point'],
+            "text": ['Instant Fill % vs. Price per 1 IF% point'],
             "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to upper left corner)?","Note: X-axis shown in log to stretch and increase visibility"],
             "color": "black",
             "subtitleColor": "gray"
