@@ -16,11 +16,10 @@ from streamlit.media_file_manager import media_file_manager
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
-#streamlit_analytics.start_tracking()
+streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
-#st.sidebar.write("*Version 1.0*")
 
 
 with st.beta_expander("How to use:"):
@@ -34,7 +33,7 @@ with st.beta_expander("How to use:"):
 #Initialize with a hardcoded dataset
 file = filename = "Unsub_export_example.csv"
 
-st.sidebar.subheader('Analyze your Unsub export file')
+st.sidebar.subheader('Upload your Unsub export file')
 uploaded_file = st.sidebar.file_uploader("Must be a .csv file", type='csv')
 if uploaded_file is not None:
     file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
@@ -60,7 +59,7 @@ df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
 
 #process data to calculate IF%
-#TO DO put in check here to not do it if IF% column already exists - rerunning a file through UE
+#check and don't redo if IF% column already exists - rerunning a file through UE
 if not 'IF%' in df.columns:
     total_usage = df['usage'].sum()
     df['current_yr_usage'] = ((df['use_ill_percent'] + df['use_other_delayed_percent']) / 100) * df['usage']
@@ -157,7 +156,6 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 
 date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
-#date
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
@@ -195,7 +193,6 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')),   #selection, if selected, if NOT selected
-    #opacity=alt.condition(selection2, alt.value(1), alt.value(0.2)),
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
     ).interactive().properties(
         height=500,
@@ -219,7 +216,6 @@ auth_hist = alt.Chart(df[filt].reset_index()).mark_bar(width=10).encode(
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).interactive().properties(
         height=400,
-        #width=800,
         title={
             "text": ["Authorships Distribution"],
             "subtitle": ["What do the range of Authorships look like?", "Use this graph to help set the Authorships slider filter and narrow down titles of interest"],
@@ -237,7 +233,6 @@ scatter_dl_vs_cit = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
     #size=('authorships')
 ).interactive().properties(
         height=400,
-        #width=800,
         title={
             "text": ["Citations vs. Downloads"],
             "subtitle": ["What is contributing to the weighted usage?", "Hold authorships steady with a filter and consider citations and DLs within that group"],
@@ -314,9 +309,7 @@ st.altair_chart(IF2, use_container_width=True)
 
 
 st.subheader('Look where journal decisions land in the Unsub histogram')
-#Unsub histogram, but colored by subscribed    bin=alt.Bin(step=1)
-#hist_filt = filt & (df['cpu']<=100)
-#hist_df = df[hist_filt]
+#Unsub histogram, but colored by subscribed
 unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_index() turns the indx into a column
     alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue beyond the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
     alt.Y('count()', axis=alt.Axis(grid=False)),
@@ -325,7 +318,6 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_inde
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).interactive().properties(
         height=400,
-        #width=800,
         title={
             "text": ["Unsub's Cost per Use Histogram, color coded by Subscribed status"],
             "subtitle": ["Note: Journals are grouped by Subscribed status, not shown in continuous order by CPU like Unsub does", "Note 2: X-axis default set to max of $100, zoom out to see data that may have even higher CPU"],
@@ -334,8 +326,6 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_inde
         }
         )
 st.altair_chart(unsub_hist, use_container_width=True)
-#st.write("Journals with cpu>100: ")
-
 
 
 
@@ -348,7 +338,6 @@ cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encod
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
     ).interactive().properties(
         height=600,
-        #width=800,
         title={
             "text": ["Overview of cancellations by 'Subject' column"],
             "subtitle": ["Review decisions and make sure you're not penalizing one discipline too much", "Subject area classifications are probably not perfect, but gives a general idea"],
@@ -366,9 +355,10 @@ st.sidebar.subheader("About")
 html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 st.sidebar.markdown('**[Project Github page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
+#st.sidebar.write("*Version 1.0*")
 
 
-streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #5 hours ahead
+streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #timestamp is 5 hours ahead
 
 # Analytics code
 components.html(
