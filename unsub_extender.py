@@ -352,7 +352,7 @@ st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 ##### Footer in sidebar #####
 st.sidebar.subheader("About")
-html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or to make suggestions, please email <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 st.sidebar.markdown('**[Project Github page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 #st.sidebar.write("*Version 1.0*")
