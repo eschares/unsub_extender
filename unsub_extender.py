@@ -16,7 +16,7 @@ from streamlit.media_file_manager import media_file_manager
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
-streamlit_analytics.start_tracking()
+#streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
@@ -75,7 +75,7 @@ my_slot1 = st.empty()   #save this spot to fill in later for how many rows get s
 # Sliders and filter
 st.sidebar.subheader("**Filters**")
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
-cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=0, max_value=int(max(df['cpu_rank'])), value=(0,int(max(df['cpu_rank']))), help='CPU Rank ranges from 0 to max number of journals in the dataset')
+cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=min(df['cpu_rank']), max_value=int(max(df['cpu_rank'])), value=(min(df['cpu_rank']),int(max(df['cpu_rank']))), help='CPU Rank ranges from 1 to max number of journals in the dataset')
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))), help='Average per year over the next five years')
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])), help='Average per year over the next five years')
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])), help='Average per year over the next five years')
@@ -364,9 +364,9 @@ st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 ##### Footer in sidebar #####
 st.sidebar.subheader("About")
-st.sidebar.markdown('**[Github page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />If you found this useful, have feedback, or to make suggestions, please email <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
+st.sidebar.markdown('**[Project Github page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
 
 
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #5 hours ahead
