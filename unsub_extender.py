@@ -246,7 +246,7 @@ st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
 #3x scatter matrix showing all metrics vs. overall usage
 scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
 
-linked = alt.Chart(df).mark_circle().encode(
+linked = alt.Chart(df[filt]).mark_circle().encode(
     alt.X(alt.repeat("repeat"), type='quantitative'),
     alt.Y('usage:Q', title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
