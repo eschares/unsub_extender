@@ -74,7 +74,7 @@ my_slot1 = st.empty()   #save this spot to fill in later for how many rows get s
 # Sliders and filter
 st.sidebar.subheader("**Filters**")
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
-cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=min(df['cpu_rank']), max_value=int(max(df['cpu_rank'])), value=(min(df['cpu_rank']),int(max(df['cpu_rank']))), help='CPU Rank ranges from 1 to max number of journals in the dataset')
+cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=int(min(df['cpu_rank'])), max_value=int(max(df['cpu_rank'])), value=(int(min(df['cpu_rank'])),int(max(df['cpu_rank']))), help='CPU Rank ranges from 1 to max number of journals in the dataset')
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))), help='Average per year over the next five years')
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])), help='Average per year over the next five years')
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])), help='Average per year over the next five years')
@@ -175,7 +175,7 @@ weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu', 'cpu_rank', 'subscribed'],
     ).interactive().properties(
         height=500,
         title={
@@ -193,7 +193,7 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')),   #selection, if selected, if NOT selected
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed'],
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu', 'cpu_rank', 'subscribed'],
     ).interactive().properties(
         height=500,
         title={
@@ -250,7 +250,7 @@ linked = alt.Chart(df[filt]).mark_circle().encode(
     alt.X(alt.repeat("repeat"), type='quantitative'),
     alt.Y('usage:Q', title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu_rank', 'subscribed']    
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu', 'cpu_rank', 'subscribed']    
 ).properties(
     width=350,
     height=250,
@@ -314,7 +314,7 @@ unsub_hist = alt.Chart(df[filt].reset_index()).mark_bar().encode(   #.reset_inde
     alt.X('cpu:Q', bin=alt.Bin(step=1), title="Cost per Use bins (data may continue beyond the chart, zoom out or scroll to see)", axis=alt.Axis(format='$'), scale=alt.Scale(domain=[-1,100])),
     alt.Y('count()', axis=alt.Axis(grid=False)),
     alt.Detail('index'),
-    tooltip=['title', 'cpu', 'subscription_cost', 'subscribed'],
+    tooltip=['title', 'cpu', 'cpu_rank', 'subscription_cost', 'subscribed'],
     color=alt.Color('subscribed:N', scale=subscribed_colorscale)
     ).interactive().properties(
         height=400,
