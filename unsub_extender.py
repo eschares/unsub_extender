@@ -330,22 +330,27 @@ st.altair_chart(unsub_hist, use_container_width=True)
 
 
 st.subheader('Consider journal subject areas')
-#cpu_Rank y vs. subject, colored by subscribed
-cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
-    x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
-    y=alt.Y('cpu_rank:Q'),
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
-    ).interactive().properties(
-        height=600,
-        title={
-            "text": ["Overview of cancellations by 'Subject' column"],
-            "subtitle": ["Review decisions and make sure you're not penalizing one discipline too much", "Subject area classifications are probably not perfect, but gives a general idea"],
-            "color": "black",
-            "subtitleColor": "gray"
-        }
-        )
-st.altair_chart(cpurank_vs_subject, use_container_width=True)
+
+empty_cols = [col for col in df.columns if df[col].isnull().all()]
+if 'subject' in empty_cols:
+    st.write("Uses the older 'subject' column, need to update this to add flag and support the more detailed 'era_subjects' column too")
+else:
+    #cpu_Rank y vs. subject, colored by subscribed
+    cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
+        x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
+        y=alt.Y('cpu_rank:Q'),
+        color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
+        tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
+        ).interactive().properties(
+            height=600,
+            title={
+                "text": ["Overview of cancellations by 'Subject' column"],
+                "subtitle": ["Review decisions and make sure you're not penalizing one discipline too much", "Subject area classifications are probably not perfect, but gives a general idea"],
+                "color": "black",
+                "subtitleColor": "gray"
+            }
+            )
+    st.altair_chart(cpurank_vs_subject, use_container_width=True)
 
 
 
