@@ -64,6 +64,8 @@ df['cpu_rank'] = pd.to_numeric(df['cpu_rank'], errors='coerce')
 df = df.replace(np.nan, 0, regex=True)
 df['cpu_rank'] = df['cpu_rank'].astype(int)
 
+#move anything with weighted usage of 0 to 1 so log graphs work
+df = df.replace({'usage':0}, 1)
 
 #process data to calculate IF%
 #check and don't redo if IF% column already exists - rerunning a file through UE
