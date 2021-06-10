@@ -60,11 +60,11 @@ df['subscribed'] = df['subscribed'].str.upper()
 
 #handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
 df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
-df['cpu_rank'] = pd.to_numeric(df['cpu_rank'], errors='coerce')
-df = df.replace(np.nan, 0, regex=True)
+df['cpu_rank'] = pd.to_numeric(df['cpu_rank'], errors='coerce')     #changes '-' to not a number
+df = df.replace(np.nan, 0, regex=True)  #changes that to 0
 df['cpu_rank'] = df['cpu_rank'].astype(int)
 fix_filt = (df['cpu_rank']==0)
-df.loc[fix_filt,'cpu_rank']= int(max(df['cpu_rank']))
+df.loc[fix_filt,'cpu_rank']= int(max(df['cpu_rank']))   #moves cpu_rank of 0 to max cpu_rank number
 
 #move anything with weighted usage of 0 to 1 so log graphs work
 df = df.replace({'usage':0}, 1)
@@ -343,8 +343,9 @@ st.altair_chart(unsub_hist, use_container_width=True)
 st.subheader('Consider journal subject areas')
 
 empty_cols = [col for col in df.columns if df[col].isnull().all()]
-if 'subject' in empty_cols:
-    st.write("Uses the older 'subject' column, need to update this to add flag and support the more detailed 'era_subjects' column too")
+#if 'subject' in empty_cols:
+if (df['subject'] == 0).all():
+    st.write("Script uses the older 'subject' column which is now deprecated by Unsub. Need to update this to add flag and support the more detailed 'era_subjects' column.")
 else:
     #cpu_Rank y vs. subject, colored by subscribed
     cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
