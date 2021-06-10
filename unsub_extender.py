@@ -63,6 +63,8 @@ df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
 df['cpu_rank'] = pd.to_numeric(df['cpu_rank'], errors='coerce')
 df = df.replace(np.nan, 0, regex=True)
 df['cpu_rank'] = df['cpu_rank'].astype(int)
+fix_filt = (df['cpu_rank']==0)
+df.loc[fix_filt,'cpu_rank']= int(max(df['cpu_rank']))
 
 #move anything with weighted usage of 0 to 1 so log graphs work
 df = df.replace({'usage':0}, 1)
