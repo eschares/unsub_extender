@@ -42,21 +42,28 @@ if uploaded_file is not None:
     file = uploaded_file
     filename = uploaded_file.name
 
-
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def load_data(file):
     st.write("New file loaded")
-    return pd.read_csv(file, sep=',', encoding='utf-8')  #Process the data in cached way to speed up processing
+    return pd.read_csv(file)#, sep=',', encoding='utf-8')  #Process the data in cached way to speed up processing
 
 st.header('Analyzing file "' + filename + '"')
 
 df = load_data(file)
 
 
+
 #==== Pre-process data ====
 #force 'subscribed' column to be a string, not Bool and all uppercase
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
+
+#handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
+df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
+df['cpu_rank'] = pd.to_numeric(df['cpu_rank'], errors='coerce')
+df = df.replace(np.nan, 0, regex=True)
+df['cpu_rank'] = df['cpu_rank'].astype(int)
+
 
 #process data to calculate IF%
 #check and don't redo if IF% column already exists - rerunning a file through UE
