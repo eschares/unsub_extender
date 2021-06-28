@@ -11,6 +11,7 @@ import numpy as np
 import altair as alt
 import streamlit_analytics
 import os
+import re
 from datetime import datetime
 from streamlit.media_file_manager import media_file_manager
 
@@ -83,7 +84,7 @@ my_slot1 = st.empty()   #save this spot to fill in later for how many rows get s
 
 
 # Sliders and filter
-st.sidebar.subheader("**Filters**")
+st.sidebar.subheader("**Filters** (arrow keys to fine-tune)")
 price_slider = st.sidebar.slider('Price ($) between:', min_value=0, max_value=int(max(df['subscription_cost'])), value=(0,int(max(df['subscription_cost']))))
 cpu_slider = st.sidebar.slider('Cost per Use Rank between:', min_value=int(min(df['cpu_rank'])), max_value=int(max(df['cpu_rank'])), value=(int(min(df['cpu_rank'])),int(max(df['cpu_rank']))), help='CPU Rank ranges from 1 to max number of journals in the dataset')
 downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_value=int(max(df['downloads'])), value=(0,int(max(df['downloads']))), help='Average per year over the next five years')
@@ -342,11 +343,77 @@ st.altair_chart(unsub_hist, use_container_width=True)
 
 st.subheader('Consider journal subject areas')
 
-empty_cols = [col for col in df.columns if df[col].isnull().all()]
-#if 'subject' in empty_cols:
+def split_era(sentence):
+    """
+    Input: era_subjects column of one row
+        ex. [['0608', 'Zoology'], ['0707', 'Veterinary Sciences'], ['06', 'Biological Sciences'], ['07', 'Agricultural and Veterinary Sciences']]"
+    Output: a list of the broadest two digit era_subjects category; can have multiple
+        ex. ['Biological Sciences', 'Agricultural and Veterinary Sciences']
+    """
+
+    two_digit_list = []
+    final = []
+    
+    mylist = re.split(r'\]',sentence)      #breaks into [['0608', 'Zoology' (no end bracket)
+    for i in mylist:
+        m = re.search(r'\d+', i)    #m tells if it has digits
+        if m!=None:             #when digit search doesn't match, it returns a NoneType and errors the group() call
+            #print(m.group())    #returns the part of string where there was a match; 0608, 0707, 06, 07
+            if len(m.group())==2:
+                two_digit_list.append(i)
+        
+        
+    #print(two_digit_list)     #List of two digit codes: ['06', 'Biological Sciences'
+    
+    for j in two_digit_list:
+        comma_split = re.split(r'\',', j)
+        for c in comma_split:       #either numbers or words
+            d = re.search(r'[a-z]+', c)     #look for words
+            if d!=None:
+                final.append(c[2:-1])       #if it has words, strip off leading _' and trailing '
+    
+    return (final)
+
+
 if (df['subject'] == 0).all():
-    st.write("Script uses the older 'subject' column which is now deprecated by Unsub. Need to update this to add flag and support the more detailed 'era_subjects' column.")
+    st.write("Using column for **'era_subject'** codes by Excellence in Research for Australia (ERA).")
+    st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined.")
+    
+    #create new column called 'era_split', calling fn on each row and adding the two digit codes in list form
+    df['era_split'] = df.apply(lambda x: split_era(x['era_subjects']), axis=1, result_type='reduce')
+    #remove leading and ending bracket and quote mark
+    df['era_split'] = df['era_split'].astype(str).str.slice(2,-2)
+    #Now it looks like "Commerce, Management, Tourism and Services', 'Built Environment and Design', 'Engineering"
+    
+    #can't just split by comma since some subjects have multiple words so have to split by ', ' quotecommaspacequote
+    df['era_split_by_quotecommaquote'] = df['era_split'].str.split('\', \'')
+    df2 = df.explode('era_split_by_quotecommaquote')    #new df defined with more rows than the original
+    df2.reset_index(drop=True, inplace=True)
+    
+    #force 'subscribed' column to be a string, not Bool, and all uppercase
+    df2['subscribed'] = df2['subscribed'].astype(str)
+    df2['subscribed'] = df2['subscribed'].str.upper()
+    df2['cpu_rank'] = df2['cpu_rank'].astype(int)
+    
+    cpurank_vs_subject2 = alt.Chart(df2).mark_circle(size=40, opacity=0.5).encode(
+        x=alt.X('era_split_by_quotecommaquote:N', title=None),
+        y=alt.Y('cpu_rank:Q'),
+        color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
+        tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'era_split', 'subscribed'],
+        
+        ).interactive().properties(
+            height=600,
+            title={
+                "text": ["Overview of cancellations by 'Subject' column"],
+                "subtitle": ["Review decisions and make sure you're not penalizing one discipline too much", "Subject area classifications are probably not perfect, but gives a general idea"],
+                "color": "black",
+                "subtitleColor": "gray"
+            }
+            )
+    st.altair_chart(cpurank_vs_subject2, use_container_width=True)
+    
 else:
+    st.write("Note: Your file uses the older **'subject'** column which is now deprecated by Unsub. Future export files use the **'era_subject'** codes by Excellence in Research for Australia (ERA).")
     #cpu_Rank y vs. subject, colored by subscribed
     cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
         x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
@@ -369,11 +436,13 @@ else:
 
 ##### Footer in sidebar #####
 st.sidebar.subheader("About")
-html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> <br />Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
-st.sidebar.markdown(html_string, unsafe_allow_html=True)
-st.sidebar.markdown('**[Project Github page](https://github.com/eschares/unsub_extender/blob/main/README.md)**')
-#st.sidebar.write("*Version 1.0*")
+github = "[![GitHub repo stars](https://img.shields.io/github/stars/eschares/unsub_extender?logo=github&style=social)](<https://github.com/eschares/unsub_extender>)"
+twitter = "[![Twitter Follow](https://img.shields.io/twitter/follow/eschares?style=social)](<https://twitter.com/eschares>)"
+st.sidebar.write(twitter + " " + github)
 
+html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+st.sidebar.markdown(html_string, unsafe_allow_html=True)
+#st.sidebar.write("*Version 1.0*")
 
 streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #timestamp is 5 hours ahead
 
