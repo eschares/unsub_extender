@@ -357,6 +357,8 @@ def split_era(sentence):
     mylist = re.split(r'\]',sentence)      #breaks into [['0608', 'Zoology' (no end bracket)
     for i in mylist:
         m = re.search(r'\d+', i)    #m tells if it has digits
+        if m==None:
+            m = re.search(r'MD', i)
         if m!=None:             #when digit search doesn't match, it returns a NoneType and errors the group() call
             #print(m.group())    #returns the part of string where there was a match; 0608, 0707, 06, 07
             if len(m.group())==2:
