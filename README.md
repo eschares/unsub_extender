@@ -1,5 +1,7 @@
 ![unsub extender logo](https://github.com/eschares/unsub_extender/blob/main/unsub_extender2.png)
 
+[![DOI](https://zenodo.org/badge/358961619.svg)](https://zenodo.org/badge/latestdoi/358961619)
+
 # About
 [unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
 The tool provides rich data and a summary graph, but more detailed analysis tends to take place off the site in an exported .csv file that allows for filtering, notes, and additional visualization.
