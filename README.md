@@ -3,10 +3,10 @@
 [![DOI](https://zenodo.org/badge/358961619.svg)](https://zenodo.org/badge/latestdoi/358961619)
 
 # About
-[unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
+[Unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
 The tool provides rich data and a summary graph, but more detailed analysis tends to take place off the site in an exported .csv file that allows for filtering, notes, and additional visualization.
 
-This project, [**unsub extender**](https://unsubextender.lib.iastate.edu), is a Python script that takes an unsub data export file and automates useful plots and visualizations for a collection analysis team to explore.
+This project, [**Unsub Extender**](https://unsubextender.lib.iastate.edu), is a Python script that takes an unsub data export file and automates useful plots and visualizations for a collection analysis team to explore.
 The graphs are interactive through [Altair](https://altair-viz.github.io/index.html) and support zoom, pan, and hover, and filters in the left sidebar help set parameters to quickly narrow in on obvious titles to KEEP or CANCEL. The Python code is turned into a web app using [Streamlit](https://streamlit.io/).
 
 Hosting provided by Iowa State University.
@@ -14,9 +14,9 @@ Hosting provided by Iowa State University.
 ![unsub extender screenshot demo](https://github.com/eschares/unsub_extender/blob/main/demo.gif)
 
 # Requirements
-An unsub export .csv file - from an [unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
+An export .csv file - from an [Unsub](http://unsub.org) project, choose "Export - Download as spreadsheet".
 
-A .csv file will be saved, which is the input to **unsub extender.**
+A .csv file will be saved, which is the input to **Unsub Extender.**
 
 The .csv file must have the following columns in any order, but named exactly as:
 * title
@@ -32,12 +32,12 @@ The .csv file must have the following columns in any order, but named exactly as
 * use_oa_percent
 * use_other_delayed_percent
 
-These should already be the default column names assigned by unsub in the file export.
+These should already be the default column names assigned by Unsub in the file export.
 
 ### subscribed column
 The **subscribed** column is especially important as it determines the color-coding of data points in several of the graphs. The column accepts the following values:
 
-(TRUE and FALSE are conventions carried over from unsub, MAYBE is supported as a third option for future consideration, and leaving the cell blank will color that journal data point grey):
+(TRUE and FALSE are conventions carried over from Unsub, MAYBE is supported as a third option for future consideration, and leaving the cell blank will color that journal data point grey):
 * TRUE
   * A title to keep, displayed in blue
 * FALSE
