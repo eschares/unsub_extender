@@ -103,7 +103,7 @@ if subscribed_filter != 'Show All':
 filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_instant_usage_percent'] <= OA_percent_slider[1]) &
         (df['downloads'] >= downloads_slider[0]) & (df['downloads'] <= downloads_slider[1]) &
         (df['citations'] >= citations_slider[0]) & (df['citations'] <= citations_slider[1]) &
-        (df['subscription_cost'] >= price_slider[0]) & (df['subscription_cost'] <= price_slider[1]) &
+        (df['subscription_cost'] >= price_slider[0]) & (df['subscription_cost'] <= price_slider[1]+1) &     #subtle bug where most expensive journal doesn't show if price has cents b/c $100.10 is greater than int($100)
         (df['authorships'] >= authorships_slider[0]) & (df['authorships'] <= authorships_slider[1]) &
         (df['cpu_rank'] >= cpu_slider[0]) & (df['cpu_rank'] <= cpu_slider[1]) &
         (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
