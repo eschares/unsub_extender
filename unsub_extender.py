@@ -378,9 +378,9 @@ def split_era(sentence):
     return (final)
 
 
-if (df['subject'] == 0).all():
+if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     st.write("Using column for **'era_subject'** codes by Excellence in Research for Australia (ERA).")
-    st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined.")
+    st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined and a single title classed as multiple subjects")
     
     #create new column called 'era_split', calling fn on each row and adding the two digit codes in list form
     df['era_split'] = df.apply(lambda x: split_era(x['era_subjects']), axis=1, result_type='reduce')
@@ -415,7 +415,8 @@ if (df['subject'] == 0).all():
             )
     st.altair_chart(cpurank_vs_subject2, use_container_width=True)
     
-else:
+#if (df['subject'] != 0).all():
+elif ('subject' in df.columns):
     st.write("Note: Your file uses the older **'subject'** column which is now deprecated by Unsub. Future export files use the **'era_subject'** codes by Excellence in Research for Australia (ERA).")
     #cpu_Rank y vs. subject, colored by subscribed
     cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
