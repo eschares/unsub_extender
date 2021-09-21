@@ -380,7 +380,7 @@ def split_era(sentence):
 
 if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     st.write("Using column for **'era_subject'** codes by Excellence in Research for Australia (ERA).")
-    st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined and a single title classed as multiple subjects")
+    st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined and the fact that a single title classed as multiple subjects")
     
     #create new column called 'era_split', calling fn on each row and adding the two digit codes in list form
     df['era_split'] = df.apply(lambda x: split_era(x['era_subjects']), axis=1, result_type='reduce')
@@ -434,6 +434,9 @@ elif ('subject' in df.columns):
             }
             )
     st.altair_chart(cpurank_vs_subject, use_container_width=True)
+else:
+    st.write("Sorry, you don't seem to have the right data in your file.")
+    st.write("I need either a **subject** column (old version) or an **era_subjects** column (new version) to show these by-subject charts.")
 
 
 
