@@ -91,7 +91,8 @@ downloads_slider = st.sidebar.slider('Downloads between:', min_value=0, max_valu
 citations_slider = st.sidebar.slider('Citations between:', min_value=0.0, max_value=max(df['citations']), value=(0.0,max(df['citations'])), help='Average per year over the next five years')
 authorships_slider = st.sidebar.slider('Authorships between:', min_value=0.0, max_value=max(df['authorships']), value=(0.0,max(df['authorships'])), help='Average per year over the next five years')
 weighted_usage_slider = st.sidebar.slider('Weighted usage (DL + x*Cit + y*Auth) between:', min_value=0, max_value=int(max(df['usage'])), value=(0,int(max(df['usage']))), help='x Citation and y Authorship weights are set in the Unsub tool itself')
-OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
+#OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['free_instant_usage_percent'])), value=(0,int(max(df['free_instant_usage_percent']))))
+OA_percent_slider = st.sidebar.slider('OA % between:', min_value=0, max_value=int(max(df['use_oa_percent'])), value=(0,int(max(df['use_oa_percent']))))
 subscribed_filter = st.sidebar.radio('Subscribed status:',['Show All', 'TRUE', 'FALSE', 'MAYBE', '(blank)'], help='Filter based on the current Subscribed status')
 subscribed_filter_flag = 0
 if subscribed_filter == "(blank)":
@@ -100,7 +101,7 @@ if subscribed_filter != 'Show All':
     subscribed_filter_flag = 1
 
 #could also use between: (df['cpu_rank'].between(cpu_slider[0], cpu_slider[1]))
-filt = ( (df['free_instant_usage_percent'] >= OA_percent_slider[0]) & (df['free_instant_usage_percent'] <= OA_percent_slider[1]) &
+filt = ( (df['use_oa_percent'] >= OA_percent_slider[0]) & (df['use_oa_percent'] <= OA_percent_slider[1]) &
         (df['downloads'] >= downloads_slider[0]) & (df['downloads'] <= downloads_slider[1]) &
         (df['citations'] >= citations_slider[0]) & (df['citations'] <= citations_slider[1]) &
         (df['subscription_cost'] >= price_slider[0]) & (df['subscription_cost'] <= price_slider[1]+1) &     #subtle bug where most expensive journal doesn't show if price has cents b/c $100.10 is greater than int($100)
@@ -262,7 +263,7 @@ linked = alt.Chart(df[filt]).mark_circle().encode(
     alt.X(alt.repeat("repeat"), type='quantitative'),
     alt.Y('usage:Q', title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu', 'cpu_rank', 'subscribed']    
+    tooltip=['title','downloads','citations','authorships','usage','use_oa_percent','subscription_cost', 'cpu', 'cpu_rank', 'subscribed']    
 ).properties(
     width=350,
     height=250,
