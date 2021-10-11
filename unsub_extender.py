@@ -115,9 +115,9 @@ if subscribed_filter_flag:      #add another filter part, have to do it this way
     filt2 = (df['subscribed'] == subscribed_filter)
     filt = filt & filt2
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(df[filt])
+# if st.checkbox('Show raw data'):
+#     st.subheader('Raw data')
+#     st.write(df[filt])
     
 my_slot2 = st.empty()   #save this spot to fill in later with the summary table of counts and sum$ by Subscribed
 
@@ -132,6 +132,10 @@ my_slot1.subheader(selected_jnls + ' rows selected out of ' + total_jnls + ' row
 #set up the color maps on 'subscribed'
 subscribed_colorscale = alt.Scale(domain = ['TRUE', 'FALSE', 'MAYBE', ' '],
                                   range = ['blue', 'red', 'green', 'gray'])
+
+subscribed_point_mapping = alt.Scale(domain=['TRUE', 'FALSE', 'MAYBE', ' '],
+                                     range=["cross", "circle", "diamond", "triangle-up"]    #The scale property allow you to map a domain to a range, where the domain specifies input values, and the range specifies the visual properties to which the domain is mapped. If you want multiple domain values to map to the same range value, it can be done like this:
+                                         )
 
 
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
@@ -155,9 +159,11 @@ with sidebar_modifier_slot:
             if st.button('Commit change!'):
                 for title in selected_titles:
                     title_filter = (df['title'] == title)
-                    df.loc[title_filter, 'subscribed'] = radiovalue
+                    df.at[title_filter, 'subscribed'] = radiovalue
 
-
+if st.checkbox('Show raw data'):
+    st.subheader('Raw data')
+    st.write(df[filt])
 
 ### Summary dataframe created to show count and sum$ by Subscribed status
 summary_df = df[filt].groupby('subscribed')['subscription_cost'].agg(['count','sum'])
@@ -168,10 +174,19 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 
 
-date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
+
+# @st.cache
+# def convert_df(df):
+#     return df.to_csv(index=False).encode('utf-8')
+
+# csv=convert_df(df)
+
+date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
+# exported_filename = 'Unsub_export_' + date + '.csv'
+# st.sidebar.download_button(label='Click to export', data=csv, file_name=exported_filename)
 
 if st.sidebar.button('Click to export'):
     this_file = media_file_manager.add(df.to_csv(index=False).encode('utf-8'), 'text/csv', r'UnsubExtender_export' + date + '.csv')
@@ -184,11 +199,12 @@ st.subheader('Start by looking at the overall usage')
 #weighted usage in log by cost (x), colored by subscribed
 #adding clickable legend to highlight subscribed categories
 selection1 = alt.selection_multi(fields=['subscribed'], bind='legend')
-weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+weighted_vs_cost = alt.Chart(df[filt]).mark_point(size=75, opacity=0.5, filled=True).encode(
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(selection1, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
-    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu', 'cpu_rank', 'subscribed'],
+    shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
+    tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'use_oa_percent', 'free_instant_usage_percent', 'cpu', 'cpu_rank', 'subscribed'],
     ).interactive().properties(
         height=500,
         title={
@@ -201,17 +217,22 @@ weighted_vs_cost = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
 st.altair_chart(weighted_vs_cost, use_container_width=True)
 
 #same chart as Weighted Use vs. cost but now colored by cpu_rank, and would really like buckets somehow
-selection2 = alt.selection_multi(fields=['cpu_rank'], bind='legend')
-weighted_vs_cost2 = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+selection2 = alt.selection_multi(fields=['subscribed'], bind='legend')
+weighted_vs_cost2 = alt.Chart(df[filt]).mark_point(size=75, opacity=0.5, filled=True).encode(
     alt.X('subscription_cost:Q', axis=alt.Axis(format='$,.2r'), scale=alt.Scale(clamp=True)),
     y=alt.Y('usage:Q', scale=alt.Scale(type='log'), title='Weighted Usage (DL + Cit + Auth)'),
-    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis')), alt.value('lightgray')),   #selection, if selected, if NOT selected
+    color=alt.condition(selection2, alt.Color('cpu_rank:Q', scale=alt.Scale(scheme='viridis', reverse=True)), alt.value('lightgray')),   #selection, if selected, if NOT selected,
+    shape=alt.Shape(
+        'subscribed:N',
+        #sort=['TRUE', 'FALSE', 'MAYBE'],
+        scale=subscribed_point_mapping
+        ),      #circle, square, cross, diamond, triangle-up, triangle-down, triangle-right, triangle-left
     tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'cpu', 'cpu_rank', 'subscribed'],
     ).interactive().properties(
         height=500,
         title={
             "text": ['Total Weighted Usage vs. Cost, color coded by CPU_Rank gradient'],
-            "subtitle": ["Same graph as above, but with different color coding", "High Cost-per-Use rank (least economical) journals show up in light yellow"],
+            "subtitle": ["Same graph as above, but with different color coding", "High Cost-per-Use rank (least economical) journals show up as darker colors"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -238,10 +259,11 @@ auth_hist = alt.Chart(df[filt].reset_index()).mark_bar(width=10).encode(
         )
 st.altair_chart(auth_hist, use_container_width=True)
 
-scatter_dl_vs_cit = alt.Chart(df[filt]).mark_circle(size=75, opacity=0.5).encode(
+scatter_dl_vs_cit = alt.Chart(df[filt]).mark_point(size=75, opacity=0.5, filled=True).encode(
     alt.X('downloads:Q', title="Downloads"),
     alt.Y('citations:Q', title="Citations"),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),
+    shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
     tooltip=['title', 'authorships', 'subscription_cost', 'subscribed']
     #size=('authorships')
 ).interactive().properties(
@@ -259,10 +281,11 @@ st.altair_chart(scatter_dl_vs_cit, use_container_width=True)
 #3x scatter matrix showing all metrics vs. overall usage
 scatter_selection = alt.selection_multi(fields=['subscribed'], bind='legend')
 
-linked = alt.Chart(df[filt]).mark_circle().encode(
+linked = alt.Chart(df[filt]).mark_point(opacity=0.5, filled=True).encode(
     alt.X(alt.repeat("repeat"), type='quantitative'),
     alt.Y('usage:Q', title='Weighted Usage (DL + Cit + Auth)'),
     color=alt.condition(scatter_selection, alt.Color('subscribed:N', scale=subscribed_colorscale), alt.value('lightgray')),   #Nominal data type
+    shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
     tooltip=['title','downloads','citations','authorships','usage','use_oa_percent','subscription_cost', 'cpu', 'cpu_rank', 'subscribed']    
 ).properties(
     width=350,
@@ -287,32 +310,34 @@ st.subheader('Consider the Instant Fill % from each journal')
 
 IF_selection = alt.selection_single()
 
-IF = alt.Chart(df[filt]).mark_circle().encode(
+IF = alt.Chart(df[filt]).mark_point(opacity=0.5, filled=True).encode(
     alt.X('subscription_cost', title="Journal Cost", axis=alt.Axis(format='$,.2r')),    #grouped thousands with two significant digits
     alt.Y('IF%', title='Instant Fill %'),
     tooltip=(['title','subscription_cost','IF%']),
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),
+    shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
     ).interactive().properties(
         height = 400,
         title={
             "text": ['Instant Fill % vs. Journal Subscription Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Could look for a less expensive journal that gets you the same IF%, generally the upper band"],
+            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Could look for a less expensive journal that gets you the same IF%, generally the upper band", "Note: Must look at all journals in the package together, graphing subsets will throw the calculations off"],
             "color": "black",
             "subtitleColor": "gray"
         }
         )
 st.altair_chart(IF, use_container_width=True)
 
-IF2 = alt.Chart(df[filt]).mark_circle().encode(
+IF2 = alt.Chart(df[filt]).mark_point(opacity=0.5, filled=True).encode(
     alt.X('cost_per_IF%', scale=alt.Scale(type='log'), title="log ( Price per 1 IF% point)", axis=alt.Axis(format='$,.2r')),
     alt.Y('IF%', title="Instant Fill %"),
     tooltip=(['title','subscription_cost','IF%','cost_per_IF%']),
-    color=alt.Color('subscribed:N', scale=subscribed_colorscale)
+    color=alt.Color('subscribed:N', scale=subscribed_colorscale),
+    shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping)
     ).interactive().properties(
         height=400,
         title={
             "text": ['Instant Fill % vs. Price per 1 IF% point'],
-            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to upper left corner)?","Note: X-axis shown in log to stretch and increase visibility"],
+            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to upper left corner)?","Note: X-axis shown in log to stretch and increase visibility", "Note: Must look at all journals in the package together, graphing subsets will throw the calculations off"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -380,7 +405,7 @@ def split_era(sentence):
 
 if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     st.write("Using column for **'era_subject'** codes by Excellence in Research for Australia (ERA).")
-    st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined and the fact that a single title classed as multiple subjects")
+    #st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined and the fact that a single title classed as multiple subjects")
     
     #create new column called 'era_split', calling fn on each row and adding the two digit codes in list form
     df['era_split'] = df.apply(lambda x: split_era(x['era_subjects']), axis=1, result_type='reduce')
@@ -390,7 +415,7 @@ if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     
     #can't just split by comma since some subjects have multiple words so have to split by ', ' quotecommaspacequote
     df['era_split_by_quotecommaquote'] = df['era_split'].str.split('\', \'')
-    df2 = df.explode('era_split_by_quotecommaquote')    #new df defined with more rows than the original
+    df2 = df.explode('era_split_by_quotecommaquote')    #new df defined with more rows than the original, with repeated rows, names and all its data every time
     df2.reset_index(drop=True, inplace=True)
     
     #force 'subscribed' column to be a string, not Bool, and all uppercase
@@ -398,10 +423,14 @@ if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     df2['subscribed'] = df2['subscribed'].str.upper()
     df2['cpu_rank'] = df2['cpu_rank'].astype(int)
     
-    cpurank_vs_subject2 = alt.Chart(df2).mark_circle(size=40, opacity=0.5).encode(
+    subject_filtered_titles_df = df2.loc[df2['title'].isin(df[filt]['title'])]  #df2 is larger than df b/c rows repeated multiple times.
+    #Want to show only titles that fit filter but can't apply it directly since index won't match. So only select titles that get returned in df[filt]
+    
+    cpurank_vs_subject2 = alt.Chart(subject_filtered_titles_df).mark_point(size=40, opacity=0.5, filled=True).encode(
         x=alt.X('era_split_by_quotecommaquote:N', title=None),
         y=alt.Y('cpu_rank:Q'),
         color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
+        shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
         tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'era_split', 'subscribed'],
         
         ).interactive().properties(
@@ -412,17 +441,21 @@ if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
                 "color": "black",
                 "subtitleColor": "gray"
             }
-            )
+            ).configure_axis(
+    labelFontSize=15,
+    #titleFontSize=20
+    )
     st.altair_chart(cpurank_vs_subject2, use_container_width=True)
     
 #if (df['subject'] != 0).all():
 elif ('subject' in df.columns):
     st.write("Note: Your file uses the older **'subject'** column which is now deprecated by Unsub. Future export files use the **'era_subject'** codes by Excellence in Research for Australia (ERA).")
     #cpu_Rank y vs. subject, colored by subscribed
-    cpurank_vs_subject = alt.Chart(df[filt]).mark_circle(size=40, opacity=0.5).encode(
+    cpurank_vs_subject = alt.Chart(df[filt]).mark_point(size=40, opacity=0.5, filled=True).encode(
         x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
         y=alt.Y('cpu_rank:Q'),
         color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
+        shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
         tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'subscribed'],
         ).interactive().properties(
             height=600,
@@ -432,7 +465,10 @@ elif ('subject' in df.columns):
                 "color": "black",
                 "subtitleColor": "gray"
             }
-            )
+            ).configure_axis(
+    labelFontSize=15,
+    #titleFontSize=20
+    )
     st.altair_chart(cpurank_vs_subject, use_container_width=True)
 else:
     st.write("Sorry, you don't seem to have the right data in your file.")
