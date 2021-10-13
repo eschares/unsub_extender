@@ -138,6 +138,34 @@ subscribed_point_mapping = alt.Scale(domain=['TRUE', 'FALSE', 'MAYBE', ' '],
                                      range=["cross", "circle", "diamond", "triangle-up"]    #The scale property allow you to map a domain to a range, where the domain specifies input values, and the range specifies the visual properties to which the domain is mapped. If you want multiple domain values to map to the same range value, it can be done like this:
                                          )
 
+# Function to remove a title from all four lists in preparation for adding back to one list
+def clear_title_from_list(title):
+    if title in st.session_state.to_true:
+        st.session_state.to_true.remove(title)
+        st.write('Removed ', title, "from st.to_true list")
+    
+    if title in st.session_state.to_false:
+        st.session_state.to_false.remove(title)
+        st.write('Removed ', title, "from st.to_false list")
+        
+    if title in st.session_state.to_maybe:
+        st.session_state.to_maybe.remove(title)
+        st.write('Removed ', title, "from st.to_maybe list")
+        
+    if title in st.session_state.to_blank:
+        st.session_state.to_blank.remove(title)
+        st.write('Removed ', title, "from st.to_blank list")
+
+# Initialize session_state versions of to_true/false/maybe/blank lists
+if 'to_true' not in st.session_state:
+    st.session_state.to_true = []
+if 'to_false' not in st.session_state:
+    st.session_state.to_false = []
+if 'to_maybe' not in st.session_state:
+    st.session_state.to_maybe = []
+if 'to_blank' not in st.session_state:
+    st.session_state.to_blank = []
+
 
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
@@ -159,8 +187,41 @@ with sidebar_modifier_slot:
             st.write(" ")       #I'm sure there's a smarter way to do this, but oh well
             if st.button('Commit change!'):
                 for title in selected_titles:
-                    title_filter = (df['title'] == title)
-                    df.at[title_filter, 'subscribed'] = radiovalue
+                    clear_title_from_list(title)  #remove title from all lists, so we only keep the most recent change
+
+                if radiovalue == 'TRUE':
+                    for title in selected_titles:
+                        st.session_state.to_true.append(title)
+                        
+                if radiovalue == 'FALSE':
+                    for title in selected_titles:
+                        st.session_state.to_false.append(title)
+                        
+                if radiovalue == 'MAYBE':
+                    for title in selected_titles:
+                        st.session_state.to_maybe.append(title)
+                        
+                if radiovalue == " ":
+                    for title in selected_titles:
+                        st.session_state.to_blank.append(title)
+
+
+# Actually do the changes in df; this runs every time the script runs but session_state lets me save the previous changes
+for title in st.session_state.to_true:
+    title_filter = (df['title'] == title)
+    df.at[title_filter, 'subscribed'] = 'TRUE'
+
+for title in st.session_state.to_false:
+    title_filter = (df['title'] == title)
+    df.at[title_filter, 'subscribed'] = 'FALSE'
+    
+for title in st.session_state.to_maybe:
+    title_filter = (df['title'] == title)
+    df.at[title_filter, 'subscribed'] = 'MAYBE'
+    
+for title in st.session_state.to_blank:
+    title_filter = (df['title'] == title)
+    df.at[title_filter, 'subscribed'] = ' '
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
@@ -178,6 +239,16 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
+
+if st.session_state.to_true:
+    st.sidebar.write("Titles you changed to TRUE ", st.session_state.to_true)
+if st.session_state.to_false:
+    st.sidebar.write("Titles you changed to FALSE ", st.session_state.to_false)
+if st.session_state.to_maybe:
+    st.sidebar.write("Titles you changed to MAYBE ", st.session_state.to_maybe)
+if st.session_state.to_blank:
+    st.sidebar.write("Titles you changed to (blank) ", st.session_state.to_blank)
+
 
 # @st.cache
 # def convert_df(df):
@@ -233,7 +304,7 @@ weighted_vs_cost2 = alt.Chart(df[filt]).mark_point(size=75, opacity=0.5, filled=
         height=500,
         title={
             "text": ['Total Weighted Usage vs. Cost, color coded by CPU_Rank gradient'],
-            "subtitle": ["Same graph as above, but with different color coding", "High Cost-per-Use rank (least economical) journals show up as darker colors"],
+            "subtitle": ["Same graph as above, but with different color coding", "High Cost-per-Use rank (least economical) journals show up in darker colors"],
             "color": "black",
             "subtitleColor": "gray"
         }
