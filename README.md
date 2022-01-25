@@ -31,6 +31,7 @@ The .csv file must have the following columns in any order, but named exactly as
 * use_ill_percent
 * use_oa_percent
 * use_other_delayed_percent
+* era_subjects
 
 These should already be the default column names assigned by Unsub in the file export.
 
