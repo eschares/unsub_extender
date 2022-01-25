@@ -7,6 +7,8 @@
 - st.beta_expander move to st.expander
 - add 'era_subjects' to example data file
 - convert subjects and era_subjects columns to strings
+- used Streamlit states to get decisions to persist across runs
+- changed marker shape to vary by Subscribed status
 
 ## 8/6/2021, v.1.0
 - first stable version released
