@@ -78,7 +78,7 @@ df = df.replace({'usage':0}, 1)
 #check and don't redo if IF% column already exists - rerunning a file through UE
 if not 'IF%' in df.columns:
     total_usage = df['usage'].sum()
-    df['current_yr_usage'] = ((df['use_ill_percent'] + df['use_other_delayed_percent']) / 100) * df['usage']
+    df['current_yr_usage'] = ((df['use_subscription_percent'] + df['use_ill_percent'] + df['use_other_delayed_percent']) / 100) * df['usage']  #assumes subscription comes in as 0 everywhere, set to FALSE
     df['IF%'] = (df['current_yr_usage'] / total_usage) * 100
     df['cost_per_IF%'] = df['subscription_cost'] / df['IF%']
 
@@ -559,7 +559,7 @@ github = "[![GitHub repo stars](https://img.shields.io/github/stars/eschares/uns
 twitter = "[![Twitter Follow](https://img.shields.io/twitter/follow/eschares?style=social)](<https://twitter.com/eschares>)"
 st.sidebar.write(twitter + " " + github)
 
-html_string = "<p style=font-size:13px>Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 1/25/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
