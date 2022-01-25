@@ -13,7 +13,7 @@ import streamlit_analytics
 import os
 import re
 from datetime import datetime
-from streamlit.media_file_manager import media_file_manager
+#from streamlit.media_file_manager import media_file_manager
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
@@ -23,7 +23,7 @@ streamlit_analytics.start_tracking()
 st.image('unsub_extender2.png')
 
 
-with st.beta_expander("How to use:"):
+with st.expander("How to use:"):
     st.write("This site takes an Unsub data export .csv file and automates the creation of useful plots and interactive visualizations so you can make more informed collection decisions.")
     st.write('**Upload your specific Unsub .csv** export file using the "Browse files" button in the left sidebar, or explore the pre-loaded example dataset and plots to see what is available.')
     st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset back to the default view.")
@@ -58,6 +58,10 @@ df = load_data(file)
 #force 'subscribed' column to be a string, not Bool and all uppercase
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
+
+#convert subject and era_subjects columns to strings, sometimes they are left blank and get coverted to 0/ints which screws everything up
+df['subject'] = df['subject'].astype(str)
+df['era_subjects'] = df['era_subjects'].astype(str)
 
 #handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
 df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
@@ -169,13 +173,13 @@ if 'to_blank' not in st.session_state:
 
 #Put Modifier down here after the filt definition so only those titles that meet the filt show up, but put into empty slot further up the sidebar for flow
 with sidebar_modifier_slot:
-    with st.beta_expander("Expand to select:"):
+    with st.expander("Expand to select:"):
         filtered_titles_df = df.loc[filt]['title']      #make a new df with only the valid titles
         #then give those valid titles as choices in the Modifier, was causing problems when trying to offer them through a filter, kept trying to use the index but wouldn't be there anymore
         selected_titles = st.multiselect('Journal Name:', pd.Series(filtered_titles_df.reset_index(drop=True)), help='Displayed in order provided by the underlying datafile')
         #st.write(selected_titles)
     
-        col1, col2 = st.beta_columns([2,1])
+        col1, col2 = st.columns([2,1])
     
         with col1:
             radiovalue = st.radio("Change 'Subscribed' status to:", ['TRUE', 'MAYBE', 'FALSE', '(blank)'])
@@ -188,6 +192,7 @@ with sidebar_modifier_slot:
             if st.button('Commit change!'):
                 for title in selected_titles:
                     clear_title_from_list(title)  #remove title from all lists, so we only keep the most recent change
+                                                    #note we are not clearing all 4 lists, just removing one title at a time
 
                 if radiovalue == 'TRUE':
                     for title in selected_titles:
@@ -250,20 +255,19 @@ if st.session_state.to_blank:
     st.sidebar.write("Titles you changed to (blank) ", st.session_state.to_blank)
 
 
-# @st.cache
-# def convert_df(df):
-#     return df.to_csv(index=False).encode('utf-8')
+##### Export the dataset with any changes made by user #####
+@st.cache
+def convert_df(df):
+    return df.to_csv(index=False).encode('utf-8')
 
-# csv=convert_df(df)
+csv=convert_df(df)
 
 date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
-# exported_filename = 'Unsub_export_' + date + '.csv'
-# st.sidebar.download_button(label='Click to export', data=csv, file_name=exported_filename)
 
-if st.sidebar.button('Click to export'):
-    this_file = media_file_manager.add(df.to_csv(index=False).encode('utf-8'), 'text/csv', r'UnsubExtender_export' + date + '.csv')
-    st.sidebar.markdown('[Click to download]({})'.format(this_file.url))
-
+st.sidebar.download_button(label="Click to download",
+                      data=csv,
+                      file_name='UnsubExtender_output_'+date+'_.csv',
+                      mime='text/csv')
 
 
 ########  Charts start here  ########
@@ -378,7 +382,7 @@ linked
 
 
 # Instant Fill % graphs
-st.subheader('Consider the Instant Fill % from each journal')
+st.subheader('Consider the Instant Fill % from each journal (paid usage / total package usage)')
 
 IF_selection = alt.selection_single()
 
@@ -392,7 +396,7 @@ IF = alt.Chart(df[filt]).mark_point(opacity=0.5, filled=True).encode(
         height = 400,
         title={
             "text": ['Instant Fill % vs. Journal Subscription Cost'],
-            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Could look for a less expensive journal that gets you the same IF%, generally the upper band", "Note: Must look at all journals in the package together, graphing subsets will throw the calculations off"],
+            "subtitle": ["Which journals increase Instant Fill % the most (moving up), and what do they cost?", "Could look for a less expensive journal that gets you the same IF%, generally the upper band", "Note: Must look at all journals in the package together; graphing subsets will throw the calculations off"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -409,7 +413,7 @@ IF2 = alt.Chart(df[filt]).mark_point(opacity=0.5, filled=True).encode(
         height=400,
         title={
             "text": ['Instant Fill % vs. Price per 1 IF% point'],
-            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to upper left corner)?","Note: X-axis shown in log to stretch and increase visibility", "Note: Must look at all journals in the package together, graphing subsets will throw the calculations off"],
+            "subtitle": ["Normalized by price, which journals are the best way to increase Instant Fill % (tending to upper left corner)?","Note: X-axis shown in log to stretch and increase visibility", "Note: Must look at all journals in the package together; graphing subsets will throw the calculations off"],
             "color": "black",
             "subtitleColor": "gray"
         }
@@ -477,7 +481,7 @@ def split_era(sentence):
 
 if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     st.write("Using column for **'era_subject'** codes by Excellence in Research for Australia (ERA).")
-    #st.write("**Note:** filters do not affect this graph due to a quirk in how the data table is defined and the fact that a single title classed as multiple subjects")
+    st.write("**Note:** Some titles do not have an **'era_subject'** area assigned; they appear in the first (left-most) column.")
     
     #create new column called 'era_split', calling fn on each row and adding the two digit codes in list form
     df['era_split'] = df.apply(lambda x: split_era(x['era_subjects']), axis=1, result_type='reduce')
@@ -503,7 +507,7 @@ if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
         y=alt.Y('cpu_rank:Q'),
         color=alt.Color('subscribed:N', scale=subscribed_colorscale),   #Nominal data type
         shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
-        tooltip=['title','downloads','citations','authorships','usage','subscription_cost', 'era_split', 'subscribed'],
+        tooltip=['title', 'cpu_rank', 'downloads','citations','authorships','usage','subscription_cost', 'era_split', 'subscribed'],
         
         ).interactive().properties(
             height=600,
