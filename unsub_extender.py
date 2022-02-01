@@ -266,7 +266,7 @@ date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
 
 st.sidebar.download_button(label="Click to download",
                       data=csv,
-                      file_name='UnsubExtender_output_'+date+'_.csv',
+                      file_name='UnsubExtender_output_'+date+'.csv',
                       mime='text/csv')
 
 
