@@ -1,4 +1,3 @@
-streamlit==1.5.0
+streamlit==1.3.0
 pandas
 altair
-git+https://github.com/Coilm/streamlit-analytics.git@ac3699a3cf23c9864c92c53aa254f309a0cba78b#egg=streamlit-analytics
