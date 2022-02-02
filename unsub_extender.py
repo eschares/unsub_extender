@@ -9,15 +9,12 @@ import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import altair as alt
-import streamlit_analytics
 import os
 import re
 from datetime import datetime
 #from streamlit.media_file_manager import media_file_manager
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
-
-streamlit_analytics.start_tracking()
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
@@ -564,8 +561,6 @@ st.sidebar.write(twitter + " " + github)
 html_string = "<p style=font-size:13px>v1.1, last modified 1/25/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
-
-streamlit_analytics.stop_tracking(unsafe_password="testtesttest")   #timestamp is 5 hours ahead
 
 # Analytics code
 components.html(
