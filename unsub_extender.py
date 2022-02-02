@@ -12,7 +12,6 @@ import altair as alt
 import os
 import re
 from datetime import datetime
-#from streamlit.media_file_manager import media_file_manager
 
 st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout='centered', initial_sidebar_state="expanded")
 
@@ -241,15 +240,17 @@ my_slot2.write(summary_df.sort_index(ascending=False))  #display in order of TRU
 
 ### Export the df with any changes the user made 
 st.sidebar.subheader('Export spreadsheet with any changes')
-
-if st.session_state.to_true:
-    st.sidebar.write("Titles you changed to TRUE ", st.session_state.to_true)
-if st.session_state.to_false:
-    st.sidebar.write("Titles you changed to FALSE ", st.session_state.to_false)
-if st.session_state.to_maybe:
-    st.sidebar.write("Titles you changed to MAYBE ", st.session_state.to_maybe)
-if st.session_state.to_blank:
-    st.sidebar.write("Titles you changed to (blank) ", st.session_state.to_blank)
+sidebar_changessummary_slot = st.sidebar.empty()
+with sidebar_changessummary_slot:
+    with st.expander("Show the changes made"):
+        if st.session_state.to_true:
+            st.write("Titles you changed to TRUE ", st.session_state.to_true)
+        if st.session_state.to_false:
+            st.write("Titles you changed to FALSE ", st.session_state.to_false)
+        if st.session_state.to_maybe:
+            st.write("Titles you changed to MAYBE ", st.session_state.to_maybe)
+        if st.session_state.to_blank:
+            st.write("Titles you changed to (blank) ", st.session_state.to_blank)
 
 
 ##### Export the dataset with any changes made by user #####
@@ -263,7 +264,7 @@ date = datetime.now().strftime("%Y_%m_%d-%H_%M_%S")
 
 st.sidebar.download_button(label="Click to download",
                       data=csv,
-                      file_name='UnsubExtener_output_'+date+'.csv',
+                      file_name='UnsubExtender_output_'+date+'.csv',
                       mime='text/csv')
 
 
