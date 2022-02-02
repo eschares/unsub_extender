@@ -4,6 +4,7 @@
 - removed streamlit-analytics, was not compatible with Streamlit 1.3.1
 - latest pandas (1.4) was causing AssertionError, downgraded to 1.3.5
 - fixed trailing underscore in exported dataset filename
+- added dropdown to show user what they changed before exporting new data
 
 ## 1/25/2022, v.1.1
 - upgraded Streamlit from v.0.84.1 to v.1.3.1 for less memory usage (current version is v1.4, but upgraded caused error "no module named 'streamlit.report_thread'")
