@@ -112,9 +112,7 @@ filt = ( (df['use_oa_percent'] >= OA_percent_slider[0]) & (df['use_oa_percent'] 
         )
 
 
-if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
-    filt2 = (df['subscribed'] == subscribed_filter)
-    filt = filt & filt2
+
 
 # if st.checkbox('Show raw data'):
 #     st.subheader('Raw data')
@@ -223,6 +221,15 @@ for title in st.session_state.to_maybe:
 for title in st.session_state.to_blank:
     title_filter = (df['title'] == title)
     df.at[title_filter, 'subscribed'] = ' '
+
+
+if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
+    filt2 = (df['subscribed'] == subscribed_filter)
+    subscribed_filter
+    filt2
+    filt = filt & filt2
+
+
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
@@ -559,7 +566,7 @@ zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](http
 st.sidebar.write(zenodo)
 st.sidebar.write(twitter + " " + github)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 1/25/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 2/4/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
