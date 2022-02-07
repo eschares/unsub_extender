@@ -227,8 +227,8 @@ for title in st.session_state.to_blank:
 
 if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
     filt2 = (df['subscribed'] == subscribed_filter)
-    subscribed_filter
-    filt2
+    #subscribed_filter
+    #filt2
     filt = filt & filt2
 
 
