@@ -56,8 +56,10 @@ df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
 
 #convert subject and era_subjects columns to strings, sometimes they are left blank and get coverted to 0/ints which screws everything up
-df['subject'] = df['subject'].astype(str)
-df['era_subjects'] = df['era_subjects'].astype(str)
+if ('subject' in df.columns):
+    df['subject'] = df['subject'].astype(str)
+if ('era_subjects' in df.columns):
+    df['era_subjects'] = df['era_subjects'].astype(str)
 
 #handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
 df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
