@@ -53,6 +53,7 @@ df = load_data(file)
 
 #==== Pre-process data ====
 #force 'subscribed' column to be a string, not Bool and all uppercase
+df['subscribed'] = df['subscribed'].fillna(' ')     #blank Subscribed values turn into a space
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
 if ('perpetual_access_years' in df.columns):
