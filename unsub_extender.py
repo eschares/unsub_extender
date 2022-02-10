@@ -347,7 +347,7 @@ scatter_dl_vs_cit = alt.Chart(df[filt]).mark_point(size=75, opacity=0.5, filled=
     alt.Y('citations:Q', title="Citations"),
     color=alt.Color('subscribed:N', scale=subscribed_colorscale),
     shape=alt.Shape('subscribed:N', scale=subscribed_point_mapping),
-    tooltip=['title', 'authorships', 'subscription_cost', 'subscribed']
+    tooltip=['title', 'downloads','citations', 'authorships', 'subscription_cost', 'subscribed']
     #size=('authorships')
 ).interactive().properties(
         height=400,
@@ -374,7 +374,7 @@ linked = alt.Chart(df[filt]).mark_point(size=50, opacity=0.5, filled=True).encod
     width=350,
     height=250,
     title={
-        "text": ["Four linked plots - Weighted usage vs. [ DL / cit / auth / Free% ]"],
+        "text": ["Four linked plots - Weighted usage vs. [ DL / cit / auth / Free% (OA+backfile) ]"],
         "subtitle": ["Zooming in will adjust all four"],
         'color':'black',
         'subtitleColor': 'gray'
