@@ -17,7 +17,7 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
-st.markdown("### ** ?? Learn more about Unsub Extender at one of our upcoming webinars: Feb 22 ([register](https://us02web.zoom.us/webinar/register/WN_yBG7qdeqQsq1lPoNetQCGw)) or Feb 24 ([register](https://us02web.zoom.us/webinar/register/WN_Ksv7x3G8S0CS-9WjEy1aOA)) **")
+st.markdown("### ** :wave: Learn more about Unsub Extender at one of our upcoming webinars: Feb 22 ([register](https://us02web.zoom.us/webinar/register/WN_yBG7qdeqQsq1lPoNetQCGw)) or Feb 24 ([register](https://us02web.zoom.us/webinar/register/WN_Ksv7x3G8S0CS-9WjEy1aOA)) **")
 
 
 with st.expander("How to use:"):
@@ -55,6 +55,7 @@ df = load_data(file)
 #force 'subscribed' column to be a string, not Bool and all uppercase
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
+df['perpetual_access_years_text'] = df['perpetual_access_years_text'].astype(str)
 
 #convert subject and era_subjects columns to strings, sometimes they are left blank and get coverted to 0/ints which screws everything up
 if ('subject' in df.columns):
