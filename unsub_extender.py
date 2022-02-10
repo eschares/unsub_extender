@@ -17,6 +17,7 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
+st.markdown("### ** ?? Learn more about Unsub Extender at one of our upcoming webinars: Feb 22 ([register](https://us02web.zoom.us/webinar/register/WN_yBG7qdeqQsq1lPoNetQCGw)) or Feb 24 ([register](https://us02web.zoom.us/webinar/register/WN_Ksv7x3G8S0CS-9WjEy1aOA)) **")
 
 
 with st.expander("How to use:"):
@@ -568,7 +569,7 @@ zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](http
 st.sidebar.write(zenodo)
 st.sidebar.write(twitter + " " + github)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 2/4/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 2/10/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
