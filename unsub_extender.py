@@ -55,7 +55,10 @@ df = load_data(file)
 #force 'subscribed' column to be a string, not Bool and all uppercase
 df['subscribed'] = df['subscribed'].astype(str)
 df['subscribed'] = df['subscribed'].str.upper()
-df['perpetual_access_years'] = df['perpetual_access_years'].astype(str)
+if ('perpetual_access_years' in df.columns):
+    df['perpetual_access_years'] = df['perpetual_access_years'].astype(str)
+if ('perpetual_access_years_text' in df.columns):
+    df['perpetual_access_years_text'] = df['perpetual_access_years_text'].astype(str)
 
 #convert subject and era_subjects columns to strings, sometimes they are left blank and get coverted to 0/ints which screws everything up
 if ('subject' in df.columns):
