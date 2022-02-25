@@ -17,7 +17,7 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
-st.markdown("### ** :wave: Learn more about Unsub Extender from one of our recent webinars: ([Feb 22](https://vimeo.com/680578098)) or ([Feb 24](https://vimeo.com/681619823)) **")
+st.markdown("### ** :wave: Learn more about Unsub Extender from a recent webinar: [Feb 22](https://vimeo.com/680578098) or [Feb 24](https://vimeo.com/681619823) **")
 
 
 with st.expander("How to use:"):
