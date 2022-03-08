@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](https://doi.org/10.5281/zenodo.5167933)
 
-### :wave: Learn more about Unsub Extender from a recent webinar and [live demo](https://vimeo.com/680578098).
+### :wave: Learn more about Unsub Extender by watching a recent [live demo](https://vimeo.com/680578098).
 
 # About
 [Unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
