@@ -17,15 +17,17 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
-st.markdown("### ** :wave: Learn more about Unsub Extender from a [live demo](https://vimeo.com/680578098) **")
+st.markdown("### :tada: ** Winner of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) (BETA) Award :tada:**")
 
 
 with st.expander("How to use:"):
+    st.write(":wave: Learn to use Unsub Extender by watching a [live demo](https://vimeo.com/680578098)")
     st.write("This site takes an Unsub data export .csv file and automates the creation of useful plots and interactive visualizations so you can make more informed collection decisions.")
     st.write('**Upload your specific Unsub .csv** export file using the "Browse files" button in the left sidebar, or explore the pre-loaded example dataset and plots to see what is available.')
     st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset back to the default view.")
     st.write("Filter on various criteria using the sliders on the left to narrow in on areas of interest, hover over data points to learn more about a specific journal, then use the dropdown to actually change a journal's *Subscribed* status and watch the graphs update. (Note: you may have to occasionally hit *'r'* to force a reload if you notice it's not loading right away)")
-    st.markdown('This project is written in Python and deployed as a web app using the library Streamlit. **More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
+    st.markdown('This project is written in Python and deployed as a web app using the library Streamlit.')
+    st.markdown('**More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
 #==== Load Data ====
 #Initialize with a hardcoded dataset
