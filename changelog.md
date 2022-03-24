@@ -1,5 +1,12 @@
 # Unsub Extender - Versioning Record and Changelog
 
+## 3/24/2022, v.1.2
+- add RUSA/ETS BETA award information
+- add live demo webinar links
+- 'perpetual_access_years' and '_text' conversions
+- Support blank Subscribed status
+- Logic for 'subject' and 'era_subjects' str convert
+
 ## 2/2/2022
 - removed streamlit-analytics, was not compatible with Streamlit 1.3.1
 - latest pandas (1.4) was causing AssertionError, downgraded to 1.3.5
