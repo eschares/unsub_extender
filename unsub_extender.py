@@ -22,8 +22,7 @@ st.markdown("### :tada: ** Winner of the 2022 RUSA ETS [Best Emerging Technology
 
 with st.expander("How to use:"):
     st.write(":wave: Learn more about using Unsub Extender by watching a [live demo](https://vimeo.com/680578098)")
-    st.write("Unsub is a tool that analyzes academic journal subscriptions to help libraries better understand their value.")
-    st.write("However, Unsub does not make it easy to understand all the complex and interrelated data it provides.")
+    st.write("Unsub is a tool that analyzes academic journal subscriptions to help libraries better understand their value. However, Unsub does not make it easy to understand all the complex and interrelated data it provides.")
     st.write("**Unsub Extender** takes an Unsub data export .csv file and automates the creation of useful plots and interactive visualizations so you can make more informed collection decisions.")
     st.write('**Upload your specific Unsub .csv** export file using the "Browse files" button in the left sidebar, or explore the pre-loaded example dataset and plots to see what is available.')
     st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset back to the default view.")
