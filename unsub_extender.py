@@ -496,9 +496,11 @@ def split_era(sentence):
 
 
 if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
-    st.write("Using column for **'era_subject'** codes by Excellence in Research for Australia (ERA).")
-    st.write("**Note:** Some titles do not have an **'era_subject'** area assigned; they appear in the first (left-most) column.")
-    
+    st.markdown("#### :rotating_light: Alert :rotating_light:")
+    st.write("Your file is using the old **'era_subject'** column which is deprecated by Unsub since May 2022.")
+    st.write("Export files now use the **'subject', 'subject_top_three,** and **'subjects_all** codes from OpenAlex.")
+    st.write("Currently, Unsub Extender will still plot the 'era_subject column, but will eventually remove this support.")
+     
     #create new column called 'era_split', calling fn on each row and adding the two digit codes in list form
     df['era_split'] = df.apply(lambda x: split_era(x['era_subjects']), axis=1, result_type='reduce')
     #remove leading and ending bracket and quote mark
@@ -541,7 +543,6 @@ if ('era_subjects' in df.columns): #& (df['era_subjects'] != 0).all():
     
 #if (df['subject'] != 0).all():
 elif ('subject' in df.columns):
-    st.write("Note: Your file uses the older **'subject'** column which is now deprecated by Unsub. Future export files use the **'era_subject'** codes by Excellence in Research for Australia (ERA).")
     #cpu_Rank y vs. subject, colored by subscribed
     cpurank_vs_subject = alt.Chart(df[filt]).mark_point(size=40, opacity=0.5, filled=True).encode(
         x=alt.X('subject:N', title=None),# axis=alt.Axis(values=[0], ticks=True, grid=False, labels=False), scale=alt.Scale()),
@@ -564,7 +565,7 @@ elif ('subject' in df.columns):
     st.altair_chart(cpurank_vs_subject, use_container_width=True)
 else:
     st.write("Sorry, you don't seem to have the right data in your file.")
-    st.write("I need either a **subject** column (old version) or an **era_subjects** column (new version) to show these by-subject charts.")
+    st.write("I need an **era_subjects** column (old version) or a **subject** or **subject_top_three** column (May 2022+) to show these by-subject charts.")
 
 
 
@@ -577,7 +578,7 @@ zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](http
 st.sidebar.write(zenodo)
 st.sidebar.write(twitter + " " + github)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 5/5/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 5/19/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
