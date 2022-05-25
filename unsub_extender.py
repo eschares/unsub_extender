@@ -17,7 +17,8 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
-st.markdown("### :tada: ** Winner of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) (BETA) Award :tada:**")
+st.markdown("##### :tada: Recipient of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) Award")
+st.markdown("##### and the 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award :tada:")
 
 
 with st.expander("How to use:"):
