@@ -29,7 +29,7 @@ with st.expander("How to use:"):
     st.write("Graphs are interactive and support zoom, click-and-drag, and hover.  Double click a graph to reset back to the default view.")
     st.write("Filter on various criteria using the sliders on the left to narrow in on areas of interest, hover over data points to learn more about a specific journal, then use the dropdown to actually change a journal's *Subscribed* status and watch the graphs update. (Note: you may have to occasionally hit *'r'* to force a reload if you notice it's not loading right away)")
     st.markdown('This project is written in Python and deployed as a web app using the library Streamlit.')
-    st.markdown('**More information about unsub extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
+    st.markdown('**More information about Unsub Extender, its requirements, and the source code is available on the [project GitHub page](https://github.com/eschares/unsub_extender)**')
 
 #==== Load Data ====
 #Initialize with a hardcoded dataset
@@ -123,7 +123,17 @@ filt = ( (df['use_oa_percent'] >= OA_percent_slider[0]) & (df['use_oa_percent'] 
         (df['usage'] >= weighted_usage_slider[0]) & (df['usage'] <= weighted_usage_slider[1])
         )
 
+if subscribed_filter_flag:  # add another filter part, have to do it this way so Subscribed=ALL works
+    st.write('Subscribed Filter Flag = 1')
+    st.write(f"subscribed_filter {subscribed_filter}")
+    
+    filt2 = (df['subscribed'] == subscribed_filter)
+    st.write(f"filt2, {filt2.sum()}")
+    filt2
 
+    filt = filt & filt2
+    st.write(f"combined filt, {filt.sum()}")
+    filt
 
 
 # if st.checkbox('Show raw data'):
@@ -220,32 +230,29 @@ with sidebar_modifier_slot:
 # Actually do the changes in df; this runs every time the script runs but session_state lets me save the previous changes
 for title in st.session_state.to_true:
     title_filter = (df['title'] == title)
-    df.at[title_filter, 'subscribed'] = 'TRUE'
+    df.loc[title_filter, 'subscribed'] = 'TRUE'
 
 for title in st.session_state.to_false:
     title_filter = (df['title'] == title)
-    df.at[title_filter, 'subscribed'] = 'FALSE'
+    df.loc[title_filter, 'subscribed'] = 'FALSE'
     
 for title in st.session_state.to_maybe:
     title_filter = (df['title'] == title)
-    df.at[title_filter, 'subscribed'] = 'MAYBE'
+    df.loc[title_filter, 'subscribed'] = 'MAYBE'
     
 for title in st.session_state.to_blank:
     title_filter = (df['title'] == title)
-    df.at[title_filter, 'subscribed'] = ' '
+    df.loc[title_filter, 'subscribed'] = ' '
 
 
-if subscribed_filter_flag:      #add another filter part, have to do it this way so Subscribed=ALL works
-    filt2 = (df['subscribed'] == subscribed_filter)
-    #subscribed_filter
-    #filt2
-    filt = filt & filt2
 
 
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(df[filt])
+
+
 
 ### Summary dataframe created to show count and sum$ by Subscribed status
 summary_df = df[filt].groupby('subscribed')['subscription_cost'].agg(['count','sum'])
@@ -579,7 +586,7 @@ zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](http
 st.sidebar.write(zenodo)
 st.sidebar.write(twitter + " " + github)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 5/19/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 7/6/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
