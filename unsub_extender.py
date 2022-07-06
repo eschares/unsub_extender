@@ -124,16 +124,9 @@ filt = ( (df['use_oa_percent'] >= OA_percent_slider[0]) & (df['use_oa_percent'] 
         )
 
 if subscribed_filter_flag:  # add another filter part, have to do it this way so Subscribed=ALL works
-    st.write('Subscribed Filter Flag = 1')
-    st.write(f"subscribed_filter {subscribed_filter}")
-    
     filt2 = (df['subscribed'] == subscribed_filter)
-    st.write(f"filt2, {filt2.sum()}")
-    filt2
-
     filt = filt & filt2
-    st.write(f"combined filt, {filt.sum()}")
-    filt
+
 
 
 # if st.checkbox('Show raw data'):
