@@ -72,6 +72,10 @@ if ('subject' in df.columns):
     df['subject'] = df['subject'].astype(str)
 if ('era_subjects' in df.columns):
     df['era_subjects'] = df['era_subjects'].astype(str)
+if ('subject_top_three' in df.columns):
+    df['subject_top_three'] = df['subject_top_three'].astype(str)
+if ('subjects_all' in df.columns):
+    df['subjects_all'] = df['subjects_all'].astype(str)
 
 #handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
 df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
