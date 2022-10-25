@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Unsub Extender
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Eric
+    family-names: Schares
+    email: eschares@iastate.edu
+    affiliation: Iowa State University
+    orcid: 'https://orcid.org/0000-0002-6292-8221'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.5167933
+repository-code: 'https://github.com/eschares/unsub_extender'
+url: 'https://unsubextender.lib.iastate.edu/'
