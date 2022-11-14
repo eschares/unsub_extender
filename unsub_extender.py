@@ -76,6 +76,8 @@ if ('subject_top_three' in df.columns):
     df['subject_top_three'] = df['subject_top_three'].astype(str)
 if ('subjects_all' in df.columns):
     df['subjects_all'] = df['subjects_all'].astype(str)
+if ('Notes' in df.columns):
+    df['Notes'] = df['Notes'].astype(str)
 
 #handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
 df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
@@ -585,7 +587,7 @@ zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](http
 st.sidebar.write(zenodo)
 st.sidebar.write(twitter + " " + github)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 9/2/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 11/14/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
