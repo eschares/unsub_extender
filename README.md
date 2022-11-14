@@ -2,6 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/358961619.svg)](https://zenodo.org/badge/latestdoi/358961619)
 
+### :books: Paper on Unsub Extender now published in [*Quantitative Science Studies*](https://doi.org/10.1162/qss_a_00200) :books:
 ### :tada: Recipient of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) (BETA) Award and the 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award 🎉
 ### Learn more about Unsub Extender by watching a recent [live demo](https://vimeo.com/680578098).
 
