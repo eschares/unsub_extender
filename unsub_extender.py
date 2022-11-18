@@ -584,10 +584,13 @@ st.sidebar.subheader("About")
 github = "[![GitHub repo stars](https://img.shields.io/github/stars/eschares/unsub_extender?logo=github&style=social)](<https://github.com/eschares/unsub_extender>)"
 twitter = "[![Twitter Follow](https://img.shields.io/twitter/follow/eschares?style=social)](<https://twitter.com/eschares>)"
 zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](https://doi.org/10.5281/zenodo.5167933)"
-st.sidebar.write(zenodo)
-st.sidebar.write(twitter + " " + github)
+mastodon = "[![Mastodon Follow](https://img.shields.io/mastodon/follow/108216956438964080?domain=https://scholar.social&style=social)](<https://scholar.social/@eschares>)"
 
-html_string = "<p style=font-size:13px>v1.1, last modified 11/14/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+st.sidebar.write(zenodo)
+st.sidebar.write(mastodon + " " + github)
+st.sidebar.write(twitter)
+
+html_string = "<p style=font-size:13px>v1.1, last modified 11/18/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
