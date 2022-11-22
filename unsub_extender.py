@@ -582,7 +582,7 @@ else:
 ##### Footer in sidebar #####
 st.sidebar.subheader("About")
 github = "[![GitHub repo stars](https://img.shields.io/github/stars/eschares/unsub_extender?logo=github&style=social)](<https://github.com/eschares/unsub_extender>)"
-twitter = "[![Twitter Follow](https://img.shields.io/twitter/follow/eschares?style=social)](<https://twitter.com/eschares>)"
+twitter = "[![Twitter Follow](https://img.shields.io/twitter/url?label=Twitter%20%40eschares&style=social&url=https%3A%2F%2Ftwitter.com%2Feschares)](<https://twitter.com/eschares>)"
 zenodo = "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5167933.svg)](https://doi.org/10.5281/zenodo.5167933)"
 mastodon = "[![Mastodon Follow](https://img.shields.io/mastodon/follow/108216956438964080?domain=https://scholar.social&style=social)](<https://scholar.social/@eschares>)"
 
