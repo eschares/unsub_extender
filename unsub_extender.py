@@ -80,6 +80,9 @@ if ('Notes' in df.columns):
     df['Notes'] = df['Notes'].astype(str)
 if ('publisher' in df.columns):
     df['publisher'] = df['publisher'].astype(str)
+for fuzzed_col in df.loc[:,df.columns.str.endswith('fuzzed')]:
+    df[fuzzed_col] = df[fuzzed_col].astype(str)
+
 
 #handle cases where a '-' is in the cell, seems to happen in cpu and cpu_rank
 df['cpu'] = pd.to_numeric(df['cpu'], errors='coerce')
@@ -592,7 +595,7 @@ st.sidebar.write(zenodo)
 st.sidebar.write(mastodon + " " + github)
 st.sidebar.write(twitter)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 12/7/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified 12/12/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 #st.sidebar.write("*Version 1.0*")
 
