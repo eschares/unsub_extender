@@ -17,9 +17,10 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
-st.markdown("##### :books: Paper on Unsub Extender now published in [*Quantitative Science Studies*](https://doi.org/10.1162/qss_a_00200) :books:")
-st.markdown("##### :tada: Recipient of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) Award")
-st.markdown("##### and the 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award :tada:")
+st.markdown("##### :books: Paper on Unsub Extender published in [*Quantitative Science Studies*](https://doi.org/10.1162/qss_a_00200)")
+st.markdown("##### :question: Need more? Hire [Schares Data Science](https://www.scharesdatascience.com/) to help interpret your Unsub results. ")
+#st.markdown("##### :tada: Recipient of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) Award")
+#st.markdown("##### and the 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award :tada:")
 
 
 
@@ -585,6 +586,11 @@ else:
 
 
 ##### Footer in sidebar #####
+st.sidebar.markdown("### Honors and Awards")
+st.sidebar.markdown("- 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) Award")
+st.sidebar.markdown("- 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award")
+
+
 st.sidebar.subheader("About")
 github = "[![GitHub repo stars](https://img.shields.io/github/stars/eschares/unsub_extender?logo=github&style=social)](<https://github.com/eschares/unsub_extender>)"
 twitter = "[![Twitter Follow](https://img.shields.io/twitter/url?label=Twitter%20%40eschares&style=social&url=https%3A%2F%2Ftwitter.com%2Feschares)](<https://twitter.com/eschares>)"
@@ -593,11 +599,10 @@ mastodon = "[![Mastodon Follow](https://img.shields.io/mastodon/follow/108216956
 
 st.sidebar.write(zenodo)
 st.sidebar.write(mastodon + " " + github)
-st.sidebar.write(twitter)
+#st.sidebar.write(twitter)
 
-html_string = "<p style=font-size:13px>v1.1, last modified 12/12/22 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified Sept. 8, 2023 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
-#st.sidebar.write("*Version 1.0*")
 
 # Analytics code
 components.html(
