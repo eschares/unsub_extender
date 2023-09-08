@@ -1,10 +1,14 @@
 ![unsub extender logo](https://github.com/eschares/unsub_extender/blob/main/unsub_extender2.png)
 
+## [https://unsubextender.lib.iastate.edu/](https://unsubextender.lib.iastate.edu/)
+
 [![DOI](https://zenodo.org/badge/358961619.svg)](https://zenodo.org/badge/latestdoi/358961619)
 
-### :books: Paper on Unsub Extender now published in [*Quantitative Science Studies*](https://doi.org/10.1162/qss_a_00200) :books:
-### :tada: Recipient of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) (BETA) Award and the 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award 🎉
-### Learn more about Unsub Extender by watching a recent [live demo](https://vimeo.com/680578098).
+### :books: Paper on Unsub Extender published in [*Quantitative Science Studies*](https://doi.org/10.1162/qss_a_00200) :books:
+
+### Learn about Unsub Extender by watching a recent [live demo](https://vimeo.com/680578098).
+
+### ❓ Need more? Hire [Schares Data Science](https://www.scharesdatascience.com/) to help interpret your Unsub results.
 
 # About
 [Unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
@@ -56,6 +60,10 @@ The **subscribed** column is especially important as it determines the color-cod
 Hosted by Iowa State University
 
 Navigate to https://unsubextender.lib.iastate.edu to run in browser
+
+# Awards 🎉
+- 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) (BETA) Award
+- 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award
 
 # License
 GNU AGPLv3, Copyright (c) 2021 Eric Schares
