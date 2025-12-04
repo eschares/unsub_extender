@@ -8,8 +8,6 @@
 
 ### Learn about Unsub Extender by watching a recent [live demo](https://vimeo.com/680578098).
 
-### ❓ Need more? Hire [Schares Data Science](https://www.scharesdatascience.com/) to help interpret your Unsub results.
-
 # About
 [Unsub](http://unsub.org) is a collection analysis tool that assists libraries in analyzing their journal subscriptions.
 The tool provides rich data and a summary graph, but more detailed analysis tends to take place off the site in an exported .csv file that allows for filtering, notes, and additional visualization.
