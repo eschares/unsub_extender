@@ -18,7 +18,6 @@ st.set_page_config(page_title='Unsub Extender', page_icon="scissors.jpg", layout
 #st.set_page_config(layout="wide")
 st.image('unsub_extender2.png')
 st.markdown("##### :books: Paper on Unsub Extender published in [*Quantitative Science Studies*](https://doi.org/10.1162/qss_a_00200)")
-st.markdown("##### :question: Need more? Hire [Schares Data Science](https://www.scharesdatascience.com/) to help interpret your Unsub results. ")
 #st.markdown("##### :tada: Recipient of the 2022 RUSA ETS [Best Emerging Technology Application](https://rusaupdate.org/2022/03/2022-ets-best-emerging-technology-application-award/) Award")
 #st.markdown("##### and the 2022 ASEE ELD [Innovation in Access to Engineering Information](https://sites.asee.org/eld/about-the-eld/awards/#innovation) Award :tada:")
 
@@ -108,6 +107,11 @@ st.sidebar.subheader("Change a journal's Subscribed status")
 sidebar_modifier_slot = st.sidebar.empty()
 my_slot1 = st.empty()   #save this spot to fill in later for how many rows get selected with the filter
 
+
+if max(df['citations']) == 0:
+          1 #set a random cell to 0.1
+if max(df['authorships']) == 0:
+          1 #set a random cell to 0.1
 
 # Sliders and filter
 st.sidebar.subheader("**Filters** (arrow keys to fine-tune)")
@@ -601,7 +605,7 @@ st.sidebar.write(zenodo)
 st.sidebar.write(mastodon + " " + github)
 #st.sidebar.write(twitter)
 
-html_string = "<p style=font-size:13px>v1.1, last modified Sept. 8, 2023 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
+html_string = "<p style=font-size:13px>v1.1, last modified Dec. 4, 2025 <br />Created by Eric Schares, Iowa State University <br /> Send any feedback, suggestions, bug reports, or success stories to <b>eschares@iastate.edu</b></p>"
 st.sidebar.markdown(html_string, unsafe_allow_html=True)
 
 # Analytics code
